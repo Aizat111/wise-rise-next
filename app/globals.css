@@ -1,26 +1,205 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@custom-variant dark (&:is(.dark *));
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* --------------------------------------------------------------------------
+ * Tailwind theme bridge
+ * Maps CSS variables → utilities (bg-primary, text-primary-foreground, font-sans…)
+ * Edit the actual values in :root / .dark below — not here.
+ * -------------------------------------------------------------------------- */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-fade: fade 0.3s ease;
+  --animate-slide-up: slideUp 0.35s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* --------------------------------------------------------------------------
+ * Design tokens — change brand colors here
+ *
+ * Primary pair (most important):
+ *   --primary            → bg-primary, border-primary, text-primary
+ *   --primary-foreground → text-primary-foreground (on primary surfaces)
+ *
+ * Also mirrored for sidebar brand accents.
+ * Use oklch(L C H) for perceptual consistency across light/dark.
+ * -------------------------------------------------------------------------- */
+:root {
+  --radius: 0.625rem;
+
+  --background: #000000;
+  --foreground: #f5f5f5;
+
+  --card: #0a0a0a;
+  --card-foreground: #f5f5f5;
+
+  --popover: #0a0a0a;
+  --popover-foreground: #f5f5f5;
+
+  /* Brand */
+  --primary: #be161a;
+  --primary-foreground: #ffffff;
+
+  --secondary: #141414;
+  --secondary-foreground: #f5f5f5;
+
+  --muted: #141414;
+  --muted-foreground: #a3a3a3;
+
+  --accent: #1a1a1a;
+  --accent-foreground: #f5f5f5;
+
+  --destructive: #ef4444;
+
+  --border: rgb(255 255 255 / 12%);
+  --input: rgb(255 255 255 / 14%);
+  --ring: #be161a;
+
+  --chart-1: #be161a;
+  --chart-2: #e85a5e;
+  --chart-3: #a3a3a3;
+  --chart-4: #737373;
+  --chart-5: #525252;
+
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: #141414;
+  --sidebar-accent-foreground: #f5f5f5;
+  --sidebar-border: rgb(255 255 255 / 12%);
+  --sidebar-ring: var(--ring);
+}
+
+.dark {
+  --background: #000000;
+  --foreground: #f5f5f5;
+
+  --card: #0a0a0a;
+  --card-foreground: #f5f5f5;
+
+  --popover: #0a0a0a;
+  --popover-foreground: #f5f5f5;
+
+  --primary: #be161a;
+  --primary-foreground: #ffffff;
+
+  --secondary: #141414;
+  --secondary-foreground: #f5f5f5;
+
+  --muted: #141414;
+  --muted-foreground: #a3a3a3;
+
+  --accent: #1a1a1a;
+  --accent-foreground: #f5f5f5;
+
+  --destructive: #ef4444;
+
+  --border: rgb(255 255 255 / 12%);
+  --input: rgb(255 255 255 / 14%);
+  --ring: #be161a;
+
+  --chart-1: #be161a;
+  --chart-2: #e85a5e;
+  --chart-3: #a3a3a3;
+  --chart-4: #737373;
+  --chart-5: #525252;
+
+  --sidebar: #0a0a0a;
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: #141414;
+  --sidebar-accent-foreground: #f5f5f5;
+  --sidebar-border: rgb(255 255 255 / 12%);
+  --sidebar-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading tracking-tight;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility container {
+  margin-inline: auto;
+
+  padding-inline: 24px;
+
+  max-width: 1280px;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #303030;
+
+  border-radius: 999px;
+}
+::selection {
+  background: #be161a;
+
+  color: white;
 }

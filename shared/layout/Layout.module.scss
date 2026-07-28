@@ -1,0 +1,38 @@
+.hidedSidebar > aside {
+  width: 4.8rem;
+  flex-grow: 0;
+
+  span {
+    opacity: 0;
+  }
+}
+
+// .hidedSidebar > div {
+//   width: 100%;
+// }
+
+.showedSidebar > aside {
+  width: var(--sidebar-width);
+}
+
+.initialSidebar > aside {
+  transition:
+    width 0.35s,
+    opacity 0.35s;
+}
+
+.hidedChatPanel > [data-attribute='chatPanel'] {
+  width: 0;
+  flex-grow: 0;
+  opacity: 0;
+}
+
+.showedChatPanel > [data-attribute='chatPanel'] {
+  min-width: var(--chat-panel-width);
+  max-width: var(--chat-panel-width);
+  width: var(--chat-panel-width) !important;
+  @media (max-width: 767px) {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}

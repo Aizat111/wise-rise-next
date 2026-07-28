@@ -1,0 +1,1113 @@
+{
+  "common": {
+    "step": "Addım",
+    "continue": "Davam Et",
+    "save": "Yadda saxla",
+    "add": "Əlavə et",
+    "loading": "Yüklənir...",
+    "error": "Xəta",
+    "success": "Uğurlu",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "contactUs": "Bizimlə əlaqə",
+    "yes": "Bəli",
+    "no": "Xeyr",
+    "cancel": "Ləğv et",
+    "send": "Göndər",
+    "yearly": "İllik",
+    "monthly": "Aylıq",
+    "discountCode": "ENDİRİM KODU",
+    "discountCodeCopied": "Kod kopyalandı: ",
+    "copyError": "Kopyalama uğursuz oldu: ",
+    "successCreated": "Uğurla yaradıldı",
+    "back": "Geri qayıt",
+    "edit": "Düzəliş et",
+    "delete": "Sil",
+    "errorMessage": "Xəta baş verdi: "
+  },
+  "inputs": {
+    "email": "E-poçt",
+    "emailPlaceholder": "E-poçt ünvanı",
+    "emailRequired": "Zəhmət olmasa bir e-poçt ünvanı daxil edin.",
+    "emailInvalid": "Zəhmət olmasa keçərli bir e-poçt ünvanı daxil edin.",
+    "emailMinLength": "Ən azı 3 simvol uzunluğunda olmalıdır.",
+    "emailMaxLength": "Ən çox 50 simvol uzunluğunda olmalıdır.",
+    "password": "Şifrə",
+    "passwordPlaceholder": "Şifrə",
+    "passwordRequired": "Zəhmət olmasa şifrə daxil edin.",
+    "minPasswordLength": "Şifrəniz ən azı 6 simvol uzunluğunda olmalıdır.",
+    "maxPasswordLength": "Şifrəniz ən çox 50 simvol uzunluğunda olmalıdır."
+  },
+  "header": {
+    "categories": "Kateqoriyalar",
+    "plan": "Plan",
+    "business": "Business",
+    "find": "Kəşf et",
+    "activities": "Fəaliyyətlərim",
+    "help": "Yardım və Dəstək",
+    "comingSoon": "Yakında Gələcəklər"
+  },
+  "footer": {
+    "discover": "Kəşf et",
+    "aboutUs": "Haqqımızda",
+    "contact": "Əlaqə",
+    "corporate": "Korporativ",
+    "frequentlyAskedQuestions": "Tez-tez Verilən Suallar",
+    "helpCenter": "Yardım Mərkəzi",
+    "subscriptionTerms": "Abunəlik Şərtləri",
+    "privacyPolicy": "Məxfilik Siyasəti",
+    "termsOfService": "Şərtlər və Qaydalar",
+    "allCategories": "Bütün Kateqoriyalar",
+    "gift": "Hədiyyə",
+    "giftCoupon": "Hədiyyə Kuponu İstifadə Et",
+    "giveGift": "Hədiyyə Et",
+    "live": "Live"
+  },
+  "auth": {
+    "login": "Daxil ol",
+    "loginText": "Giriş",
+    "logoutText": "Çıxış",
+    "register": "Qeydiyyatdan keç",
+    "forgotPassword": "Şifrəmi unutdum",
+    "resetPassword": "Şifrəni sıfırla",
+    "verifyEmail": "E-poçtu təsdiqlə",
+    "resendVerificationEmail": "E-poçt təsdiqləmə linki göndər",
+    "signUp": "Üzv ol",
+    "or": "və ya",
+    "googleRegister": "Google ilə qeydiyyatdan keç",
+    "googleLogin": "Google ilə daxil ol"
+  },
+  "login": {
+    "title": "Daxil ol",
+    "subtitle": "Hesabına e-poçt və şifrə istifadə edərək daxil ola bilərsən",
+    "emailPlaceholder": "E-poçt ünvanı",
+    "passwordPlaceholder": "Şifrə",
+    "emailRequired": "E-poçt ünvanı mütləqdir",
+    "emailInvalid": "Düzgün e-poçt ünvanı daxil edin",
+    "passwordRequired": "Şifrə mütləqdir",
+    "passwordMinLength": "Şifrə ən azı 6 simvoldan ibarət olmalıdır",
+    "submit": "Daxil ol",
+    "submitting": "Daxil olunur...",
+    "forgotPassword": "Şifrəmi unutdum",
+    "or": "və ya",
+    "googleLogin": "Google ilə daxil ol",
+    "showPassword": "Şifrəni göstər",
+    "hidePassword": "Şifrəni gizlə",
+    "loginError": "Daxil olmaq mümkün olmadı. Zəhmət olmasa məlumatları yoxlayın.",
+    "noAccount": "Üzv deyilsən?",
+    "registerNow": "İndi qeydiyyatdan keç",
+    "accountNotActiveMessage": "Üzvlüyünüz ləğv edilmişdir. Üzvlüyünüzü aktivləşdirmək istəyirsiniz?",
+    "accountActivatedMessage": "Hesabınız yenidən aktiv edildi."
+  },
+  "forgotPassword": {
+    "title": "Şifrəni Sıfırla",
+    "subtitle": "Şifrəni unutmusansa, e-poçt məlumatlarını daxil edib şifrəni dəyişə bilərsən.",
+    "message": "E-poçtuna gələn link ilə davam et!"
+  },
+  "register": {
+    "step1": {
+      "title": "Hesab Yarat",
+      "subtitle": "Qeydiyyat üçün bilgileri doldur.",
+      "emailPlaceholder": "E-poçt ünvanınız",
+      "emailRequired": "E-poçt ünvanı mütləqdir",
+      "emailInvalid": "Keçərli bir e-poçt ünvanı daxil edin",
+      "commercialRequired": "Ticarət mesajı razılığını qəbul etməlisiniz.",
+      "privacyRequired": "Aydınlatma Mətnini təsdiqləməlisiniz.",
+      "commercialMessage": "Ticarət Elektron Mesaj Təsdiq Mətni",
+      "commercialMessageText": " oxudum, təsdiqləyirəm.",
+      "privacyPolicy": "Aydınlatma Mətni",
+      "privacyPolicyText": " oxudum, fərdi məlumatlarımın işlənməsinə və xaricə ötürülməsinə razılıq verirəm.",
+      "termsText": "* Davam Et düyməsinə basaraq 18 yaşından böyük olduğunuzu və",
+      "terms": "İstifadə Qaydaları",
+      "termsTextEnd": " qəbul etmiş olursunuz.",
+      "useGiftSubtitle": "Hədiyyə kupon kodunu istifadə edərək qeydiyyatdan keçmək üçün məlumatları doldur.",
+      "googleLogin": "Google ilə qeydiyyatdan keç",
+      "or": "və ya"
+    },
+    "step2": {
+      "title": "Şifrəni Yarat",
+      "passwordPlaceholder": "Şifrənizi yaradın",
+      "passwordRequired": "Şifrə mütləqdir",
+      "passwordRule": "Zəhmət olmasa göstərilən qaydalara uyğun şifrənizi yaradın.",
+      "passwordMinLength": "Şifrəniz ən azı 6 simvol uzunluğunda olmalıdır.",
+      "passwordChangeSuccess": "Şifrəniz uğurla dəyişdirildi.",
+      "newPassword": "Yeni Şifrə",
+      "newPasswordAgain": "Yeni Şifrəni Təkrar Daxil Et",
+      "discoverNow": "İndi Kəşf Et",
+      "stepLabel": "Addım 3/4"
+    },
+    "step3": {
+      "title": "Üzvlük Planını Seç",
+      "profile": "1 Hesab - 4 Profil",
+      "freeMonth": "1 Ay pulsuz sına.",
+      "freeMonthText": "1 Ay Pulsuz",
+      "freeYear": "1 İl pulsuz sına.",
+      "freeYearText": "1 İl Pulsuz",
+      "feature1": "Taahüt yox, kolayca iptal edin",
+      "feature2": "Türkiyənin ən yaxşılarından 1.000+ dərs",
+      "feature3": "Hər ay əlavə olunan yeni dərslər",
+      "feature4": "Telefon, tablet və kompüterdən izləyin",
+      "feature5": "Hər dərsdə sertifika qazanın",
+      "feature6": "Aylıq plana görə avantajlı qiymət",
+      "buyNow": "SATIN AL",
+      "select": "Seç",
+      "bestValue": "Ən Sərfəli",
+      "planRequired": "Davam etmək üçün bir plan seçməlisiniz.",
+      "plansLoadError": "Planlar yüklənmədi. Zəhmət olmasa yenidən cəhd edin.",
+      "retry": "Yenidən cəhd et",
+      "sale50": "50% Endirim"
+    },
+    "step4": {
+      "title": "Ödəniş Et",
+      "subtitle": "Kart məlumatlarını daxil et.",
+      "summary": "Ödəniş Xülasəsi",
+      "emailLabel": "E-poçt",
+      "total": "Cəmi",
+      "processing": "Ödəniş emal olunur...",
+      "checkoutError": "Ödəniş tamamlanmadı. Zəhmət olmasa yenidən cəhd edin.",
+      "name": "Ad",
+      "namePlaceholder": "Ad",
+      "surname": "Soyad",
+      "surnamePlaceholder": "Soyad",
+      "nameRequired": "Zəhmət olmasa adınızı daxil edin.",
+      "nameInvalid": "Zəhmət olmasa keçərli bir ad daxil edin.",
+      "nameMaxLength": "Ad ən çox 50 simvol uzunluğunda olmalıdır.",
+      "nameMinLength": "Ad ən azı 2 simvol uzunluğunda olmalıdır.",
+      "surnameRequired": "Zəhmət olmasa soyadınızı daxil edin.",
+      "surnameInvalid": "Zəhmət olmasa keçərli bir soyad daxil edin.",
+      "surnameMaxLength": "Soyad ən çox 50 simvol uzunluğunda olmalıdır.",
+      "surnameMinLength": "Soyad ən azı 2 simvol uzunluğunda olmalıdır.",
+      "cardNumber": "Kart Nömrəsi",
+      "cardNumberPlaceholder": "Kart Nömrəsi",
+      "cardNumberRequired": "Zəhmət olmasa bir kart nömrəsi daxil edin.",
+      "cardNumberInvalid": "Zəhmət olmasa keçərli bir kart nömrəsi daxil edin.",
+      "cardNumberMaxLength": "Kart nömrəsi ən çox 16 simvol uzunluğunda olmalıdır.",
+      "cardNumberMinLength": "Kart nömrəsi ən azı 16 simvol uzunluğunda olmalıdır.",
+      "cardDate": "Son İstifadə Tarixi",
+      "cardDatePlaceholder": "AA/İİ",
+      "cardDateRequired": "Zəhmət olmasa son istifadə tarixini daxil edin.",
+      "cardDateInvalid": "Zəhmət olmasa keçərli bir son istifadə tarixi daxil edin.",
+      "cardDateMaxLength": "Son istifadə tarixi ən çox 5 simvol uzunluğunda olmalıdır.",
+      "cardDateMinLength": "Son istifadə tarixi ən azı 5 simvol uzunluğunda olmalıdır.",
+      "cardCode": "CVV",
+      "cardCodePlaceholder": "CVV",
+      "cardCodeRequired": "Zəhmət olmasa CVV daxil edin.",
+      "cardCodeInvalid": "Zəhmət olmasa keçərli bir CVV daxil edin.",
+      "cardCodeMaxLength": "CVV ən çox 4 simvol uzunluğunda olmalıdır.",
+      "cardCodeMinLength": "CVV ən azı 3 simvol uzunluğunda olmalıdır.",
+      "cardPlan": "Seçdiyin Plan",
+      "cardPlanMessage": "Üzvlüyünüzü təsdiqləmək üçün kartınızdan sadəcə 1 TL çəkiləcək.",
+      "couponeCode": "Kupon Kodu",
+      "haveCoupon": "Kupon kodum var",
+      "invalidCouponeCode": "Kupon kodu etibarsızdır",
+      "preInformationForm": "İlkin Məlumatlandırma Forması",
+      "distanceContract": "Məsafəli Satış Müqaviləsi",
+      "contractAcceptText": "-ni oxudum və təsdiq edirəm.",
+      "contractRequired": "Davam etmək üçün müqavilələri təsdiqləməlisiniz.",
+      "acceptMessage": " qəbul edirəm.",
+      "and": "və",
+      "expireMessage": "* Ödə və İndi Kəşf Et düyməsinə basaraq yuxarıda yazılan məbləği ödəmə öhdəliyi altına girəcəksiniz və üzvlüyünüz siz ləğv edənə qədər yenilənəcəkdir.",
+      "cancelSubscription": "Gələcəkdə ödəniş alınmasını istəmirsinizsə",
+      "cancelSubscriptionMessage": "saxlı qalmaq şərtilə üzvlüyünüzü istədiyiniz vaxt ləğv edə bilərsiniz.",
+      "cardTypeNotAllowedMessage": "* Qüvvədə olan qanunvericiliyə görə abunəlik əməliyyatlarında debet kart, virtual kart və əvvəlcədən ödənişli kartlarla qeydiyyat yaradıla bilməz.",
+      "payAndDiscoverNow": "Ödə və İndi Kəşf Et",
+      "finishPayment": "Ödənişi Tamamla",
+      "freeMonth": "PULSUZ SINA"
+    }
+  },
+  "survey": {
+    "title": "Xoş gəldin!",
+    "subtitle": "Hesabın hazırdır. Qısa bir anketlə məqsədlərini müəyyən edərək davam edə bilərsən.",
+    "cta": "Ana səhifəyə qayıt"
+  },
+  "home": {
+    "home": "Ana səhifə",
+    "title": "Ən Yaxşılardan Yüzlərlə Təlim Videosunu İstədiyin Yerdə İzlə!",
+    "withWiseRise": "Wise&Rise ilə",
+    "moveForward": "Olduğun Yerdə Dayanma, İrəlilə!",
+    "nowMove": "İndi İrəlilə",
+    "everyoneHasPotential": "Hər Kəsin Bir Potensialı Vardır!",
+    "unlockNewOpportunities": "Yeni İmkanların Kilidini Aç və Bacarıqlarını İnkişaf Etdir.",
+    "mostViewed": "Ən Çox İzlənilənlər",
+    "startLearning": "Öyrənməyə Başla",
+    "comingSoon": "Tezliklə Gələcəklər",
+    "bestOfTurkey": "Türkiyənin Ən Yaxşılarını İzlə",
+    "featuredTrainings": "Önə Çıxan Təlimlər",
+    "newAdded": "Yeni Əlavə Olunanlar",
+    "specialForParents": "Valideynlərə Özəl",
+    "businessWorld": "İş Dünyası",
+    "psychology": "Psixologiya",
+    "art": "İncəsənət",
+    "life": "Həyat",
+    "all": "Hamısı",
+    "specialForYou": "Sənə Özəl",
+    "categories": "Kateqoriyalar",
+    "allTrainings": "Bütün Təlimlər",
+    "inviteProgressMessage": "Hər ay yeni adlar və yeni məzmunlarla səni irəliləməyə dəvət edirik!",
+    "chooseTheCategoryYouWantToDevelop": "9 Fərqli Kateqoriyada İnkişaf Eltmək İstədiyin Sahəni Seç, Təlimini Tamamla!",
+    "everyMonthNewContent": "HƏR AY ƏLAVƏ OLUNAN YENİ MƏZMUNLARLA",
+    "youNeedToDevelopInTheCategoryYouWant": "EHTİYAC DUYDUĞUN HƏR MÖVZUDA İNKİŞAF ET.",
+    "youCanDevelopYourLifeSkillsInManyCategories": "Bir çox kateqoriyada özünəməxsus məlumatlarla həyat bacarıqlarını inkişaf etdirmə imkanı...",
+    "trainings": "Təlimlər",
+    "chooseTheCategoryYouAreInterestedIn": "DAHA ÇOX MƏLUMAT ÜÇÜN MARAĞINI ÇƏKƏN KATEQORİYALARI SEÇ",
+    "visitTheCategoriesAndOpenTheDoorOfTransformation": "Kateqoriyaları ziyarət edib istədiyin təlimlə transformasiya qapısını arala.",
+    "viewAll": "Hamısına Bax",
+    "wiseRiseInBusinessWorld": "Wise&Rise İş Dünyasında!",
+    "createALearningCultureInYourCompany": "Wise&Rise ilə qurumunuzda bir öyrənmə mədəniyyəti yaradın. Qrup endirimləri və daha çox məlumat üçün bizimlə əlaqə saxlayın.",
+    "moveWithUs": "BİZİMLƏ İRƏLİLƏ",
+    "view": "İncələ",
+    "watchNow": "İndi izləyin",
+    "watchTrailer": "Treyleri İzlə",
+    "registerNow": "İndi Qeydiyyatdan Keç",
+    "everyoneIsTheArchitectOfTheirOwnFortune": "Hər kəs öz taleyinin memarıdır;",
+    "watchTheBestOfTurkey": "Wise&Rise İlə Türkiyənin Ən Yaxşılarını İzlə",
+    "improveAsYouWatch": "İzlədikcə İnkişaf Et,",
+    "improveAsYouWatchText": "İnkişaf Etdikcə Dəyiş!",
+    "createYourAccount": "Hesabını yarat",
+    "addedToFavorites": "Favorilərə Əlavə Edildi",
+    "removedFromFavorites": "Favorilərdən Çıxarıldı."
+  },
+  "aboutUs": {
+    "title": "Haqqımızda",
+    "description1": "Gənc yaşda yolu intellektual cəmiyyətin çox dəyərli adları ilə kəsişmiş, onların vizyonlarına şahidlik edə-edə özümüzü “inkişafa” və daima “irəliləməyə” həsr etmiş kiçik bir komanda olaraq yola çıxdıq. O qədər dəyərli tövsiyələr, o qədər fərqli bir vizyon və ilham mənbəyi idilər ki, istədik ki, ölkəmizin bütün gəncləri və valideynləri də bu geniş dünyadan faydalana bilsin, bizimlə yürüsün. İlham aldığımız, onlar kimi işləmək və fərq yaratmaq istədiyimiz, tövsiyələrini nəfəsimizi tutaraq dinlədiyimiz şəxslərlə cəmiyyəti bir az daha yaxınlaşdırmağın bir ehtiyac olduğunu gördük.",
+    "description2": "Wise&Rise ailəsi olaraq, bu dəyərli şəxslərin iş həyatlarını, ilham axtarışlarını, bir ömür həsr etdikləri ehtiraslarını və süzülmüş təcrübələrini dünyaya çatdırmaq niyyəti ilə bu platformanı həyata keçirdik. Sahəsinin ulduzlarının həyata baxışlarını, nəyi necə bacardıqlarını və nəyi fərqli etdiklərini birinci ağızdan dinləyib öz həyatlarımıza uyğunlaşdırmağın uğuru bərabərində gətirəcəyinə inanırıq. Şübhəsiz marağını heç itirməyən, soruşub araşdıran, fərqli bir bucaqdan baxa bilən, tələbəliyin heç bitməyən bir səyahət olduğunu dərk edən hər insan mütləq potensialını kəşf edər. Sizlərlə komandamızı genişləndirib bir ailə olaraq hamılıqla irəliləməyə davam edəcəyimiz üçün çox həyəcanlıyıq.",
+    "contactDescription": "Aşağıdakı məlumatlar vasitəsilə bizimlə əlaqə saxlaya bilərsən.",
+    "email": "E-poçt",
+    "address": "Ünvan"
+  },
+"membershipAgreement": {
+    "title": "Üzvlük Müqaviləsi",
+    "section1": {
+      "title": "TƏRƏFLƏR",
+      "description": "Bu Üzvlük Müqaviləsi (<b>''Müqavilə''</b> ) Veranova Medya ve Dijital Yayın Hizmetleri A.Ş.-nin (\"Veranova Medya\") sahibi olduğu <b>''Wise&Rise''</b> adlı rəqəmsal platforma (<b>''Wise&Rise''</b> ) vasitəsilə Veranova Medya-nın təqdim edəcəyi xidmətlərdən faydalanmaq istəyən istifadəçi ilə Veranova Medya arasındakı üzvlük şərtlərinə dair usul və əsasları müəyyən etmək məqsədilə tərtib edilmişdir."
+    },
+    "section2": {
+      "title": "ÜZVLÜK",
+      "item1": "Veranova Medya, sahibi olduğu Wise&Rise adlı rəqəmsal platformaya üzv olan şəxslərə; internetə qoşulmuş telefon, kompüter, televizor kimi Wise&Rise-a daxil olmaq imkanı verən bütün cihazlar vasitəsilə internet texnologiyası üzərindən, müxtəlif mövzularda ixtisası / səriştəsi olan təlimçilərin icra etdiyi / yer aldığı məzmunlara çıxış əldə etməsini təmin edən bir üzvlük xidməti təklif edir. Bu üzvlük xidməti, <span class=\"text-primary\">seçdiyiniz</span> abunəlik növünə görə məhdud sayda bəzi şəxslərin istifadəsinə təqdim etmə imkanı tanımaqla birlikdə, qayda olaraq şəxsə özəl xarakter daşıyır.",
+      "item2": "Veranova Medya tərəfindən müəyyən ediləcək bəzi Wise&Rise məzmunlarının, üzvlər tərəfindən cihaza yükləmək (download) yolu ilə oflayn (offline) olaraq əldə edilməsi mümkündür. Veranova Medya, üzvlərinin oflayn olaraq əldə etməsinə imkan yaratdığı məzmunlarına -sadalananlarla məhdudlaşmamaq şərtilə- izləmə sayı, periodu və giriş müddəti kimi məhdudiyyətlər tətbiq edə bilər.",
+      "item3": "Oxudum, təsdiqləyirəm etdiyinizdə / düyməsinə kliklədiyinizdə, Müqavilənin bütün maddələrinin hər sətrini oxuduğunuzu və tam olaraq anladığınızı qəbul etmiş sayılırsınız. Bu səbəbdən Müqavilədəki bütün müddəaları zəhmət olmasa diqqətlə oxuyun. Oxudum, təsdiqləyirəm etdiyinizə / düyməsinə kliklədiyinizə dair bəyanatınızın (rəqəmsal mühitdəki hərəkətinizin) Wise&Rise-ın informasiya sistemlərinə çatması ilə birlikdə üzvlük əməliyyatı reallaşmış və tamamlanmış olur.",
+      "item4": "On səkkiz (18) yaşından kiçik şəxslərin Wise&Rise-a üzv olması Veranova Medya tərəfindən qəbul edilmir. 18 yaşından kiçik şəxslərin Wise & Rise məzmunlarından yararlana bilməsi üçün bir yetkin nəzarətində olmaları lazımdır.",
+      "item5": "Wise&Rise üzvünün, Veranova Medya tərəfindən Wise&Rise üzərindən verilən xidməti istifadə edə bilməsi üçün, ''www.wisenrise.com'' ünvanına daxil olmasına və ünvanda yer alan vizual-eşitmə qeydlərini/videoları izləyə bilməsinə imkan yaradan bir internet bağlantısına və cihaza sahib olması lazımdır.",
+      "item6": "Wise&Rise üzvlüyü (1) üzvün bu Müqavilə şərtlərinə əməl etdiyi, (2) əgər üzv ilə Veranova Medya arasında ''Onlayn Abunəlik Xidməti Satınalmasına Dair Məsafəli Müqavilə''(<b>''Məsafəli Müqavilə''</b>) bağlanıbsa Məsafəli Müqavilə şərtlərinə əməl etdiyi, (3) üzvün xidmət alma iradəsi davam etdiyi müddətcə; Veranova Medya tərəfindən müəyyən edilən müddət ərzində davam edir. Şübhəyə yer verməmək adına; Veranova Medya ilə üzv arasında Məsafəli Müqavilə bağlanması, şəxsin Wise&Rise-a üzv ola bilməsi üçün şərt qoyulmur."
+    },
+    "section3": {
+      "title": "ÜZVÜN MƏSULİYYƏTLƏRİ",
+      "item1": "Şəxsin bu Müqavilə ilə Wise&Rise-a üzv olması, şəxsə Wise&Rise üzərindəki videolar, yazılı mətn sənədləri üzərində heç bir halda lisenziya hüququ tanımaz. Üzvlərin giriş əldə edəcəyi bütün vizual-eşitmə və/və ya yazılı məzmunların bütün müəllif hüquqları Veranova Medya-ya və ya məzmunun istehsalına töhfə verən iş ortaqlarına aiddir. Üzvlərin girişinə açılacaq olan heç bir məzmunu emal etmə, çoxaltma, yayma, təmsil, ictimaiyyətə çatdırma, icarəyə vermə və/və ya satma hüququ yoxdur.",
+      "item2": "Üzv, üzvlük müddəti boyunca qüvvədə olan bütün qanunvericilik hökmlərinə uyğun davranacağını, istər qanunvericilik istərsə də Veranova Medya-nın bu Müqavilədə qeyd olunan hüquqlarını istifadə etməsi nəticəsində ortaya çıxa biləcək məhdudiyyətlərə riayət edəcəyini qəbul edir.",
+      "item3": "Üzv, Wise&Rise üzərində yaradılmış qorumaların və məhdudiyyətlərin heç birini deaktiv etməyəcəyini, hər hansı bir şəkildə funksionallıqlarını itirmələrini təmin etməyəcəyini öhdəsinə götürür.",
+      "item4": "Üzv, Wise&Rise-a daxil olmaq üçün robot, hörümçək, qaşıyıcı və başqa avtomatik yollar istifadə etməyəcəkdir. Üzv, Wise&Rise üzərindən əldə edilə bilən hər hansı bir proqram təminatını ya da digər məhsulları və ya prosesləri mənbə koduna çevirməməyi, bunlar üzərində hissələrə ayırma əməliyyatı aparmamağı; Wise&Rise-ın məzmununa hər hansı bir kod və ya məhsul yerləşdirməməyi və ya hər hansı bir şəkildə manipulyasiya etməməyi; hər hansı bir məlumat yaratma, məlumat toplama ya da çıxarma üsulu istifadə etməməyi; hər cür proqram virusu ya da hər hansı başqa bir kompüter kodu, faylları və ya proqramları daxil olmaqla, Wise&Rise ilə əlaqəli hər hansı bir kompüter proqramı ya da təchizatı və ya telekommunikasiya avadanlığının funksionallığını kəsmək, zədələmək və ya məhdudlaşdırmaq üçün hazırlanmış hər hansı bir materialı yükləməməyi, göndərməməyi, e-poçt ilə və ya başqa şəkildə göndərməməyi və ya ötürməməyi qəbul edir.",
+      "item5": "Üzvün bu Müqavilədə qeyd olunan və ya qüvvədə olan qanunvericilikdən irəli gələn başqa öhdəliklərini pozması halında, üzvlüyü dərhal ləğv edilə biləcək olub Veranova Medya-nın əlavə hər cür tələb və iddia hüququ saxlı olduğu kimi üzvün üçüncü şəxslərə vermiş olduğu zərərlərə görə məsuliyyəti yoxdur.",
+      "item6": "Üzv, Wise&Rise üzərindən yaratdığı hesab vasitəsilə həyata keçirilən bütün əməliyyatlardan məsuldur. Üzv, hesabın nəzarətini saxlamaq və başqalarının hesaba daxil olmasının qarşısını almaq adına, hesabın şifrəsini heç kimlə paylaşmamalıdır və Wise&Rise-a daxil olduğu/sessiya açdığı bütün cihazların nəzarətini əlində saxlamalıdır. <span class=\"text-primary\">Belə ki; Üzvün çoxlu istifadəyə yararlı ''Ailə'' paketini satın alması halında, paketini birlikdə istifadə etmək üzrə e-poçt ünvanını və şifrəsini paylaşdığı şəxslərlə edəcəyi məlumat paylaşımı bu hökmün pozulması təşkil etməyəcəkdir.</span>",
+      "item7": "Üzv; yetkin olduğunu, Wise&Rise üzərində üzvlük yaratma əməliyyatları zamanı Wise&Rise-a təqdim etdiyi hər cür məlumatın doğru və aktual olduğunu və sözügedən məlumatların aktual və/və ya doğru olmamasından qaynaqlana biləcək hər cür məsuliyyətin və öhdəliyin şəxsən özünə aid olduğunu qəbul və taahhüd edir.",
+      "item8": "Üzv, Wise&Rise üzərində üzvlük yaratma əməliyyatları zamanı təyin etdiyi şifrəsinin gizli qalması üçün lazımi diqqət və qayğını göstərəcəyini, şifrəsini hər hansı bir üçüncü şəxsə açıqlamayacağını, istifadə etdirməyəcəyini, şifrəsinin səlahiyyətsiz üçüncü şəxslər tərəfindən ələ keçirildiyini öyrənməsi və ya buna dair şübhəli bir vəziyyət yaranması halında dərhal Veranova Medya-ya info@wisenrise.com e-poçt ünvanı üzərindən bildiriş verəcəyini, şifrəsinin üçüncü şəxslər tərəfindən istifadə edilməsi səbəbiylə yaranacaq zərərlərdən Veranova Medya-nın məsul olmayacağını qəbul və taahhüd edir. <span class=\"text-primary\">Belə ki; Üzvün çoxlu istifadəyə yararlı ''Ailə'' paketini satın alması halında, paketini birlikdə istifadə etmək üzrə e-poçt ünvanını və şifrəsini paylaşdığı şəxslərlə edəcəyi məlumat paylaşımı bu hökmün pozulması təşkil etməyəcəkdir.</span>",
+      "item9": "Üzv, Wise&Rise üzərindən təmin ediləcək məzmunlara, məzmunların müxtəlifliyinə, sayına və məzmunlarda yer alan bütün məlumat, təklif və tövsiyələrin elmi və/və ya şərhi doğruluğuna dair olaraq Veranova Medya tərəfindən heç bir zəmanət verilmədiyini, Veranova Medya-nın Wise&Rise üzərindəki məzmunları istədiyi şəkildə artırma, azaltma və dəyişdirmə hüququna sahib olduğunu qəbul, bəyan və taahhüd edir.",
+      "item10": "Üzv ilə Veranova Medya arasında -bu Müqaviləyə əlavə olaraq- Məsafəli Müqavilə bağlanması vəziyyətində; bu Müqavilə, Məsafəli Müqavilə ilə birlikdə qüvvədə olmağa davam edir. Anılan iki müqavilə arasında ziddiyyət olması halında, <span class=\"text-primary\">Məsafəli</span> Müqavilə üstünlük təşkil edir.",
+      "item11": "Üzv, üzvlüyə mövzu rəqəmsal məzmun xidmətlərinin əsas xüsusiyyətləri və digər bütün məsələlərdə məlumat sahibi olduğunu və bu Müqavilənin və Müqavilədə yer alan üzvlük şərtlərinin öhdəlik yaratdığını qəbul və bəyan edir."
+    },
+    "section4": {
+      "title": "ÜZVLÜK ŞƏRTLƏRİNDƏ DƏYİŞİKLİK",
+      "description": "Veranova Medya-nın bu Müqavilə ilə tənzimlənən üzvlük şərtlərində dəyişiklik etmə hüququ saxlıdır. Belə ki; Müqavilədə edilən hər hansı bir dəyişiklik, üzvə bildiriş edilməsini izləyən ən tez 30 (otuz) gün sonra qüvvədə olacaqdır. Müqavilədə tənzimlənən üzvlük şərtlərindəki dəyişikliyin Üzv tərəfindən qəbul edilməməsi vəziyyətində; Veranova Medya, üzvlüyü dayandırma və ya müqaviləni ləğv etmə hüququna sahib olacaqdır."
+    },
+    "section5": {
+      "title": "ÜZVLÜK HÜQUQUNUN DEVREDİLMƏZLİYİ",
+      "description": "Bu Müqavilə ilə üzvə təmin edilən üzvlük hüququ, yalnız pulsuz məzmunların istifadəçi tərəfindən görüntülənməsinə icazə verən məhdud bir hüquq olub üçüncü şəxslərə verilə bilməz."
+    },
+    "section6": {
+      "title": "FƏRDİ MƏQSƏDLƏ İSTİFADƏ",
+      "description": "Wise&Rise üzərindən üzvə təmin edilən hər cür məzmun, üzvün şəxsi və ticarət xarakterli olmayan istifadəsinə yönəlikdir. Üzv, Wise&Rise-da yer alan məzmunların bu Müqavilə çərçivəsində sadəcə fərdi məqsəd ilə istifadə edilə biləcəyini və ticarət xarakterli istifadələrə mövzu edilməyəcəyini qəbul və taahhüd edir."
+    },
+    "section7": {
+      "title": "FƏRDİ MƏLUMATLARIN QORUNMASI və KUKİLƏR",
+      "item1": "Üzvün Wise&Rise məzmunlarına nəzər sala bilməsi və üzvə daha yaxşı bir xidmət təklif edilə bilməsi adına, www.wisenrise.com internet ünvanı üzərindən daxil etdiyiniz məlumatlar istiqamətində ad-soyad, doğum tarixi, telefon nömrəsi, e-poçt ünvanı kimi fərdi məlumatlar qeyd edilməkdədir.",
+      "item2": "Wise&Rise üzvlərinin fərdi məlumatlarının işlənməsi haqqındakı ətraflı məlumata, www.wisenrise.com ünvanında yer alan KVKK Aydınlatma Mətnindən çata bilərsiniz.",
+      "item3": "Üzv, Wise&Rise-da yer alan kuki (tanımlama məlumatı) tətbiqlərini qəbul etməsi halında, kukilər (tanımlama məlumatları) www.wisenrise.com ünvanında yer alan Kuki Siyasətinə uyğun olaraq üzvün cihazına yerləşdirilir."
+    },
+    "section8": {
+      "title": "MÜXTƏLİF HÖKMLƏR",
+      "item1": "Müqavilənin hər hansı bir və ya birdən çox hökmünün etibarsız, qanunlara zidd və ya tətbiq edilə bilməz elan edilməsi vəziyyətində, qalan hökmlərin etibarlılığı bu vəziyyətdən təsirlənməyəcəkdir.",
+      "item2": "Üzvlük ilə əlaqəli hər cür məlumat, üzvə yalnız elektron mühitdə və elektron formatda ötürüləcəkdir. Üzv tərəfindən təmin edilmiş olan əlaqə məlumatlarında bir dəyişiklik olması halında; üzv, bu dəyişikliyi dərhal Veranova Medya-ya info@wisenrise.com e-poçt ünvanı üzərindən bildirməlidir.",
+      "item3": "Üzv, internetdə yaşanan kəsintilər, sürət azalması və bənzəri səbəblərlə xidmətdə yaşanacaq kəsinti, görüntü keyfiyyəti və təhlükəsizlik problemlərindən və/və ya ölkədə ümumi bir qarışıqlığın ortaya çıxması müharibə, terror, tətil, ümumi elektrik kəsintisi, zəlzələ, su basması, pandemiya, fövqəladə hal, kiber hücum, cihazlara virus bulaşmış olması və ya bənzəri bir fors-major səbəblə xidmətin verilməsinə dair yaşanacaq problemlərdən Veranova Medya-nın məsul olmayacağını qəbul və taahhüd edir."
+    },
+    "section9": {
+      "title": "MƏSULİYYƏTİN MƏHDUDLAŞDIRILMASI və ZƏMANƏTDƏN İMTİNA",
+      "item1": "Wise&Rise üzərindən təmin ediləcək məzmunlara, məzmunların müxtəlifliyinə, sayına və məzmunlarda yer alan bütün məlumat, təklif və tövsiyələrin elmi və/və ya şərhi doğruluğuna dair olaraq Veranova Medya tərəfindən hər hansı bir şəkildə zəmanət verilmir.",
+      "item2": "Veranova Medya-nın, Wise&Rise-da yer alan və üçüncü tərəflərə aid bağlantılı linklərdə yer alan reklamların mövzusunu təşkil edə biləcək məhsul və/və ya xidmətlərə dair heç bir məsuliyyəti yoxdur."
+    },
+    "section10": {
+      "title": "MÜQAVİLƏNİN LƏĞVİ və ÜZVLÜK İPTALI",
+      "description": "Həm üzv həm də Veranova Medya, bu Müqaviləni hər hansı bir səbəb göstərmədən birtərəfli şəkildə ləğv etmək yolu ilə üzvlüyü iptal edə bilər. Üzvlüyün iptal edilməsi halında, Wise&Rise-da yer alan məzmunlar üzvün girişinə bağlanır. Məsafəli Müqavilə hökmləri saxlıdır."
+    },
+    "section11": {
+      "title": "HÜQUQUN VERİLMƏSİ",
+      "description": "Veranova Medya, bu Müqavilənin üzv tərəfindən qəbul edilməsi ilə qurulan üzvlük əlaqəsinə dair hüquqlarını və öhdəliklərini hər hansı bir zamanda bir başqasına verə və təhvil edə bilər."
+    },
+    "section12": {
+      "title": "UYUŞMAZLIQLARIN HƏLLİ",
+      "description": "Bu Müqavilədən qaynaqlana biləcək ixtilaflarda İstanbul Mərkəz (Çağlayan) Məhkəmələri və İcra Dairələri səlahiyyətlidir."
+    },
+    "section13": {
+      "title": "QÜVVƏYƏ MİNMƏ",
+      "description": "Bu Müqavilə, üzv tərəfindən oxunaraq -elektron mühitdə- qəbul edildiyi və qəbul bəyanatının Wise&Rise informasiya sistemlərinə çatdığı anda qüvvəyə minəcək və tərəflərdən hər hansı biri tərəfindən ləğv edilənə qədər qüvvədə qalacaqdır."
+    },
+    "items": {
+      "item1": {
+        "title": "TƏRƏFLƏR",
+        "descriptions": {
+          "item1": "Bu Üzvlük Müqaviləsi (''Müqavilə'' ) Veranova Medya ve Dijital Yayın Hizmetleri A.Ş.-nin (\"Veranova Medya\") sahibi olduğu ''Wise&Rise'' adlı rəqəmsal platforma (''Wise&Rise'' ) vasitəsilə Veranova Medya-nın təqdim edəcəyi xidmətlərdən faydalanmaq istəyən istifadəçi ilə Veranova Medya arasındakı üzvlük şərtlərinə dair usul və əsasları müəyyən etmək məqsədilə tərtib edilmişdir."
+        }
+      }
+    }
+  },
+  "categories": {
+    "title": "Kateqoriyalar",
+    "subtitle": "Mütəxəssis Adlar, Yüzlərlə Mövzu Başlığı, Hər Ay Yeni Məzmunlar",
+    "allCategories": "Bütün Kateqoriyalar"
+  },
+  "comingSoonPage": {
+    "noTrainings": "Təlim tapılmır."
+  },
+  "useGift": {
+    "title": "Hədiyyənizi istifadə edin",
+    "subtitle": "Başlamaq üçün, kodu aşağıya daxil edin.",
+    "placeholder": "Kod və ya Pin",
+    "invalidCode": "Kupon kodu etibarsızdır",
+    "use": "İstifadə et",
+    "help": "Hədiyyə kupon kodları haqqında kömək istəyirsiniz?",
+    "inputGiftCode": "Hədiyyə kupon kodunu daxil et"
+  },
+  "membership": {
+    "expired": "Üzvlüyünüzün müddəti bitmişdir. Üzvlüyünüzü yeniləmək üçün aşağıdaki düyməyə klikləyin.",
+    "renew": "Üzvlüyü Yenilə"
+  },
+  "giveGift": {
+    "giftCardTitle": "Hədiyyə İllik Üzvlük Planı",
+    "yearlyPayment": "İllik Ödəniş",
+    "monthlyPayment": "Aylıq Ödəniş",
+    "totalPrice": "Cəmi Qiymət",
+    "senderName": "Göndərən Adı",
+    "senderNamePlaceholder": "Satın alan şəxsin adını daxil edin",
+    "senderSurname": "Göndərən Soyadı",
+    "senderSurnamePlaceholder": "Satın alan şəxsin soyadını daxil edin",
+    "senderEmail": "Göndərən E-poçt",
+    "senderEmailPlaceholder": "Satın alan şəxsin e-poçt ünvanını daxil edin",
+    "senderPhone": "Göndərən Telefon Nömrəsi",
+    "senderPhonePlaceholder": "Satın alan şəxsin telefon nömrəsini daxil edin",
+    "receiverName": "Qəbul edən Adı",
+    "receiverNamePlaceholder": "Hədiyyə edilən şəxsin adını daxil edin",
+    "receiverSurname": "Qəbul edən Soyadı",
+    "receiverSurnamePlaceholder": "Hədiyyə edilən şəxsin soyadını daxil edin",
+    "receiverEmail": "Qəbul edən E-poçt",
+    "receiverEmailPlaceholder": "Hədiyyə edilən şəxsin e-poçt ünvanını daxil edin",
+    "giftNote": "Hədiyyə qeydi",
+    "giftNotePlaceholder": "Hədiyyə mesajını qoya bilərsiniz...",
+    "sendNow": "İndi Göndər",
+    "scheduleSend": "Göndərmə Vaxtını Təyin Et",
+    "sendDate": "Göndərmə Tarixi",
+    "sendTime": "Göndərmə Saatı",
+    "hour": "Saat",
+    "giftSendSuccess": "Hədiyyə uğurla göndərildi"
+  },
+  "certificate": {
+    "certificateMessage": "sessiyasına qatılaraq bu sənədi almağa haqq qazanmışdır.",
+    "and": "ilə",
+    "certificateNumber": "SERTİFİKAT NO"
+  },
+  "profile": {
+    "addProfile": "Profil Əlavə Et",
+    "addProfileSubtitle": "Digər Şəxslər Üçün Profil Əlavə Et",
+    "profileCreatedSuccess": "Profiliniz uğurla əlavə edildi",
+    "name": "Profil Adı",
+    "namePlaceholder": "Profil adı",
+    "nameRequired": "Profil adı mütləqdir",
+    "nameMinLength": "Profil adı ən azı 2 simvol olmalıdır",
+    "nameMaxLength": "Profil adı ən çox 30 simvol ola bilər",
+    "chooseEmoji": "Əhvalını Seç",
+    "chooseAvatar": "Avatar Seç",
+    "avatarRequired": "Zəhmət olmasa bir avatar seçin",
+    "editProfile": "Profili Düzəliş Et",
+    "editProfileSubtitle": "Profil adını və avatarını yeniləyə bilərsən.",
+    "editProfileSuccess": "Profiliniz uğurla düzəliş edildi",
+    "whoIsWatching": "Kim İzləyir",
+    "createProfile": "Profil Yarat",
+    "createProfileSubtitle": "Profil məlumatlarını daxil et.",
+    "createSubmit": "Profili Yarat",
+    "creating": "Yaradılır...",
+    "saving": "Saxlanılır...",
+    "deleteProfile": "Profili Sil",
+    "deleteProfileConfirm": "Bu profili silmək istədiyinizə əminsiniz?",
+    "deleting": "Silinir...",
+    "emptyState": "Hələ profil yoxdur. Yeni profil əlavə edərək başla.",
+    "loadError": "Profillər yüklənə bilmədi. Zəhmət olmasa yenidən cəhd edin.",
+    "selectError": "Profil seçilə bilmədi. Zəhmət olmasa yenidən cəhd edin.",
+    "deleteError": "Profil silinə bilmədi. Zəhmət olmasa yenidən cəhd edin.",
+    "genericError": "Əməliyyat tamamlanmadı. Zəhmət olmasa yenidən cəhd edin."
+  },
+  "business": {
+    "subtitle": "Komandanızın bacarıqlarını yüksək səviyyəli təlimlərlə inkişaf etdirin.",
+    "learnFromTheBestInYourField": "Sahəsinin ən yaxşılarından öyrənin, iş dünyasında önə çıxın, Wise&Rise ilə komandanızı gələcəyə daşıyın!",
+    "learnFromTheBestInYourFieldMobile": "Sahəsinin ən yaxşılarından öyrənin",
+    "learnFromTheBestInYourFieldMobile2": "iş dünyasında önə çıxın.",
+    "leadYourTeamToTheFuture": " komandanızı gələcəyə daşıyın!",
+    "references": "REFERANSLARIMIZ",
+    "chooseTheCategoryToDevelop": "İş dünyasında fərq yaratmaq üçün marağınızı çəkən kateqoriyaları seçin.",
+    "reachThePeakWithTheBestInTurkey": "Türkiyənin ən yaxşıları ilə zirvəyə çatın.",
+    "properties": "XÜSUSİYYƏTLƏR",
+    "howToWorkWithWiseRise": "WISE & RISE İLƏ NECƏ İŞLƏYƏCƏKSİNİZ?",
+    "forUsers": "İstifadəçilər üçün",
+    "forBusiness": "İş Dünyası üçün",
+    "features": {
+      "item1": {
+        "title": "Ehtiyaca yönəlik, təsirli bir təlim təcrübəsi",
+        "text": "Türkiyənin sahəsində ən yaxşı mütəxəssislərinin həm nöqtə atışı həm yadda qalan təlim məzmunlarına çatın. "
+      },
+      "item2": {
+        "title": "Çevik öyrənmə formatı",
+        "text": "İstər masaüstündə istər mobil tətbiqdə; hər zaman, hər yerdə və öz sürətinizdə öyrənin."
+      },
+      "item3": {
+        "title": "Bacarıq qazandıran dərslər",
+        "text": "Praktik və tətbiqi dərslərlə nəzəri biliyi, real həyatda tətbiq edilə bilən bilik və bacarıqlara çevirin."
+      },
+      "item4": {
+        "title": "İnteraktiv iş ",
+        "text": "Zaman kodlu qeyd alma sistemi ilə interaktiv bir təlim təcrübəsi yaşayın. "
+      },
+      "item5": {
+        "title": "Yüklənə bilən hesabatlar ",
+        "text": "Komandanızın təlimə qatılım - məzmun izləmə müddətlərini hesabatlayın və arxivinizə qatın."
+      },
+      "item6": {
+        "title": "Təlim təyini və atama",
+        "text": "Komanda üzvlərinizə onları inkişaf etdirəcək, hər birinə şəxsə özəl bacarıq qazandıracaq təlim məzmunu təyin edin. "
+      },
+      "item7": {
+        "title": "Performans izləmə",
+        "text": "İşçilərinizin hər bir təlimdəki inkişaf-performans müddətini izləyin. "
+      },
+      "item8": {
+        "title": "Sertifikat təmin etmə",
+        "text": "Komanda üzvlərinizi, karyera yolunda bilik bacarıq inkişaflarını göstərən sertifikatlarla motivasiya edin."
+      }
+    }
+  },
+  "lessonsDetail": {
+    "teacher": "Təlimçi",
+    "category": "Kateqoriya",
+    "watch": "İzlə",
+    "addToFavorites": "Favorilərə Əlavə Et",
+    "removeFromFavorites": "Favorilərdən Çıxar",
+    "downloadGuid": "Təlim Qeydlərini Yüklə",
+    "mightInterestYou": "MARAĞINI ÇƏKƏ BİLƏCƏKLƏR",
+    "mightInterestYouDescription": "Ən yaxşılara limitsiz giriş səni gözləyir",
+    "otherClasses": "Digər Təlimlər",
+    "certificateOpportunity": "Sertifikat İmkanı",
+    "watchToContinue": "İzləməyə",
+    "watchToContinueDescription": "Davam Et",
+    "watchToStart": "Başla",
+    "myNotes": "Qeydlərim",
+    "watchTrailer": "Treyleri İzlə",
+    "aboutLesson": "Təlim Haqqında",
+    "lessonContent": "Təlim Məzmunu",
+    "takeNotes": "Qeyd Al",
+    "share": "Paylaş"
+  },
+  "myProgress": {
+    "title": "İrəliləmə Vəziyyətim",
+    "noTrainingFound": "Məzmun tapılmadı",
+    "completedTrainings": "Tamamladığım Təlimlər",
+    "completedTrainingsDescription": "İzlədiyin təlimləri görüntüleyib siyahıya sala bilərsən.",
+    "viewNotes": "Qeydləri Görüntülə",
+    "allNotes": "Bütün Qeydlərim",
+    "myCertificates": "Sertifikatlarım",
+    "myCertificatesDescription": "Tamamladığın təlimlərdən aldığın sertifikatları görüntüləyə bilərsən.",
+    "assignedTrainings": "Təyin Edilmiş Təlimlər"
+  },
+  "notFound": {
+    "title": "404 - Səhifə Tapılmadı",
+    "description": "Təəssüf ki, axtardığınız səhifə mövcud deyil."
+  },
+  "pracingPlan": {
+    "title": "Üzvlük Planları",
+    "subscriptionMessage": "Üzvlüyünüzün avtomatik yenilənməsi ləğv ediləcəkdir. Mövcud istifadə haqqınız müddəti bitənə qədər davam edəcək, bu tarixdən sonra yeni bir ödəniş edilməyəcəkdir. Əməliyyatınız tamamlandıqda təhlükəsizliyiniz üçün sessiyanız sonlandırılacaqdır.",
+    "paymentHistory": "Ödəniş Keçmişi",
+    "paymentHistoryDescription": "Bütün son əməliyyatlar siyahısı.",
+    "startDate": "Başlanğıc Tarixi",
+    "endDate": "Bitmə Tarixi",
+    "status": "Status",
+    "price": "Qiymət",
+    "action": "Əməliyyat"
+  },
+  "search": {
+    "results": "Nəticələr",
+    "totalResults": "nəticə tapıldı",
+    "noResults": "Axtarışınız hər hansı bir nəticə vermədi.",
+    "noResultsDescription": "Axtardığını tapa bilmədin?",
+    "noResultsDescription2": "Bir təlimçi və ya bir təlimmi axtarırsan?",
+    "noResultsDescription3": "Təlimçi adı ya da mövzu əsaslı açar bir sözlə təkrar cəhd et."
+  },
+  "faq": {
+    "item1": {
+      "title": "Wise&Rise nədir?",
+      "description": "Üzvlərimizin maraq dairələrinə görə müxtəlif təlimləri izləmələrini təmin edən, abunəlik əsaslı bir rəqəmsal təlim platformasıdır. İstəyən hər şəxsin Türkiyənin ən yaxşıları tərəfindən verilən yüzlərlə rəqəmsal təlimi izləməsini və ya dinləməsini mümkün edir. İstər iş həyatı və liderlik, istər fotoqrafiya, qastronomiya, yazarlıq, musiqi və daha çoxu olsun; Wise&Rise birinci sinif bir onlayn öyrənmə təcrübəsi təqdim edir. Təlimlərə hər zaman, hər yerdə çata bilərsən."
+    },
+    "item2": {
+      "title": "Rəqəmsal Təlim Platforması Nədir?",
+      "description": "Fiziki bir yer ya da zaman sərhədi olmayan, təlimçi ilə tələbənin eyni yerdə olmadığı, internet bağlantısına sahib hər kəsin öz seçdiyi mühitdə smartfon, planşet, kompüter kimi vasitələrlə təlim ala bildiyi sistemdir."
+    },
+    "item3": {
+      "title": "Necə üzv olaram?",
+      "description": "Təlimlərə masaüstü kompüter, noutbuk və mobil tətbiqimiz kimi müxtəlif cihazlardan və platformalardan daxil ola bilərsiniz. www.wisenrise.com ünvanından üzvlük əməliyyatlarını həyata keçirə bilər ya da aplikasiya üzərindən üzvlük təmin edə bilərsən."
+    },
+    "item4": {
+      "title": "Wise&Rise üzvlüyü öhdəlik tələb edirmi?",
+      "description": "Wise&Rise abunəliklərimiz illik bazada tənzimlənir. Ödənişi istəsəniz tək səfərdə nağd, istəsəniz 12 taksitli olaraq həyata keçirə bilərsiniz. Abunəliyinizi istədiyiniz anda ləğv edə bilərsiniz; ləğv tələbiniz mövcud illik dövrünüzün sonunda, yenilənmə edilməməsi şəklində işleme alınır."
+    },
+    "item5": {
+      "title": "Dəstəklənən cihazlar hansılardır?",
+      "description": "Smartfonlar, planşetlər kimi tətbiqə sahib, internetə bağlı hər hansı bir cihazdan izləyə bilərsən. Həmçinin kompüterində bir internet brauzeri istifadə edərək də təlimlərə çata bilərsən. Veb brauzeri uyğunluğu üçün sistem tələblərini incələyə bilər və ən yaxşı performansı əldə etmək üçün internet sürəti tövsiyələrimizi gözdən keçirə bilərsən. Hər plan Wise&Rise-ı eyni anda izləyə biləcəyin cihaz sayını müəyyən edir. Bütün paketlərdə məzmunları HD, FullHD, UHD ya da 4K dəqiqliyində izləyə bilərsən."
+    },
+    "item6": {
+      "title": "Necə ödəniş edə bilərəm?",
+      "description": "Ödənişlərini bank, kredit kartı, ön ödənişli kart ilə wiserise.com üzərində yer alan ödəniş bölümündən Iyzico infrastrukturu ilə təhlükəsiz şəkildə ödəyə bilərsən. Ödənişlərini Iyzico infrastrukturu ilə təhlükəsiz şəkildə həyata keçirə bilərsən."
+    },
+    "item7": {
+      "title": "Ödəniş edərkən xəta alıram, bu nədən ola bilər?",
+      "description": "İnternet alış-verişlərinə bağlı vəya bank tərəfindən hər hansı bir məhdudiyyəti olan kartlarla ödəniş edərkən xəta ala bilərsən. Bankınla əlaqə saxlayaraq bu məhdudiyyətləri qaldıra bilərsən. Problem yenə də həll olmazsa bizimlə əlaqə saxlamağını tövsiyə edirik."
+    },
+    "item8": {
+      "title": "İstifadəçi məlumatlarımı unutdum, nə etməm lazımdır?",
+      "description": "Üzv giriş ekranından “Şifrəmi Unutdum” düyməsinə kliklədikdən sonra qeydiyyat əsnasında verdiyin e-poçt ünvanını yazaraq şifrə yeniləmə linkinin e-poçt ünvanına göndərilməsini təmin edə bilərsən."
+    },
+    "item9": {
+      "title": "Təlimi tamamladıqdan sonra da məzmunlara girişim olacaqmı?",
+      "description": "Hesabının problemsiz vəziyyətdə olması və təlimin onlayn olaraq var olmağa davam etməsi şərtilə təlimlərə üzvlüyün müddətincə giriş haqqın mövcuddur. Təlimi tamamladıqdan sonra müəyyən məzmunları incələməyə davam edə bilər, qeydlərinə göz gəzdirə bilər və ya təlimi başdan izləyə bilərsən."
+    },
+    "item10": {
+      "title": "Hər təlimdə iştirak sənədi verilirmi?",
+      "description": "Tamamladığın hər təlim sonunda iştirak sənədinə haqq qazanacaqsan."
+    },
+    "item11": {
+      "title": "Platformadakı təlimlər dövri olaraq mı yayımda qalır?",
+      "description": "Wise & Rise təlimləri davamlı platformada qalır, istədiyin zaman izləyə bilərsən. Wise & Rise mövcud təlimlərinə əlavə olaraq yeni təlimlər ilə yenilənir."
+    },
+    "item12": {
+      "title": "Xarici ölkə üzvlükldərində hansı kartlar keçərlidir?",
+      "description": "Türkiyə xaricində edəcəyin üzvlüklərdə Mastercard ya da VISA infrastrukturu istifadə edən hər hansı bir kredit kartıyla ödənişini tamamlaya bilərsən."
+    },
+    "item13": {
+      "title": "Üzvlük yeniləməsi necə edilir?",
+      "description": "Satın aldığın aylıq paketlər hər ay avtomatik olaraq yenilənməkdədir. Paketinin avtomatik olaraq yenilənməsini istəmirsənsə “Planlarım” sahəsindən yenilənmə seçimlərinə çata bilər ya da Yardım Mərkəzimizdən dəstək ala bilərsən."
+    },
+    "item14": {
+      "title": "Hissə-hissə ödəniş edə bilərəmmi?",
+      "description": "Taksit seçimimizin olduğu paketlərdə, kredit kartı məlumatlarını daxil etdiyində açılacaq taksit pəncərəsindən ödənişini taksitli olaraq həyata keçirə bilərsən."
+    },
+    "item15": {
+      "title": "İllik abunəliyi taksitli ödəniş seçimi ilə satın almaq istəyirəm, hansı kartları istifadə edə bilərəm?",
+      "description": "Bütün kredit kartları ilə illik üzvlüyünü taksitli ödəniş seçimi ilə ala bilərsən."
+    },
+    "item16": {
+      "title": "Faturamı harada görüntüləyə bilərəm?",
+      "description": "Faturalarını görüntüləmək üçün üzvlük məlumatlarınla giriş etdikdən sonra “Planlarım” bölümünü ziyarət edə bilərsən."
+    },
+    "item17": {
+      "title": "Üzvlük iptalini necə həyata keçirə bilərəm?",
+      "description": "Üzvlük iptalı əməliyyatların üçün veb brauzeri üzərindən üzvlük məlumatlarınla giriş etdikdən sonra “Planlarım” qismindən “İptal et” düyməsinə klikləyə bilərsən."
+    }
+  },
+"privacyPolicy": {
+    "title": "Məxfilik Siyasəti",
+    "breadcrumbHome": "Ana səhifə",
+    "breadcrumbCurrent": "Məxfilik Siyasəti",
+    "mainTitle": "VERANOVA MEDYA VE DİJİTAL YAYIN HİZMETLERİ A.Ş. FƏRDİ MƏLUMATLARIN İŞLƏNMƏSİNƏ DAİR AYDINLATMA MƏTNİ",
+    "introduction": "6698 saylı Fərdi Məlumatların Mühafizəsi Qanunu (<b>\"KVKK\" </b>və ya <b> \"Qanun\"</b>) əsasında ''Məlumat Məsuliyyətlisi'' sifətinə malik Veranova Medya ve Dijital Yayın Hizmetleri A.Ş. (<b>\"Veranova Medya''</b> və ya <b>\"Şirkət\"</b>) olaraq; sahibi olduğumuz ''Wise&Rise'' adlı rəqəmsal platforma vasitəsilə bizimlə paylaşdığınız fərdi məlumatlarınızı, aşağıda təfərrüatları ilə izah edilən şərtlərlə toplayır, emal edir və ötürürük.",
+    "introText": "Bu mətn ilə Veranova Medya, Qanunda ''Müvafiq Şəxs'' kimi təyin olunan siz məlumat sahiblərini, fərdi məlumatlarınızın toplanması, işlənməsi, ötürülməsi prosesləri və Qanun çərçivəsindəki hüquqlarınız barədə məlumatlandırır.",
+    "section1": {
+      "title": "1. Məlumat Məsuliyyətlisi",
+      "content": "Veranova Medya, fərdi məlumatlarınızın işlənməsi proseslərində, Qanunun 3/1-(ı) maddəsində təyin olunan ''Məlumat Məsuliyyətlisi'' olaraq hərəkət etmək surətiylə fərdi məlumatlarınızın işlənmə məqsədlərini və vasitələrini müəyyən edir.",
+      "content2": "Veranova Medya, məlumat məsuliyyətlisi olaraq, məlumat qeydiyyat sistemini qurmaq, idarə etmək və məlumat təhlükəsizliyinə dair inzibati və texniki tədbirləri görməklə öhdəlik daşıyır. Bu çərçivədə, məlumatlarınızı Qanunun 3/1-(ğ) maddəsində təyin olunan ''Məlumat İşləyən'' sifətinə malik üçüncü şəxslərə də işlədə biləcəkdir."
+    },
+    "section2": {
+      "title": "2. İşlənən Fərdi Məlumatlarınız və Fərdi Məlumatlarınızın İşlənmə Məqsədləri",
+      "intro": "Wise&Rise vasitəsilə bizimlə paylaşdığınız məlumatlarınız və Wise&Rise üzərindəki fəaliyyətləriniz çərçivəsində, aşağıda qeyd olunan fərdi məlumatlarınızı aşağıda sadalanan məqsədlərlə Qanunun 5-ci və 6-cı maddələrində qeyd olunan məlumat işləmə şərtləri daxilində işləməkdədir.",
+      "table": {
+        "dataOwner": "Məlumat Sahibi",
+        "dataCategory": "Məlumat Kateqoriyası",
+        "dataTypes": "Məlumat Növləri",
+        "onlineVisitor": "Onlayn",
+        "visitor": "Ziyarətçi",
+        "onlineSubscriber": "Onlayn Abunəçi",
+        "member": "/Üzv",
+        "communication": "Əlaqə",
+        "communicationData": "E-poçt, mobil telefon",
+        "transactionSecurity": "Əməliyyat Təhlükəsizliyi",
+        "transactionSecurityData": "IP Ünvanı, İnternet Saytı Giriş, Çıxış və Gəzişmə Məlumatı, Log Qeydləri, Hesab İstifadəçi Məlumatları, Cihaz MAC Ünvanı",
+        "marketingInfo": "Marketinq Məlumatları",
+        "marketingInfoData": "Kukilər, anket məlumatları",
+        "identity": "Kimlik",
+        "identityData": "Ad-Soyad, T.C. şəxsiyyət nömrəsi",
+        "communicationDataFull": "E-poçt, telefon/mobil telefon, ünvan, iş yeri ünvanı, faktura ünvanı",
+        "customerTransactionInfo": "Müştəri Əməliyyat Məlumatları",
+        "customerTransactionInfoData": "Məhsul və xidmət satınalma keçmişi məlumatları, faktura məlumatları, tələb və şikayət məlumatları",
+        "transactionSecurityDataFull": "IP Ünvanı, İnternet Saytı Giriş, Çıxış və Gəzişmə Məlumatı, Log Qeydləri, Cihaz MAC Ünvanı",
+        "legalTransactionInfo": "Hüquqi Əməliyyat Məlumatları",
+        "legalTransactionInfoData": "Məhkəmə, İnzibati, Tənzimləyici və Nəzarət Qurumları ilə Paylaşılan Məlumatlar, Xəbərdarlıq və İxtarnamə Məlumatları, Müqavilə məlumatları"
+      },
+      "tableNote": "Yuxarıdakı cədvəldə yer alan fərdi məlumatlarınız, aşağıdakı məqsədlərlə məhdud olmaq şərtilə işlənməkdədir.",
+      "identityInfo": {
+        "title": "Kimlik Məlumatları",
+        "item1": "Müqavilə proseslərinin icrası",
+        "item2": "Müqavilədən irəli gələn öhdəliklərin yerinə yetirilə bilməsi",
+        "item3": "Məhsul və ya xidmətlərin satın alınmasına və istifadə edilməsinə yönəlik proseslərin həyata keçirilə bilməsi",
+        "item4": "Xidmətlərin icra ediləcəyi internet saytının təhlükəsizliyinin təmin edilə bilməsi",
+        "item5": "Tələb və şikayət proseslərinin idarə edilə bilməsi",
+        "item6": "Maliyyə və finansal öhdəliklərin yerinə yetirilə bilməsi",
+        "item7": "Səlahiyyətli şəxs, qurum və təşkilatlara məlumat verilə bilməsi",
+        "item8": "Məlumat təhlükəsizliyi proseslərinin icrası",
+        "item9": "İş fəaliyyətlərinin icrası",
+        "item10": "Fəaliyyətlərin qanunvericiliyə uyğun olaraq davam etdirilməsi"
+      },
+      "communicationInfo": {
+        "title": "Əlaqə Məlumatları",
+        "item1": "Müqavilə proseslərinin icrası",
+        "item2": "Müqavilədən irəli gələn öhdəliklərin yerinə yetirilə bilməsi,",
+        "item3": "Məhsul və ya xidmətlərin satın alınmasına və istifadə edilməsinə yönəlik proseslərin həyata keçirilə bilməsi",
+        "item4": "Xidmətlərin icra ediləcəyi internet saytının təhlükəsizliyinin təmin edilə bilməsi",
+        "item5": "Tələb və şikayət proseslərinin idarə edilə bilməsi",
+        "item6": "Maliyyə və finansal öhdəliklərin yerinə yetirilə bilməsi",
+        "item7": "Səlahiyyətli şəxs, qurum və təşkilatlara məlumat verilə bilməsi",
+        "item8": "Məlumat təhlükəsizliyi proseslərinin icrası",
+        "item9": "İş fəaliyyətlərinin icrası",
+        "item10": "Fəaliyyətlərin qanunvericiliyə uyğun olaraq davam etdirilməsi"
+      },
+      "transactionSecurityInfo": {
+        "title": "Əməliyyat Təhlükəsizliyi Məlumatları",
+        "item1": "Xidmətlərin icra ediləcəyi internet saytının təhlükəsizliyinin təmin edilə bilməsi",
+        "item2": "Səlahiyyətli şəxs, qurum və təşkilatlara məlumat verilə bilməsi",
+        "item3": "Məlumat təhlükəsizliyi proseslərinin icrası",
+        "item4": "İş fəaliyyətlərinin icrası",
+        "item5": "Fəaliyyətlərin qanunvericiliyə uyğun olaraq davam etdirilməsi"
+      },
+      "customerTransactionInfo": {
+        "title": "Müştəri Əməliyyat Məlumatları",
+        "item1": "Müqavilə proseslərinin icrası",
+        "item2": "Müqavilədən irəli gələn öhdəliklərin yerinə yetirilə bilməsi,",
+        "item3": "Məhsul və ya xidmətlərin satın alınmasına və istifadə edilməsinə yönəlik proseslərin həyata keçirilə bilməsi",
+        "item4": "Xidmətlərin icra ediləcəyi internet saytının təhlükəsizliyinin təmin edilə bilməsi",
+        "item5": "Tələb və şikayət proseslərinin idarə edilə bilməsi",
+        "item6": "Maliyyə və finansal öhdəliklərin yerinə yetirilə bilməsi",
+        "item7": "Səlahiyyətli şəxs, qurum və təşkilatlara məlumat verilə bilməsi",
+        "item8": "Məlumat təhlükəsizliyi proseslərinin icrası",
+        "item9": "İş fəaliyyətlərinin icrası",
+        "item10": "Fəaliyyətlərin qanunvericiliyə uyğun olaraq davam etdirilməsi"
+      },
+      "financialInfo": {
+        "title": "Finansal Məlumatlar",
+        "item1": "Müqavilə proseslərinin icrası",
+        "item2": "Müqavilədən irəli gələn öhdəliklərin yerinə yetirilə bilməsi,",
+        "item3": "Məhsul və ya xidmətlərin satın alınmasına və istifadə edilməsinə yönəlik proseslərin həyata keçirilə bilməsi",
+        "item4": "Xidmətlərin icra ediləcəyi internet saytının təhlükəsizliyinin təmin edilə bilməsi",
+        "item5": "Tələb və şikayət proseslərinin idarə edilə bilməsi",
+        "item6": "Maliyyə və finansal öhdəliklərin yerinə yetirilə bilməsi",
+        "item7": "Səlahiyyətli şəxs, qurum və təşkilatlara məlumat verilə bilməsi",
+        "item8": "Məlumat təhlükəsizliyi proseslərinin icrası",
+        "item9": "İş fəaliyyətlərinin icrası",
+        "item10": "Fəaliyyətlərin qanunvericiliyə uyğun olaraq davam etdirilməsi"
+      },
+      "legalTransactionInfo": {
+        "title": "Hüquqi Əməliyyat Məlumatları",
+        "item1": "Müqavilə proseslərinin icrası",
+        "item2": "Müqavilədən irəli gələn öhdəliklərin yerinə yetirilə bilməsi,",
+        "item3": "Məhsul və ya xidmətlərin satın alınmasına və istifadə edilməsinə yönəlik proseslərin həyata keçirilə bilməsi",
+        "item4": "Xidmətlərin icra ediləcəyi internet saytının təhlükəsizliyinin təmin edilə bilməsi",
+        "item5": "Tələb və şikayət proseslərinin idarə edilə bilməsi",
+        "item6": "Maliyyə və finansal öhdəliklərin yerinə yetirilə bilməsi",
+        "item7": "Səlahiyyətli şəxs, qurum və təşkilatlara məlumat verilə bilməsi",
+        "item8": "Məlumat təhlükəsizliyi proseslərinin icrası",
+        "item9": "İş fəaliyyətlərinin icrası",
+        "item10": "Fəaliyyətlərin qanunvericiliyə uyğun olaraq davam etdirilməsi"
+      },
+      "marketingInfo": {
+        "title": "Marketinq Məlumatları",
+        "item1": "Reklam/kampaniya/promosyon proseslərinin icrası",
+        "item2": "Marketinq analiz işlərinin icrası",
+        "item3": "Müştəri əlaqələrinin idarə edilməsi proseslərinin icrası",
+        "item4": "Müştəri məmnuniyyətinə yönəlik fəaliyyətlərin icrası",
+        "item5": "İş proseslərinin təkmilləşdirilməsinə yönəlik təkliflərin alınması və dəyərləndirilməsi"
+      },
+      "paymentNote": "''İşlənən Fərdi Məlumatlarınız və Fərdi Məlumatlarınızın İşlənmə Məqsədləri'' başlığı altındakı cədvəldə yer alan və Wise&Rise-ı onlayn mühitdən ziyarətiniz çərçivəsindəki statusunuza görə dəyişiklik göstərən fərdi məlumatlarınız arasında, ödəniş həyata keçirdiyiniz bank və ya kredit kartı məlumatlarınız yer almır. Ödəniş əməliyyatını həyata keçirdiyiniz bank və ya kredit kartı məlumatlarınız, Şirkətimiz tərəfindən məlumat işləmə fəaliyyətinə mövzu edilmir. Bank və ya kredit kartı məlumatlarınız, Wise&Rise-a təhlükəsiz ödəniş sistemi xidməti təmin edən qurumlar tərəfindən işlənir və saxlanılır."
+    },
+    "section3": {
+      "title": "3. Fərdi Məlumatlarınızın Toplanma Üsulları və Hüquqi Səbəbi",
+      "content": "Fərdi məlumatlarınız, bu aydınlatma mətnində açıqlanan hüquqi səbəblər və işləmə məqsədləri çərçivəsində, xidmət və işləmə məqsədinə görə fərqlilik göstərməklə birlikdə; Wise&Rise-ın internet ünvanı üzərindəki hər cür əməliyyat üçün məlumat girişi etdiyiniz elektron formalar, Şirkətimizə fiziki olaraq təslim etdiyiniz sənədlər, Wise&Rise-ın internet ünvanı üzərindən etdiyiniz xidmət satınalma əməliyyatları, telefon, e-poçt və sair üsullarla yaratdığınız tələb, şikayət, müraciət kimi məlumat və sənəd ötürülməsi fəaliyyətləri vasitəsilə, avtomatik ya da avtomatik olmayan yollarla şifahi, yazılı və ya elektron olaraq, ''İşlənən Fərdi Məlumatlarınız və Fərdi Məlumatlarınızın İşlənmə Məqsədləri'' başlığı altındakı cədvəldə yer alan məqsədlər istiqamətində, Şirkətimiz tərəfindən təqdim edilən xidmətlərin müəyyən edilən qanuni çərçivədə təqdim edilə bilməsi və bu çərçivədə Şirkətimizin müqavilə və qanundan doğan məsuliyyətlərini tam və doğru bir şəkildə yerinə yetirə bilməsi məqsədi ilə toplanmaqdadır."
+    },
+    "section4": {
+      "title": "4. Fərdi Məlumatlarınızın Ötürülməsi",
+      "domestic": {
+        "title": "Ölkədaxili",
+        "content1": "Veranova Medya, fərdi məlumatların ötürülməsində Qanunda nəzərdə tutulan və Qurum tərəfindən qəbul edilən qərar və müvafiq tənzimləmələrə uyğun bir şəkildə hərəkət etməkdədir.",
+        "content2": "Veranova Medya tərəfindən işlənən fərdi məlumatlar müvafiq şəxsin açıq razılığı olmadan üçüncü şəxslərə (həqiqi və ya hüquqi) ötürülə bilməz. Ancaq Qanun və ya digər müvafiq qanunvericilikdə ötürülməsinin məcburi olduğu hallarda Veranova Medya tərəfindən işlənmiş olan fərdi məlumatlar qanunvericilikdə nəzərdə tutulan şəkildə və göstərilən məhdudiyyətlərə bağlı olaraq yuxarıda sadalanan məlumat işləmə məqsədləri daxilində \"Qanunlarda açıq şəkildə nəzərdə tutulması\", \"Bir müqavilənin qurulması və ya icrası ilə birbaşa əlaqəli olması şərtilə, müqavilənin tərəflərinə aid fərdi məlumatların işlənməsinin zəruri olması\", \"Məlumat məsuliyyətlisinin hüquqi öhdəliyini yerinə yetirə bilməsi üçün məcburi olması.\", \"Müvafiq şəxsin əsas hüquq və azadlıqlarına zərər verməmək şərtilə, məlumat məsuliyyətlisinin qanuni mənafeləri üçün məlumat işlənməsinin məcburi olması\" hüquqi səbəblərinə əsaslanaraq, iş ortaqları, təchizatçılar, fəaliyyətlərin həyata keçirilməsi çərçivəsində səlahiyyətli özəl hüquq həqiqi və ya hüquqi şəxsləri ilə səlahiyyət verilən inzibati və ya məhkəmə qurumu və ya təşkilatına ötürülə bilməkdədir.",
+        "content3": "Veranova Medya, işləmiş olduğu fərdi məlumatları bu mətndə göstərilən məlumat işləmə məqsədləri ilə məhdud, əlaqəli və hər vəziyyətdə Qanunda nəzərdə tutulan şərtlərə uyğun olaraq; ölkə daxilində yerləşən üçüncü şəxslərə ötürə bilməkdədir. Bu çərçivədə fərdi məlumatların ötürülə biləcəyi üçüncü şəxslər məhkəmə, inzibati, nəzarətçi, tənzimləyici dövlət qurum və təşkilatları; iş ortaqlarımız; səhmdarlarımız; qrup şirkətlərimiz; hüquqi, maliyyə və vergi məsləhətçilərimiz; təchizatçılarımız və auditorlar olaraq ifadə edilməlidir."
+      },
+      "international": {
+        "title": "Xaricə",
+        "content1": "Qanunun 9-cu maddəsinə əsasən, fərdi məlumatların xaricə ötürülə bilməsi üçün müvafiq şəxsin açıq razılığının olması məcburidir. Əks təqdirdə fərdi məlumatlar, Qanunun 5-ci və 6-cı maddələrində göstərilən şərtlərdən birinin varlığı və fərdi məlumatın ötürüləcəyi xarici ölkə, ölkə daxilindəki sektorlar və ya beynəlxalq təşkilatlar haqqında yetərlilik qərarı olması vəziyyətində xaricə ötürülə bilməkdədir.",
+        "content2": "Yetərlilik qərarı olmaması halında; Qanunun 5-ci və 6-cı maddələrində göstərilən şərtlərdən birinin varlığı ilə məlumat sahibinin ötürmənin ediləcəyi ölkədə də hüquqlarını istifadə etmə, təsirli qanun yollarına müraciət etmə imkanının olması şərtilə və \"Xaricdəki dövlət qurum və təşkilatları və ya beynəlxalq təşkilatlar ilə Türkiyədəki dövlət qurum və təşkilatları və ya dövlət qurumu xarakterli peşə təşkilatları arasında edilən beynəlxalq müqavilə xarakterində olmayan razılaşmanın varlığı və Qurum tərəfindən ötürməyə icazə verilməsi\", \"Ortaq iqtisadi fəaliyyətdə olan təşəbbüs qrupu daxilindəki şirkətlərin riayət etməklə yükümlü olduğu, fərdi məlumatların qorunmasına dair hökmlər ehtiva edən və Qurum tərəfindən təsdiqlənən bağlayıcı şirkət qaydalarının varlığı\", \"Qurum tərəfindən elan edilən, məlumat kateqoriyaları, məlumat ötürmənin məqsədləri, alıcı və alıcı qrupları, məlumat alıcısı tərəfindən alınacaq texniki və inzibati tədbirlər, xüsusi xarakterli fərdi məlumatlar üçün alınan əlavə tədbirlər kimi məsələləri ehtiva edən standart müqavilənin varlığı\", \"Yetərli qorumanı təmin edəcək hökmlərin yer aldığı yazılı bir öhdəliyin varlığı və Qurum tərəfindən ötürməyə icazə verilməsi\" şəklindəki uyğun zəmanətlərdən birinin tərəflərcə təmin edilməsi halında xaricə ötürülə bilər.",
+        "content3": "Yetərlilik qərarının olmaması və yuxarıda sadalanan uyğun zəmanətlərdən hər hansı birinin təmin edilməməsi vəziyyətində də, arızi (müvəqqəti) olmaq şərtilə; \"Müvafiq şəxsin, ehtimal olunan risklər haqqında məlumatlandırılması şərtilə, ötürməyə açıq razılıq verməsi\", \"Ötürmənin, müvafiq şəxslə məlumat məsuliyyətlisi arasındakı bir müqavilənin icrası və ya müvafiq şəxsin tələbi üzərinə alınan müqavilə öncəsi tədbirlərin tətbiq edilməsi üçün məcburi olması\", \"Ötürmənin, müvafiq şəxs xeyrinə məlumat məsuliyyətlisi və digər bir həqiqi və ya hüquqi şəxs arasında ediləcək bir müqavilənin qurulması və ya icrası üçün məcburi olması\", \"Ötürmənin üstün bir ictimai fayda üçün məcburi olması\", \"Bir hüququn təsisi, istifadə edilməsi və ya qorunması üçün fərdi məlumatların ötürülməsinin məcburi olması\", \"Faktiki imkansızlıq səbəbiylə razılığını açıqlaya bilməyəcək vəziyyətdə olan və ya razılığına hüquqi etibarlılıq olmayan şəxsin özünün ya da bir başqasının həyatı və ya bədən bütövlüyünün qorunması üçün fərdi məlumatların ötürülməsinin məcburi olması\", \"İctimaiyyətə və ya qanuni mənafeyi olan şəxslərə açıq olan bir sicildən, müvafiq qanunvericilikdə sicilə daxil olmaq üçün lazım olan şərtlərin təmin edilməsi və qanuni mənafeyi olan şəxsin tələb etməsi şərtilə ötürmə edilməsi\" hallarından birinin varlığı halında fərdi məlumatlar xaricə ötürülə bilər.",
+        "content4": "Fərdi məlumatlar, beynəlxalq müqavilə hökmləri saxlı qalmaq şərtilə, Türkiyənin və ya müvafiq şəxsin mənafeyinin ciddi şəkildə zərər görəcəyi vəziyyətlərdə, ancaq müvafiq dövlət qurumu və ya təşkilatının rəyi alınaraq Qurumun icazəsi ilə xaricə ötürülə bilər."
+      }
+    },
+    "section5": {
+      "title": "5. Fərdi Məlumatlarınızın Saxlanma Müddəti",
+      "content": "Şirkətimiz fərdi məlumatlarınızı ancaq müvafiq qanunvericilikdə göstərildiyi və ya işləndikləri məqsəd üçün lazım olan müddət qədər mühafizə etməkdədir. Bu çərçivədə, ilk növbədə müvafiq qanunvericilikdə fərdi məlumatların saxlanması üçün bir müddət müəyyən edilibsə bu müddətə uyğun davranmaqda, bir müddət müəyyən edilməyibsə fərdi məlumatları işləndikləri məqsəd üçün lazım olan müddət qədər saxlamaqdadır. Müddətin bitməsi və ya işlənməsini tələb edən səbəblərin aradan qalxması halında fərdi məlumatlarınız Qanunun 7-ci maddəsinə əsasən silinməkdə, yox edilməkdə və ya anonim hala gətirilərək Şirkətimiz tərəfindən istifadə edilməyə davam edilə bilməkdədir."
+    },
+    "section6": {
+      "title": "6. Qanuni Hüquqlarınız",
+      "intro": "Fərdi məlumat sahibi olaraq, Qanunun 11-ci maddəsinə əsasən, məlumat məsuliyyətlisi olan Veranova Medya-ya müraciət edərək;",
+      "rights": {
+        "item1": "Fərdi məlumatınızın işlənib işlənmədiyini öyrənmə,",
+        "item2": "Fərdi məlumatlarınız işlənibsə buna dair məlumat tələb etmə,",
+        "item3": "Fərdi məlumatlarınızın işlənmə məqsədini və bunların məqsədinə uyğun istifadə edilib edilmədiyini öyrənmə,",
+        "item4": "Ölkə daxilində və ya xaricdə fərdi məlumatlarınızın ötürüldüyü üçüncü şəxsləri bilmə,",
+        "item5": "Fərdi məlumatlarınız əskik və ya yanlış işlənmiş olması halında bunların düzəldilməsini istəmə və bu çərçivədə edilən əməliyyatın fərdi məlumatların ötürüldüyü üçüncü şəxslərə bildirilməsini istəmə,",
+        "item6": "Qanunun 7-ci maddəsində nəzərdə tutulan şərtlər (Qanun və müvafiq digər qanun hökmlərinə uyğun olaraq işlənmiş olmasına baxmayaraq, fərdi məlumatınızın işlənməsini tələb edən səbəblərin aradan qalxması halı) çərçivəsində fərdi məlumatların silinməsini və ya yox edilməsini istəmə və bu çərçivədə edilən əməliyyatın fərdi məlumatların ötürüldüyü üçüncü şəxslərə bildirilməsini istəmə,",
+        "item7": "İşlənən məlumatlarınızın müstəsna olaraq avtomatik sistemlər vasitəsilə təhlil edilməsi surətiylə əleyhinizə bir nəticənin ortaya çıxmasına etiraz etmə,",
+        "item8": "Fərdi məlumatlarınızın qanuna zidd olaraq işlənməsi səbəbiylə zərərə uğramanız halında zərərin qarşılanmasını tələb etmə hüquqlarınız mövcuddur. Qanunun 28-ci Maddəsində nəzərdə tutulan istisnai hallar saxlıdır."
+      },
+      "applicationInfo": "Yuxarıda sadalanan hüquqlarınıza dair tələblərinizi, ''Məlumat Məsuliyyətlisinə Müraciət Usul və Əsasları Haqqında Təbliğə'' görə, yaş imzanızın olması şərtilə, buradan çata biləcəyiniz",
+      "applicationForm": "Müraciət Forması",
+      "applicationAddress": "ilə ''Akat Mah. Cebeci Cad. No: 65 Beşiktaş/İSTANBUL'' ünvanına; və ya",
+      "applicationEmail": "info@wisenrise.com",
+      "applicationEmail2": "və ya (...)@hs01.kep.tr ünvanına yazılı olaraq və şəxsiyyət təsdiqinizin edilməsini təmin edərək çatdıra bilərsiniz. Şirkətimiz müraciət tələblərini, Qanunun 13-cü maddəsinə uyğun olaraq, tələbin xarakterinə görə və ən gec 30 (otuz) gün içində nəticələndirəcəkdir.",
+      "costInfo": "Əməliyyatın maliyyət tələb etməsi halında, Fərdi Məlumatların Mühafizəsi Qurumu tərəfindən müəyyən edilən tarif tətbiq olunacaqdır. Tələbin rədd edilməsi halında, rədd səbəbi/səbəbləri yazılı olaraq və ya elektron mühitdə əsaslandırılacaqdır.",
+      "applicationRequirements": "Fərdi məlumat sahibi olaraq sahib olduğunuz və yuxarıda göstərilən hüquqlarınızı istifadə etmək üçün edəcəyiniz və istifadə etməyi tələb etdiyiniz hüquqa dair açıqlamalarınızı ehtiva edən müraciətdə; tələb etdiyiniz xüsusun açıq və aydın olması, tələb etdiyiniz mövzunun şəxsiniz ilə əlaqəli olması və ya başqası adından hərəkət edirsinizsə bu mövzuda xüsusi olaraq səlahiyyətli olmanız və səlahiyyətinizi sənədləşdirməniz, müraciətin şəxsiyyət və ünvan məlumatlarını ehtiva etməsi və müraciətə şəxsiyyətinizi təsdiq edici sənədlərin əlavə edilməsi lazımdır."
+    },
+    "closing": {
+      "respectfully": "Hörmətlə,",
+      "companyName": "Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirkəti"
+    }
+  },
+  "preliminaryInformationForm": {
+    "title": "İlkin Məlumatlandırma Forması",
+    "breadcrumbHome": "Ana səhifə",
+    "breadcrumbCurrent": "İlkin Məlumatlandırma Forması",
+    "paragraph1": "Oxumaqda olduğunuz ilkin məlumatlandırma forması imzalamaq üzrə olduğunuz Üzvlük və Onlayn Abunəlik Xidməti Satınalmasına Dair Məsafəli Müqavilə (\"Məsafəli Müqavilə\") ilə əlaqədar məlumatlandırılmanız məqsədilə hazırlanmışdır.",
+    "paragraph2": "Bu forma, 6502 saylı İstehlakçının Qorunması Haqqında Qanun, Məsafəli Müqavilələrə Dair Reqlament və Abunəlik Müqavilələri Reqlamentinə uyğun şəkildə hazırlanmışdır.",
+    "paragraph3": "Zəhmət olmasa bu formanın, İstifadə Qaydalarının və təsdiqləyəcəyiniz Məsafəli Müqavilənin bütün hökmlərini oxuyub anladığınızdan əmin olun. Bunun üçün kifayət qədər vaxtınız vardır.",
+    "paragraph4": "Oxumaqda olduğunuz ilkin məlumatlandırma forması imzalamaq üzrə olduğunuz Üzvlük və Onlayn Abunəlik Xidməti Satınalmasına Dair Məsafəli Müqavilə (\"Məsafəli Müqavilə\") ilə əlaqədar məlumatlandırılmanız məqsədilə hazırlanmışdır.",
+    "table": {
+      "cash": "Nağd",
+      "installment": "Taksit",
+      "accountProfile": "1 Hesab 4 Profil",
+      "feature1": "9 Kateqoriya + 500-dən Çox Dərs",
+      "feature2": "Hər Ay Yeni Məzmunlar",
+      "feature3": "Kompüterdən, Mobil Cihazdan, Planşetdən Limitsiz Giriş",
+      "feature4": "İzləyərkən Qeyd Alma Xüsusiyyəti",
+      "feature5": "Mobil Cihazdan Podkast Dinləmə Xüsusiyyəti",
+      "feature6": "Hər Təlimlə Yeni Bir Sertifikat Qazanma İmkanı"
+    },
+    "paragraph5": "Wise&Rise xidməti, Məsafəli Müqavilələr Reqlamentinin 15-ci (on beşinci) maddəsinin ''ğ'' bəndində yer alan ''Elektron mühitdə anında icra edilən xidmətlər və ya istehlakçıya anında təslim edilən qeyri-maddi mallara dair müqavilələr'' çərçivəsində olub qanunvericilik gərəyi Wise&Rise-a üzv olub rəqəmsal məzmunlara giriş etdiyiniz andan etibarən imtina hüququnuz (cayma haqqı) yoxdur. Zəhmət olmasa bu xüsusa diqqət yetirin.",
+    "paragraph6": "Ödənişinizi bank, kredit kartı, ön ödənişli kart ilə Wise&Rise-da yer alan ödəniş bölümündən Iyzico infrastrukturu ilə təhlükəsiz şəkildə həyata keçirə bilərsiniz. Türkiyə xaricindən yaradılacaq üzvlüklərdə Mastercard və ya VISA infrastrukturu istifadə edən hər hansı bir kredit kartıyla ödəniş həyata keçirilməsi mümkündür.",
+    "paragraph7": "Ödəniş düyməsinə basaraq seçdiyiniz plana dair göstərilən vergilər daxil satış qiymətini ödəmə öhdəliyi altına girəcəyinizi xatırladırıq.",
+    "paragraph8": "Üzvlük proseslərinə dair hüquqi mətnləriniz bildirdiyiniz e-poçt ünvanına göndəriləcəkdir.",
+    "paragraph9": "Wise&Rise-ı hər hansı bir giriş məhdudiyyəti olmadan istifadə edə bilərsiniz. Olduğunuz ölkə qaynaqlı giriş çətinliklərindən məsul ola bilməyəcəyimizi bilməyinizi istəyirik.",
+    "signature": "Hörmətlə,",
+    "companyName": "Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirkəti"
+  },
+  "commercialElectronicMessage": {
+    "title": "Ticarət Elektron Mesaj Təsdiq Mətni",
+    "paragraph1": "Bu Bildiriş; Wise&Rise məzmun xidmətlərini tanıtmaq və marketinqini etmək məqsədilə elektron kommunikasiya vasitələri ilə həyata keçirəcəyimiz ticarət əlaqəsinə dair 6563 saylı Elektron Ticarətin Tənzimlənməsi Haqqında Qanun və 29417 saylı Rəsmi Qəzetdə dərc olunan Ticarət Əlaqəsi və Ticarət Elektron Mesajlar Haqqında Reqlament çərçivəsində məlumat vermə və təsdiq alma öhdəliyimizi açıqlayır. Həmçinin verilən təsdiqin necə geri alınacağına da yer verilmişdir.",
+    "paragraph2": "Biz; Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirkəti olaraq, İstifadə Qaydaları ilə Üzvlük və Məsafəli Satış Müqaviləsi çərçivəsində e-poçt və telefon məlumatlarınızı 6698 saylı Fərdi Məlumatların Qorunması Haqqında Qanun və müvafiq qanunvericiliyə uyğun şəkildə toplayır və işləyirik. Ətraflı məlumat üçün zəhmət olmasa Məxfilik Bildirişi, Kuki Siyasəti və KVKK Aydınlatma Mətnini incələyin.",
+    "paragraph3": "Siz; bu bildirişə təsdiq verməyiniz vəziyyətində, Wise&Rise məzmun xidmətlərinə dair olaraq e-poçt və/və ya mesaj yoluyla müxtəlif ticarət məqsədli tanıtım, kampaniya və məlumatlandırmalar edilməsinə açıq razılıq verdiyinizi qəbul etmiş sayılırsınız. Bu müsbət iradə bəyanınız təbrik və xoş niyyət mesajlarını da əhatə edir.",
+    "paragraph4": "Vermiş olduğunuz bu təsdiqinizi aşağıdakı üsullarla hər zaman geri ala bilərsiniz:",
+    "paragraph5": "Mesaj İdarəetmə Sistemi üzərindən (https://vatandas.iys.org.tr) ",
+    "paragraph6": "info@wisenrise.com üzərindən",
+    "paragraph7": "Tərəfinizə göndərəcəyimiz mesajlar altında olan link üzərindən",
+    "paragraph8": "Rədd bəyanı bizlərə çatdıqdan sonrakı 3 iş günü içində ticarət elektron mesaj göndərimini dayandırırıq.",
+    "closing": "Hörmətlə,",
+    "companyName": "Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirkəti"
+  },
+  "onlineConditions": {
+    "title": "Məsafəli Müqavilə",
+    "subtitle": "ÜZVLÜK VƏ ONLAYN ABUNƏLİK XİDMƏTİ SATINALMASINA DAİR MƏSAFƏLİ MÜQAVİLƏ",
+    "article1": {
+      "title": "MADDƏ 1 – GİRİŞ",
+      "p1": "1.1. Oxumaqda olduğunuz müqavilə Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirkətinin (<b>\"Veranova Medya\"</b> və ya <b>\"SATICI\"</b> və ya <b>\"Təminatçı\"</b> ) sahibi olduğu veb sayt, mobil tətbiq və Wise&Rise adlı rəqəmsal platforma (birlikdə <b> \"Wise&Rise\"</b>) vasitəsilə təqdim edəcəyi xidmətlərdən faydalanmaq istəyən siz dəyərli üzv namizədinə (<b>\"ALICI\"</b>) yönəlik qaydaları müəyyən etməkdə olub təsdiqinizə təqdim edilir.",
+      "p2": "1.2. 6502 saylı İstehlakçının Qorunması Haqqında Qanun, Məsafəli Müqavilələrə Dair Reqlament və Abunəlik Müqavilələri Reqlamentinə uyğun şəkildə hazırlanan bu Üzvlük və Onlayn Abunəlik Xidməti Satınalmasına Dair Məsafəli Müqavilə bundan sonra qısaca \"Məsafəli Müqavilə'' olaraq adlandırılacaqdır.",
+      "p3": "1.3. Zəhmət olmasa Məsafəli Müqavilənin bütün hökmlərini oxuyub anladığınızdan əmin olduqdan sonra təsdiqləyin. Bunun üçün kifayət qədər vaxtınız vardır.",
+      "p4": "1.4. Wise&Rise-a giriş təmin edə bildiyiniz hər cihazda Məsafəli Müqaviləyə elektron olaraq təsdiq verməyiniz, bütün şərtləri qəbul etmiş olmağınız nəticəsini doğurur. Bu təsdiq əməliyyatına \"Click Wrap Metodu'' olaraq da adlandırılan ''Klikləmə Yoluyla Qəbul'' əməliyyatı da daxildir."
+    },
+    "article2": {
+      "title": "MADDƏ 2 – TƏRƏFLƏR",
+      "sellerTitle": "1.1. SATICI / TƏMİNATÇI",
+      "buyerTitle": "1.2. ALICI",
+      "commercialTitle": "Ticarət Ünvanı :",
+      "commercialValue": "VERANOVA MEDYA VE DİJİTAL YAYIN HİZMETLERİ A.Ş.",
+      "taxNo": "Vergi No :",
+      "taxNoValue": "9241000351 (Beşiktaş Vergi Dairəsi)",
+      "mersisNo": "MERSİS No :",
+      "mersisNoValue": "0924100035100001",
+      "address": "Ünvan :",
+      "addressValue": "Akat Mah. Cebeci Cad. No:65 Beşiktaş/İstanbul",
+      "email": "E-Poçt:",
+      "emailValue": "info@wisenrise.com",
+      "nameSurname": "Ad Soyad :",
+      "tcNo": "T.C.K.N.:",
+      "phone": "Telefon:"
+    },
+    "article3": {
+      "title": "MADDƏ 3 – MÖVZU",
+      "p1": "Məsafəli Müqavilə; ",
+      "p2": "• Nağd ödəmə üsuluyla satın alınan və 12 (on iki) ay boyunca giriş hüququ təmin edən abunəlik xidmətinin (nağd plan) və ya 12 (on iki) taksit halında ödəmə imkanı təmin edərək satın alınan və 12 (on iki) ay boyunca giriş hüququ təmin edən abunəlik xidmətinin (taksitli plan) ALICI tərəfindən satın alınması qarşılığında, əhatəsi Məsafəli Müqavilənin 3 (üç) nömrəli maddəsində göstərilən seçimin ALICININ girişinə açılması və xidmətlərin təmin edilməsini,",
+      "p3": "• Tərəflərin sahib olduğu hüquq və öhdəliklərin müəyyən edilməsini, mövzu edir."
+    },
+    "article4": {
+      "title": "MADDƏ 4 – SATIN ALINAN PLAN MƏLUMATLARI VƏ ÖDƏNİŞ ÜSULU",
+      "cash": "NAĞD",
+      "installment": "TAKSİT",
+      "accountProfile": "1 Hesab - 4 Profil",
+      "feature1": "9 Kateqoriya + 500-dən Çox Dərs",
+      "feature2": "Hər Ay Yeni Məzmunlar",
+      "feature3": "Hər Ay Sizə Özəl Bonus Məzmunlar",
+      "feature4": "Kompüterdən, Mobil Cihazdan, Planşetdən Limitsiz Giriş",
+      "feature5": "İzləyərkən Qeyd Alma Xüsusiyyəti",
+      "feature6": "Mobil Cihazdan Podkast Dinləmə Xüsusiyyəti",
+      "feature7": "Hər Təlimlə Yeni Bir Sertifikat Qazanma İmkanı",
+      "bankCard": "BANK KARTI",
+      "creditCard": "KREDİT KARTI"
+    },
+    "article5": {
+      "title": "MADDƏ 5 – ALICININ HÜQUQ VƏ MƏSULİYYƏTLƏRİ",
+      "p1": {
+        "title": "5.1. Təsdiqləmə:",
+        "text": "ALICI; Wise&Rise tərkibində təqdim olunan başda Məsafəli Müqavilə olmaqla bütün mətn, forma, bildiriş, müqavilə kimi bütün hüquqi sənədlərin maddələrinin hər sətrini oxuduğunu və tam olaraq anladığını qəbul, bəyan və taahhüd edir."
+      },
+      "p2": {
+        "title": "5.2. Doğru və Aktual Məlumat:",
+        "text": "ALICI; Məsafəli Müqavilə bağlamağa səlahiyyətli olduğunu, təmin etdiyi hər cür məlumatın doğru və aktual olduğunu qəbul və bəyan edir. ALICI; sözügedən məlumatların aktual və/və ya doğru olmamasından qaynaqlana biləcək hər cür məsuliyyətin və öhdəliyin şəxsən özünə aid olduğunu taahhüd edir."
+      },
+      "p3": {
+        "title": "5.3. Yetkin Olma və Kiçiyin Yararlanması:",
+        "text": "ALICI; on səkkiz (18) yaşından böyük olduğunu; əksinin təsbit edilməsi halında üzvlüyünün dərhal sonlandırılacağını bildiyini qəbul və bəyan edir. ALICININ, 18 yaşından kiçik şəxsləri Wise&Rise məzmunlarından yararlandırması velayət/vesayət sahibi şəxslərin təsdiqi və hər halda ancaq bir yetkin nəzarətində mümkündür. Əks hallar və bu proseslər üçün bütün məsuliyyət müvafiq ALICIYA aid olub SATICININ məsul olmadığını ALICI əvvəlcədən qəbul edir."
+      },
+      "p4": {
+        "title": "5.4. Şifrə Qoruma Öhdəliyi:",
+        "text": "ALICI; Wise&Rise üzərində üzvlük yaratma əməliyyatları zamanı təyin etdiyi şifrəsinin gizli qalması üçün lazımi diqqət və qayğını göstərəcəyini, şifrəsini hər hansı bir üçüncü şəxsə açıqlamayacağını, istifadə etdirməyəcəyini, giriş məlumatlarının üçüncü şəxslərlə istifadə etdirmək məqsədli paylaşıldığının təspiti halında üzvlüyünün sonlandırıla biləcəyini; şifrəsinin səlahiyyətsiz üçüncü şəxslər tərəfindən ələ keçirildiyini öyrənməsi və ya buna dair şübhəli bir vəziyyət yaranması halında dərhal SATICIYA info@wisenrise.com e-poçt ünvanı üzərindən bildiriş verəcəyini, şifrəsinin üçüncü şəxslər tərəfindən istifadə edilməsi səbəbiylə yaranacaq zərərlərdən SATICININ məsul olmayacağını qəbul və taahhüd edir. Belə ki; Üzvün çoxlu istifadəyə yararlı paketi satın alması halında, paketini birlikdə istifadə etmək üzrə e-poçt ünvanını və şifrəsini paylaşdığı şəxslərlə edəcəyi məlumat paylaşımı bu hökmün pozulması təşkil etməyəcəkdir."
+      },
+      "p5": {
+        "title": "5.5. Satın Alınan Plan:",
+        "text": "ALICI; Məsafəli Müqavilənin -3- nömrəli qismində yer alan, nağd və ya taksitli şəkildə ödəmə seçiminə bağlı müəyyən edilən üzvlük növünü və əhatəsini Wise&Rise-a üzv olma mərhələsində özünün seçdiyini, plana bağlı ödəniş miqdarının bu növ və əhatəyə uyğun şəkildə yaradılacağını bildiyini qəbul, bəyan və taahhüd edir."
+      },
+      "p6": {
+        "title": "5.6. Ödəniş:",
+        "text": "Seçilən plan daxilindəki xidmətlərin haqqı; ''ödəniş və kart məlumatları / (planlarım)'' başlıqlı səhifədə olan və üzvlük əsnasında ALICI tərəfindən məlumatı verilən kredit / bank kartından ödəniş qurumu Iyzico vasitəsilə təhsil edilir."
+      },
+      "p7": {
+        "title": "5.7. Üzvlüyün Reallaşması:",
+        "text": "ALICI; Məsafəli Müqavilənin oxudum, təsdiqləyirəm edildiyinə / düyməsinə klikləndiyinə dair bəyanın (rəqəmsal mühitdəki hərəkətin) Wise&Rise-ın informasiya sistemlərinə çatmasıyla birlikdə üzvlük əməliyyatının reallaşmış və tamamlanmış olacağını qəbul, bəyan və taahhüd edir."
+      },
+      "p8": {
+        "title": "5.8. Xidmətin Yer və Zamanı:",
+        "text": "ALICI tərəfindən xidmətin satın alınaraq üzv olunmasının ardından rəqəmsal xarakterli məzmunların SATICI tərəfindən ALICININ girişinə təqdim ediləcəyi yer",
+        "website": "www.wisenrise.com",
+        "text2": "və Wise&Rise mobil tətbiqidir. Xidmətə dair ödəniş, ALICIYA aid ödəniş vasitəsindən qaynaqlanan ''balans yetərsizliyi'' daxil hər cür texniki və fiziki problem səbəbiylə tamamlanmadığında; rəqəmsal məzmunlar ALICININ girişinə açılmayacaqdır."
+      },
+      "p9": {
+        "title": "5.9. Ödəniş Üsul və Məlumatlarının Saxlanması:",
+        "text": "ALICI; kredit/bank kartı məlumatlarının SATICI tərəfindən saxlanmadığını; bu məlumatların Türkiyə Cümhuriyyəti Mərkəzi Bankı tərəfindən səlahiyyətləndirilən vasitəçi ödəniş qurumu olan və təhlükəsiz ödəniş təmin edən Iyzico tərəfindən saxlanacağını bildiyini və bu xüsusları qəbul etdiyini bəyan və taahhüd edir."
+      },
+      "p10": {
+        "title": "5.10. İnternet Girişi və Cihaz Tələbləri:",
+        "text": "ALICI; Wise&Rise xidmətini istifadə edə bilmək üçün, ''www.wisenrise.com'' ünvanında yer alan vizual-eşitmə qeydlərini/videoları izləmə imkanı təmin edən bir internet bağlantısı ilə cihaza sahib olması və seçilən abunəlik növünə uyğun ödəniş vasitəsi təqdim etməsi gərəkdiyini qəbul və bəyan edir."
+      },
+      "p11": {
+        "title": "5.11. Məzmun İdarəetməsi:",
+        "text": "ALICI; Wise&Rise üzərindən təmin ediləcək məzmunlara, məzmunların müxtəlifliyinə, sayına və məzmunlarda yer alan bütün məlumat, təklif və tövsiyələrin elmi və/və ya şərhi doğruluğuna dair olaraq SATICI tərəfindən heç bir zəmanət verilmədiyini, SATICININ Wise&Rise üzərindəki məzmunları istədiyi şəkildə artırma, azaltma və dəyişdirmə hüququna sahib olduğunu; məzmun qaldırılması ya da məzmun əlavə edilməsi qaynaqlı ödəniş iadəsini mümkün olmadığını bildiyini qəbul, bəyan və taahhüd edir."
+      },
+      "p12": {
+        "title": "5.12. Oflayn Məzmun Siyasəti:",
+        "text": "Veranova Medya tərəfindən müəyyən ediləcək bəzi Wise&Rise məzmunlarının, üzvlər tərəfindən cihaza yükləmək (download) yolu ilə oflayn (offline) olaraq əldə edilməsi mümkündür. Veranova Medya, üzvlərinin oflayn olaraq əldə etməsinə imkan yaratdığı məzmunlarına -sadalananlarla məhdudlaşmamaq şərtilə- izləmə sayı, periodu və giriş müddəti kimi məhdudiyyətlər tətbiq edə bilər."
+      },
+      "p13": {
+        "title": "5.13. Fikri Mülkiyyət Hüquqları:",
+        "text": "ALICI; Wise&Rise-a üzv olmanın; Wise&Rise üzərindəki videolar, yazılı mətn sənədləri üzərində heç bir halda lisenziya ya da icazə hüququ tanımadığını qəbul edir. ALICI; üzvlərin giriş əldə edəcəyi bütün vizual-eşitmə və/və ya yazılı məzmunların, Wise&Rise proqram kodlarının bütün müəllif hüquqlarının SATICIYA və ya məzmunun istehsalına töhfə verən iş ortaqlarına aid olduğunu bildiyini bəyan və taahhüd edir."
+      },
+      "p14": {
+        "title": "5.14. Məzmun İstifadə Məhdudiyyəti:",
+        "text": "ALICI; üzvlərin girişinə açılacaq olan heç bir məzmunu emal etmə, çoxaltma, yayma, təmsil, ictimaiyyətə çatdırma, icarəyə vermə və/və ya satma hüququnun olmadığını qəbul və bəyan edir."
+      },
+      "p15": {
+        "title": "5.15. Sənaye Mülkiyyət Hüquqları və Ticarət Hüquqları Öhdəliyi:",
+        "text": "ALICI; Wise&Rise sənaye mülkiyyət hüquqları, ticarət ünvanı və domen adlarının yalnız SATICIYA aid olduğunu bildiyini; bunların təqlid edilə bilməyəcəyini, kopyalana bilməyəcəyini və ticarət/fərdi məqsədlə istifadə edilə bilməyəcəyini qəbul, bəyan və taahhüd edir."
+      },
+      "p16": {
+        "title": "5.16. Əməliyyatlardan Məsuliyyət:",
+        "text": "ALICI, Wise&Rise üzərindən yaratdığı hesab vasitəsilə həyata keçirilən bütün əməliyyatlardan məsuldur. ALICI; hesabın nəzarətini saxlamaq və başqalarının hesaba daxil olmasının qarşısını almaq adına, hesabın şifrəsini heç kimlə paylaşmamalıdır və Wise&Rise-a daxil olduğu/sessiya açdığı bütün cihazların nəzarətini əlində saxlamalıdır. Belə ki; ALICININ çoxlu istifadəyə yararlı paketi satın alması halında, paketini birlikdə istifadə etmək üzrə e-poçt ünvanını və şifrəsini paylaşdığı şəxslərlə edəcəyi məlumat paylaşımı bu hökmün pozulması təşkil etməyəcəkdir."
+      },
+      "p17": {
+        "title": "5.17. Qaydalara Əməl Etmə:",
+        "text": "ALICI; üzvlük müddəti boyunca \"5846 saylı Fikir və Sənət Əsərləri Qanunu\", \"6769 saylı Sənaye Mülkiyyət Qanunu\", \"6102 saylı Türk Ticarət Qanunu\", \"5237 saylı Türk Cəza Qanunu\" və qüvvədə olan digər bütün qanunvericilik hökmlərinə uyğun davranacağını, istər qanunvericilik istərsə də SATICININ hüquqlarını istifadə etməsi nəticəsində ortaya çıxa biləcək məhdudiyyətlərə riayət edəcəyini qəbul edir. Əks təqdirdə SATICININ bu səbəbdən dövlət qurumlarına və/və ya üçüncü şəxslərə ödəmək məcburiyyətində qaldığı/qalacağı hər cür təzminat və/və ya inzibati/məhkəmə pul cəzaları üçün ALICIYA eynilə rücu (geri tələb etmə) hüququ saxlıdır."
+      },
+      "p18": {
+        "title": "5.18. Qoruma və Məhdudiyyətlər:",
+        "text": "ALICI; Wise&Rise üzərində yaradılmış qorumaların və məhdudiyyətlərin heç birini deaktiv etməyəcəyini, hər hansı bir şəkildə funksionallıqlarını itirmələrini təmin etməyəcəyini öhdəsinə götürür."
+      },
+      "p19": {
+        "title": "5.19. Hüquqa Uyğun Giriş:",
+        "text": "ALICI; Wise&Rise-a daxil olmaq üçün robot, hörümçək, qaşıyıcı və başqa avtomatik yollar istifadə etməyəcəkdir. ALICI; Wise&Rise üzərindən əldə edilə bilən hər hansı bir proqram təminatını ya da digər məhsulları və ya prosesləri mənbə koduna çevirməməyi, bunlar üzərində hissələrə ayırma əməliyyatı aparmamağı; Wise&Rise-ın məzmununa hər hansı bir kod və ya məhsul yerləşdirməməyi və ya hər hansı bir şəkildə manipulyasiya etməməyi; hər hansı bir məlumat yaratma, məlumat toplama ya da çıxarma üsulu istifadə etməməyi; hər cür proqram virusu ya da hər hansı başqa bir kompüter kodu, faylları və ya proqramları daxil olmaqla, Wise&Rise ilə əlaqəli hər hansı bir kompüter proqramı ya da təchizatı və ya telekommunikasiya avadanlığının funksionallığını kəsmək, zədələmək və ya məhdudlaşdırmaq üçün hazırlanmış hər hansı bir materialı yükləməməyi, göndərməməyi, e-poçt ilə və ya başqa şəkildə göndərməməyi və ya ötürməməyi qəbul edir."
+      },
+      "p20": {
+        "title": "5.20. Təzmin Öhdəliyi:",
+        "text": "ALICI; Məsafəli Müqavilə ya da hər hansı bir qanunvericilik hökmünə zidd davrandığı təqdirdə, SATICI lazımi müdaxilələrdə olma, xidməti dayandırma, xidmətləri və girişi tamamilə və ya qismən məhdudlaşdırma, əngəlləmə hüququna sahibdir. ALICI; bu hallarda, SATICININ maddi-mənəvi, müsbət-mənfi hər cür birbaşa-dolayı zərərini əlavə məhkəmə qərarına ehtiyac qalmamaq şərtilə, ilk tələb anında dərhal, nağd və birdəfəyə təzmin edəcəyini qəbul, bəyan və taahhüd edir."
+      },
+      "p21": {
+        "title": "5.21. Öhdəliklərin Pozulması:",
+        "text": "ALICI; Məsafəli Müqavilədə göstərilən və ya qüvvədə olan qanunvericilikdən irəli gələn başqa öhdəliklərini pozması halında, üzvlüyünün dərhal sonlandırıla biləcəyini, SATICININ əlavə hər cür tələb və iddia hüququnun saxlı olduğunu, üçüncü şəxslərə verilən zərərlərdən SATICININ məsuliyyətinin olmadığını, bunlardan özünün məsul olduğunu qəbul, bəyan və taahhüd edir."
+      },
+      "p22": {
+        "title": "5.22. Üzvlük Davam Şərtləri:",
+        "text": "Wise&Rise üzvlüyü; Məsafəli Müqavilə şərtlərinə əməl edildiyi və üzvün xidmət alma iradəsi davam etdiyi müddətcə; müəyyən edilən müddət və şərtlər daxilində davam edir."
+      },
+      "p23": {
+        "title": "5.23. İmtina Hüququ (Cayma Haqqı):",
+        "text": "ALICI; SATICI tərəfindən özünə təmin edilən bu xidmətlərin Məsafəli Müqavilələr Reqlamentinin 15-ci (on beşinci) maddəsinin ''ğ'' bəndində yer alan ''Elektron mühitdə anında icra edilən xidmətlər və ya istehlakçıya anında təslim edilən qeyri-maddi mallara dair müqavilələr'' çərçivəsində olduğunu, bu səbəblə qanunvericilik gərəyi Wise&Rise-a giriş edərək rəqəmsal məzmunlara çatdığı andan etibarən imtina hüququnun (cayma haqqı) ola bilməyəcəyini əvvəlcədən qəbul edir."
+      },
+      "p24": {
+        "title": "5.24. Xidmət və Planın Yenilənməsi:",
+        "intro": "- ALICI; yenilənmənin aşağıda yazılı hökmlər çərçivəsində olduğunu qəbul edir.",
+        "li1": "o\tALICI; ləğv etmədiyi müddətcə, satınalma tarixindən tam 1 (bir) il sonrasına uyğun gələn tarixdə, SATICI tərəfindən ALICIYA ən gec 30 (otuz) gün əvvəldən e-poçt yoluyla bildirilən qiymət üzərindən, ''ödəniş və kart məlumatları / planlarım'' başlıqlı səhifədə ALICI tərəfindən məlumatı verilən kredit/bank kartından ödəniş qurumu Iyzico vasitəsilə təhsil edilmək surətiylə öz-özünə yenilənir. SATICININ ödəniş cəhdlərinə dair hüquqları saxlıdır.",
+        "li2": "ALICI; abunəliyinin yenilənməsini tələb etmirsə, planlarım bölümündən abunəlik planını ləğv etməklə yükümlüdür.",
+        "li3": "ALICI, Nağd Plan növündəki abunəliyini ləğv etdiyində, müvafiq ilin qalıq müddəti boyunca xidmət mövzusu məzmunlara giriş təmin edə bilər.",
+        "li4": "ALICI; abunəliyini ləğv etdiyində, ləğv etdiyi təqvim günündəki ayın sonuna qədər xidmət mövzusu məzmunlara giriş təmin edə bilər.",
+        "li5": "Məsafəli Müqavilənin 4 (dörd) nömrəli maddəsində də göstərilən ödəniş cəhdi səylərinin müsbət istiqamətdə nəticə verməməsi vəziyyətində, SATICI, xidməti dərhal sonlandıra bilər."
+      },
+      "p25": {
+        "title": "5.25. Ödəniş Cəhdləri:",
+        "text": "ALICI;satın alınması vəziyyətində; planlarım səhifəsindən və ya üzərindən hər daim məlumatına çata biləcəyi yeniləmə dövründən əvvəl abunəliyini ləğv etmədiyində, məlumatını vermiş olduğu kredit / bank kartından avtomatik olaraq təhsilat həyata keçirilə biləcəyini qəbul, bəyan və taahhüd edir. Müvafiq təhsilatın kart balansının yetərsiz olması səbəbiylə həyata keçirilə bilmədiyi vəziyyətlərdə; SATICI, ödəniş qurumu vasitəsilə bir müddət daha müvafiq təhsilatı həyata keçirməyə cəhd edə bilər. ALICI; bu müddət ərzində xidmətlərə giriş edə bilər, ancaq yeniləmə dövrünün bitdiyi tarixdən etibarən dörd gün boyunca müvafiq təhsilat tamamlana bilməzsə SATICI, xidmətləri ALICININ girişinə bağlaya bilər."
+      },
+      "p26": {
+        "title": "5.26. Məlumat Təhlükəsizliyi:",
+        "text": "ALICI tərəfindən Wise&Rise-a daxil edilən məlumatların və əməliyyatların təhlükəsizliyi üçün lazımi tədbirlər; SATICI tərəfindəki sistem infrastrukturunda, məlumat və əməliyyatın mahiyyətinə görə texniki imkanları ölçüsündə alınmışdır. ALICI; özü tərəfindən və özünə aid cihaz üzərindən məlumatlarını daxil etdiyindən; bu məlumatların qorunması və bu məlumatlara əlaqəsiz şəxslərcə daxil oluna bilməməsi üçün, virus və bənzəri zərərli tətbiqlərə dair olanlar daxil, lazımi tədbirlərin alınması məsuliyyətinin yalnız özünə aid olduğunu qəbul, bəyan və taahhüd edir."
+      },
+      "p27": {
+        "title": "5.27. Fərdi Məlumatlar:",
+        "text": "Detalları Aydınlatma Mətnində izah edildiyi üzrə; ALICININ abunəlik xidmətini satın aldığı əsnada paylaşdığı bütün fərdi məlumatlar müvafiq qanunlara, Fərdi Məlumatları Mühafizə Qurumu qərarlarına və digər bütün tənzimləmələrə uyğun şəkildə təmin edilir, işlənir, saxlanır və ötürülür."
+      },
+      "p28": {
+        "title": "5.28. Kuki Siyasəti:",
+        "text": "Wise&Rise-da yer alan kuki (tanımlama məlumatı) tətbiqlərini qəbul etməyiniz halında, kukilər (tanımlama məlumatları)",
+        "link": "Kuki Siyasəti",
+        "text2": "uyarınca ziyarətçi və/və ya üzvün cihazına yerləşdirilir."
+      },
+      "p29": {
+        "title": "5.29. Bağlayıcılıq:",
+        "text": "ALICI; üzvlüyə mövzu rəqəmsal məzmun xidmətlərinin əsas xüsusiyyətləri və digər bütün məsələlərdə məlumat sahibi olduğunu və İstifadə Şərtləri Bildirişi ilə Məsafəli Müqavilənin və bunlarda yer alan üzvlük şərtlərinin bağlayıcı olduğunu qəbul və bəyan edir."
+      },
+      "p30": {
+        "title": "5.30. Sənəd Üstünlüyü:",
+        "text": "ALICI; İstifadə Qaydaları ilə Məsafəli Müqavilənin birlikdə qüvvədə olacağını; hər iki sənəd arasında ziddiyyət olması halında, Məsafəli Müqavilənin üstün tətbiq ediləcəyini qəbul edir."
+      }
+    },
+    "article6": {
+      "title": "MADDƏ 6 – SATICININ HÜQUQ VƏ MƏSULİYYƏTLƏRİ",
+      "p1": {
+        "title": "6.1. Şəxsə Özəl Üzvlük Xidməti:",
+        "text": "SATICI; Wise&Rise üzərindən ALICIYA internetə qoşulmuş telefon, kompüter, televizor kimi cihazlar vasitəsilə internet texnologiyası üzərindən, müxtəlif mövzularda ixtisası / səriştəsi olan təlimçilərin icra etdiyi / yer aldığı məzmunlara çıxış əldə etməsini təmin edən bir xidmət təklif edəcəyini bəyan edir. Bu üzvlük xidməti, satın alınan plana görə məhdud sayda bəzi şəxslərin istifadəsinə təqdim etmə imkanı tanımaqla birlikdə, qayda olaraq şəxsə özəl xarakter daşıyır."
+      },
+      "p2": {
+        "title": "6.2. Dəyişən Xidmət Şərtləri və Məlumatlandırma:",
+        "text": "SATICI; ən yaxşı istifadəçi təcrübəsini təqdim edə bilmək məqsədilə texnologiyada, xidmətlərdə ya da ödəniş siyasətində hər cür dəyişikliyi həyata keçirmə hüququnu saxlı tutar. Bu prosesdə SATICININ ALICIYA qarşı qanuni sərhədlər daxilində hər hansı bir öhdəliyi yoxdur. Bəhs edilən dəyişikliklər; sadalananlarla məhdudlaşmamaq şərtilə texniki problemlər, baxım dövrləri, testlər, rəsmi orqan qərarları, üçüncü tərəf hücumları səbəbiylə müxtəlif kəsintilər; aylıq abunəlik haqqındakı dəyişikliklər; məzmunların yenilənməsi, məzmun qaldırma ya da əlavə etməni əhatə edir. SATICI, belə bir vəziyyətdə ALICINI məlumatlandırır."
+      },
+      "p3": {
+        "title": "6.3. İllik Plan Haqqında Dəyişiklik Hüququ:",
+        "text": "SATICI; ALICININ İllik Planının / İxtisaslı İllik Planının bir sonrakı yeniləmə dövründə keçərli olmaq üzrə İllik Plan / İxtisaslı İllik Plan haqlarında dəyişiklik edə bilər. SATICI, edəcəyi dəyişikliyi ən gec 30 (otuz) gün əvvəlində ALICIYA internet saytı və ya e-poçt vasitəsilə bildirir. ALICININ dəyişiklik edilmiş haqq üzərindən həyata keçirdiyi abunəlik planı yeniləməsinə etiraz hüququ mövcud deyil."
+      },
+      "p4": {
+        "title": "6.4. Ödənişdə Dəyişiklik Hüququ:",
+        "text": "SATICI; ALICININ bir sonrakı il yeniləmə dövründə keçərli olmaq üzrə ödənişlərində dəyişiklik edə bilər. SATICI, edəcəyi dəyişikliyi ən gec 30 (otuz) gün əvvəlində ALICIYA internet saytı və ya e-poçt vasitəsilə bildirir. ALICININ dəyişiklik edilmiş ödəniş üzərindən həyata keçirdiyi abunəlik planı yeniləməsinə etiraz hüququ mövcud deyil."
+      }
+    },
+    "article7": {
+      "title": "MADDƏ 7 - MƏSULİYYƏTİN MƏHDUDLAŞDIRILMASI",
+      "p1": {
+        "title": "7.1. Elmi və Şərhi Doğruluq:",
+        "text": "ALICI; Wise&Rise üzərindən təmin ediləcək məzmunlara, məzmunların müxtəlifliyinə, sayına və məzmunlarda yer alan bütün məlumat, təklif və tövsiyələrin elmi və/və ya şərhi doğruluğuna dair olaraq SATICI tərəfindən hər hansı bir şəkildə zəmanət verilmədiyini qəbul və bəyan edir."
+      },
+      "p2": {
+        "title": "7.2. Zərər Məsuliyyəti:",
+        "text": "ALICI; SATICININ Wise&Rise xidmətlərinin xətasız olacağına və ya davamlı təmin ediləcəyinə və ya xidmətlərin virus və digər zərərli ünsürlərdən təmizlənmiş olacağına dair zəmanət vermədiyini; ağır qüsur və ya qəsd halları xaric olmaqla, ALICININ birbaşa və/və ya dolayı zərərlərindən SATICININ məsul olmadığını bildiyini qəbul və taahhüd edir."
+      },
+      "p3": {
+        "title": "7.3. Bağlantılı Link və Reklamlar:",
+        "text": "ALICI; SATICININ, Wise&Rise-da yer alan və üçüncü tərəflərə aid bağlantılı linklərdə yer alan reklamların mövzusunu təşkil edə biləcək məhsul və/və ya xidmətlərə dair yaxud üçüncü tərəf tətbiq və cihazları ilə giriş təmin ediləcək xidmətlərə yönəlik heç bir məsuliyyəti olmadığını; SATICININ bu xüsuslarla əlaqədar hər hansı bir zəmanət təqdim etmədiyini qəbul edir."
+      }
+    },
+    "article8": {
+      "title": "MADDƏ 8 – MÜQAVİLƏNİN LƏĞVİ və LƏĞVİN NƏTİCƏLƏRİ",
+      "p1": {
+        "title": "8.1. SATICININ Ləğv Hüququ:",
+        "text": "Satın alınan xidmətin nağd ya da taksitli plan daxilində olub olmadığı fərq etmədən; ALICININ öhdəliklərindən hər hansı birinə qismən və/və ya tamamilə zidd davranması vəziyyətində, SATICI; Məsafəli Müqaviləni ləğv edə bilər və ALICININ Wise&Rise-a giriş hüququnu ləğv tarixi etibariylə sonlandıra bilər."
+      },
+      "p2": {
+        "title": "8.2. ALICININ Məsafəli Müqaviləni Ləğv Proseduru:",
+        "text": "ALICI Məsafəli Müqaviləni ləğv edə bilər. Ləğv bildirişinin kağız üzərində və ya qalıcı məlumat saxlayıcısı ilə SATICIYA yönəldilmiş olması lazımdır. Qanunvericilik hökmləri çərçivəsində əks tənzimləmə olmadığı müddətcə SATICININ edilən ödənişi iadə etmə məcburiyyəti yoxdur. Belə ki ALICI tərəfindən Məsafəli Müqavilə çərçivəsindəki Nağd Planın müddətindən əvvəl ləğv edilməsi vəziyyətində; SATICI, ALICININ abunəliyinə son verdiyi tarixə qədər ALICININ Nağd Plan çərçivəsindəki öhdəliyinə istinadən etmiş olduğu bütün endirimləri ALICIDAN tələb edə bilər. ALICI; Nağd Plan çərçivəsindəki öhdəliyinə istinadən etmiş olduğu endirimlərin SATICI tərəfindən, ''ödəniş və kart məlumatları / planlarım'' başlıqlı səhifədə ALICI tərəfindən məlumatı verilən kredit / bank kartından ödəniş qurumu Iyzico vasitəsilə təhsil edilməsinə razılığının olduğunu qəbul və bəyan edir. Nağd Planın ləğv edilməsi vəziyyətində ALICI, SATICI ləğv tələbini yerinə yetirənə qədər  Wise&Rise-a giriş edə bilər."
+      }
+    },
+    "article9": {
+      "title": "MADDƏ 9 – MÜXTƏLİF HÖKMLƏR",
+      "p1": {
+        "title": "9.1. İlkin Məlumatlandırmaya Dair Təsdiq:",
+        "text": "ALICI; Məsafəli Müqaviləni təsdiqlədiyində Məsafəli Müqavilələr Reqlamentinin 6-cı (altıncı) maddəsində göstərilən usullara uyğun olaraq SATICI tərəfindən özünə ilkin məlumatlandırmada bulunulduğunu qəbul etmiş sayılacağını bildiyini bəyan və taahhüd edir."
+      },
+      "p2": {
+        "title": "9.2. Davamlılıq:",
+        "text": "Məsafəli Müqavilənin hər hansı bir və ya birdən çox hökmünün etibarsız, qanunlara zidd və ya tətbiq edilə bilməz elan edilməsi vəziyyətində, qalan hökmlərin etibarlılığı bu vəziyyətdən təsirlənməz."
+      },
+      "p3": {
+        "title": "9.3. Bildirişlər (Təbligatlar):",
+        "text": "SATICI ilə ALICI arasındakı hər cür bildiriş və əlaqə, qanunvericilikdə sadalanan məcburi hallar xaricində, yalnız elektron mühitdə və elektron formatda olmaq üzrə Məsafəli Müqavilədə yazılı e-poçt ünvanları vasitəsilə ediləcəkdir."
+      },
+      "p4": {
+        "title": "9.4. Fors-major (Mücbir Səbəb):",
+        "text": "İnternetdə yaşanan kəsintilər, sürət azalması və bənzəri səbəblərlə xidmətdə yaşana biləcək kəsinti, görüntü keyfiyyəti və təhlükəsizlik problemlərindən və/və ya ölkədə ümumi bir qarışıqlığın ortaya çıxması müharibə, terror, tətil, ümumi elektrik kəsintisi, zəlzələ, su basması, pandemiya, fövqəladə hal, kiber hücum, cihazlara virus bulaşmış olması və ya bənzəri fors-major səbəblərdən Veranova Medya məsul deyildir."
+      },
+      "p5": {
+        "title": "9.5. Verilmə və Təhvil:",
+        "text": "SATICI, üzvlük əlaqəsinə dair hüquqlarını və öhdəliklərini hər hansı bir zamanda bir başqasına verə və təhvil edə bilər."
+      },
+      "p6": {
+        "title": "9.6. Uyuşmazlıqların Həlli:",
+        "text": "Məsafəli Müqavilədən doğa biləcək bütün uyuşmazlıqlarda Türk Hüququ tətbiq olunur. Ticarət Nazirliyincə qanun gərəyi hər il müəyyən edilən/elan edilən pul sərhədləri daxilində İl və Rayon İstehlakçı Hakem Heyətləri, bu sərhədləri aşan vəziyyətlərdə İstehlakçı Məhkəmələri səlahiyyətli və vəzifəlidir. ALICI, bu çərçivədə, özünün və ya istərsə SATICININ yerləşdiyi yerdəki Hakem Heyətləri və İstehlakçı Məhkəmələrinə müraciət edə bilər."
+      },
+      "p7": {
+        "title": "9.7. Dəlil Müqaviləsi:",
+        "text": "Məsafəli Müqavilədən doğa biləcək bütün uyuşmazlıqlarda SATICIYA aid ticarət dəftər qeydləri, qalıcı məlumat saxlayıcıları, verilənlər bazaları, server və kompüter qeydləri ilə bütün elektron qeydlər qəti dəlil təşkil edir. ALICI, Məsafəli Müqaviləni təsdiqləyərək bu hökmün Mülki Prosessual Məcəllənin (Hukuk Muhakemeleri Kanunu) 193-cü maddəsi uyarınca dəlil müqaviləsi olduğunu qəbul edir."
+      }
+    },
+    "article10": {
+      "title": "MADDƏ 10 – İMZA və QÜVVƏYƏ MİNMƏ, NÜMUNƏ GÖNDƏRİMİ",
+      "p1": {
+        "title": "10.1. İmza və Qüvvəyə Minmə:",
+        "text": "Cəmi 10 (on) maddədən ibarət olan Məsafəli Müqavilə; ALICI tərəfindən elektron mühitdə təsdiqlənmək surətiylə qurulmuş/imzalanmış və qüvvəyə minmişdir."
+      },
+      "p2": {
+        "title": "10.2. Nümunə Göndərimi:",
+        "text": "Müqavilənin bir nümunəsi, təsdiqdən sonra SATICI tərəfindən ALICIYA elektron poçt vasitəsilə göndərilir."
+      },
+      "sellerProvider": "SATICI/TƏMİNATÇI",
+      "buyer": "ALICI",
+      "commercialTitle": "Ticarət Ünvanı :",
+      "commercialValue": "Veranova Medya ve Dijital Yayın Hizmetleri A.Ş.",
+      "taxNo": "Vergi No :",
+      "taxNoValue": "9241000351 (Beşiktaş V.D.)",
+      "mersisNo": "MERSİS No :",
+      "mersisNoValue": "0924100035100001",
+      "address": "Ünvan :",
+      "addressValue": "Akat Mah. Cebeci Cad. No:65 Beşiktaş/İstanbul",
+      "email": "E-Poçt :",
+      "emailValue": "info@wisenrise.com",
+      "nameSurname": "Ad Soyad :",
+      "tcNo": "TCKN :"
+    }
+  }
+}
