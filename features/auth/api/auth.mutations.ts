@@ -1,6 +1,6 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { isAxiosError } from "axios";
 
 import type {
@@ -23,6 +23,9 @@ import {
   setStoredUser,
   type StoredAuthUser,
 } from "@/core/lib/token";
+import { logout as logoutAction } from "@/store/slices/authSlice";
+import { clearActiveProfile } from "@/store/slices/profileSlice";
+import { useAppDispatch } from "@/store/hooks";
 
 import { authService } from "./auth.service";
 import { paymentService } from "./payment.service";
@@ -172,6 +175,26 @@ export function useCheckoutMutation() {
         });
       }
       return result;
+    },
+  });
+}
+
+export function useLogoutMutation() {
+  const dispatch = useAppDispatch();
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: async () => {
+      try {
+        await authService.logout();
+      } catch {
+        // Clear local session even if the network request fails.
+      }
+    },
+    onSettled: async () => {
+      dispatch(logoutAction());
+      dispatch(clearActiveProfile());
+      queryClient.clear();
     },
   });
 }

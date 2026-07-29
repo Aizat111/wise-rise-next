@@ -28,4 +28,8 @@ export const QUERY_KEYS = {
   avatar: {
     all: ["avatars"],
   },
+
+  notification: {
+    all: ["notifications"],
+  },
 };

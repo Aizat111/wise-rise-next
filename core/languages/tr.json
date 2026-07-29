@@ -45,7 +45,21 @@
     "find": "Keşfet",
     "activities": "Aktivitelerim",
     "help": "Yardım Destek",
-    "comingSoon": "Yakında Gelecekler"
+    "helpSupport": "Yardım & Destek",
+    "comingSoon": "Yakında Gelecekler",
+    "search": "Ara",
+    "menu": "Menü",
+    "account": "Hesap",
+    "profile": "Profil",
+    "editProfile": "Profil Düzenle",
+    "myPlans": "Planlarım",
+    "following": "Takip Ettiklerim",
+    "notifications": "Bildirimler",
+    "noNotifications": "Henüz bildirimin yok",
+    "viewAllNotifications": "Tümünü Gör",
+    "noCategories": "Kategori bulunamadı",
+    "loggingOut": "Çıkış yapılıyor...",
+    "logout": "Çıkış Yap"
   },
   "footer": {
     "discover": "Keşfet",

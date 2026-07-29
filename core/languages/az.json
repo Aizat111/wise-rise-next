@@ -45,7 +45,21 @@
     "find": "Kəşf et",
     "activities": "Fəaliyyətlərim",
     "help": "Yardım və Dəstək",
-    "comingSoon": "Yakında Gələcəklər"
+    "helpSupport": "Yardım və Dəstək",
+    "comingSoon": "Yakında Gələcəklər",
+    "search": "Axtar",
+    "menu": "Menyu",
+    "account": "Hesab",
+    "profile": "Profil",
+    "editProfile": "Profili redaktə et",
+    "myPlans": "Planlarım",
+    "following": "İzlədiklərim",
+    "notifications": "Bildirişlər",
+    "noNotifications": "Hələ bildiriş yoxdur",
+    "viewAllNotifications": "Hamısına bax",
+    "noCategories": "Kateqoriya tapılmadı",
+    "loggingOut": "Çıxış edilir...",
+    "logout": "Çıxış et"
   },
   "footer": {
     "discover": "Kəşf et",

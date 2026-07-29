@@ -47,4 +47,8 @@ export const ENDPOINTS = {
   avatar: {
     list: `${SERVICES.AVATAR}`,
   },
+
+  notification: {
+    list: `${SERVICES.NOTIFICATION}`,
+  },
 };

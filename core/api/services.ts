@@ -10,4 +10,5 @@ export enum SERVICES {
   PAYMENT = "/payments",
   PROFILE = "/profiles",
   AVATAR = "/avatars",
+  NOTIFICATION = "/notifications",
 }
