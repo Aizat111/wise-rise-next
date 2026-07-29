@@ -15,6 +15,7 @@ import { DeleteProfileDialog } from "./DeleteProfileDialog";
 import { EditProfileDialog } from "./EditProfileDialog";
 import { ProfileGrid } from "./ProfileGrid";
 import { ProfileSkeleton } from "./ProfileSkeleton";
+import { notify } from "@/shared/components/notify/store/notify.store";
 
 type ProfileSelectorProps = {
   className?: string;
@@ -112,7 +113,11 @@ export function ProfileSelector({ className }: ProfileSelectorProps) {
         avatars={avatars}
         isLoadingAvatars={isLoadingAvatars}
         onSave={async ({ id, data }) => {
-          await updateProfile.mutateAsync({ id, data });
+          await updateProfile.mutateAsync({ id, data }).then(() => {
+            notify.success(t("editProfileSuccess"));
+          }).catch((error) => {
+            console.error(error);
+          });
         }}
       />
 
@@ -123,7 +128,12 @@ export function ProfileSelector({ className }: ProfileSelectorProps) {
           if (!open) setDeleteTarget(null);
         }}
         onConfirm={async (id) => {
-          await deleteProfile.mutateAsync(id);
+          await deleteProfile.mutateAsync(id).then(() => {
+            notify.success(t("deleteProfileSuccess"));
+          }).catch((error) => {
+            notify.error(t("deleteProfileError"));
+            console.error(error);
+          });
           if (activeProfile && String(activeProfile.id) === String(id)) {
             dispatch(setActiveProfile(null));
           }

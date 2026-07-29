@@ -10,8 +10,11 @@ export function useHeader() {
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
   const storedUser = useAppSelector((state) => state.auth.user);
   const activeProfile = useAppSelector((state) => state.profile.activeProfile);
+  console.log(activeProfile);
 
-  const { data: me, isLoading: isMeLoading } = useMeQuery(mounted && isAuthenticated);
+  const { data: me, isLoading: isMeLoading } = useMeQuery(
+    mounted && isAuthenticated,
+  );
 
   useEffect(() => {
     setMounted(true);
@@ -28,8 +31,7 @@ export function useHeader() {
   const email = me?.email ?? storedUser?.email ?? "";
 
   const avatarUrl =
-    activeProfile?.avatar?.path ??
-    (me?.profile_img ? me.profile_img : null);
+    activeProfile?.avatar?.path ?? (me?.profile_img ? me.profile_img : null);
 
   return {
     mounted,

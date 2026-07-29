@@ -1,12 +1,40 @@
-export default function Home() {
+import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
+
+import { SITE } from "@/config/site";
+import { DEFAULT_LOCALE } from "@/core/config/domain-locale.config";
+import { HomePage } from "@/features/home/components/HomePage";
+import FAQSchema from "@/shared/seo/FAQSchema";
+import { buildPageMetadata } from "@/shared/seo/generateMetadata";
+import { getFaqItems } from "@/shared/seo/getFaqItems";
+
+type Props = {
+  params: Promise<{ locale: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const canonical = locale === DEFAULT_LOCALE ? "/" : `/${locale}`;
+
+  return buildPageMetadata({
+    title: SITE.defaultTitle,
+    description: SITE.description,
+    canonical,
+    absoluteTitle: true,
+    keywords: ["online eğitim", "kurs", "abonelik", "Wise&Rise"],
+  });
+}
+
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const faqItems = await getFaqItems();
+
   return (
-    <div className="flex flex-1 flex-col items-center justify-center px-6 py-24">
-      <h1 className="font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-        Wise & Rise
-      </h1>
-      <p className="mt-3 max-w-md text-center text-muted-foreground">
-        Öğrenmeye başlamak için sayfayı düzenleyin.
-      </p>
-    </div>
+    <>
+      <FAQSchema items={faqItems} />
+      <HomePage />
+    </>
   );
 }

@@ -203,3 +203,12 @@
 
   color: white;
 }
+
+@keyframes notify-progress-shrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}

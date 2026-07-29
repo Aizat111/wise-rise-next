@@ -1,11 +1,10 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-
+import { useNotify } from "@/shared/components/notify/hooks/useNotify";
 import { AuthLayout } from "@/features/auth/components/layout/AuthLayout";
 import { useRouter } from "@/core/i18n/navigation";
 import { cn } from "@/lib/utils";
-
 import { useAvatarsQuery } from "../api/profile.queries";
 import { useCreateProfileMutation } from "../api/profile.mutations";
 import { ProfileForm } from "../components/ProfileForm";
@@ -15,7 +14,7 @@ export default function CreateProfilePage() {
   const router = useRouter();
   const avatarsQuery = useAvatarsQuery();
   const createProfile = useCreateProfileMutation();
-
+  const notify = useNotify();
   return (
     <AuthLayout solid>
       <div
@@ -39,7 +38,12 @@ export default function CreateProfilePage() {
             submitLabel={t("createSubmit")}
             submittingLabel={t("creating")}
             onSubmit={async (data) => {
-              await createProfile.mutateAsync(data);
+              await createProfile.mutateAsync(data).then(() => {
+                notify.success(t("profileCreatedSuccess"));
+                router.push("/profil-sec");
+              }).catch((error) => {
+                console.error(error);
+              });
               router.push("/profil-sec");
             }}
           />

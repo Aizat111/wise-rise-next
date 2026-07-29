@@ -451,6 +451,7 @@
     "deleteProfile": "Profili Sil",
     "deleteProfileConfirm": "Bu profili silmek istediğine emin misin?",
     "deleting": "Siliniyor...",
+    "deleteProfileSuccess": "Profiliniz başarıyla silindi",
     "emptyState": "Henüz profil yok. Yeni bir profil ekleyerek başla.",
     "loadError": "Profiller yüklenemedi. Lütfen tekrar dene.",
     "selectError": "Profil seçilemedi. Lütfen tekrar dene.",
