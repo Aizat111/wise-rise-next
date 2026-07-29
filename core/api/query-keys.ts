@@ -5,7 +5,7 @@ export const QUERY_KEYS = {
 
   course: {
     all: ["courses"],
-
+    mostWatched: ["courses", "most-watched"],
     detail: (slug: string) => ["course", slug],
   },
 

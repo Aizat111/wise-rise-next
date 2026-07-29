@@ -19,6 +19,7 @@ export const ENDPOINTS = {
   course: {
     list: `${SERVICES.COURSE}`,
     detail: (slug: string) => `${SERVICES.COURSE}/${slug}`,
+    mostWatched: `${SERVICES.COURSE}/sorted/most_watched`,
   },
 
   blog: {

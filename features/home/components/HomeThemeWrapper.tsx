@@ -1,38 +1,42 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { HOME_THEME_STYLES } from "../constants";
-import type { HomeTabId } from "../types";
 
 type HomeThemeWrapperProps = {
-  activeTab: HomeTabId;
+  themeKey: string;
+  themeStyle: CSSProperties;
   children: ReactNode;
   className?: string;
 };
 
+/**
+ * Animated full-bleed theme surface for a home variant.
+ * Used by DefaultHome / WeTheLivingHome independently — not a content dependency.
+ */
 export function HomeThemeWrapper({
-  activeTab,
+  themeKey,
+  themeStyle,
   children,
   className,
 }: HomeThemeWrapperProps) {
   return (
     <div
       className={cn(
-        "relative flex min-h-[calc(100dvh-4rem)] flex-1 flex-col overflow-hidden",
+        "relative flex flex-1 flex-col overflow-hidden",
         className,
       )}
     >
       <AnimatePresence initial={false} mode="sync">
         <motion.div
-          key={activeTab}
+          key={themeKey}
           aria-hidden
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.45, ease: "easeInOut" }}
-          style={HOME_THEME_STYLES[activeTab]}
+          style={themeStyle}
           className="pointer-events-none absolute inset-0"
         />
       </AnimatePresence>
