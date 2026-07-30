@@ -50,6 +50,27 @@ export type EducationCardProps = {
   aspectRatio?: CardAspectRatio;
 };
 
+export type ComingSoonCardData = {
+  id: string | number;
+  thumbnail: string;
+  title: string;
+  authorName: string;
+  authorLogo?: string | null;
+  /** ISO date string from API (`coming_soon_date`). */
+  comingSoonDate?: string | null;
+};
+
+export type ComingSoonCardProps = {
+  thumbnail: string;
+  title: string;
+  authorName: string;
+  authorLogo?: string | null;
+  /** Pre-formatted badge label, e.g. "12 Ağustos" / "12 Aug". */
+  dateLabel?: string | null;
+  className?: string;
+  aspectRatio?: CardAspectRatio;
+};
+
 export type ContentSliderProps<T> = {
   title: string;
   items: T[];
@@ -64,6 +85,7 @@ export type ContentSliderProps<T> = {
   renderSkeleton?: (index: number) => ReactNode;
   className?: string;
   gapClassName?: string;
+  itemWidthClassName?: string;
 };
 
 export type SliderNavigationProps = {
@@ -85,4 +107,21 @@ export type SliderHeaderProps = {
   onScrollLeft?: () => void;
   onScrollRight?: () => void;
   className?: string;
+};
+
+export type HeroSlide = {
+  id: string | number;
+  imageUrl: string;
+  mobileImageUrl: string;
+  href?: string | null;
+  alt?: string | null;
+};
+
+export type HeroSliderProps = {
+  items: HeroSlide[];
+  isLoading?: boolean;
+  isError?: boolean;
+  onRetry?: () => void;
+  className?: string;
+  "aria-label"?: string;
 };

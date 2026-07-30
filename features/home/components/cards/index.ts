@@ -1,6 +1,8 @@
 export { BaseCard } from "./BaseCard";
 export { EducationCard } from "./EducationCard";
 export { EducationCardSkeleton } from "./EducationCardSkeleton";
+export { ComingSoonCard } from "./ComingSoonCard";
+export { ComingSoonCardSkeleton } from "./ComingSoonCardSkeleton";
 export { BusinessCard } from "./BusinessCard";
 export type { BusinessCardProps } from "./BusinessCard";
 export { EventCard } from "./EventCard";

@@ -6,7 +6,17 @@ export const QUERY_KEYS = {
   course: {
     all: ["courses"],
     mostWatched: ["courses", "most-watched"],
+    comingSoon: ["courses", "coming-soon"],
     detail: (slug: string) => ["course", slug],
+  },
+
+  hero: {
+    all: ["heroes"],
+    list: (platform: string, mediaType = "image") => [
+      "heroes",
+      mediaType,
+      platform,
+    ],
   },
 
   blog: {

@@ -15,3 +15,12 @@ export function useMostWatchedClassroomsQuery(enabled = true) {
     staleTime: 5 * 60 * 1000,
   });
 }
+
+export function useComingSoonClassroomsQuery(enabled = true) {
+  return useQuery<Classroom[]>({
+    queryKey: QUERY_KEYS.course.comingSoon,
+    queryFn: () => classroomService.listComingSoon(),
+    enabled,
+    staleTime: 5 * 60 * 1000,
+  });
+}

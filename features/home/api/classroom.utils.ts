@@ -1,6 +1,10 @@
 import type { Classroom } from "@/core/types/classroom.types";
 
-import type { DefaultHomeMode, EducationCardData } from "../types";
+import type {
+  ComingSoonCardData,
+  DefaultHomeMode,
+  EducationCardData,
+} from "../types";
 
 const PLATFORM_BY_MODE: Partial<Record<DefaultHomeMode, string>> = {
   "wise-rise": "wisenrise",
@@ -27,4 +31,36 @@ export function mapClassroomToEducationCard(
       classroom.teacher?.logo?.path ?? classroom.teacher?.photo?.path ?? null,
     is_favorite: classroom.is_favorite ?? false,
   };
+}
+
+/** Drop classrooms that cannot render a usable EducationCard thumbnail. */
+export function mapClassroomsToEducationCards(
+  classrooms: Classroom[],
+): EducationCardData[] {
+  return classrooms
+    .map(mapClassroomToEducationCard)
+    .filter((card) => Boolean(card.thumbnail));
+}
+
+export function mapClassroomToComingSoonCard(
+  classroom: Classroom,
+): ComingSoonCardData {
+  return {
+    id: classroom.id,
+    title: classroom.name,
+    thumbnail: classroom.thumbnail?.path ?? classroom.cover?.path ?? "",
+    authorName: classroom.teacher?.name ?? "",
+    authorLogo:
+      classroom.teacher?.logo?.path ?? classroom.teacher?.photo?.path ?? null,
+    comingSoonDate: classroom.coming_soon_date ?? null,
+  };
+}
+
+/** Drop classrooms that cannot render a usable ComingSoonCard thumbnail. */
+export function mapClassroomsToComingSoonCards(
+  classrooms: Classroom[],
+): ComingSoonCardData[] {
+  return classrooms
+    .map(mapClassroomToComingSoonCard)
+    .filter((card) => Boolean(card.thumbnail));
 }

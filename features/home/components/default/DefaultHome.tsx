@@ -3,6 +3,8 @@
 import { HOME_THEME_STYLES } from "../../constants";
 import type { DefaultHomeMode } from "../../types";
 import { HomeThemeWrapper } from "../HomeThemeWrapper";
+import { ComingSoonSection } from "./ComingSoonSection";
+import { HomeHeroSlider } from "./HomeHeroSlider";
 import { MostWatchedSlider } from "./MostWatchedSlider";
 
 export type DefaultHomeProps = {
@@ -20,10 +22,14 @@ export function DefaultHome({ mode }: DefaultHomeProps) {
       themeStyle={HOME_THEME_STYLES[mode]}
     >
       <div
-        className="flex flex-1 flex-col gap-8 px-4 py-6 sm:gap-10 sm:px-6 sm:py-8 md:px-25"
+        className="flex flex-1 flex-col gap-8 px-4 py-6 sm:gap-10  sm:py-8 "
         aria-live="polite"
       >
-        <MostWatchedSlider mode={mode} />
+        <HomeHeroSlider mode={mode} />
+        <div className="px-4 lg:px-25">
+          <MostWatchedSlider mode={mode} />
+          <ComingSoonSection mode={mode} />
+        </div>
       </div>
     </HomeThemeWrapper>
   );

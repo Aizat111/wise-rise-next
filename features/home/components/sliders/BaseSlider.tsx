@@ -27,6 +27,8 @@ export type BaseSliderProps = {
   className?: string;
   trackClassName?: string;
   itemClassName?: string;
+  /** Replaces default item width (2 mobile / 4 desktop). */
+  itemWidthClassName?: string;
   gapClassName?: string;
   /** When false, mouse drag is disabled. */
   dragEnabled?: boolean;
@@ -43,6 +45,7 @@ export function BaseSlider({
   className,
   trackClassName,
   itemClassName,
+  itemWidthClassName = SLIDER_ITEM_WIDTH_CLASS,
   gapClassName = "gap-3",
   dragEnabled = true,
   "aria-label": ariaLabel,
@@ -74,7 +77,7 @@ export function BaseSlider({
 
   return (
     <section
-      className={cn("relative w-full", className)}
+      className={cn("relative w-full my-3", className)}
       aria-roledescription="carousel"
       aria-label={ariaLabel}
       aria-busy={!dragEnabled || undefined}
@@ -98,7 +101,7 @@ export function BaseSlider({
             key={isValidElement(child) && child.key != null ? child.key : index}
             className={cn(
               "shrink-0 snap-start",
-              SLIDER_ITEM_WIDTH_CLASS,
+              itemWidthClassName,
               itemClassName,
             )}
           >

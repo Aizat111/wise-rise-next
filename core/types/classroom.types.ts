@@ -26,6 +26,9 @@ export type Classroom = {
   description?: string | null;
   view_count?: number;
   is_favorite?: boolean | null;
+  coming_soon?: boolean | null;
+  /** ISO date string, e.g. "2026-08-12". */
+  coming_soon_date?: string | null;
   thumbnail?: ClassroomMedia | null;
   cover?: ClassroomMedia | null;
   banner?: ClassroomMedia | null;

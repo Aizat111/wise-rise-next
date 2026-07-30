@@ -40,7 +40,8 @@ export function EducationCard({
         src={thumbnail}
         alt={title}
         fill
-        className="object-cover object-[center_10%] "
+        sizes="(max-width: 768px) 50vw, 25vw"
+        className="object-cover object-[center_10%]"
       />
 
       <div
@@ -76,21 +77,25 @@ export function EducationCard({
         </motion.span>
       </Button>
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center pb-4">
-        <div className="relative mt-3 h-12  xl:h-24 w-50 md:w-75 xl:w-85">
-          <Image
-            src={authorLogo ?? ""}
-            alt={authorName ?? ""}
-            fill
-            className="object-contain px-4"
-          />
-        </div>
+        {authorLogo ? (
+          <div className="relative mt-3 h-12 w-50 md:w-75 xl:h-24 xl:w-85">
+            <Image
+              src={authorLogo}
+              alt={authorName}
+              fill
+              sizes="(max-width: 768px) 200px, 340px"
+              className="object-contain px-4"
+            />
+          </div>
+        ) : authorName ? (
+          <p className="mt-3 truncate px-3 text-xs font-medium text-white/90 sm:text-sm">
+            {authorName}
+          </p>
+        ) : null}
 
-        <div
-          aria-hidden
-          className="mt-2 xl:mt-4 h-1 w-15 bg-white"
-        />
+        <div aria-hidden className="mt-2 h-1 w-15 bg-white xl:mt-4" />
 
-        <h3 className="my-2 xl:my-4 mx-2 xl:mx-3 line-clamp-2 text-center text-sm sm:text-base font-semibold leading-snug text-white/85">
+        <h3 className="mx-2 my-2 line-clamp-2 text-center text-sm font-semibold leading-snug text-white/85 sm:text-base xl:mx-3 xl:my-4">
           {title}
         </h3>
       </div>

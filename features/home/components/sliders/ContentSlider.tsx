@@ -26,6 +26,7 @@ export function ContentSlider<T>({
   renderSkeleton,
   className,
   gapClassName,
+  itemWidthClassName,
 }: ContentSliderProps<T>) {
   if (!isLoading && items.length === 0) {
     return null;
@@ -35,6 +36,7 @@ export function ContentSlider<T>({
     <BaseSlider
       className={className}
       gapClassName={gapClassName}
+      itemWidthClassName={itemWidthClassName}
       aria-label={title}
       dragEnabled={!isLoading}
       header={({ canScrollLeft, canScrollRight, scrollLeft, scrollRight }) => (

@@ -3,6 +3,7 @@ export enum SERVICES {
   AUTH = "/auth",
   REGISTER = "/register",
   COURSE = "/classrooms",
+  HERO = "/heroes",
   BLOG = "/blog",
   TEACHER = "/teachers",
   CATEGORY = "/categories",

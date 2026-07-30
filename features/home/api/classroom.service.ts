@@ -5,9 +5,9 @@ import type {
   ClassroomsPaginatedResponse,
 } from "@/core/types/classroom.types";
 
-type MostWatchedResponse = Classroom[] | ClassroomsPaginatedResponse;
+type ClassroomsListResponse = Classroom[] | ClassroomsPaginatedResponse;
 
-function normalizeClassrooms(response: MostWatchedResponse): Classroom[] {
+function normalizeClassrooms(response: ClassroomsListResponse): Classroom[] {
   if (Array.isArray(response)) return response;
   if (response && Array.isArray(response.data)) return response.data;
   return [];
@@ -15,8 +15,17 @@ function normalizeClassrooms(response: MostWatchedResponse): Classroom[] {
 
 export const classroomService = {
   async listMostWatched(): Promise<Classroom[]> {
-    const response = await clientRequest<MostWatchedResponse>({
+    const response = await clientRequest<ClassroomsListResponse>({
       url: ENDPOINTS.course.mostWatched,
+      method: "GET",
+    });
+
+    return normalizeClassrooms(response);
+  },
+
+  async listComingSoon(): Promise<Classroom[]> {
+    const response = await clientRequest<ClassroomsListResponse>({
+      url: ENDPOINTS.course.comingSoon,
       method: "GET",
     });
 

@@ -2,6 +2,8 @@ export { BaseSlider } from "./BaseSlider";
 export type { BaseSliderProps, SliderControls } from "./BaseSlider";
 export { ContentSlider } from "./ContentSlider";
 export { HeroSlider } from "./HeroSlider";
+export { HeroSliderSkeleton } from "./HeroSliderSkeleton";
+export { HeroPagination } from "./HeroPagination";
 export { CategorySlider } from "./CategorySlider";
 export { SliderHeader } from "./SliderHeader";
 export { SliderNavigation } from "./SliderNavigation";
