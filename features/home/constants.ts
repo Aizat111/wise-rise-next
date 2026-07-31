@@ -27,6 +27,16 @@ export const COMING_SOON_SKELETON_COUNT = 2;
 export const COMING_SOON_SLIDER_ITEM_WIDTH_CLASS =
   "w-[calc((100%-0.75rem)/2)]";
 
+/** Teacher slider: 2 on mobile, 5 on desktop (md+). */
+export const TEACHER_MOBILE_VISIBLE = 2;
+export const TEACHER_DESKTOP_VISIBLE = 5;
+export const TEACHER_SKELETON_COUNT = 5;
+export const TEACHER_SLIDER_ITEM_WIDTH_CLASS =
+  "w-[calc((100%-0.75rem)/2)] md:w-[calc((100%-3rem)/5)]";
+
+/** Tall poster ratio for TeacherCard (height ≈ 3× width). */
+export const TEACHER_CARD_ASPECT_RATIO: CardAspectRatio = "1/3";
+
 /** Desktop: ~5% adjacent peek on each side → active hero ~90% wide. */
 export const HERO_PEEK_PERCENT = 5;
 export const HERO_ACTIVE_PERCENT = 100 - HERO_PEEK_PERCENT * 2;
@@ -43,6 +53,7 @@ export const HERO_MOBILE_ACTIVE_PERCENT = 100 - HERO_MOBILE_PEEK_PERCENT * 2;
 export const HERO_ASPECT_RATIO_CLASS = "h-[380px] md:h-auto md:aspect-[5/2]";
 
 export const CARD_ASPECT_RATIO_CLASS: Record<CardAspectRatio, string> = {
+  "1/3": "aspect-[1/3]",
   "2/3": "aspect-[2/3]",
   "3/4": "aspect-[3/4]",
 };

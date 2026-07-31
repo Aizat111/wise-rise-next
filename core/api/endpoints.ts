@@ -27,6 +27,10 @@ export const ENDPOINTS = {
     list: `${SERVICES.HERO}`,
   },
 
+  teacher: {
+    theBest: `${SERVICES.TEACHER}/sorted/the_best`,
+  },
+
   blog: {
     list: `${SERVICES.BLOG}`,
     detail: (slug: string) => `${SERVICES.BLOG}/${slug}`,

@@ -17,7 +17,7 @@ export type HomeTabItemConfig = {
 };
 
 /** Portrait card aspect ratios used across home content cards. */
-export type CardAspectRatio = "2/3" | "3/4";
+export type CardAspectRatio = "1/3" | "2/3" | "3/4";
 
 export type BaseCardProps = {
   children: ReactNode;
@@ -69,6 +69,48 @@ export type ComingSoonCardProps = {
   dateLabel?: string | null;
   className?: string;
   aspectRatio?: CardAspectRatio;
+};
+
+export type TeacherCardData = {
+  id: string | number;
+  name: string;
+  photo: string;
+  categoryName: string;
+  description: string;
+  isFavorite?: boolean;
+};
+
+export type TeacherCardProps = {
+  name: string;
+  photo: string;
+  categoryName: string;
+  isFavorite?: boolean;
+  onFavorite?: (nextFavorite: boolean) => void;
+  onClick?: () => void;
+  className?: string;
+  /** Photo aspect ratio; defaults to tall poster (1/3). */
+  aspectRatio?: CardAspectRatio;
+};
+
+export type TeacherDialogProps = {
+  teacher: TeacherCardData | null;
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+};
+
+export type TeacherSliderProps = {
+  items: TeacherCardData[];
+  isLoading?: boolean;
+  onViewAll?: () => void;
+  onItemClick?: (item: TeacherCardData) => void;
+  onFavorite?: (item: TeacherCardData, nextFavorite: boolean) => void;
+  className?: string;
+};
+
+export type TeacherSectionProps = {
+  /** Navigates to the full teachers list when "Tümü" is clicked. */
+  onViewAll?: () => void;
+  className?: string;
 };
 
 export type ContentSliderProps<T> = {

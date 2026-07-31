@@ -8,6 +8,11 @@ export type {
   EducationCardProps,
   ComingSoonCardData,
   ComingSoonCardProps,
+  TeacherCardData,
+  TeacherCardProps,
+  TeacherDialogProps,
+  TeacherSliderProps,
+  TeacherSectionProps,
   ContentSliderProps,
   SliderHeaderProps,
   SliderNavigationProps,
@@ -26,6 +31,11 @@ export {
   COMING_SOON_VISIBLE,
   COMING_SOON_SKELETON_COUNT,
   COMING_SOON_SLIDER_ITEM_WIDTH_CLASS,
+  TEACHER_MOBILE_VISIBLE,
+  TEACHER_DESKTOP_VISIBLE,
+  TEACHER_SKELETON_COUNT,
+  TEACHER_SLIDER_ITEM_WIDTH_CLASS,
+  TEACHER_CARD_ASPECT_RATIO,
   HERO_PEEK_PERCENT,
   HERO_ACTIVE_PERCENT,
   HERO_ASPECT_RATIO_CLASS,
@@ -42,6 +52,8 @@ export {
   MostWatchedSlider,
   HomeHeroSlider,
   ComingSoonSection,
+  TeacherSection,
+  TeacherSlider,
 } from "./components/default";
 export type { DefaultHomeProps } from "./components/default";
 export { WeTheLivingHome } from "./components/we-the-living";
@@ -50,12 +62,16 @@ export {
   useComingSoonClassroomsQuery,
 } from "./api/classroom.queries";
 export { useHeroesQuery } from "./api/hero.queries";
+export { useBestTeachersQuery } from "./api/teacher.queries";
 export {
   BaseCard,
   EducationCard,
   EducationCardSkeleton,
   ComingSoonCard,
   ComingSoonCardSkeleton,
+  TeacherCard,
+  TeacherSkeleton,
+  TeacherDialog,
   BusinessCard,
   EventCard,
   PodcastCard,

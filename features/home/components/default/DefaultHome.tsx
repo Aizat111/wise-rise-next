@@ -6,6 +6,7 @@ import { HomeThemeWrapper } from "../HomeThemeWrapper";
 import { ComingSoonSection } from "./ComingSoonSection";
 import { HomeHeroSlider } from "./HomeHeroSlider";
 import { MostWatchedSlider } from "./MostWatchedSlider";
+import { TeacherSection } from "./TeacherSection";
 
 export type DefaultHomeProps = {
   mode: DefaultHomeMode;
@@ -28,6 +29,7 @@ export function DefaultHome({ mode }: DefaultHomeProps) {
         <HomeHeroSlider mode={mode} />
         <div className="px-4 lg:px-25">
           <MostWatchedSlider mode={mode} />
+          <TeacherSection />
           <ComingSoonSection mode={mode} />
         </div>
       </div>

@@ -44,13 +44,13 @@ export function SliderHeader({
           />
         ) : null}
 
-        {showViewAll && onViewAll ? (
+        {showViewAll ? (
           <button
             type="button"
             onClick={onViewAll}
             className={cn(
-              "text-sm font-medium text-white/75 transition-colors duration-200",
-              "hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+              "text-sm font-bold text-primary transition-colors duration-200 cursor-pointer lg:text-base",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
             )}
           >
             {resolvedViewAllLabel}

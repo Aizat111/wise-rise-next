@@ -19,6 +19,11 @@ export const QUERY_KEYS = {
     ],
   },
 
+  teacher: {
+    all: ["teachers"],
+    theBest: ["teachers", "the-best"],
+  },
+
   blog: {
     all: ["blogs"],
   },
