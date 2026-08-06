@@ -1,4 +1,5 @@
 import type { Classroom } from "@/core/types/classroom.types";
+import { buildCourseHref } from "@/features/course/api/course.utils";
 
 import type {
   ComingSoonCardData,
@@ -30,6 +31,7 @@ export function mapClassroomToEducationCard(
     authorLogo:
       classroom.teacher?.logo?.path ?? classroom.teacher?.photo?.path ?? null,
     is_favorite: classroom.is_favorite ?? false,
+    href: buildCourseHref(classroom.teacher?.slug, classroom.slug),
   };
 }
 

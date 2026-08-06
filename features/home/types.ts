@@ -36,6 +36,8 @@ export type EducationCardData = {
   authorName: string;
   authorLogo?: string | null;
   is_favorite?: boolean;
+  /** Locale-aware detail path: `/{teacherSlug}/{courseSlug}`. */
+  href?: string | null;
 };
 
 export type EducationCardProps = {

@@ -17,7 +17,9 @@ type UseSliderScrollOptions = {
   enabled?: boolean;
 };
 
-export function useSliderScroll({ enabled = true }: UseSliderScrollOptions = {}) {
+export function useSliderScroll({
+  enabled = true,
+}: UseSliderScrollOptions = {}) {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
@@ -101,7 +103,7 @@ export function useSliderScroll({ enabled = true }: UseSliderScrollOptions = {})
         moved: false,
       };
 
-      el.setPointerCapture(event.pointerId);
+      // el.setPointerCapture(event.pointerId);
       setIsDragging(true);
     },
     [enabled],
@@ -148,12 +150,15 @@ export function useSliderScroll({ enabled = true }: UseSliderScrollOptions = {})
     setIsDragging(false);
   }, []);
 
-  const onClickCapture = useCallback((event: ReactMouseEvent<HTMLDivElement>) => {
-    if (!suppressClickRef.current) return;
-    event.preventDefault();
-    event.stopPropagation();
-    suppressClickRef.current = false;
-  }, []);
+  const onClickCapture = useCallback(
+    (event: ReactMouseEvent<HTMLDivElement>) => {
+      if (!suppressClickRef.current) return;
+      event.preventDefault();
+      event.stopPropagation();
+      suppressClickRef.current = false;
+    },
+    [],
+  );
 
   return {
     scrollerRef,

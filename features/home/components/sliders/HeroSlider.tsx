@@ -26,7 +26,6 @@ import {
 import type { HeroSlide, HeroSliderProps } from "../../types";
 import { HeroPagination } from "./HeroPagination";
 import { HeroSliderSkeleton } from "./HeroSliderSkeleton";
-import { useIsDesktop } from "@/shared/hooks/useIsDesktop";
 
 const DRAG_THRESHOLD_PX = 48;
 const SPRING = { type: "spring" as const, stiffness: 280, damping: 32 };
@@ -71,17 +70,30 @@ function HeroSlideCard({
   const alt = item.alt?.trim() || "Hero";
   const href = item.href?.trim() || "";
   const isLinked = Boolean(href) && isActive;
-  const isDesktop = useIsDesktop();
+  const desktopSrc = item.imageUrl;
+  const mobileSrc = item.mobileImageUrl?.trim() || item.imageUrl;
+
   const media = (
-    <Image
-      src={isDesktop ? item.imageUrl : item.mobileImageUrl}
-      alt={alt}
-      fill
-      priority={priority}
-      sizes="(max-width: 768px) 95vw, 90vw"
-      className="object-cover object-top md:object-cover "
-      draggable={false}
-    />
+    <>
+      <Image
+        src={desktopSrc}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes="(max-width: 768px) 95vw, 90vw"
+        className="hidden object-cover object-top md:block"
+        draggable={false}
+      />
+      <Image
+        src={mobileSrc}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes="95vw"
+        className="object-cover object-top md:hidden"
+        draggable={false}
+      />
+    </>
   );
 
   const shellClassName = cn(
@@ -89,7 +101,7 @@ function HeroSlideCard({
     "transition-[transform,box-shadow,border-color] duration-300 ease-out",
     "border border-transparent",
     isActive &&
-    " md:hover:border-white md:hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
+      " md:hover:border-white md:hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
     (isLinked || Boolean(onActivate)) && "cursor-pointer",
   );
 

@@ -61,4 +61,9 @@ export const ENDPOINTS = {
   notification: {
     list: `${SERVICES.NOTIFICATION}`,
   },
+
+  notes: {
+    list: `${SERVICES.NOTES}`,
+    create: `${SERVICES.NOTES}`,
+  },
 };

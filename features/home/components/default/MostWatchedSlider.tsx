@@ -2,6 +2,8 @@
 
 import { useTranslations } from "next-intl";
 
+import { Link } from "@/core/i18n/navigation";
+
 import { useMostWatchedClassroomsQuery } from "../../api/classroom.queries";
 import {
   filterClassroomsByHomeMode,
@@ -34,15 +36,25 @@ export function MostWatchedSlider({ mode }: MostWatchedSliderProps) {
       isLoading={isLoading}
       showViewAll={false}
       getItemKey={(item) => item.id}
-      renderItem={(item) => (
-        <EducationCard
-          thumbnail={item.thumbnail}
-          title={item.title}
-          authorName={item.authorName}
-          authorLogo={item.authorLogo}
-          isFavorite={item.is_favorite ?? false}
-        />
-      )}
+      renderItem={(item) => {
+        const card = (
+          <EducationCard
+            thumbnail={item.thumbnail}
+            title={item.title}
+            authorName={item.authorName}
+            authorLogo={item.authorLogo}
+            isFavorite={item.is_favorite ?? false}
+          />
+        );
+
+        if (!item.href) return card;
+
+        return (
+          <Link href={item.href} className="block focus-visible:outline-none">
+            {card}
+          </Link>
+        );
+      }}
     />
   );
 }

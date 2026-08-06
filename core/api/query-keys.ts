@@ -47,4 +47,9 @@ export const QUERY_KEYS = {
   notification: {
     all: ["notifications"],
   },
+
+  notes: {
+    all: ["notes"],
+    byVideo: (videoId: string) => ["notes", "video", videoId],
+  },
 };

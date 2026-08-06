@@ -15,7 +15,7 @@ function mapHeroToSlide(hero: Hero): HeroSlide {
   return {
     id: hero.id,
     imageUrl: hero.image_url,
-    mobileImageUrl: hero.mobile_image_url ?? "",
+    mobileImageUrl: hero.mobile_image_url?.trim() || hero.image_url,
     href: hero.button_url,
     alt: hero.title,
   };
