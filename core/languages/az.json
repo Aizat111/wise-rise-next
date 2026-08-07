@@ -377,7 +377,12 @@
   "categories": {
     "title": "Kateqoriyalar",
     "subtitle": "Mütəxəssis Adlar, Yüzlərlə Mövzu Başlığı, Hər Ay Yeni Məzmunlar",
-    "allCategories": "Bütün Kateqoriyalar"
+    "allCategories": "Bütün Kateqoriyalar",
+    "emptyCategory": "Bu kateqoriyada hələ məzmun yoxdur.",
+    "loadMore": "Daha çox",
+    "loading": "Yüklənir...",
+    "favoriteError": "Favorit əməliyyatı tamamlanmadı.",
+    "actions": "Əməliyyatlar"
   },
   "comingSoonPage": {
     "noTrainings": "Təlim tapılmır."

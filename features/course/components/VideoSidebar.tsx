@@ -22,7 +22,7 @@ export function VideoSidebar({
   const [activeTab, setActiveTab] = useState<VideoWatchTabId>("content");
 
   return (
-    <aside className="flex flex-col gap-4 rounded-xl border border-white/10 bg-white/3 p-4 lg:sticky lg:top-24 lg:max-h-[calc(100svh-7rem)] lg:overflow-y-auto lg:self-start">
+    <aside className="flex flex-col gap-4 rounded-xl  bg-white/3 p-4 lg:sticky lg:top-24 lg:max-h-[calc(100svh-7rem)] lg:overflow-y-auto lg:self-start">
       <TeacherInfoCard
         teacherName={teacherName}
         teacherPhoto={teacherPhoto}
@@ -34,10 +34,10 @@ export function VideoSidebar({
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
-          initial={{ opacity: 0, x: 8 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -8 }}
-          transition={{ duration: 0.22 }}
+          initial={{ opacity: 0, y: 28 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 12 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           {activeTab === "content" ? (
             <CourseContentTab content={content} />

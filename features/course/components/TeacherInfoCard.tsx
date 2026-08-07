@@ -20,7 +20,7 @@ export function TeacherInfoCard({
     .join("");
 
   return (
-    <div className="flex items-center gap-3 border-b border-white/10 pb-4">
+    <div className="flex items-center gap-3  pb-4">
       <div className="relative size-12 shrink-0 overflow-hidden rounded-full bg-white/10 ring-1 ring-white/15">
         {teacherPhoto ? (
           <Image
@@ -28,7 +28,7 @@ export function TeacherInfoCard({
             alt={teacherName}
             fill
             sizes="48px"
-            className="object-cover"
+            className="object-cover  object-[center_8%]"
           />
         ) : (
           <span
@@ -45,8 +45,8 @@ export function TeacherInfoCard({
           {teacherName}
         </p>
         {categoryName ? (
-          <p className="truncate text-sm text-white/60">
-            <span className="sr-only">{t("category")}: </span>
+          <p className="truncate inline-block text-sm  text-white/60 bg-primary/50 rounded-md py-1 px-3">
+
             {categoryName}
           </p>
         ) : null}

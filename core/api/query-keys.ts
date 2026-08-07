@@ -8,6 +8,11 @@ export const QUERY_KEYS = {
     mostWatched: ["courses", "most-watched"],
     comingSoon: ["courses", "coming-soon"],
     detail: (slug: string) => ["course", slug],
+    list: (filters: Record<string, string | number | undefined>) => [
+      "courses",
+      "list",
+      filters,
+    ],
   },
 
   hero: {
@@ -30,6 +35,10 @@ export const QUERY_KEYS = {
 
   category: {
     all: ["categories"],
+  },
+
+  favorite: {
+    all: ["favorites"],
   },
 
   plan: {

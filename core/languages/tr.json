@@ -378,7 +378,12 @@
   "categories": {
     "title": "Kategoriler",
     "subtitle": "Uzman İsimler, Yüzlerce Konu Başlığı, Her Ay Yeni İçerikler",
-    "allCategories": "Tüm Kategoriler"
+    "allCategories": "Tüm Kategoriler",
+    "emptyCategory": "Bu kategoride henüz içerik bulunmuyor.",
+    "loadMore": "Daha Fazla",
+    "loading": "Yükleniyor...",
+    "favoriteError": "Favori işlemi tamamlanamadı.",
+    "actions": "İşlemler"
   },
   "comingSoonPage": {
     "noTrainings": "Eğitim bulunmamaktadır."

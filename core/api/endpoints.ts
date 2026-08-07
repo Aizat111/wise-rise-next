@@ -23,6 +23,12 @@ export const ENDPOINTS = {
     comingSoon: `${SERVICES.COURSE}/sorted/coming_soon`,
   },
 
+  favorite: {
+    list: `${SERVICES.FAVORITE}`,
+    create: `${SERVICES.FAVORITE}`,
+    remove: (id: string | number) => `${SERVICES.FAVORITE}/${id}`,
+  },
+
   hero: {
     list: `${SERVICES.HERO}`,
   },

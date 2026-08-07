@@ -108,7 +108,7 @@ export function VideoPlayerPage({
 
   return (
     <div className="bg-background">
-      <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-6 sm:px-6 lg:px-10 lg:pb-24 lg:pt-8">
+      <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-6 sm:px-6 lg:px-10 lg:pb-24 lg:pt-12">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,3fr)] lg:items-start lg:gap-8">
           <div className="flex min-w-0 flex-col gap-5">
             <div className="overflow-hidden rounded-xl bg-black shadow-lg shadow-black/30">

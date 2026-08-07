@@ -19,6 +19,7 @@ export function EducationCard({
   authorLogo,
   isFavorite = false,
   onFavorite,
+  topRightAction,
   onClick,
   className,
   aspectRatio = DEFAULT_CARD_ASPECT_RATIO,
@@ -49,33 +50,37 @@ export function EducationCard({
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black/80 via-black/40 to-transparent"
       />
 
-      <Button
-        onClick={handleFavoriteClick}
-        aria-label={isFavorite ? "Favorilerden çıkar" : "Favorilere ekle"}
-        aria-pressed={isFavorite}
-        className={cn(
-          "absolute top-2 right-1.5 z-20 inline-flex size-9 items-center justify-center rounded-full",
-          " text-white bg-transparent transition-colors duration-200",
-          "hover:bg-black/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50",
-          "md:hover:scale-110",
-        )}
-      >
-        <motion.span
-          key={isFavorite ? "on" : "off"}
-          initial={{ scale: 0.85 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 420, damping: 22 }}
-          className="inline-flex"
+      {topRightAction ? (
+        <div className="absolute top-2 right-1.5 z-20">{topRightAction}</div>
+      ) : (
+        <Button
+          onClick={handleFavoriteClick}
+          aria-label={isFavorite ? "Favorilerden çıkar" : "Favorilere ekle"}
+          aria-pressed={isFavorite}
+          className={cn(
+            "absolute top-2 right-1.5 z-20 inline-flex size-9 items-center justify-center rounded-full",
+            " text-white bg-transparent transition-colors duration-200",
+            "hover:bg-black/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50",
+            "md:hover:scale-110",
+          )}
         >
-          <Heart
-            className={cn(
-              "size-6 transition-colors duration-200",
-              isFavorite ? "fill-red-500 text-red-500" : "fill-none text-white",
-            )}
-            strokeWidth={2}
-          />
-        </motion.span>
-      </Button>
+          <motion.span
+            key={isFavorite ? "on" : "off"}
+            initial={{ scale: 0.85 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 420, damping: 22 }}
+            className="inline-flex"
+          >
+            <Heart
+              className={cn(
+                "size-6 transition-colors duration-200",
+                isFavorite ? "fill-red-500 text-red-500" : "fill-none text-white",
+              )}
+              strokeWidth={2}
+            />
+          </motion.span>
+        </Button>
+      )}
       <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-center pb-4">
         {authorLogo ? (
           <div className="relative mt-3 h-12 w-50 md:w-75 xl:h-24 xl:w-85">

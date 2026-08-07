@@ -13,4 +13,5 @@ export enum SERVICES {
   AVATAR = "/avatars",
   NOTIFICATION = "/notifications",
   NOTES = "/notes",
+  FAVORITE = "/favorites",
 }

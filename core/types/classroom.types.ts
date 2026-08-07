@@ -89,10 +89,33 @@ export type ClassroomDetailResponse = {
   data: Classroom;
 };
 
+export type ClassroomsPaginationMeta = {
+  current_page: number;
+  per_page: number;
+  total: number;
+  last_page: number;
+};
+
 export type ClassroomsPaginatedResponse = {
   data: Classroom[];
   current_page?: number;
   per_page?: number;
   total?: number;
   last_page?: number;
+  meta?: Partial<ClassroomsPaginationMeta>;
+};
+
+export type ClassroomsListParams = {
+  category_id?: number;
+  platform?: ClassroomPlatform | string;
+  page?: number;
+  per_page?: number;
+};
+
+export type ClassroomsListResult = {
+  items: Classroom[];
+  currentPage: number;
+  lastPage: number;
+  perPage: number;
+  total: number;
 };

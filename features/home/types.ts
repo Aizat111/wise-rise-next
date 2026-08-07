@@ -47,6 +47,8 @@ export type EducationCardProps = {
   authorLogo?: string | null;
   isFavorite?: boolean;
   onFavorite?: (nextFavorite: boolean) => void;
+  /** Replaces the default favorite heart when provided. */
+  topRightAction?: ReactNode;
   onClick?: () => void;
   className?: string;
   aspectRatio?: CardAspectRatio;

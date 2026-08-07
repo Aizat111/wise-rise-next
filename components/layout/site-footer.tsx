@@ -103,7 +103,7 @@ type SiteFooterProps = {
 
 export function SiteFooter({ categories }: SiteFooterProps) {
   const categoryLinks: FooterLink[] = categories.map((category) => ({
-    href: `/kategoriler/${category.slug}`,
+    href: `/${category.slug}`,
     label: category.name,
   }));
 

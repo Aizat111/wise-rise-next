@@ -50,5 +50,5 @@ export type HeaderNavLink = {
 };
 
 export function getCategoryHref(category: Category) {
-  return `/kategoriler/${category.slug}`;
+  return `/${category.slug}`;
 }
