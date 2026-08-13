@@ -77,6 +77,44 @@
     "giveGift": "Hədiyyə Et",
     "live": "Live"
   },
+  "information": {
+    "home": "Ana səhifə",
+    "pages": {
+      "about": "Haqqımızda",
+      "contact": "Əlaqə",
+      "faq": "Tez-tez Verilən Suallar",
+      "privacyPolicy": "Məxfilik Siyasəti",
+      "userAgreement": "İstifadəçi Müqaviləsi",
+      "distanceSales": "Məsafəli Satış Müqaviləsi",
+      "preInfo": "İlkin Məlumat Forması",
+      "cookiePolicy": "Cookie Siyasəti",
+      "kvkk": "KVKK"
+    }
+  },
+  "cookiePolicy": {
+    "intro": "Bu Cookie Siyasəti Veranova Medya və Rəqəmsal Yayın Xidmətləri A.Ş. (“Wise&Rise”) tərəfindən idarə olunan veb sayt və mobil tətbiqlərdə istifadə olunan cookie-lər barədə sizi məlumatlandırmaq məqsədilə hazırlanmışdır.",
+    "section1": {
+      "title": "1. Cookie nədir?",
+      "content": "Cookie-lər ziyarət etdiyiniz veb saytlar tərəfindən brauzerinizə və ya cihazınıza yazılan kiçik mətn fayllarıdır. Sayta növbəti ziyarətlərinizdə sizi tanımaq, seçimlərinizi yadda saxlamaq və istifadə təcrübəsini yaxşılaşdırmaq üçün istifadə olunur."
+    },
+    "section2": {
+      "title": "2. Hansı cookie-lərdən istifadə edirik?",
+      "content": "Wise&Rise məcburi/funksional cookie-lər, performans və analitika cookie-ləri, habelə (açıq razılığınıza əsasən) marketinq cookie-ləri istifadə edə bilər. Məcburi cookie-lər platformanın təhlükəsiz və düzgün işləməsi üçün zəruridir."
+    },
+    "section3": {
+      "title": "3. Cookie-lərin istifadə məqsədləri",
+      "content": "Cookie-lər sessiya idarəetməsi, təhlükəsizlik, sayt performansının ölçülməsi, məzmun və xidmətlərin təkmilləşdirilməsi, seçimlərinizin yadda saxlanması və hüquqi öhdəliklərin yerinə yetirilməsi məqsədləri ilə istifadə edilə bilər."
+    },
+    "section4": {
+      "title": "4. Cookie seçimlərinin idarə edilməsi",
+      "content": "Brauzer ayarlarından cookie-ləri silə, əngəlləyə və ya müəyyən növləri məhdudlaşdıra bilərsiniz. Məcburi cookie-lərin əngəllənməsi halında Wise&Rise-ın bəzi funksiyalarının düzgün işləməyə biləcəyini xatırladırıq."
+    },
+    "section5": {
+      "title": "5. Yeniləmələr və əlaqə",
+      "content": "Bu Cookie Siyasəti lazım gəldikdə yenilənə bilər. Aktual mətn həmişə bu səhifədə dərc olunur. Suallarınız üçün info@wisenrise.com ünvanından bizimlə əlaqə saxlaya bilərsiniz."
+    },
+    "closing": "Hörmətlə, Veranova Medya və Rəqəmsal Yayın Xidmətləri Anonim Şirkəti"
+  },
   "auth": {
     "login": "Daxil ol",
     "loginText": "Giriş",
@@ -289,7 +327,8 @@
     "description2": "Wise&Rise ailəsi olaraq, bu dəyərli şəxslərin iş həyatlarını, ilham axtarışlarını, bir ömür həsr etdikləri ehtiraslarını və süzülmüş təcrübələrini dünyaya çatdırmaq niyyəti ilə bu platformanı həyata keçirdik. Sahəsinin ulduzlarının həyata baxışlarını, nəyi necə bacardıqlarını və nəyi fərqli etdiklərini birinci ağızdan dinləyib öz həyatlarımıza uyğunlaşdırmağın uğuru bərabərində gətirəcəyinə inanırıq. Şübhəsiz marağını heç itirməyən, soruşub araşdıran, fərqli bir bucaqdan baxa bilən, tələbəliyin heç bitməyən bir səyahət olduğunu dərk edən hər insan mütləq potensialını kəşf edər. Sizlərlə komandamızı genişləndirib bir ailə olaraq hamılıqla irəliləməyə davam edəcəyimiz üçün çox həyəcanlıyıq.",
     "contactDescription": "Aşağıdakı məlumatlar vasitəsilə bizimlə əlaqə saxlaya bilərsən.",
     "email": "E-poçt",
-    "address": "Ünvan"
+    "address": "Ünvan",
+    "contactButton": "Bizimlə əlaqə saxlayın"
   },
 "membershipAgreement": {
     "title": "Üzvlük Müqaviləsi",
@@ -846,7 +885,7 @@
       "applicationRequirements": "Fərdi məlumat sahibi olaraq sahib olduğunuz və yuxarıda göstərilən hüquqlarınızı istifadə etmək üçün edəcəyiniz və istifadə etməyi tələb etdiyiniz hüquqa dair açıqlamalarınızı ehtiva edən müraciətdə; tələb etdiyiniz xüsusun açıq və aydın olması, tələb etdiyiniz mövzunun şəxsiniz ilə əlaqəli olması və ya başqası adından hərəkət edirsinizsə bu mövzuda xüsusi olaraq səlahiyyətli olmanız və səlahiyyətinizi sənədləşdirməniz, müraciətin şəxsiyyət və ünvan məlumatlarını ehtiva etməsi və müraciətə şəxsiyyətinizi təsdiq edici sənədlərin əlavə edilməsi lazımdır."
     },
     "closing": {
-      "respectfully": "Hörmətlə,",
+      "respectfully": "Hörmətlə",
       "companyName": "Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirkəti"
     }
   },

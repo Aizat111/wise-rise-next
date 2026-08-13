@@ -9,18 +9,23 @@ import { useTranslations } from "next-intl";
 type FooterLink = {
   href: string;
   label: string;
+  external?: boolean;
 };
 
 const exploreLinks: FooterLink[] = [
   { href: "/hakkimizda", label: "footer.aboutUs" },
   { href: "/iletisim", label: "footer.contact" },
-  { href: "/live", label: "footer.live" },
+  {
+    href: "https://wisenrise.com/live/",
+    label: "footer.live",
+    external: true,
+  },
 ];
 
 const corporateLinks: FooterLink[] = [
-  { href: "/sss", label: "footer.frequentlyAskedQuestions" },
-  { href: "/yardim", label: "footer.helpCenter" },
-  { href: "/abonelik-sartlari", label: "footer.subscriptionTerms" },
+  { href: "/sikca-sorulan-sorular", label: "footer.frequentlyAskedQuestions" },
+  { href: "/iletisim", label: "footer.helpCenter" },
+  { href: "/uyelik-sozlesmesi", label: "footer.subscriptionTerms" },
   { href: "/gizlilik-politikasi", label: "footer.privacyPolicy" },
 ];
 
@@ -52,12 +57,23 @@ function FooterColumn({
       <ul className="flex flex-col gap-2">
         {links.map((link) => (
           <li key={link.href + link.label}>
-            <Link
-              href={link.href}
-              className="text-base  transition-colors duration-1000 text-foreground/80 hover:text-primary font-medium"
-            >
-              {translate ? t(link.label) : link.label}
-            </Link>
+            {link.external ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base  transition-colors duration-1000 text-foreground/80 hover:text-primary font-medium"
+              >
+                {translate ? t(link.label) : link.label}
+              </a>
+            ) : (
+              <Link
+                href={link.href}
+                className="text-base  transition-colors duration-1000 text-foreground/80 hover:text-primary font-medium"
+              >
+                {translate ? t(link.label) : link.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

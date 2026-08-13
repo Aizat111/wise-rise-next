@@ -10,7 +10,6 @@ export function useHeader() {
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
   const storedUser = useAppSelector((state) => state.auth.user);
   const activeProfile = useAppSelector((state) => state.profile.activeProfile);
-  console.log(activeProfile);
 
   const { data: me, isLoading: isMeLoading } = useMeQuery(
     mounted && isAuthenticated,

@@ -77,6 +77,44 @@
     "giveGift": "Hediye Et",
     "live": "Live"
   },
+  "information": {
+    "home": "Anasayfa",
+    "pages": {
+      "about": "Hakkımızda",
+      "contact": "İletişim",
+      "faq": "Sık Sorulan Sorular",
+      "privacyPolicy": "Gizlilik Politikası",
+      "userAgreement": "Üyelik Sözleşmesi",
+      "distanceSales": "Mesafeli Satış Sözleşmesi",
+      "preInfo": "Ön Bilgilendirme Formu",
+      "cookiePolicy": "Çerez Politikası",
+      "kvkk": "KVKK"
+    }
+  },
+  "cookiePolicy": {
+    "intro": "Bu Çerez Politikası, Veranova Medya ve Dijital Yayın Hizmetleri A.Ş. (“Wise&Rise”) tarafından işletilen internet sitesi ve mobil uygulamalarda kullanılan çerezler (tanımlama bilgileri) hakkında sizleri bilgilendirmek amacıyla hazırlanmıştır.",
+    "section1": {
+      "title": "1. Çerez Nedir?",
+      "content": "Çerezler, ziyaret ettiğiniz internet siteleri tarafından tarayıcınıza veya cihazınıza kaydedilen küçük metin dosyalarıdır. Siteyi sonraki ziyaretlerinizde sizi tanımak, tercihlerinizi hatırlamak ve kullanım deneyimini iyileştirmek için kullanılır."
+    },
+    "section2": {
+      "title": "2. Hangi Çerezleri Kullanıyoruz?",
+      "content": "Wise&Rise; zorunlu/işlevsel çerezler, performans ve analitik çerezler ile (açık rızanıza bağlı olarak) pazarlama çerezleri kullanabilir. Zorunlu çerezler platformun güvenli ve düzgün çalışması için gereklidir."
+    },
+    "section3": {
+      "title": "3. Çerezlerin Kullanım Amaçları",
+      "content": "Çerezler; oturum yönetimi, güvenlik, site performansının ölçülmesi, içerik ve hizmetlerin iyileştirilmesi, tercihlerinizin hatırlanması ve yasal yükümlülüklerin yerine getirilmesi amaçlarıyla kullanılabilir."
+    },
+    "section4": {
+      "title": "4. Çerez Tercihlerini Yönetme",
+      "content": "Tarayıcı ayarlarınızdan çerezleri silebilir, engelleyebilir veya belirli türleri sınırlandırabilirsiniz. Zorunlu çerezlerin engellenmesi halinde Wise&Rise’ın bazı özelliklerinin düzgün çalışmayabileceğini hatırlatırız."
+    },
+    "section5": {
+      "title": "5. Güncellemeler ve İletişim",
+      "content": "Bu Çerez Politikası gerektiğinde güncellenebilir. Güncel metin her zaman bu sayfada yayınlanır. Sorularınız için info@wisenrise.com adresinden bizimle iletişime geçebilirsiniz."
+    },
+    "closing": "Saygılarımızla, Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirketi"
+  },
   "auth": {
     "login": "Giriş Yap",
     "loginText": "Giriş",
@@ -290,7 +328,8 @@
     "description2": "Wise&Rise ailesi olarak, bu kıymetli kişilerin çalışma hayatlarını, ilham arayışlarını, bir ömür adadıkları tutkularını ve damıttıkları deneyimlerini dünyaya ulaştırma niyetiyle bu platformu hayata geçirdik. Alanının yıldızlarının hayata bakışlarını, neyi nasıl başardıklarını ve neyi farklı yaptıklarını birinci ağızdan dinleyip kendi hayatlarımıza uyarlamanın başarıyı beraberinde getireceğine inanıyoruz. Şüphesiz merakını hiç yitirmeyen, sorup sorgulayan, farklı bir açıdan bakabilen, öğrenciliğin hiç bitmeyen bir yolculuk olduğunu idrak eden her insan mutlaka potansiyelini keşfeder. Sizlerle ekibimizi genişletip bir aile olarak hep beraber ilerlemeye devam edeceğimiz için çok heyecanlıyız.",
     "contactDescription": "Aşağıdaki bilgiler ile bizimle iletişime geçebilirsin.",
     "email": "E-posta",
-    "address": "Adres"
+    "address": "Adres",
+    "contactButton": "Bize Ulaşın"
   },
   "membershipAgreement": {
     "title": "Üyelik Sözleşmesi",
@@ -850,7 +889,7 @@
       "applicationRequirements": "Kişisel veri sahibi olarak sahip olduğunuz ve yukarıda belirtilen haklarınızı kullanmak için yapacağınız ve kullanmayı talep ettiğiniz hakka ilişkin açıklamalarınızı içeren başvuruda; talep ettiğiniz hususun açık ve anlaşılır olması, talep ettiğiniz konunun şahsınız ile ilgili olması veya başkası adına hareket ediyor iseniz bu konuda özel olarak yetkili olmanız ve yetkinizi belgelendirmeniz, başvurunun kimlik ve adres bilgilerini içermesi ve başvuruya kimliğinizi teyit edici belgelerin eklenmesi gerekmektedir."
     },
     "closing": {
-      "respectfully": "Saygılarımızla,",
+      "respectfully": "Saygılarımızla",
       "companyName": "Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirketi"
     }
   },

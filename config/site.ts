@@ -20,7 +20,7 @@ export const SITE = {
 
   twitter: "@wisenrise",
 
-  email: "info@wisenrise.com",
+  email: "destek@wisenrise.com",
 
   phone: "+90xxxxxxxx",
 
@@ -34,4 +34,5 @@ export const SITE = {
   },
 
   favicon: "/favicon.ico",
+  contactAddress: "Akat Mah. Cebeci Cad. No:65 Beşiktaş/İstanbul",
 };
