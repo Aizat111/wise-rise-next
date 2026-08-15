@@ -32,10 +32,26 @@ export type Teacher = {
   is_favorite?: boolean | null;
 };
 
+export type TeachersPaginationMeta = {
+  current_page: number;
+  per_page: number;
+  total: number;
+  last_page: number;
+};
+
 export type TeachersPaginatedResponse = {
   data: Teacher[];
   current_page?: number;
   per_page?: number;
   total?: number;
   last_page?: number;
+  meta?: Partial<TeachersPaginationMeta>;
+};
+
+export type TeachersListResult = {
+  items: Teacher[];
+  currentPage: number;
+  lastPage: number;
+  perPage: number;
+  total: number;
 };

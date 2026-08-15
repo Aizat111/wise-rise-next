@@ -44,7 +44,21 @@ export const QUERY_KEYS = {
   like: {
     all: ["likes"],
     classrooms: ["likes", "classrooms"],
+    classroomsList: (profileId: string | number, pageSize: number) => [
+      "likes",
+      "classrooms",
+      "list",
+      String(profileId),
+      pageSize,
+    ],
     teachers: ["likes", "teachers"],
+    teachersList: (profileId: string | number, pageSize: number) => [
+      "likes",
+      "teachers",
+      "list",
+      String(profileId),
+      pageSize,
+    ],
   },
 
   plan: {

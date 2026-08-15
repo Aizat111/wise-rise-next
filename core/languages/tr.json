@@ -457,6 +457,21 @@
     "error": "Arama sonuçları yüklenemedi.",
     "retry": "Tekrar dene"
   },
+  "followingPage": {
+    "title": "Takip Ettiklerim",
+    "subtitle": "Takip ettiğin eğitimleri ve eğitmenleri keşfet.",
+    "description": "Takip ettiğin eğitimleri ve eğitmenleri keşfet.",
+    "classroomsTitle": "Takip Ettiğim Eğitimler",
+    "teachersTitle": "Takip Ettiğim Eğitmenler",
+    "emptyClassrooms": "Henüz takip ettiğin bir eğitim bulunmuyor.",
+    "emptyTeachers": "Henüz takip ettiğin bir eğitmen bulunmuyor.",
+    "loadMore": "Daha Fazla",
+    "loading": "Yükleniyor...",
+    "error": "Takip ettiklerin yüklenemedi.",
+    "classroomsError": "Takip ettiğin eğitimler yüklenemedi.",
+    "teachersError": "Takip ettiğin eğitmenler yüklenemedi.",
+    "retry": "Tekrar dene"
+  },
   "banners": {
     "guestLearning": {
       "title": "En İyilerden Yüzlerce Eğitim Videosunu İstediğin Yerde İzle!",

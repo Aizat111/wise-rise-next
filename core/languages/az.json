@@ -456,6 +456,21 @@
     "error": "Axtarış nəticələri yüklənmədi.",
     "retry": "Yenidən cəhd et"
   },
+  "followingPage": {
+    "title": "İzlədiklərim",
+    "subtitle": "İzlədiyin təlimləri və müəllimləri kəşf et.",
+    "description": "İzlədiyin təlimləri və müəllimləri kəşf et.",
+    "classroomsTitle": "İzlədiyim Təlimlər",
+    "teachersTitle": "İzlədiyim Müəllimlər",
+    "emptyClassrooms": "Hələ izlədiyin bir təlim yoxdur.",
+    "emptyTeachers": "Hələ izlədiyin bir müəllim yoxdur.",
+    "loadMore": "Daha çox",
+    "loading": "Yüklənir...",
+    "error": "İzlədiklərin yüklənmədi.",
+    "classroomsError": "İzlədiyin təlimlər yüklənmədi.",
+    "teachersError": "İzlədiyin müəllimlər yüklənmədi.",
+    "retry": "Yenidən cəhd et"
+  },
   "banners": {
     "guestLearning": {
       "title": "Ən Yaxşılardan Yüzlərlə Təlim Videosunu İstədiyin Yerdə İzlə!",

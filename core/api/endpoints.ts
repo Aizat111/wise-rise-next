@@ -72,6 +72,10 @@ export const ENDPOINTS = {
       `${SERVICES.PROFILE}/${profileId}/likes/classrooms/${classroomId}`,
     likeTeacher: (profileId: string | number, teacherId: string | number) =>
       `${SERVICES.PROFILE}/${profileId}/likes/teachers/${teacherId}`,
+    likedClassrooms: (profileId: string | number) =>
+      `${SERVICES.PROFILE}/${profileId}/likes/classrooms`,
+    likedTeachers: (profileId: string | number) =>
+      `${SERVICES.PROFILE}/${profileId}/likes/teachers`,
   },
 
   avatar: {
