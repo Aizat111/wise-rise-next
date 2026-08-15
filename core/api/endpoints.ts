@@ -86,4 +86,6 @@ export const ENDPOINTS = {
     list: `${SERVICES.NOTES}`,
     create: `${SERVICES.NOTES}`,
   },
+
+  search: `${SERVICES.SEARCH}`,
 };

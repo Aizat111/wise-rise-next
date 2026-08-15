@@ -76,4 +76,9 @@ export const QUERY_KEYS = {
     all: ["notes"],
     byVideo: (videoId: string) => ["notes", "video", videoId],
   },
+
+  search: {
+    all: ["search"],
+    list: (q: string, pageSize: number) => ["search", "list", q, pageSize],
+  },
 };

@@ -441,6 +441,21 @@
     "retry": "Yenidən cəhd et",
     "loading": "Yüklənir..."
   },
+  "searchPage": {
+    "title": "Axtar",
+    "subtitle": "Ən Yaxşıların Məktəbinə Xoş Gəldin",
+    "description": "Wise&Rise təlimləri arasında axtardığın məzmunları kəşf et.",
+    "placeholder": "Məzmun axtar",
+    "searchLabel": "Məzmun axtar",
+    "results": "Nəticələr",
+    "resultsCount": "{count} nəticə tapıldı",
+    "emptyPrompt": "Axtarmaq istədiyin məzmunu yaz.",
+    "emptyResults": "Axtarışınıza uyğun bir təlim tapılmadı.",
+    "loadMore": "Daha çox",
+    "loading": "Yüklənir...",
+    "error": "Axtarış nəticələri yüklənmədi.",
+    "retry": "Yenidən cəhd et"
+  },
   "banners": {
     "guestLearning": {
       "title": "Ən Yaxşılardan Yüzlərlə Təlim Videosunu İstədiyin Yerdə İzlə!",

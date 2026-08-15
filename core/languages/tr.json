@@ -442,6 +442,21 @@
     "retry": "Tekrar dene",
     "loading": "Yükleniyor..."
   },
+  "searchPage": {
+    "title": "Ara",
+    "subtitle": "En İyilerin Okuluna Hoş Geldin",
+    "description": "Wise&Rise eğitimleri arasında aradığın içerikleri keşfet.",
+    "placeholder": "İçerik ara",
+    "searchLabel": "İçerik ara",
+    "results": "Sonuçlar",
+    "resultsCount": "{count} sonuç bulundu",
+    "emptyPrompt": "Aramak istediğin içeriği yaz.",
+    "emptyResults": "Aramanızla eşleşen bir eğitim bulunamadı.",
+    "loadMore": "Daha Fazla",
+    "loading": "Yükleniyor...",
+    "error": "Arama sonuçları yüklenemedi.",
+    "retry": "Tekrar dene"
+  },
   "banners": {
     "guestLearning": {
       "title": "En İyilerden Yüzlerce Eğitim Videosunu İstediğin Yerde İzle!",

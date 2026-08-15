@@ -9,7 +9,7 @@ export const guestNavLinks = [
 export const authNavLinks = [
   { href: "/business", label: "header.business" },
   { href: "/yakinda-gelecekler", label: "header.comingSoon" },
-  { href: "/kesfet", label: "header.find" },
+  { href: "/kategoriler", label: "header.find" },
   { href: "/aktivitelerim", label: "header.activities" },
 ] as const;
 
@@ -20,7 +20,7 @@ export const profileMenuLinks = [
     icon: "user" as const,
   },
   {
-    href: "/profil/duzenle",
+    href: "/profil-sec",
     label: "header.editProfile",
     icon: "edit" as const,
   },
@@ -30,7 +30,7 @@ export const profileMenuLinks = [
     icon: "plans" as const,
   },
   {
-    href: "/yardim-destek",
+    href: "/sikca-sorulan-sorular",
     label: "header.helpSupport",
     icon: "help" as const,
   },

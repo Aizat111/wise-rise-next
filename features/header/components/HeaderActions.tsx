@@ -77,6 +77,8 @@ export function HeaderActions({
           variant="ghost"
           size="icon"
           aria-label={t("header.search")}
+          nativeButton={false}
+          render={<Link href="/ara" />}
           className="text-base hover:text-primary"
         >
           <SearchIcon />
