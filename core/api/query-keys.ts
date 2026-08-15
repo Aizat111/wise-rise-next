@@ -41,8 +41,23 @@ export const QUERY_KEYS = {
     all: ["favorites"],
   },
 
+  like: {
+    all: ["likes"],
+    classrooms: ["likes", "classrooms"],
+    teachers: ["likes", "teachers"],
+  },
+
   plan: {
     all: ["plans"],
+    byPeriod: (period: string) => ["plans", period],
+  },
+
+  order: {
+    all: ["orders"],
+  },
+
+  account: {
+    subscriptionStatus: ["account", "subscription-status"],
   },
 
   profile: {

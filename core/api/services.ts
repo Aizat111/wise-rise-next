@@ -8,6 +8,7 @@ export enum SERVICES {
   TEACHER = "/teachers",
   CATEGORY = "/categories",
   PLAN = "/plans",
+  ORDER = "/orders",
   PAYMENT = "/payments",
   PROFILE = "/profiles",
   AVATAR = "/avatars",

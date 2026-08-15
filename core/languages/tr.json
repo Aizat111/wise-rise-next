@@ -322,6 +322,15 @@
     "addedToFavorites": "Favorilere Eklendi",
     "removedFromFavorites": "Favorilerden Çıkarıldı."
   },
+  "likes": {
+    "addToFavorites": "Favorilere ekle",
+    "removeFromFavorites": "Favorilerden çıkar",
+    "classroomAdded": "Eğitim favorilere eklendi.",
+    "classroomRemoved": "Eğitim favorilerden çıkarıldı.",
+    "teacherAdded": "Öğretmen favorilere eklendi.",
+    "teacherRemoved": "Öğretmen favorilerden çıkarıldı.",
+    "error": "İşlem sırasında bir hata oluştu."
+  },
   "aboutUs": {
     "title": "Hakkımızda",
     "description1": "Genç yaşta yolu entelektüel camianın çok kıymetli isimleriyle kesişmiş, onların vizyonlarına şahitlik ede ede kendimizi “gelişime” ve daima “ilerleme”ye adamış küçük bir ekip olarak yola çıktık. Öyle kıymetli tavsiyeler, öyle farklı bir vizyon ve ilham kaynağıydılar ki istedik ki ülkemizin tüm gençleri ve ebeveynleri de bu engin dünyadan faydalanabilsin, bizimle yürüsün. İlham aldığımız, onlar gibi çalışmak ve fark yaratmak istediğimiz, tavsiyelerini soluksuz dinlediğimiz kişilerle toplumu biraz daha yaklaştırmanın bir ihtiyaç olduğunu gördük.",
@@ -425,7 +434,36 @@
     "actions": "İşlemler"
   },
   "comingSoonPage": {
-    "noTrainings": "Eğitim bulunmamaktadır."
+    "title": "Yakında Gelecekler",
+    "subtitle": "Uzman İsimler, Yüzlerce Konu Başlığı, Her Ay Yeni İçerikler",
+    "description": "Wise&Rise'ta yakında yayınlanacak eğitimleri keşfedin. Her ay eklenen yeni içeriklerle ihtiyaç duyduğunuz her konuda gelişin.",
+    "empty": "Şu anda yakında gelecek bir içerik bulunmuyor.",
+    "error": "Yakında gelecek eğitimler yüklenemedi.",
+    "retry": "Tekrar dene",
+    "loading": "Yükleniyor..."
+  },
+  "banners": {
+    "guestLearning": {
+      "title": "En İyilerden Yüzlerce Eğitim Videosunu İstediğin Yerde İzle!",
+      "subtitle": "Wise&Rise ile Olduğun Yerde Durma, İlerle!",
+      "cta": "ŞİMDİ İLERLE"
+    },
+    "business": {
+      "title": "Wise&Rise İş Dünyasında!",
+      "description": "Wise&Rise ile kurumunuzda bir öğrenme kültürü oluşturun. Grup indirimleri ve daha fazla bilgi için bizimle iletişime geçin.",
+      "ctaTitle": "Bizimle İlerle",
+      "cta": "Bizimle İlerle",
+      "business2Title":"Alanının en iyilerinden öğrenin, iş dünyasında öne çıkın, Wise&Rise ile ekibinizi geleceğe taşıyın!",
+      "business2Cta": "Bize Ulaşın"
+    }
+  },
+  "categoriesSection": {
+    "categories": "Kategoriler",
+    "title": "Tüm Eğitimler",
+    "description1": "Her ay yeni isimler&yeni içeriklerle seni ilerlemeye davet ediyoruz!",
+    "description2": "10 Farklı Kategoride Gelişmek İstediğin Alanı Seç, Eğitimini Tamamla!",
+    "empty": "Henüz gösterilecek kategori bulunmuyor.",
+    "loading": "Kategoriler yükleniyor"
   },
   "useGift": {
     "title": "Hediyenizi kullanın",
@@ -505,12 +543,15 @@
     "genericError": "İşlem tamamlanamadı. Lütfen tekrar dene."
   },
   "business": {
+    "title": "Wise&Rise İş Dünyasında",
+    "heroTitle": "Wise&Rise İş Dünyasında!",
     "subtitle": "Ekibinizin yeteneklerini üst düzey eğitimlerle geliştirin.",
     "learnFromTheBestInYourField": "Alanının en iyilerinden öğrenin, iş dünyasında öne çıkın, Wise&Rise ile ekibinizi geleceğe taşıyın!",
     "learnFromTheBestInYourFieldMobile": "Alanının en iyilerinden öğrenin",
     "learnFromTheBestInYourFieldMobile2": "iş dünyasında öne çıkın.",
     "leadYourTeamToTheFuture": " ekibinizi geleceğe taşıyın!",
     "references": "REFERANSLARIMIZ",
+    "courses":"Eğitimler",
     "chooseTheCategoryToDevelop": "İş dünyasında fark yaratmak için ilginizi çeken kategorileri seçin.",
     "reachThePeakWithTheBestInTurkey": "Türkiye’nin en iyileriyle zirveye ulaşın.",
     "properties": "ÖZELLİKLER",
@@ -634,6 +675,8 @@
   },
   "pracingPlan": {
     "title": "Üyelik Planları",
+    "subtitle": "Aylık ve yıllık üyelik seçeneklerini inceleyin.",
+    "description": "Wise&Rise üyelik planlarını inceleyin. Aylık ve yıllık seçeneklerle tüm eğitimlere sınırsız erişim sağlayın.",
     "subscriptionMessage": "Üyeliğinizin otomatik yenilemesi iptal edilecektir. Mevcut kullanım hakkınız süresi bitene kadar devam edecek, bu tarihten sonra yeni bir çekim yapılmayacaktır. İşleminiz tamamlandığında güvenliğiniz için oturumunuz sonlandırılacaktır.",
     "paymentHistory": "Ödeme Geçmişi",
     "paymentHistoryDescription": "Tüm son işlemler listesi.",
@@ -641,7 +684,27 @@
     "endDate": "Bitiş Tarihi",
     "status": "Durum",
     "price": "Fiyat",
-    "action": "İşlem"
+    "action": "İşlem",
+    "columnId": "ID",
+    "currentPlan": "Mevcut plan",
+    "cancelTitle": "Üyeliğinizi iptal etmek istediğinize emin misiniz?",
+    "cancelConfirm": "Üyeliği İptal Et",
+    "cancelDismiss": "Vazgeç",
+    "cancelSuccess": "Üyeliğiniz başarıyla iptal edildi.",
+    "cancelError": "Üyelik iptal edilemedi. Lütfen tekrar deneyin.",
+    "cancelling": "İptal ediliyor...",
+    "emptyPayments": "Henüz bir ödeme geçmişiniz bulunmuyor.",
+    "plansLoadError": "Planlar yüklenemedi. Lütfen tekrar deneyin.",
+    "ordersLoadError": "Ödeme geçmişi yüklenemedi. Lütfen tekrar deneyin.",
+    "noCurrentPlan": "Aktif bir üyelik planınız bulunmuyor.",
+    "retry": "Tekrar Dene",
+    "loading": "Yükleniyor...",
+    "statusActive": "Aktif",
+    "statusCompleted": "Tamamlandı",
+    "statusCancelled": "İptal edildi",
+    "statusPending": "Bekliyor",
+    "statusPaid": "Ödendi",
+    "statusFailed": "Başarısız"
   },
   "search": {
     "results": "Sonuçlar",

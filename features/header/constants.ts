@@ -1,9 +1,9 @@
 import type { Category } from "@/core/api/types";
 
 export const guestNavLinks = [
-  { href: "/plan", label: "header.plan" },
+  { href: "/uyelik-planlari", label: "header.plan" },
   { href: "/business", label: "header.business" },
-  { href: "/yakinda", label: "header.comingSoon" },
+  { href: "/yakinda-gelecekler", label: "header.comingSoon" },
 ] as const;
 
 export const authNavLinks = [
@@ -25,7 +25,7 @@ export const profileMenuLinks = [
     icon: "edit" as const,
   },
   {
-    href: "/planlarim",
+    href: "/uyelik-planlari",
     label: "header.myPlans",
     icon: "plans" as const,
   },

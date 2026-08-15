@@ -27,17 +27,8 @@ export function TeacherSection({
   const [selectedTeacher, setSelectedTeacher] =
     useState<TeacherCardData | null>(null);
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [favoriteOverrides, setFavoriteOverrides] = useState<
-    Record<string, boolean>
-  >({});
 
-  const items = mapTeachersToCards(data).map((item) => {
-    const key = String(item.id);
-    if (key in favoriteOverrides) {
-      return { ...item, isFavorite: favoriteOverrides[key] };
-    }
-    return item;
-  });
+  const items = mapTeachersToCards(data);
 
   const showLoading = isLoading || (isFetching && items.length === 0);
 
@@ -48,13 +39,6 @@ export function TeacherSection({
   const handleItemClick = (item: TeacherCardData) => {
     setSelectedTeacher(item);
     setDialogOpen(true);
-  };
-
-  const handleFavorite = (item: TeacherCardData, nextFavorite: boolean) => {
-    setFavoriteOverrides((prev) => ({
-      ...prev,
-      [String(item.id)]: nextFavorite,
-    }));
   };
 
   if (isError && items.length === 0) {
@@ -96,7 +80,6 @@ export function TeacherSection({
         isLoading={showLoading}
         onViewAll={onViewAll}
         onItemClick={handleItemClick}
-        onFavorite={handleFavorite}
       />
 
       <TeacherDialog

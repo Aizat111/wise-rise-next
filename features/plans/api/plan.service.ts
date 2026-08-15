@@ -2,6 +2,7 @@ import { clientRequest } from "@/core/api/client";
 import { ENDPOINTS } from "@/core/api/endpoints";
 import type {
   DisplayPlans,
+  PlanPeriod,
   PlansResponse,
   SubscriptionPlan,
 } from "@/core/types/plan.types";
@@ -31,17 +32,25 @@ export function selectDisplayPlans(plans: SubscriptionPlan[]): DisplayPlans {
 }
 
 export const planService = {
-  async list(): Promise<SubscriptionPlan[]> {
+  async list(period?: PlanPeriod): Promise<SubscriptionPlan[]> {
     const response = await clientRequest<PlansApiResponse>({
       url: ENDPOINTS.plan.list,
       method: "GET",
+      params: period ? { period } : undefined,
     });
 
     return normalizePlans(response);
   },
 
   async getDisplayPlans(): Promise<DisplayPlans> {
-    const plans = await planService.list();
-    return selectDisplayPlans(plans);
+    const [monthlyPlans, yearlyPlans] = await Promise.all([
+      planService.list("Monthly"),
+      planService.list("Yearly"),
+    ]);
+
+    return {
+      monthly: selectDisplayPlans(monthlyPlans).monthly,
+      yearly: selectDisplayPlans(yearlyPlans).yearly,
+    };
   },
 };

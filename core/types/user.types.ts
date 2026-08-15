@@ -44,6 +44,10 @@ export interface IUser {
   twoFactorEnabled: boolean;
   balance: number;
   gameToken: string;
+  /** Wise&Rise membership fields returned by GET /me when present. */
+  plan_type?: string | null;
+  plan_id?: string | null;
+  period?: string | null;
 }
 
 export interface IBetHistoryResponse {

@@ -23,7 +23,7 @@ export async function AboutPage() {
           addressLabel={t("address")}
           address={SITE.contactAddress}
           buttonLabel={t("contactButton")}
-          className="mt-10 lg:mt-20 bg-[#14161a] backdrop-blur-sm rounded-lg p-20 py-30"
+          className="mt-10 lg:mt-20 bg-surface backdrop-blur-sm rounded-lg p-20 py-30"
         />
       </InformationProse>
     </InformationLayout>

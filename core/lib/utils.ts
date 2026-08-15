@@ -1,8 +1,7 @@
-import { type ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
-import { notify } from './notify';
-import { getVipLevelColor } from '@/core/constants/vip-levels.constants';
+import { notify } from "./notify";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -28,27 +27,30 @@ export function formatOrdinal(value: number): string {
 
 // Common card styles
 export const cardStyles = {
-  base: 'bg-toshi-secondary border border-toshi-dark-60 rounded-lg p-6',
-  hover: 'hover:bg-toshi-accent hover:border-toshi-primary transition-all duration-200',
-  interactive: 'cursor-pointer hover:scale-105 transition-transform duration-200'
+  base: "bg-toshi-secondary border border-toshi-dark-60 rounded-lg p-6",
+  hover:
+    "hover:bg-toshi-accent hover:border-toshi-primary transition-all duration-200",
+  interactive:
+    "cursor-pointer hover:scale-105 transition-transform duration-200",
 };
 
 export const formatCurrency = (value: number) => {
-  return value.toLocaleString('en-US', {
-    style: 'currency',
-    currency: 'USD',
+  return value.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
     minimumFractionDigits: 2,
-    maximumFractionDigits: 2
+    maximumFractionDigits: 2,
   });
 };
 
-export const getVipBackgroundByLevel = (level: number): string => {
-  return getVipLevelColor(level);
-};
-
-export const handleShare = async (text: string, description: string, url: string, imageUrl?: string) => {
+export const handleShare = async (
+  text: string,
+  description: string,
+  url: string,
+  imageUrl?: string,
+) => {
   if (!navigator.share) {
-    notify('error', 'error.error', 'error.error');
+    notify("error", "error.error", "error.error");
     return;
   }
 
@@ -56,17 +58,21 @@ export const handleShare = async (text: string, description: string, url: string
     if (imageUrl) {
       const response = await fetch(imageUrl);
       const blob = await response.blob();
-      const ext = blob.type.split('/')[1] || 'jpg';
+      const ext = blob.type.split("/")[1] || "jpg";
       const file = new File([blob], `share.${ext}`, { type: blob.type });
 
       if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ title: text, text: description, files: [file] });
+        await navigator.share({
+          title: text,
+          text: description,
+          files: [file],
+        });
         return;
       }
     }
 
     await navigator.share({ title: text, text: description, url });
   } catch (err) {
-    console.log('Share iptal edildi veya hata:', err);
+    console.log("Share iptal edildi veya hata:", err);
   }
 };

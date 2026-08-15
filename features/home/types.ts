@@ -45,6 +45,8 @@ export type EducationCardProps = {
   title: string;
   authorName: string;
   authorLogo?: string | null;
+  /** Classroom ID used by the like API. */
+  entityId?: string | number;
   isFavorite?: boolean;
   onFavorite?: (nextFavorite: boolean) => void;
   /** Replaces the default favorite heart when provided. */
@@ -88,6 +90,8 @@ export type TeacherCardProps = {
   name: string;
   photo: string;
   categoryName: string;
+  /** Teacher ID used by the like API. */
+  entityId?: string | number;
   isFavorite?: boolean;
   onFavorite?: (nextFavorite: boolean) => void;
   onClick?: () => void;

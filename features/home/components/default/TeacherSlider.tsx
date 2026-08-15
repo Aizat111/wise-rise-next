@@ -20,7 +20,6 @@ export function TeacherSlider({
   isLoading = false,
   onViewAll,
   onItemClick,
-  onFavorite,
   className,
 }: TeacherSliderProps) {
   const t = useTranslations("home");
@@ -39,12 +38,12 @@ export function TeacherSlider({
       renderSkeleton={() => <TeacherSkeleton />}
       renderItem={(item) => (
         <TeacherCard
+          entityId={item.id}
           name={item.name}
           photo={item.photo}
           categoryName={item.categoryName}
           isFavorite={item.isFavorite ?? false}
           onClick={() => onItemClick?.(item)}
-          onFavorite={(nextFavorite) => onFavorite?.(item, nextFavorite)}
         />
       )}
     />

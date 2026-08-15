@@ -1,10 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
-import type { KeyboardEvent, MouseEvent } from "react";
+import type { KeyboardEvent } from "react";
 
-import { Button } from "@/components/ui/button";
+import { FavoriteButton } from "@/features/likes";
 import { cn } from "@/lib/utils";
 import Image from "@/shared/ui/Images/Image";
 
@@ -23,19 +21,13 @@ export function TeacherCard({
   name,
   photo,
   categoryName,
+  entityId,
   isFavorite = false,
-  onFavorite,
   onClick,
   className,
   aspectRatio = TEACHER_CARD_ASPECT_RATIO,
 }: TeacherCardProps) {
   const isInteractive = Boolean(onClick);
-
-  const handleFavoriteClick = (event: MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
-    onFavorite?.(!isFavorite);
-  };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
     if (!isInteractive) return;
@@ -77,36 +69,14 @@ export function TeacherCard({
 
         />
 
-        <Button
-          type="button"
-          onClick={handleFavoriteClick}
-          aria-label={isFavorite ? "Favorilerden çıkar" : "Favorilere ekle"}
-          aria-pressed={isFavorite}
-          className={cn(
-            "absolute top-2 right-1.5 z-20 inline-flex size-9 items-center justify-center rounded-full",
-            "bg-transparent text-white transition-colors duration-200",
-            "hover:bg-black/55 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50",
-            "md:hover:scale-110",
-          )}
-        >
-          <motion.span
-            key={isFavorite ? "on" : "off"}
-            initial={{ scale: 0.85 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 420, damping: 22 }}
-            className="inline-flex"
-          >
-            <Heart
-              className={cn(
-                "size-5 transition-colors duration-200 sm:size-6",
-                isFavorite
-                  ? "fill-red-500 text-red-500"
-                  : "fill-none text-white",
-              )}
-              strokeWidth={2}
-            />
-          </motion.span>
-        </Button>
+        {entityId != null ? (
+          <FavoriteButton
+            type="teacher"
+            entityId={entityId}
+            initialLiked={isFavorite}
+            iconClassName="size-5 sm:size-6"
+          />
+        ) : null}
       </div>
 
       <div className="flex min-w-0 flex-col gap-0.5 px-0.5">

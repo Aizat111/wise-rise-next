@@ -39,6 +39,7 @@ export function MostWatchedSlider({ mode }: MostWatchedSliderProps) {
       renderItem={(item) => {
         const card = (
           <EducationCard
+            entityId={item.id}
             thumbnail={item.thumbnail}
             title={item.title}
             authorName={item.authorName}

@@ -50,6 +50,16 @@ export const ENDPOINTS = {
     list: `${SERVICES.PLAN}`,
   },
 
+  order: {
+    list: `${SERVICES.ORDER}`,
+  },
+
+  account: {
+    /** PUT /disable_account — cancels the authenticated user's membership */
+    disable: `/disable_account`,
+    subscriptionStatus: `/subscription-status`,
+  },
+
   payment: {
     checkout: `${SERVICES.PAYMENT}/checkout`,
   },
@@ -58,6 +68,10 @@ export const ENDPOINTS = {
     list: `${SERVICES.PROFILE}`,
     detail: (id: string | number) => `${SERVICES.PROFILE}/${id}`,
     select: (id: string | number) => `${SERVICES.PROFILE}/${id}/select`,
+    likeClassroom: (profileId: string | number, classroomId: string | number) =>
+      `${SERVICES.PROFILE}/${profileId}/likes/classrooms/${classroomId}`,
+    likeTeacher: (profileId: string | number, teacherId: string | number) =>
+      `${SERVICES.PROFILE}/${profileId}/likes/teachers/${teacherId}`,
   },
 
   avatar: {

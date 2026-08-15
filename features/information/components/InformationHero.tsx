@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 
-import { INFORMATION_HERO_BG } from "../constants";
 import type { InformationHeroProps } from "../types";
 import { InformationBreadcrumb } from "./InformationBreadcrumb";
 import { InformationContainer } from "./InformationContainer";
@@ -14,8 +13,7 @@ export async function InformationHero({
 }: InformationHeroProps) {
   return (
     <header
-      className={cn("relative isolate w-full", className)}
-      style={{ backgroundColor: INFORMATION_HERO_BG }}
+      className={cn("relative isolate w-full bg-surface", className)}
     >
       <div className="flex min-h-[160px] w-full items-center sm:min-h-[200px] lg:min-h-[240px]">
         <InformationContainer className="w-full py-8 sm:py-10 lg:py-12">

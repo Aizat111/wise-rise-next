@@ -14,6 +14,9 @@ export interface SubscriptionPlan {
   order: number;
   status: boolean;
   product: PlanProduct;
+  /** Present when the plans API returns feature copy with the plan. */
+  features?: string[] | null;
+  currency?: string | null;
 }
 
 export interface PlansResponse {

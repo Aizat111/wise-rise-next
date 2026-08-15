@@ -13,11 +13,7 @@ export type CategoriesPageProps = {
   initialCategories?: Category[];
 };
 
-export type CategoryHeroProps = {
-  title: string;
-  subtitle: string;
-  backgroundSrc: string;
-};
+export type { CategoryHeroProps } from "@/shared/ui/CategoryHero";
 
 export type CategorySidebarProps = {
   categories: Category[];

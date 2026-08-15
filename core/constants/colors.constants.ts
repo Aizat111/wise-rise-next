@@ -35,6 +35,7 @@ export const COLORS = {
   },
   yellow: '#FFC200',
   lightgrey: '#424A5F',
+  surface: '#14161a',
   avatar_outline: '#7E96D4',
   toshi_body: '#1B2031',
   grey40: 'rgba(6, 14, 32, 0.40)',

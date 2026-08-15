@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "@/core/api/query-keys";
 import type { DisplayPlans, SubscriptionPlan } from "@/core/types/plan.types";
 
-import { planService, selectDisplayPlans } from "./plan.service";
+import { planService } from "./plan.service";
 
 export function usePlansQuery() {
   return useQuery<SubscriptionPlan[]>({
@@ -18,10 +18,7 @@ export function usePlansQuery() {
 export function useDisplayPlansQuery() {
   return useQuery<DisplayPlans>({
     queryKey: [...QUERY_KEYS.plan.all, "display"],
-    queryFn: async () => {
-      const plans = await planService.list();
-      return selectDisplayPlans(plans);
-    },
+    queryFn: () => planService.getDisplayPlans(),
     staleTime: 5 * 60 * 1000,
   });
 }

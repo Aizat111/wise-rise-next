@@ -6,12 +6,16 @@ import { QUERY_KEYS } from "@/core/api/query-keys";
 import type { Category } from "@/core/api/types";
 import { categoryService } from "./category.service";
 
-export function useCategoriesQuery(initialData?: Category[]) {
+export function useCategoriesQuery(
+  initialData?: Category[],
+  options?: { enabled?: boolean },
+) {
   return useQuery<Category[]>({
     queryKey: QUERY_KEYS.category.all,
     queryFn: () => categoryService.list(),
     initialData:
       initialData && initialData.length > 0 ? initialData : undefined,
     staleTime: 5 * 60 * 1000,
+    enabled: options?.enabled ?? true,
   });
 }

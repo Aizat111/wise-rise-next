@@ -1,7 +1,9 @@
+import { CATEGORY_HERO_BACKGROUND } from "@/shared/ui/category-hero.constants";
+
 export const CATEGORY_PAGE_SIZE = 12;
 
 /** Full-bleed hero background for the categories page. */
-export const CATEGORY_BACKGROUND = "/background/categoryBackground.png";
+export const CATEGORY_BACKGROUND = CATEGORY_HERO_BACKGROUND;
 
 /** Special sidebar filter for We The Living platform content. */
 export const WE_THE_LIVING_SLUG = "we-the-living";

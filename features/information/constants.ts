@@ -1,7 +1,9 @@
+import { COLORS } from "@/core/constants/colors.constants";
+
 import type { InformationPageKey } from "./types";
 
 /** Full-bleed hero background — matches design spec. */
-export const INFORMATION_HERO_BG = "#14161A";
+export const INFORMATION_HERO_BG = COLORS.surface;
 
 /**
  * Content width used across the site (header/footer/category sections).

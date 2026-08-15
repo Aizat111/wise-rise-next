@@ -321,6 +321,15 @@
     "addedToFavorites": "Favorilərə Əlavə Edildi",
     "removedFromFavorites": "Favorilərdən Çıxarıldı."
   },
+  "likes": {
+    "addToFavorites": "Favorilərə əlavə et",
+    "removeFromFavorites": "Favorilərdən çıxar",
+    "classroomAdded": "Təlim favorilərə əlavə edildi.",
+    "classroomRemoved": "Təlim favorilərdən çıxarıldı.",
+    "teacherAdded": "Müəllim favorilərə əlavə edildi.",
+    "teacherRemoved": "Müəllim favorilərdən çıxarıldı.",
+    "error": "Əməliyyat zamanı xəta baş verdi."
+  },
   "aboutUs": {
     "title": "Haqqımızda",
     "description1": "Gənc yaşda yolu intellektual cəmiyyətin çox dəyərli adları ilə kəsişmiş, onların vizyonlarına şahidlik edə-edə özümüzü “inkişafa” və daima “irəliləməyə” həsr etmiş kiçik bir komanda olaraq yola çıxdıq. O qədər dəyərli tövsiyələr, o qədər fərqli bir vizyon və ilham mənbəyi idilər ki, istədik ki, ölkəmizin bütün gəncləri və valideynləri də bu geniş dünyadan faydalana bilsin, bizimlə yürüsün. İlham aldığımız, onlar kimi işləmək və fərq yaratmaq istədiyimiz, tövsiyələrini nəfəsimizi tutaraq dinlədiyimiz şəxslərlə cəmiyyəti bir az daha yaxınlaşdırmağın bir ehtiyac olduğunu gördük.",
@@ -424,7 +433,33 @@
     "actions": "Əməliyyatlar"
   },
   "comingSoonPage": {
-    "noTrainings": "Təlim tapılmır."
+    "title": "Tezliklə Gələcəklər",
+    "subtitle": "Mütəxəssis Adlar, Yüzlərlə Mövzu Başlığı, Hər Ay Yeni Məzmunlar",
+    "description": "Wise&Rise-da tezliklə yayımlanacaq təlimləri kəşf edin. Hər ay əlavə olunan yeni məzmunlarla ehtiyac duyduğunuz hər mövzuda inkişaf edin.",
+    "empty": "Hazırda tezliklə gələcək bir məzmun yoxdur.",
+    "error": "Tezliklə gələcək təlimlər yüklənmədi.",
+    "retry": "Yenidən cəhd et",
+    "loading": "Yüklənir..."
+  },
+  "banners": {
+    "guestLearning": {
+      "title": "Ən Yaxşılardan Yüzlərlə Təlim Videosunu İstədiyin Yerdə İzlə!",
+      "subtitle": "Wise&Rise ilə Olduğun Yerdə Qalma, İrəlilə!",
+      "cta": "İNDİ İRƏLİLƏ"
+    },
+    "business": {
+      "title": "Wise&Rise İş Dünyasında!",
+      "description": "Wise&Rise ilə qurumunuzda öyrənmə mədəniyyəti yaradın. Qrup endirimləri və əlavə məlumat üçün bizimlə əlaqə saxlayın.",
+      "ctaTitle": "Bizimlə İrəlilə",
+      "cta": "Bizimlə İrəlilə"
+    }
+  },
+  "categoriesSection": {
+    "title": "Bütün Təlimlər",
+    "description1": "Hər ay yeni adlar və yeni məzmunlarla səni irəliləməyə dəvət edirik!",
+    "description2": "10 Fərqli Kateqoriyada İnkişaf Eltmək İstədiyin Sahəni Seç, Təlimini Tamamla!",
+    "empty": "Hazırda göstəriləcək kateqoriya yoxdur.",
+    "loading": "Kateqoriyalar yüklənir"
   },
   "useGift": {
     "title": "Hədiyyənizi istifadə edin",
@@ -504,6 +539,8 @@
     "genericError": "Əməliyyat tamamlanmadı. Zəhmət olmasa yenidən cəhd edin."
   },
   "business": {
+    "title": "Wise&Rise İş Dünyasında",
+    "heroTitle": "Wise&Rise İş Dünyasında!",
     "subtitle": "Komandanızın bacarıqlarını yüksək səviyyəli təlimlərlə inkişaf etdirin.",
     "learnFromTheBestInYourField": "Sahəsinin ən yaxşılarından öyrənin, iş dünyasında önə çıxın, Wise&Rise ilə komandanızı gələcəyə daşıyın!",
     "learnFromTheBestInYourFieldMobile": "Sahəsinin ən yaxşılarından öyrənin",
@@ -630,6 +667,8 @@
   },
   "pracingPlan": {
     "title": "Üzvlük Planları",
+    "subtitle": "Aylıq və illik üzvlük seçimlərini nəzərdən keçirin.",
+    "description": "Wise&Rise üzvlük planlarını nəzərdən keçirin. Aylıq və illik seçimlərlə bütün dərslərə limitsiz giriş əldə edin.",
     "subscriptionMessage": "Üzvlüyünüzün avtomatik yenilənməsi ləğv ediləcəkdir. Mövcud istifadə haqqınız müddəti bitənə qədər davam edəcək, bu tarixdən sonra yeni bir ödəniş edilməyəcəkdir. Əməliyyatınız tamamlandıqda təhlükəsizliyiniz üçün sessiyanız sonlandırılacaqdır.",
     "paymentHistory": "Ödəniş Keçmişi",
     "paymentHistoryDescription": "Bütün son əməliyyatlar siyahısı.",
@@ -637,7 +676,27 @@
     "endDate": "Bitmə Tarixi",
     "status": "Status",
     "price": "Qiymət",
-    "action": "Əməliyyat"
+    "action": "Əməliyyat",
+    "columnId": "ID",
+    "currentPlan": "Mövcud plan",
+    "cancelTitle": "Üzvlüyünüzü ləğv etmək istədiyinizə əminsiniz?",
+    "cancelConfirm": "Üzvlüyü Ləğv Et",
+    "cancelDismiss": "İmtina et",
+    "cancelSuccess": "Üzvlüyünüz uğurla ləğv edildi.",
+    "cancelError": "Üzvlük ləğv edilə bilmədi. Zəhmət olmasa yenidən cəhd edin.",
+    "cancelling": "Ləğv edilir...",
+    "emptyPayments": "Hələ ödəniş keçmişiniz yoxdur.",
+    "plansLoadError": "Planlar yüklənmədi. Zəhmət olmasa yenidən cəhd edin.",
+    "ordersLoadError": "Ödəniş keçmişi yüklənmədi. Zəhmət olmasa yenidən cəhd edin.",
+    "noCurrentPlan": "Aktiv üzvlük planınız yoxdur.",
+    "retry": "Yenidən cəhd et",
+    "loading": "Yüklənir...",
+    "statusActive": "Aktiv",
+    "statusCompleted": "Tamamlandı",
+    "statusCancelled": "Ləğv edildi",
+    "statusPending": "Gözləyir",
+    "statusPaid": "Ödənildi",
+    "statusFailed": "Uğursuz"
   },
   "search": {
     "results": "Nəticələr",
