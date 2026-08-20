@@ -1,6 +1,5 @@
 import type { Teacher } from "@/core/types/teacher.types";
-
-import type { TeacherCardData } from "../types";
+import type { TeacherCardData } from "@/shared/ui/cards";
 
 export function mapTeacherToCard(teacher: Teacher): TeacherCardData {
   return {

@@ -5,10 +5,12 @@ import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { mapTeachersToCards } from "@/features/home/api/teacher.utils";
-import { TeacherCard } from "@/features/home/components/cards/TeacherCard";
-import { TeacherDialog } from "@/features/home/components/cards/TeacherDialog";
-import { TeacherSkeleton } from "@/features/home/components/cards/TeacherSkeleton";
-import type { TeacherCardData } from "@/features/home/types";
+import {
+  TeacherCard,
+  TeacherDialog,
+  TeacherSkeleton,
+  type TeacherCardData,
+} from "@/shared/ui/cards";
 import { useLikedTeachersQuery } from "@/features/likes";
 import { notify } from "@/shared/components/notify";
 

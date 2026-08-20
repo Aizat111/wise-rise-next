@@ -533,6 +533,13 @@
   "username": "Username",
   "loading": "Loading...",
   "or": "OR",
+  "cards": {
+    "watchNow": "Watch Now",
+    "view": "View",
+    "moreActions": "More actions",
+    "all": "All",
+    "progress": "Progress"
+  },
   "home": {
     "recently_played": "Recently Played",
     "popular_sports": "Popular Sports",

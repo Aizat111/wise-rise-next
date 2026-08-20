@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import type { EducationCardData } from "@/features/home/types";
+import type { EducationCardData } from "@/shared/ui/cards";
 
 export type SearchListParams = {
   q: string;

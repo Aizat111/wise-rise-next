@@ -3,6 +3,8 @@
 import { useTranslations } from "next-intl";
 
 import { Link } from "@/core/i18n/navigation";
+import { EducationCard } from "@/shared/ui/cards";
+import { ContentSlider } from "@/shared/ui/sliders";
 
 import { useMostWatchedClassroomsQuery } from "../../api/classroom.queries";
 import {
@@ -10,8 +12,6 @@ import {
   mapClassroomsToEducationCards,
 } from "../../api/classroom.utils";
 import type { DefaultHomeMode } from "../../types";
-import { EducationCard } from "../cards/EducationCard";
-import { ContentSlider } from "../sliders/ContentSlider";
 
 type MostWatchedSliderProps = {
   mode: DefaultHomeMode;

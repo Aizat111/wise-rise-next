@@ -6,6 +6,8 @@ export type {
   BaseCardProps,
   EducationCardData,
   EducationCardProps,
+  EducationProgressCardData,
+  EducationProgressCardProps,
   ComingSoonCardData,
   ComingSoonCardProps,
   TeacherCardData,
@@ -67,6 +69,8 @@ export {
   BaseCard,
   EducationCard,
   EducationCardSkeleton,
+  EducationProgressCard,
+  EducationProgressCardSkeleton,
   ComingSoonCard,
   ComingSoonCardSkeleton,
   TeacherCard,
@@ -75,12 +79,12 @@ export {
   BusinessCard,
   EventCard,
   PodcastCard,
-} from "./components/cards";
+} from "@/shared/ui/cards";
 export type {
   BusinessCardProps,
   EventCardProps,
   PodcastCardProps,
-} from "./components/cards";
+} from "@/shared/ui/cards";
 export {
   BaseSlider,
   ContentSlider,
@@ -91,5 +95,5 @@ export {
   SliderHeader,
   SliderNavigation,
   useSliderScroll,
-} from "./components/sliders";
-export type { BaseSliderProps, SliderControls } from "./components/sliders";
+} from "@/shared/ui/sliders";
+export type { BaseSliderProps, SliderControls } from "@/shared/ui/sliders";

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import type { ComingSoonCardData } from "@/features/home/types";
+import type { ComingSoonCardData } from "@/shared/ui/cards";
 
 export type ComingSoonGridItem = ComingSoonCardData & {
   dateLabel?: string | null;

@@ -1,7 +1,7 @@
 "use client";
 
 import { SITE } from "@/config/site";
-import { EducationCard } from "@/features/home/components/cards/EducationCard";
+import { EducationCard } from "@/shared/ui/cards";
 
 import type { CategoryEducationCardProps } from "../types";
 import { CourseActionDropdown } from "./CourseActionDropdown";

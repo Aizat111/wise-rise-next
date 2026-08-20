@@ -25,6 +25,13 @@
     "delete": "Sil",
     "errorMessage": "Xəta baş verdi: "
   },
+  "cards": {
+    "watchNow": "İndi izlə",
+    "view": "İncələ",
+    "moreActions": "Digər əməliyyatlar",
+    "all": "Hamısı",
+    "progress": "İrəliləyiş"
+  },
   "inputs": {
     "email": "E-poçt",
     "emailPlaceholder": "E-poçt ünvanı",
@@ -470,6 +477,41 @@
     "classroomsError": "İzlədiyin təlimlər yüklənmədi.",
     "teachersError": "İzlədiyin müəllimlər yüklənmədi.",
     "retry": "Yenidən cəhd et"
+  },
+  "activitiesPage": {
+    "title": "Fəaliyyətlərim",
+    "description": "Təlimlərini, qeydlərini, izlədiyin müəllimləri və sertifikatlarını idarə et.",
+    "watchingTitle": "İzləməyə Davam Et",
+    "watchedTitle": "Tamamladığım Təlimlər",
+    "assignedTitle": "Təyin Edilmiş Təlimlər",
+    "notesTitle": "Qeydlərim",
+    "teachersTitle": "İzlədiyim Müəllimlər",
+    "certificatesTitle": "Sertifikatlarım",
+    "emptyEducations": "Hazırda təlim tapılmadı.",
+    "emptyNotes": "Hazırda qeyd tapılmadı.",
+    "emptyTeachers": "Hazırda müəllim tapılmadı.",
+    "emptyCertificates": "Hazırda sertifikat tapılmadı.",
+    "loading": "Yüklənir...",
+    "retry": "Yenidən cəhd et",
+    "error": "Fəaliyyətlərin yüklənmədi.",
+    "watchingError": "İzləmə siyahın yüklənmədi.",
+    "watchedError": "Tamamladığın təlimlər yüklənmədi.",
+    "assignedError": "Təyin edilmiş təlimlər yüklənmədi.",
+    "notesError": "Qeydlərin yüklənmədi.",
+    "teachersError": "İzlədiyin müəllimlər yüklənmədi.",
+    "certificatesError": "Sertifikatların yüklənmədi.",
+    "certificateDetailError": "Sertifikat detalları yüklənmədi.",
+    "downloadPdf": "PDF Yüklə",
+    "share": "Paylaş",
+    "copy": "Kopyala",
+    "linkCopied": "Link kopyalandı.",
+    "linkCopyError": "Bağlantı kopyalanmadı.",
+    "pdfDownloadError": "PDF yüklənmədi.",
+    "shareWhatsapp": "WhatsApp",
+    "shareFacebook": "Facebook",
+    "shareTwitter": "X",
+    "shareLinkedin": "LinkedIn",
+    "certificateDialogTitle": "Sertifikat"
   },
   "banners": {
     "guestLearning": {

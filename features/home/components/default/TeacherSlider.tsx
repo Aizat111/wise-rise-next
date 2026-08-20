@@ -2,14 +2,14 @@
 
 import { useTranslations } from "next-intl";
 
+import { TeacherCard, TeacherSkeleton } from "@/shared/ui/cards";
 import {
+  ContentSlider,
   TEACHER_SKELETON_COUNT,
   TEACHER_SLIDER_ITEM_WIDTH_CLASS,
-} from "../../constants";
+} from "@/shared/ui/sliders";
+
 import type { TeacherSliderProps } from "../../types";
-import { TeacherCard } from "../cards/TeacherCard";
-import { TeacherSkeleton } from "../cards/TeacherSkeleton";
-import { ContentSlider } from "../sliders/ContentSlider";
 
 /**
  * "Türkiye'nin En İyileri" content row built on ContentSlider → BaseSlider.

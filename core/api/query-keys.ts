@@ -89,6 +89,41 @@ export const QUERY_KEYS = {
   notes: {
     all: ["notes"],
     byVideo: (videoId: string) => ["notes", "video", videoId],
+    byProfile: (profileId: string | number, pageSize: number) => [
+      "notes",
+      "profile",
+      String(profileId),
+      pageSize,
+    ],
+  },
+
+  activities: {
+    all: ["activities"],
+    watching: (profileId: string | number) => [
+      "activities",
+      "watching",
+      String(profileId),
+    ],
+    watched: (profileId: string | number) => [
+      "activities",
+      "watched",
+      String(profileId),
+    ],
+    assigned: (profileId: string | number) => [
+      "activities",
+      "assigned",
+      String(profileId),
+    ],
+  },
+
+  certificates: {
+    all: ["certificates"],
+    detail: (userId: string | number, certificateId: string | number) => [
+      "certificates",
+      "detail",
+      String(userId),
+      String(certificateId),
+    ],
   },
 
   search: {

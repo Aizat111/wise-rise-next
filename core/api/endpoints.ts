@@ -76,6 +76,27 @@ export const ENDPOINTS = {
       `${SERVICES.PROFILE}/${profileId}/likes/classrooms`,
     likedTeachers: (profileId: string | number) =>
       `${SERVICES.PROFILE}/${profileId}/likes/teachers`,
+    notes: (profileId: string | number) =>
+      `${SERVICES.PROFILE}/${profileId}/notes`,
+  },
+
+  activities: {
+    watching: (profileId: string | number) =>
+      `${SERVICES.ACTIVITIES}/watching/${profileId}`,
+    watched: (profileId: string | number) =>
+      `${SERVICES.ACTIVITIES}/watched/${profileId}`,
+  },
+
+  assignedClassroom: {
+    list: (profileId: string | number) =>
+      `${SERVICES.ASSIGNED_CLASSROOM}/${profileId}`,
+  },
+
+  certificates: {
+    list: (userId: string | number) =>
+      `${SERVICES.USER}/certificates/${userId}`,
+    detail: (userId: string | number, certificateId: string | number) =>
+      `${SERVICES.USER}/certificates/${userId}/${certificateId}`,
   },
 
   avatar: {

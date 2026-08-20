@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "@/core/i18n/navigation";
-import { EducationCardSkeleton } from "@/features/home/components/cards/EducationCardSkeleton";
+import { EducationCardSkeleton } from "@/shared/ui/cards";
 
 import { CATEGORY_GRID_SKELETON_COUNT } from "../constants";
 import type { CategoryGridProps } from "../types";

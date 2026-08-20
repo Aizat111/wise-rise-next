@@ -2,10 +2,11 @@
 
 import type { Hero } from "@/core/types/hero.types";
 
+import { HeroSlider, type HeroSlide } from "@/shared/ui/sliders";
+
 import { useHeroesQuery } from "../../api/hero.queries";
 import { getHeroPlatformParam } from "../../api/hero.utils";
-import type { DefaultHomeMode, HeroSlide } from "../../types";
-import { HeroSlider } from "../sliders/HeroSlider";
+import type { DefaultHomeMode } from "../../types";
 
 type HomeHeroSliderProps = {
   mode: DefaultHomeMode;

@@ -6,8 +6,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/core/i18n/navigation";
 import { mapClassroomsToEducationCards } from "@/features/home/api/classroom.utils";
-import { EducationCard } from "@/features/home/components/cards/EducationCard";
-import { EducationCardSkeleton } from "@/features/home/components/cards/EducationCardSkeleton";
+import { EducationCard, EducationCardSkeleton } from "@/shared/ui/cards";
 import { useLikedClassroomsQuery } from "@/features/likes";
 import { notify } from "@/shared/components/notify";
 

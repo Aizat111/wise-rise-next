@@ -4,12 +4,12 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
+import { TeacherDialog, type TeacherCardData } from "@/shared/ui/cards";
 import { cn } from "@/lib/utils";
 
 import { useBestTeachersQuery } from "../../api/teacher.queries";
 import { mapTeachersToCards } from "../../api/teacher.utils";
-import type { TeacherCardData, TeacherSectionProps } from "../../types";
-import { TeacherDialog } from "../cards/TeacherDialog";
+import type { TeacherSectionProps } from "../../types";
 import { TeacherSlider } from "./TeacherSlider";
 
 /**

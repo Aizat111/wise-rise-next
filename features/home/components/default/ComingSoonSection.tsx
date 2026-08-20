@@ -3,21 +3,22 @@
 import { Fragment } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
+import { ComingSoonCard, ComingSoonCardSkeleton } from "@/shared/ui/cards";
+import {
+  BaseSlider,
+  COMING_SOON_SKELETON_COUNT,
+  COMING_SOON_SLIDER_ITEM_WIDTH_CLASS,
+  SliderNavigation,
+} from "@/shared/ui/sliders";
+
 import { useComingSoonClassroomsQuery } from "../../api/classroom.queries";
 import {
   filterClassroomsByHomeMode,
   mapClassroomsToComingSoonCards,
 } from "../../api/classroom.utils";
-import {
-  COMING_SOON_SKELETON_COUNT,
-  COMING_SOON_SLIDER_ITEM_WIDTH_CLASS,
-} from "../../constants";
 import type { DefaultHomeMode } from "../../types";
 import { formatComingSoonDate } from "../../utils/formatComingSoonDate";
-import { ComingSoonCard } from "../cards/ComingSoonCard";
-import { ComingSoonCardSkeleton } from "../cards/ComingSoonCardSkeleton";
-import { BaseSlider } from "../sliders/BaseSlider";
-import { SliderNavigation } from "../sliders/SliderNavigation";
+import Link from "next/link";
 
 type ComingSoonSectionProps = {
   mode: DefaultHomeMode;
@@ -95,16 +96,18 @@ export function ComingSoonSection({ mode }: ComingSoonSectionProps) {
             )
             : items.map((item) => (
               <Fragment key={item.id}>
-                <ComingSoonCard
-                  thumbnail={item.thumbnail}
-                  title={item.title}
-                  authorName={item.authorName}
-                  authorLogo={item.authorLogo}
-                  dateLabel={formatComingSoonDate(
-                    item.comingSoonDate,
-                    locale,
-                  )}
-                />
+                <Link href={"/yakinda-gelecekler"} >
+                  <ComingSoonCard
+                    thumbnail={item.thumbnail}
+                    title={item.title}
+                    authorName={item.authorName}
+                    authorLogo={item.authorLogo}
+                    dateLabel={formatComingSoonDate(
+                      item.comingSoonDate,
+                      locale,
+                    )}
+                  />
+                </Link>
               </Fragment>
             ))}
         </BaseSlider>

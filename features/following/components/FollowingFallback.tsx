@@ -1,5 +1,4 @@
-import { EducationCardSkeleton } from "@/features/home/components/cards/EducationCardSkeleton";
-import { TeacherSkeleton } from "@/features/home/components/cards/TeacherSkeleton";
+import { EducationCardSkeleton, TeacherSkeleton } from "@/shared/ui/cards";
 
 import {
   FOLLOWING_CLASSROOMS_GRID_CLASS,

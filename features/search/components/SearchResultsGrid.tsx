@@ -1,5 +1,5 @@
 import { Link } from "@/core/i18n/navigation";
-import { EducationCard } from "@/features/home/components/cards/EducationCard";
+import { EducationCard } from "@/shared/ui/cards";
 
 import { SEARCH_GRID_CLASS } from "../constants";
 import type { SearchResultsGridProps } from "../types";

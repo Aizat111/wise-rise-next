@@ -2,12 +2,15 @@ import { clientRequest } from "@/core/api/client";
 import { ENDPOINTS } from "@/core/api/endpoints";
 import type {
   CreateVideoNoteRequest,
+  ProfileNote,
+  ProfileNotesListParams,
   VideoNote,
   VideoNotesListParams,
   VideoNotesPaginatedResponse,
 } from "@/core/types/notes.types";
 
 type NotesListResponse = VideoNote[] | VideoNotesPaginatedResponse;
+type ProfileNotesListResponse = ProfileNote[] | VideoNotesPaginatedResponse;
 
 function normalizeNotes(response: NotesListResponse): VideoNote[] {
   if (Array.isArray(response)) return response;
@@ -41,6 +44,25 @@ export const notesService = {
     });
 
     return normalizeNotes(response);
+  },
+
+  async listByProfile({
+    profileId,
+    page = 0,
+    pageSize = 12,
+    signal,
+  }: ProfileNotesListParams): Promise<ProfileNote[]> {
+    const response = await clientRequest<ProfileNotesListResponse>({
+      url: ENDPOINTS.profile.notes(profileId),
+      method: "GET",
+      signal,
+      params: {
+        "page[number]": page,
+        "page[size]": pageSize,
+      },
+    });
+
+    return normalizeNotes(response) as ProfileNote[];
   },
 
   async create(payload: CreateVideoNoteRequest): Promise<VideoNote> {

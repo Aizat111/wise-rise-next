@@ -174,7 +174,7 @@ export function Step1() {
                                 label={
                                     <>
                                         <Link
-                                            href="/ticari-elektronik-ileti"
+                                            href="/ticari-elektronik-ileti-onay-metni"
                                             className="text-primary underline-offset-2 hover:underline"
                                             target="_blank"
                                         >

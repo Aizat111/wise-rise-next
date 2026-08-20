@@ -1,6 +1,6 @@
 "use client";
 
-import { EducationCardSkeleton } from "@/features/home/components/cards/EducationCardSkeleton";
+import { EducationCardSkeleton } from "@/shared/ui/cards";
 
 import { CATEGORY_GRID_SKELETON_COUNT } from "../constants";
 

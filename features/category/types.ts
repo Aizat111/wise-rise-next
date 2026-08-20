@@ -1,5 +1,5 @@
 import type { Category } from "@/core/api/types";
-import type { EducationCardData } from "@/features/home/types";
+import type { EducationCardData } from "@/shared/ui/cards";
 
 export type CategorySelection =
   | { type: "all" }

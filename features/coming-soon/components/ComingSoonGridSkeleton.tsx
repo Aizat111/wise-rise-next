@@ -1,4 +1,4 @@
-import { ComingSoonCardSkeleton } from "@/features/home/components/cards/ComingSoonCardSkeleton";
+import { ComingSoonCardSkeleton } from "@/shared/ui/cards";
 
 import {
   COMING_SOON_GRID_CLASS,

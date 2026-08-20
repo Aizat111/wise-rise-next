@@ -67,6 +67,8 @@ export type Classroom = {
   description?: string | null;
   view_count?: number | null;
   is_favorite?: boolean | null;
+  /** 0–100 learning progress when provided by API. */
+  completion_rate?: number | null;
   coming_soon?: boolean | null;
   /** ISO date string, e.g. "2026-08-12". */
   coming_soon_date?: string | null;

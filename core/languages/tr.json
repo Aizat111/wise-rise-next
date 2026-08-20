@@ -25,6 +25,13 @@
     "delete": "Sil",
     "errorMessage": "Hata oluştu: "
   },
+  "cards": {
+    "watchNow": "Şimdi İzle",
+    "view": "İncele",
+    "moreActions": "Diğer işlemler",
+    "all": "Tümü",
+    "progress": "İlerleme"
+  },
   "inputs": {
     "email": "E-posta",
     "emailPlaceholder": "E-posta Adresi",
@@ -471,6 +478,41 @@
     "classroomsError": "Takip ettiğin eğitimler yüklenemedi.",
     "teachersError": "Takip ettiğin eğitmenler yüklenemedi.",
     "retry": "Tekrar dene"
+  },
+  "activitiesPage": {
+    "title": "Aktivitelerim",
+    "description": "Eğitimlerini, notlarını, takip ettiğin eğitmenleri ve sertifikalarını yönet.",
+    "watchingTitle": "İzlemeye Devam Et",
+    "watchedTitle": "Tamamladığım Eğitimler",
+    "assignedTitle": "Atanmış Eğitimler",
+    "notesTitle": "Notlarım",
+    "teachersTitle": "Takip Ettiğim Eğitmenler",
+    "certificatesTitle": "Sertifikalarım",
+    "emptyEducations": "Şu an eğitim bulunmamaktadır.",
+    "emptyNotes": "Şu an not bulunmamaktadır.",
+    "emptyTeachers": "Şu an eğitmen bulunmamaktadır.",
+    "emptyCertificates": "Şu an sertifika bulunmamaktadır.",
+    "loading": "Yükleniyor...",
+    "retry": "Tekrar dene",
+    "error": "Aktivitelerin yüklenemedi.",
+    "watchingError": "İzleme listen yüklenemedi.",
+    "watchedError": "Tamamladığın eğitimler yüklenemedi.",
+    "assignedError": "Atanmış eğitimler yüklenemedi.",
+    "notesError": "Notların yüklenemedi.",
+    "teachersError": "Takip ettiğin eğitmenler yüklenemedi.",
+    "certificatesError": "Sertifikaların yüklenemedi.",
+    "certificateDetailError": "Sertifika detayı yüklenemedi.",
+    "downloadPdf": "PDF İndir",
+    "share": "Paylaş",
+    "copy": "Kopyala",
+    "linkCopied": "Link kopyalandı.",
+    "linkCopyError": "Bağlantı kopyalanamadı.",
+    "pdfDownloadError": "PDF indirilemedi.",
+    "shareWhatsapp": "WhatsApp",
+    "shareFacebook": "Facebook",
+    "shareTwitter": "X",
+    "shareLinkedin": "LinkedIn",
+    "certificateDialogTitle": "Sertifika"
   },
   "banners": {
     "guestLearning": {

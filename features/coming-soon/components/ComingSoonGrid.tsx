@@ -1,4 +1,4 @@
-import { ComingSoonCard } from "@/features/home/components/cards/ComingSoonCard";
+import { ComingSoonCard } from "@/shared/ui/cards";
 
 import { COMING_SOON_GRID_CLASS } from "../constants";
 import type { ComingSoonGridProps } from "../types";
