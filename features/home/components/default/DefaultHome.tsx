@@ -1,26 +1,31 @@
 "use client";
 
 import { useAppSelector } from "@/store/hooks";
-import { HOME_THEME_STYLES } from "../../constants";
-import type { DefaultHomeMode } from "../../types";
-import { HomeThemeWrapper } from "../HomeThemeWrapper";
-import { ComingSoonSection } from "./ComingSoonSection";
-import { HomeHeroSlider } from "./HomeHeroSlider";
-import { MostWatchedSlider } from "./MostWatchedSlider";
-import { TeacherSection } from "./TeacherSection";
+
+import type { DisplayMembershipPlans } from "@/core/types/plan.types";
 import { BusinessBanner } from "@/shared/ui/banners/BusinessBanner";
 import { GuestLearningBanner } from "@/shared/ui/banners/GuestLearningBanner";
 import { CategoriesSection } from "@/shared/ui/categories";
 
+import { HOME_THEME_STYLES } from "../../constants";
+import type { DefaultHomeMode } from "../../types";
+import { HomeThemeWrapper } from "../HomeThemeWrapper";
+import { WeTheLivingMembershipBanner } from "../we-the-living/WeTheLivingMembershipBanner";
+import { ComingSoonSection } from "./ComingSoonSection";
+import { HomeHeroSlider } from "./HomeHeroSlider";
+import { MostWatchedSlider } from "./MostWatchedSlider";
+import { TeacherSection } from "./TeacherSection";
+
 export type DefaultHomeProps = {
   mode: DefaultHomeMode;
+  membershipPlans: DisplayMembershipPlans;
 };
 
 /**
  * Shared home layout for "Tüm İçerikler" and "Wise&Rise".
  * Content and optional sections differ by `mode`; UI building blocks stay shared.
  */
-export function DefaultHome({ mode }: DefaultHomeProps) {
+export function DefaultHome({ mode, membershipPlans }: DefaultHomeProps) {
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
   return (
     <HomeThemeWrapper
@@ -34,6 +39,11 @@ export function DefaultHome({ mode }: DefaultHomeProps) {
         <HomeHeroSlider mode={mode} />
         <div className="px-4 lg:px-25">
           <GuestLearningBanner isAuthenticated={isAuthenticated} />
+          <WeTheLivingMembershipBanner
+            monthlyPlan={membershipPlans.monthly}
+            yearlyPlan={membershipPlans.yearly}
+            className="my-8"
+          />
           <MostWatchedSlider mode={mode} />
           <TeacherSection />
           <CategoriesSection />

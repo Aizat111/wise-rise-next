@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { SITE } from "@/config/site";
 import { DEFAULT_LOCALE } from "@/core/config/domain-locale.config";
 import { HomePage } from "@/features/home/components/HomePage";
+import { getDisplayMembershipPlans } from "@/features/plans/api/get-plans";
 import FAQSchema from "@/shared/seo/FAQSchema";
 import { buildPageMetadata } from "@/shared/seo/generateMetadata";
 import { getFaqItems } from "@/shared/seo/getFaqItems";
@@ -29,12 +30,15 @@ export default async function Home({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const faqItems = await getFaqItems();
+  const [faqItems, membershipPlans] = await Promise.all([
+    getFaqItems(),
+    getDisplayMembershipPlans(),
+  ]);
 
   return (
     <>
       <FAQSchema items={faqItems} />
-      <HomePage />
+      <HomePage membershipPlans={membershipPlans} />
     </>
   );
 }

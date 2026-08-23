@@ -2,7 +2,7 @@ import { clientRequest } from "@/core/api/client";
 import { ENDPOINTS } from "@/core/api/endpoints";
 import type { Hero, HeroesResponse } from "@/core/types/hero.types";
 
-import { normalizeHeroes } from "./hero.utils";
+import { normalizeHeroes, normalizeVideoHeroes } from "./hero.utils";
 
 export type ListHeroesParams = {
   platform?: string;
@@ -23,6 +23,8 @@ export const heroService = {
       },
     });
 
-    return normalizeHeroes(response);
+    return mediaType === "video"
+      ? normalizeVideoHeroes(response)
+      : normalizeHeroes(response);
   },
 };

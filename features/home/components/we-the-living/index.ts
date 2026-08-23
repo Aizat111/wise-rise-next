@@ -1,1 +1,12 @@
 export { WeTheLivingHome } from "./WeTheLivingHome";
+export { WeTheLivingVideoHero } from "./WeTheLivingVideoHero";
+export { WeTheLivingFeed } from "./WeTheLivingFeed";
+export { WeTheLivingSlider } from "./WeTheLivingSlider";
+export { WeTheLivingCourseCard } from "./WeTheLivingCourseCard";
+export { WeTheLivingSimpleBanner } from "./WeTheLivingSimpleBanner";
+export { WeTheLivingImageBanner } from "./WeTheLivingImageBanner";
+export { WeTheLivingMembershipBanner } from "./WeTheLivingMembershipBanner";
+export { WeTheLivingMembershipCard } from "./WeTheLivingMembershipCard";
+export type { WeTheLivingSimpleBannerProps } from "./WeTheLivingSimpleBanner";
+export type { WeTheLivingImageBannerProps } from "./WeTheLivingImageBanner";
+export type { WeTheLivingMembershipBannerProps } from "./WeTheLivingMembershipBanner";

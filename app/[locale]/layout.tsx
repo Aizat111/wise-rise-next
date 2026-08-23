@@ -9,7 +9,7 @@ import { defaultMetadata } from "@/config/seo";
 import { routing } from "@/core/i18n/routing";
 import Providers from "@/core/providers/Providers";
 import { getCategories } from "@/features/category/api/get-categories";
-import { poppins } from "@/lib/fonts";
+import { extraFontVariables, poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import OrganizationSchema from "@/shared/seo/schemas/OrganizationSchema";
 import WebsiteSchema from "@/shared/seo/WebsiteSchema";
@@ -44,7 +44,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html
       lang={locale}
       suppressHydrationWarning
-      className={cn("h-full dark", poppins.variable)}
+      className={cn("h-full dark", poppins.variable, extraFontVariables)}
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <OrganizationSchema />

@@ -24,6 +24,8 @@ export type BaseSliderProps = {
   children: ReactNode;
   /** Optional header slot with live scroll controls (arrows, etc.). */
   header?: (controls: SliderControls) => ReactNode;
+  /** Overlay aligned to the track (side arrows, edge fades). */
+  overlay?: (controls: SliderControls) => ReactNode;
   className?: string;
   trackClassName?: string;
   itemClassName?: string;
@@ -42,6 +44,7 @@ export type BaseSliderProps = {
 export function BaseSlider({
   children,
   header,
+  overlay,
   className,
   trackClassName,
   itemClassName,
@@ -84,30 +87,36 @@ export function BaseSlider({
     >
       {header?.(controls)}
 
-      <div
-        ref={scrollerRef}
-        {...pointerHandlers}
-        className={cn(
-          "flex w-full touch-pan-x overflow-x-auto scroll-smooth",
-          "snap-x snap-mandatory",
-          "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden",
-          isDragging ? "cursor-grabbing select-none" : "cursor-grab",
-          gapClassName,
-          trackClassName,
-        )}
-      >
-        {items.map((child, index) => (
-          <div
-            key={isValidElement(child) && child.key != null ? child.key : index}
-            className={cn(
-              "shrink-0 snap-start",
-              itemWidthClassName,
-              itemClassName,
-            )}
-          >
-            {child}
-          </div>
-        ))}
+      <div className="relative">
+        {overlay?.(controls)}
+
+        <div
+          ref={scrollerRef}
+          {...pointerHandlers}
+          className={cn(
+            "flex w-full touch-pan-x overflow-x-auto scroll-smooth",
+            "snap-x snap-mandatory",
+            "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden",
+            isDragging ? "cursor-grabbing select-none" : "cursor-grab",
+            gapClassName,
+            trackClassName,
+          )}
+        >
+          {items.map((child, index) => (
+            <div
+              key={
+                isValidElement(child) && child.key != null ? child.key : index
+              }
+              className={cn(
+                "shrink-0 snap-start",
+                itemWidthClassName,
+                itemClassName,
+              )}
+            >
+              {child}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

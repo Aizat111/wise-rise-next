@@ -31,6 +31,50 @@ export type TeacherSectionProps = {
   className?: string;
 };
 
+export type WeTheLivingCourseCardData = {
+  id: string | number;
+  title: string;
+  teacherName: string;
+  thumbnail: string;
+  href: string | null;
+};
+
+export type WeTheLivingSliderSection = {
+  kind: "slider";
+  id: string;
+  title: string;
+  items: WeTheLivingCourseCardData[];
+};
+
+/** Reserved for We The Living banners between sliders and on other WTL pages. */
+export type WeTheLivingSimpleBannerItemKey = "item1" | "item2";
+
+export type WeTheLivingBannerSection =
+  | {
+      kind: "banner";
+      id: string;
+      variant: "simple";
+      itemKey: WeTheLivingSimpleBannerItemKey;
+      image: string;
+    }
+  | {
+      kind: "banner";
+      id: string;
+      variant: "image";
+    }
+  | {
+      kind: "banner";
+      id: string;
+      variant: "membership";
+    }
+  | {
+      kind: "banner";
+      id: string;
+      variant: "membershipcard";
+    };
+export type WeTheLivingHomeSection =
+  WeTheLivingSliderSection | WeTheLivingBannerSection;
+
 export type {
   CardAspectRatio,
   BaseCardProps,

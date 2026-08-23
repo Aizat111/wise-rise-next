@@ -4,6 +4,7 @@ export enum SERVICES {
   REGISTER = "/register",
   COURSE = "/classrooms",
   HERO = "/heroes",
+  HOME = "/home",
   BLOG = "/blog",
   TEACHER = "/teachers",
   CATEGORY = "/categories",

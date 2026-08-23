@@ -326,7 +326,13 @@
     "improveAsYouWatchText": "İnkişaf Etdikcə Dəyiş!",
     "createYourAccount": "Hesabını yarat",
     "addedToFavorites": "Favorilərə Əlavə Edildi",
-    "removedFromFavorites": "Favorilərdən Çıxarıldı."
+    "removedFromFavorites": "Favorilərdən Çıxarıldı.",
+    "weTheLiving": {
+      "visualLibraryTitle": "Görsel Kitabxana",
+      "visualLibrarySubtitle": "Biliyi görsel bir səyahətə çevirən, sahəsinin ən yaxşılarının izahları ilə hazırlanmış bir hikmət kitabxanası.",
+      "videoLoadError": "Video yüklənmədi.",
+      "coursesLoadError": "Təlimlər yüklənmədi."
+    }
   },
   "likes": {
     "addToFavorites": "Favorilərə əlavə et",
@@ -1341,6 +1347,49 @@
       "emailValue": "info@wisenrise.com",
       "nameSurname": "Ad Soyad :",
       "tcNo": "TCKN :"
+    }
+  },
+  "weTheLiving": {
+    "banner": {
+      "simple": {
+        "item1": {
+          "title": "Hikmət bir varış yeri deyil, səyahətin özüdür.",
+          "subtitle": "Səni gözləyən bir yol var",
+          "imageAlt": "Oynat"
+        },
+        "item2": {
+          "title": "Daha çox öyrənməyə, daha dərini görməyə hazırsan?",
+          "subtitle": "Kəşf səyahətin indi başlasın",
+          "imageAlt": "Kəşf yolu"
+        },
+        "cta": "İNDİ İZLƏ"
+      },
+      "image": {
+        "title": "Bilmək gözəlləşdirir",
+        "subtitle": "Bilən bir gözlə baxmaq üçün...",
+        "cta": "İZLƏMƏYƏ İNDİ BAŞLA",
+        "imageAlt": "We The Living kitabxana"
+      }
+    },
+    "membership": {
+      "title": "Üzvlük Planları",
+      "cta": "İNDİ İZLƏ",
+      "monthly": {
+        "title": "AYLIQ ÜZVLÜK PLANI",
+        "imageAlt": "Aylıq üzvlük planı"
+      },
+      "yearly": {
+        "title": "İLLİK ÜZVLÜK PLANI",
+        "imageAlt": "İllik üzvlük planı"
+      },
+      "features": {
+        "noCommitment": "Öhdəlik yoxdur, asanlıqla ləğv edin",
+        "lessons": "Türkiyənin ən yaxşılarından 1.000+ dərs",
+        "newCourses": "Hər ay əlavə olunan yeni təlimlər",
+        "watchAnywhere": "Telefon, planşet və kompüterdən izləyin",
+        "certificate": "Hər təlimdə sertifikat qazanın",
+        "betterPrice": "Aylıq plana görə sərfəli qiymət"
+      }
     }
   }
 }

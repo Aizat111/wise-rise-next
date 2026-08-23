@@ -33,6 +33,10 @@ export const ENDPOINTS = {
     list: `${SERVICES.HERO}`,
   },
 
+  home: {
+    feed: `${SERVICES.HOME}`,
+  },
+
   teacher: {
     theBest: `${SERVICES.TEACHER}/sorted/the_best`,
   },

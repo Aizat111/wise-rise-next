@@ -15,6 +15,10 @@ export type {
   TeacherDialogProps,
   TeacherSliderProps,
   TeacherSectionProps,
+  WeTheLivingCourseCardData,
+  WeTheLivingHomeSection,
+  WeTheLivingBannerSection,
+  WeTheLivingSimpleBannerItemKey,
   ContentSliderProps,
   SliderHeaderProps,
   SliderNavigationProps,
@@ -58,11 +62,23 @@ export {
   TeacherSlider,
 } from "./components/default";
 export type { DefaultHomeProps } from "./components/default";
-export { WeTheLivingHome } from "./components/we-the-living";
+export {
+  WeTheLivingHome,
+  WeTheLivingSimpleBanner,
+  WeTheLivingImageBanner,
+  WeTheLivingMembershipBanner,
+  WeTheLivingMembershipCard,
+} from "./components/we-the-living";
+export type {
+  WeTheLivingSimpleBannerProps,
+  WeTheLivingImageBannerProps,
+  WeTheLivingMembershipBannerProps,
+} from "./components/we-the-living";
 export {
   useMostWatchedClassroomsQuery,
   useComingSoonClassroomsQuery,
 } from "./api/classroom.queries";
+export { useHomeFeedQuery } from "./api/home.queries";
 export { useHeroesQuery } from "./api/hero.queries";
 export { useBestTeachersQuery } from "./api/teacher.queries";
 export {

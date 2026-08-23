@@ -24,6 +24,11 @@ export const QUERY_KEYS = {
     ],
   },
 
+  home: {
+    all: ["home"],
+    feed: (platform: string) => ["home", "feed", platform],
+  },
+
   teacher: {
     all: ["teachers"],
     theBest: ["teachers", "the-best"],

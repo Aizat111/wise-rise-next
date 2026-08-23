@@ -7,29 +7,11 @@ import type {
   SubscriptionPlan,
 } from "@/core/types/plan.types";
 
+import { normalizePlans, selectDisplayPlans } from "./plan.utils";
+
 type PlansApiResponse = SubscriptionPlan[] | PlansResponse;
 
-function normalizePlans(response: PlansApiResponse): SubscriptionPlan[] {
-  if (Array.isArray(response)) return response;
-  if (response && Array.isArray(response.data)) return response.data;
-  return [];
-}
-
-/** Pick one active Monthly and one active Yearly plan (lowest order first). */
-export function selectDisplayPlans(plans: SubscriptionPlan[]): DisplayPlans {
-  const active = plans
-    .filter((plan) => plan.status)
-    .sort((a, b) => a.order - b.order);
-
-  return {
-    monthly:
-      active.find((plan) => String(plan.period).toLowerCase() === "monthly") ??
-      null,
-    yearly:
-      active.find((plan) => String(plan.period).toLowerCase() === "yearly") ??
-      null,
-  };
-}
+export { normalizePlans, selectDisplayPlans } from "./plan.utils";
 
 export const planService = {
   async list(period?: PlanPeriod): Promise<SubscriptionPlan[]> {

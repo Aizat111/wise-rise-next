@@ -13,7 +13,7 @@ export type Hero = {
   order: number;
   is_active: boolean;
   show_on_homepage: boolean;
-  image_url: string;
+  image_url: string | null;
   mobile_image_url: string | null;
   video_url: string | null;
 };

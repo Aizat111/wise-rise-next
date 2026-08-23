@@ -27,3 +27,15 @@ export interface DisplayPlans {
   monthly: SubscriptionPlan | null;
   yearly: SubscriptionPlan | null;
 }
+
+/** UI-ready plan model. Current `price` always comes from the API. */
+export type MembershipPlan = {
+  period: PlanPeriod;
+  price: number;
+  oldPrice: number;
+};
+
+export type DisplayMembershipPlans = {
+  monthly: MembershipPlan | null;
+  yearly: MembershipPlan | null;
+};

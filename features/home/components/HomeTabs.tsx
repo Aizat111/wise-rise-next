@@ -13,12 +13,12 @@ type HomeTabsProps = {
 
 export function HomeTabs({ activeTab, onTabChange }: HomeTabsProps) {
   return (
-    <div className={`flex w-full justify-center px-4 py-4 sm:py-5 ${activeTab === "we-the-living" ? "bg-[##02472b]" : "bg-[#18171c]"}`}>
+    <div className={`flex w-full justify-center px-4 py-4 sm:py-5 ${activeTab === "we-the-living" ? "bg-[#045333]" : "bg-[#18171c]"}`}>
       <LayoutGroup id="home-tabs">
         <div
           role="tablist"
           aria-label="Ana sayfa içerik filtresi"
-          className="grid w-[90%] grid-cols-3 gap-1 rounded-full bg-[#25262b] p-1 sm:w-[25%]  sm:max-w-[25%]"
+          className={`grid w-[90%] grid-cols-3 gap-1 rounded-full ${activeTab === "we-the-living" ? "bg-[#045333] border border-white" : "bg-[#25262b]"} p-1 sm:w-[25%]  sm:max-w-[25%]`}
         >
           {HOME_TABS.map((tab) => (
             <HomeTabItem

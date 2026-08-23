@@ -327,7 +327,13 @@
     "improveAsYouWatchText": "Geliştikçe Dönüş!",
     "createYourAccount": "Hesabını oluştur",
     "addedToFavorites": "Favorilere Eklendi",
-    "removedFromFavorites": "Favorilerden Çıkarıldı."
+    "removedFromFavorites": "Favorilerden Çıkarıldı.",
+    "weTheLiving": {
+      "visualLibraryTitle": "Görsel Kütüphane",
+      "visualLibrarySubtitle": "Bilgiyi görsel bir yolculuğa dönüştüren, alanının en iyilerinin anlatımlarıyla hazırlanmış bir bilgelik kütüphanesi.",
+      "videoLoadError": "Video yüklenemedi.",
+      "coursesLoadError": "Eğitimler yüklenemedi."
+    }
   },
   "likes": {
     "addToFavorites": "Favorilere ekle",
@@ -1349,6 +1355,49 @@
       "emailValue": "info@wisenrise.com",
       "nameSurname": "İsim Soyisim :",
       "tcNo": "TCKN :"
+    }
+  },
+  "weTheLiving": {
+    "banner": {
+      "simple": {
+        "item1": {
+          "title": "Bilgelik bir varış değil, yolculuğun kendisidir.",
+          "subtitle": "Seni bekleyen bir rota var",
+          "imageAlt": "Oynat"
+        },
+        "item2": {
+          "title": "Daha fazlasını öğrenmeye, daha derini görmeye hazır mısın?",
+          "subtitle": "Keşfetme yolculuğun şimdi başlasın",
+          "imageAlt": "Keşif rotası"
+        },
+        "cta": "HEMEN İZLE"
+      },
+      "image": {
+        "title": "Bilmek güzelleştirir",
+        "subtitle": "Bilen bir gözle bakmak için...",
+        "cta": "HEMEN İZLEMEYE BAŞLA",
+        "imageAlt": "We The Living kütüphane"
+      }
+    },
+    "membership": {
+      "title": "Üyelik Planları",
+      "cta": "HEMEN İZLE",
+      "monthly": {
+        "title": "AYLIK ÜYELİK PLANI",
+        "imageAlt": "Aylık üyelik planı"
+      },
+      "yearly": {
+        "title": "YILLIK ÜYELİK PLANI",
+        "imageAlt": "Yıllık üyelik planı"
+      },
+      "features": {
+        "noCommitment": "Taahhüt yok, kolayca iptal edin",
+        "lessons": "Türkiye’nin en iyilerinden 1.000+ ders",
+        "newCourses": "Her ay eklenen yeni eğitimler",
+        "watchAnywhere": "Telefon, tablet ve bilgisayardan izleyin",
+        "certificate": "Her eğitimde sertifika kazanın",
+        "betterPrice": "Aylık plana göre avantajlı fiyat"
+      }
     }
   }
 }

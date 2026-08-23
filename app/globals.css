@@ -45,6 +45,11 @@
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
+  --font-all-round-gothic: var(--font-all-round-gothic-family), ui-sans-serif, sans-serif;
+  --font-apple-chancery: var(--font-apple-chancery-family), cursive;
+  --font-palatino: var(--font-palatino-family), "Palatino Linotype", Palatino, serif;
+  --font-altun: var(--font-altun-family), ui-sans-serif, sans-serif;
+  --font-izmir: var(--font-izmir-family), ui-serif, serif;
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);

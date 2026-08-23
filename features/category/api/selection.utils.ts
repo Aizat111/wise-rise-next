@@ -13,7 +13,7 @@ export function getCategoryPageHref(category: Category) {
 }
 
 export function getWeTheLivingHref() {
-  return `/${WE_THE_LIVING_SLUG}`;
+  return `/kayit-ol`;
 }
 
 export function resolveCategorySelection(

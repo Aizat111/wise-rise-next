@@ -13,7 +13,7 @@ export function useHeroesQuery(
   enabled = true,
 ) {
   return useQuery<Hero[]>({
-    queryKey: QUERY_KEYS.hero.list(platform),
+    queryKey: QUERY_KEYS.hero.list(platform, mediaType),
     queryFn: () => heroService.list({ platform, mediaType }),
     enabled,
     staleTime: 5 * 60 * 1000,
