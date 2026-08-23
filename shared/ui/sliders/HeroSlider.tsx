@@ -6,6 +6,7 @@ import {
   useCallback,
   useEffect,
   useEffectEvent,
+  useLayoutEffect,
   useRef,
   useState,
   type MouseEvent as ReactMouseEvent,
@@ -97,11 +98,11 @@ function HeroSlideCard({
   );
 
   const shellClassName = cn(
-    "relative mx-auto h-full w-full overflow-hidden rounded-4xl bg-white/5 md:w-full",
+    "absolute inset-0 overflow-hidden rounded-4xl bg-white/5",
     "transition-[transform,box-shadow,border-color] duration-300 ease-out",
     "border border-transparent",
     isActive &&
-      " md:hover:border-white md:hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
+    " md:hover:border-white md:hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
     (isLinked || Boolean(onActivate)) && "cursor-pointer",
   );
 
@@ -161,7 +162,9 @@ function HeroCarousel({
 
   // Virtual index into the cloned track (middle copy when looping).
   const [virtualIndex, setVirtualIndex] = useState(() => (loop ? count : 0));
-  const skipAnimationRef = useRef(false);
+  // Jump to the middle clone on first layout — animating from x=0 leaves the
+  // active slide off-screen (and opacity-0 on mobile).
+  const skipAnimationRef = useRef(true);
   const suppressClickRef = useRef(false);
   const virtualIndexRef = useRef(virtualIndex);
 
@@ -183,7 +186,7 @@ function HeroCarousel({
     setIsDesktop(window.matchMedia("(min-width: 768px)").matches);
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     measure();
     const el = viewportRef.current;
     if (!el) return;
@@ -198,6 +201,7 @@ function HeroCarousel({
   }, []);
 
   const syncLength = useEffectEvent((nextCount: number, nextLoop: boolean) => {
+    skipAnimationRef.current = true;
     setVirtualIndex(nextLoop ? nextCount : 0);
   });
 
@@ -213,17 +217,9 @@ function HeroCarousel({
 
   const gapPx = isDesktop ? 12 : 0;
   const slideWidth =
-    viewportWidth > 0
-      ? isDesktop
-        ? viewportWidth * 0.9
-        : viewportWidth * 0.95
-      : 0;
+    viewportWidth > 0 ? (viewportWidth * activePercent) / 100 : 0;
   const peekPx =
-    viewportWidth > 0
-      ? isDesktop
-        ? viewportWidth * 0.05
-        : (viewportWidth - slideWidth) / 2
-      : 0;
+    viewportWidth > 0 ? (viewportWidth * peekPercent) / 100 : 0;
   const step = slideWidth + gapPx;
   const targetX = slideWidth > 0 ? peekPx - virtualIndex * step : 0;
 
@@ -243,7 +239,7 @@ function HeroCarousel({
     [count, loop],
   );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (slideWidth <= 0) return;
 
     if (skipAnimationRef.current) {
@@ -413,7 +409,7 @@ function HeroCarousel({
       >
         {slideWidth > 0 ? (
           <motion.div
-            className="flex"
+            className="flex items-start"
             style={{ x: trackX, gap: gapPx }}
           >
             {loopedItems.map((item, loopIndex) => {
@@ -422,24 +418,28 @@ function HeroCarousel({
               return (
                 <div
                   key={`${item.id}-${loopIndex}`}
-                  className={cn(
-                    "relative shrink-0",
-                    HERO_ASPECT_RATIO_CLASS,
-                    !isDesktop && !isActive && " opacity-0 pointer-events-none",
-                  )}
+                  className="relative shrink-0"
                   style={{ width: slideWidth, minWidth: slideWidth }}
                   aria-hidden={!isActive}
                 >
-                  <HeroSlideCard
-                    item={item}
-                    isActive={isActive}
-                    priority={isActive && realIndex === 0}
-                    onActivate={
-                      canNavigate && !isActive
-                        ? () => setVirtualIndex(loopIndex)
-                        : undefined
-                    }
-                  />
+                  <div
+                    className={cn(
+                      "relative w-full overflow-hidden",
+                      isDesktop ? "aspect-5/2" : "h-[380px]",
+                      !isDesktop && !isActive && "opacity-0 pointer-events-none",
+                    )}
+                  >
+                    <HeroSlideCard
+                      item={item}
+                      isActive={isActive}
+                      priority={isActive && realIndex === 0}
+                      onActivate={
+                        canNavigate && !isActive
+                          ? () => setVirtualIndex(loopIndex)
+                          : undefined
+                      }
+                    />
+                  </div>
                 </div>
               );
             })}

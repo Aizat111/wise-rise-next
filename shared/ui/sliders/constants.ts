@@ -39,8 +39,8 @@ export const HERO_MOBILE_PEEK_PERCENT = 2.5;
 export const HERO_MOBILE_ACTIVE_PERCENT = 100 - HERO_MOBILE_PEEK_PERCENT * 2;
 
 /**
- * Mobile: ~95% of the viewport height (width is 95% via carousel peek).
- * Image uses object-contain so proportions stay intact.
- * Desktop: landscape frame matching common hero assets (1200×480 → 5/2).
+ * Mobile: fixed 380px frame (width is 95% via carousel peek).
+ * Desktop: 5/2 landscape. Do not pair this with `md:h-auto` on a box whose
+ * children are `position: absolute` — height collapses to 0 and the slide vanishes.
  */
-export const HERO_ASPECT_RATIO_CLASS = "h-[380px] md:h-auto md:aspect-[5/2]";
+export const HERO_ASPECT_RATIO_CLASS = "h-[380px] md:aspect-[5/2]";
