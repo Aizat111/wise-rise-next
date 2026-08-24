@@ -30,6 +30,7 @@ export interface DisplayPlans {
 
 /** UI-ready plan model. Current `price` always comes from the API. */
 export type MembershipPlan = {
+  id: string;
   period: PlanPeriod;
   price: number;
   oldPrice: number;

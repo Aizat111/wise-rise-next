@@ -68,6 +68,10 @@ export const ENDPOINTS = {
     checkout: `${SERVICES.PAYMENT}/checkout`,
   },
 
+  gift: {
+    buy: `/buyGift`,
+  },
+
   profile: {
     list: `${SERVICES.PROFILE}`,
     detail: (id: string | number) => `${SERVICES.PROFILE}/${id}`,

@@ -41,7 +41,11 @@ export function toMembershipPlan(
   const price = toSafePrice(plan.price);
   if (price == null) return null;
 
+  const id = typeof plan.id === "string" ? plan.id.trim() : "";
+  if (!id) return null;
+
   return {
+    id,
     period,
     price,
     oldPrice:
