@@ -6,6 +6,7 @@ import { isAxiosError } from "axios";
 import type {
   IAuthData,
   ILoginResponse,
+  IRegisterGiftRequest,
   IRegisterStep1Request,
   IRegisterStep2Request,
   IRegisterStep3Request,
@@ -73,6 +74,50 @@ function extractAccessToken(
     return (response.token as ILoginResponse).token;
   }
   return undefined;
+}
+
+function extractTokenString(value: unknown): string | undefined {
+  if (typeof value === "string" && value.trim()) return value;
+  return undefined;
+}
+
+function unwrapGiftRegisterLogin(response: unknown): ILoginResponse {
+  if (!response || typeof response !== "object") {
+    throw new Error("Gift registration response missing token");
+  }
+
+  const body = response as Record<string, unknown>;
+
+  if (body.success === false) {
+    const message =
+      typeof body.message === "string" && body.message.trim()
+        ? body.message
+        : "Gift registration failed";
+    throw new Error(message);
+  }
+
+  const nested =
+    body.data && typeof body.data === "object"
+      ? (body.data as Record<string, unknown>)
+      : null;
+
+  const token =
+    extractTokenString(body.token) ??
+    extractTokenString(body.accessToken) ??
+    (nested
+      ? extractTokenString(nested.token) ??
+        extractTokenString(nested.accessToken)
+      : undefined);
+
+  if (!token) {
+    throw new Error("Gift registration response missing token");
+  }
+
+  const userSource = nested?.user ?? body.user;
+  return {
+    token,
+    user: toStoredUser(userSource) ?? undefined,
+  };
 }
 
 async function persistLoginSession(
@@ -161,6 +206,21 @@ export function useRegisterStep4Mutation() {
         });
       }
       return response;
+    },
+  });
+}
+
+export function useRegisterGiftMutation() {
+  return useMutation<
+    ILoginResponse,
+    Error,
+    { id: string; data: IRegisterGiftRequest }
+  >({
+    mutationFn: async ({ id, data }) => {
+      const response = await authService.registerGift(id, data);
+      const login = unwrapGiftRegisterLogin(response);
+      await persistLoginSession(login);
+      return login;
     },
   });
 }

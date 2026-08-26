@@ -1,6 +1,14 @@
 import type { PlanPeriod } from "@/core/types/plan.types";
 
 export const GIFT_ROUTE = "/hediye-et" as const;
+export const GIFT_REDEEM_ROUTE = "/hediye-kullan" as const;
+
+export const GIFT_TYPEFORM_URL =
+  "https://0u0c51hhbc2.typeform.com/to/NATfnS4l?typeform-source=wisenrise.com" as const;
+
+export const GIFT_CODE_DEBOUNCE_MS = 400;
+
+export const GIFT_REDEEM_BACKGROUND = "/background/r3.jpg" as const;
 
 export const GIFT_CONTAINER_CLASS =
   "mx-auto w-full max-w-7xl px-5 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-12";

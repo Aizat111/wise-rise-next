@@ -7,6 +7,7 @@ import { useRouter } from "@/core/i18n/navigation";
 import {
   canAccessStep,
   clearRegisterDraft,
+  isGiftRegister,
   useRegisterDraft,
 } from "@/features/auth/hooks/useRegisterDraft";
 
@@ -20,6 +21,12 @@ export function Step4() {
 
   useEffect(() => {
     if (!ready) return;
+    if (isGiftRegister(draft)) {
+      router.replace(
+        draft.registrationId ? "/kayit-ol/sifre-olustur" : "/kayit-ol",
+      );
+      return;
+    }
     if (!canAccessStep(4, draft)) {
       if (!draft.email) {
         router.replace("/kayit-ol");
@@ -36,7 +43,7 @@ export function Step4() {
     router.push("/giris");
   };
 
-  if (!ready || !canAccessStep(4, draft)) {
+  if (!ready || isGiftRegister(draft) || !canAccessStep(4, draft)) {
     return null;
   }
 

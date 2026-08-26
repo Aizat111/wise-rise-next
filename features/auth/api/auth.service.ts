@@ -3,6 +3,7 @@ import { ENDPOINTS } from "@/core/api/endpoints";
 import type {
   IAuthData,
   ILoginResponse,
+  IRegisterGiftRequest,
   IRegisterResponse,
   IRegisterStep1Request,
   IRegisterStep2Request,
@@ -89,6 +90,15 @@ export const authService = {
   registerStep4(id: string, data: IRegisterStep4Request) {
     return clientRequest<IRegisterStepResponse>({
       url: ENDPOINTS.register.step(4, id),
+      method: "POST",
+      data,
+    });
+  },
+
+  /** POST /register/gift/{id} — attaches a verified gift code to the draft user */
+  registerGift(id: string, data: IRegisterGiftRequest) {
+    return clientRequest<IRegisterStepResponse>({
+      url: ENDPOINTS.register.gift(id),
       method: "POST",
       data,
     });

@@ -14,6 +14,8 @@ export const ENDPOINTS = {
     /** POST /register/{currentStep}/steps/{id} */
     step: (currentStep: number, id: string) =>
       `${SERVICES.REGISTER}/${currentStep}/steps/${id}`,
+    /** POST /register/gift/{id} — activates a verified gift code on a draft user */
+    gift: (id: string) => `${SERVICES.REGISTER}/gift/${id}`,
   },
 
   course: {
@@ -70,6 +72,8 @@ export const ENDPOINTS = {
 
   gift: {
     buy: `/buyGift`,
+    /** POST /check-gift-code — { code } */
+    checkCode: `/check-gift-code`,
   },
 
   profile: {

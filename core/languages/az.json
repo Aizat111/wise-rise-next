@@ -540,13 +540,23 @@
     "loading": "Kateqoriyalar yüklənir"
   },
   "useGift": {
+    "metaTitle": "Hədiyyənizi istifadə edin",
+    "metaDescription": "Hədiyyə kupon kodunuzu daxil edərək Wise&Rise üzvlüyünüzü aktivləşdirin.",
     "title": "Hədiyyənizi istifadə edin",
     "subtitle": "Başlamaq üçün, kodu aşağıya daxil edin.",
-    "placeholder": "Kod və ya Pin",
-    "invalidCode": "Kupon kodu etibarsızdır",
+    "placeholder": "Kodu daxil edin",
+    "invalidCode": "Hədiyyə kupon kodu etibarsızdır.",
+    "validCode": "Kupon kodu keçərlidir.",
     "use": "İstifadə et",
     "help": "Hədiyyə kupon kodları haqqında kömək istəyirsiniz?",
-    "inputGiftCode": "Hədiyyə kupon kodunu daxil et"
+    "inputGiftCode": "Hədiyyə kupon kodu",
+    "emailTitle": "E-poçt ünvanınızı daxil edin",
+    "passwordTitle": "Şifrənizi yaradın",
+    "register": "Qeydiyyatdan keç",
+    "success": "Hədiyyəniz uğurla aktivləşdirildi.",
+    "error": "Kupon kodu yoxlanılarkən xəta baş verdi.",
+    "registerError": "Hədiyyə qeydiyyatı tamamlanmadı. Zəhmət olmasa yenidən cəhd edin.",
+    "backgroundAlt": "Hədiyyə kuponu istifadə fonu"
   },
   "membership": {
     "expired": "Üzvlüyünüzün müddəti bitmişdir. Üzvlüyünüzü yeniləmək üçün aşağıdaki düyməyə klikləyin.",

@@ -1,31 +1,29 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
+
+import { cn } from "@/lib/utils";
+
 type RegisterStepperProps = {
   currentStep: 1 | 2 | 3 | 4;
+  totalSteps?: 2 | 4;
   className?: string;
 };
 
-const STEPS = [1, 2, 3, 4] as const;
-
-export function RegisterStepper({ currentStep, className }: RegisterStepperProps) {
+export function RegisterStepper({
+  currentStep,
+  totalSteps = 4,
+  className,
+}: RegisterStepperProps) {
   const t = useTranslations("common");
   return (
     <div
       className={cn("mb-2 flex items-center justify-center gap-2", className)}
-      aria-label={`Adım ${currentStep}/4`}
+      aria-label={`${t("step")} ${currentStep}/${totalSteps}`}
     >
-
-
-
-
-      <div>
-
-        <div className="text-sm md:text-base text-primary font-semibold">{t("step")} {currentStep}/4</div>
+      <div className="text-sm font-semibold text-primary md:text-base">
+        {t("step")} {currentStep}/{totalSteps}
       </div>
-
-
     </div>
   );
 }

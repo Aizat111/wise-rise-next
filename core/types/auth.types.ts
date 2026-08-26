@@ -47,6 +47,11 @@ export interface IRegisterStep2Request {
   password: string;
 }
 
+/** POST /register/gift/{id} */
+export interface IRegisterGiftRequest {
+  code: string;
+}
+
 export interface IRegisterStep3Request {
   plan_id: string;
 }

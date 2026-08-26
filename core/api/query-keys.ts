@@ -3,6 +3,10 @@ export const QUERY_KEYS = {
     me: ["auth", "me"],
   },
 
+  gift: {
+    checkCode: (code: string) => ["gift", "check-code", code] as const,
+  },
+
   course: {
     all: ["courses"],
     mostWatched: ["courses", "most-watched"],

@@ -19,6 +19,8 @@ export type RegisterDraft = {
   planPrice: number | null;
   planName: string | null;
   step: RegisterStep;
+  /** Verified gift coupon code — present only in the 2-step gift register flow */
+  giftCode: string | null;
 };
 
 export const REGISTER_ROUTES = {
@@ -39,6 +41,7 @@ export const EMPTY_REGISTER_DRAFT: RegisterDraft = {
   planPrice: null,
   planName: null,
   step: 1,
+  giftCode: null,
 };
 
 type Listener = () => void;
@@ -61,6 +64,10 @@ function readFromStorage(): RegisterDraft {
     return {
       ...EMPTY_REGISTER_DRAFT,
       ...parsed,
+      giftCode:
+        typeof parsed.giftCode === "string" && parsed.giftCode.trim()
+          ? parsed.giftCode
+          : null,
     };
   } catch {
     return EMPTY_REGISTER_DRAFT;
@@ -132,18 +139,32 @@ export function useRegisterDraft() {
     clearRegisterDraft();
   }, []);
 
+  const startGiftRegister = useCallback((giftCode: string) => {
+    setDraft({
+      ...EMPTY_REGISTER_DRAFT,
+      giftCode,
+      step: 1,
+    });
+  }, []);
+
   return {
     draft,
     ready,
     updateDraft,
     resetDraft,
+    startGiftRegister,
   };
+}
+
+export function isGiftRegister(draft: RegisterDraft): boolean {
+  return Boolean(draft.giftCode?.trim());
 }
 
 export function canAccessStep(step: RegisterStep, draft: RegisterDraft): boolean {
   if (step <= 1) return true;
   if (!draft.email || !draft.privacyConsent || !draft.registrationId) return false;
   if (step === 2) return true;
+  if (isGiftRegister(draft)) return false;
   if (!draft.password) return false;
   if (step === 3) return true;
   if (!draft.planId) return false;

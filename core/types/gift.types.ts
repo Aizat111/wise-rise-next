@@ -27,3 +27,15 @@ export type BuyGiftResponse = {
   message?: string;
   [key: string]: unknown;
 };
+
+/** POST /check-gift-code */
+export type CheckGiftCodeRequest = {
+  code: string;
+};
+
+export type CheckGiftCodeResponse = {
+  success: boolean;
+  message: string;
+  data: unknown;
+  extras?: unknown;
+};

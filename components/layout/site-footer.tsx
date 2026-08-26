@@ -30,7 +30,7 @@ const corporateLinks: FooterLink[] = [
 ];
 
 const giftLinks: FooterLink[] = [
-  { href: "/hediye-kuponu", label: "footer.giftCoupon" },
+  { href: "/hediye-kullan", label: "footer.giftCoupon" },
   { href: "/hediye-et", label: "footer.giveGift" },
 ];
 

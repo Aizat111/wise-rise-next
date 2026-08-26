@@ -14,7 +14,10 @@ import {
     getAuthErrorMessage,
     useRegisterStep1Mutation,
 } from "@/features/auth/api/auth.mutations";
-import { useRegisterDraft } from "@/features/auth/hooks/useRegisterDraft";
+import {
+    isGiftRegister,
+    useRegisterDraft,
+} from "@/features/auth/hooks/useRegisterDraft";
 
 import { RegisterFormShell } from "./RegisterFormShell";
 import { StickyContinueButton } from "./StickyContinueButton";
@@ -65,6 +68,8 @@ export function Step1() {
         },
     });
 
+    const isGift = isGiftRegister(draft);
+
     const isLoading = isSubmitting || registerStep1.isPending;
 
     useEffect(() => {
@@ -103,7 +108,12 @@ export function Step1() {
         window.location.href = GOOGLE_AUTH_URL;
     };
     return (
-        <RegisterFormShell title={t("title")} subtitle={t("subtitle")} step={1}>
+        <RegisterFormShell
+            title={t("title")}
+            subtitle={isGift ? t("useGiftSubtitle") : t("subtitle")}
+            step={1}
+            totalSteps={isGift ? 2 : 4}
+        >
             <form
                 id={FORM_ID}
                 onSubmit={handleSubmit(onSubmit)}

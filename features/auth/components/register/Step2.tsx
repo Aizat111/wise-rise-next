@@ -3,20 +3,27 @@
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { Eye, EyeOff } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Input } from "@/components/ui/input";
 import { useRouter } from "@/core/i18n/navigation";
+import { getAccessToken, getStoredUser } from "@/core/lib/token";
 import {
   getAuthErrorMessage,
+  useRegisterGiftMutation,
   useRegisterStep2Mutation,
 } from "@/features/auth/api/auth.mutations";
 import {
   canAccessStep,
+  clearRegisterDraft,
+  isGiftRegister,
   useRegisterDraft,
 } from "@/features/auth/hooks/useRegisterDraft";
+import { notify } from "@/shared/components/notify";
+import { useAppDispatch } from "@/store/hooks";
+import { setAuthSession } from "@/store/slices/authSlice";
 
 import { RegisterFormShell } from "./RegisterFormShell";
 import { StickyContinueButton } from "./StickyContinueButton";
@@ -36,13 +43,18 @@ export type Step2Values = z.infer<ReturnType<typeof createStep2Schema>>;
 
 export function Step2() {
   const t = useTranslations("register.step2");
+  const tGift = useTranslations("useGift");
   const tCommon = useTranslations("common");
   const tLogin = useTranslations("login");
   const router = useRouter();
+  const dispatch = useAppDispatch();
   const { draft, ready, updateDraft } = useRegisterDraft();
   const registerStep2 = useRegisterStep2Mutation();
+  const registerGift = useRegisterGiftMutation();
   const [showPassword, setShowPassword] = useState(false);
   const [apiError, setApiError] = useState<string | null>(null);
+  const submittingRef = useRef(false);
+  const isGift = isGiftRegister(draft);
 
   const schema = useMemo(() => createStep2Schema(t), [t]);
   const resolver = useMemo(() => standardSchemaResolver(schema), [schema]);
@@ -59,7 +71,8 @@ export function Step2() {
     defaultValues: { password: "" },
   });
 
-  const isLoading = isSubmitting || registerStep2.isPending;
+  const isLoading =
+    isSubmitting || registerStep2.isPending || registerGift.isPending;
 
   useEffect(() => {
     if (!ready) return;
@@ -71,6 +84,7 @@ export function Step2() {
   }, [ready, draft, reset, router]);
 
   const onSubmit = async (values: Step2Values) => {
+    if (submittingRef.current || isLoading) return;
     setApiError(null);
 
     if (!draft.registrationId) {
@@ -78,23 +92,50 @@ export function Step2() {
       return;
     }
 
+    submittingRef.current = true;
+
     try {
       await registerStep2.mutateAsync({
         id: draft.registrationId,
         data: { password: values.password },
       });
+
+      if (isGift && draft.giftCode) {
+        const login = await registerGift.mutateAsync({
+          id: draft.registrationId,
+          data: { code: draft.giftCode },
+        });
+        dispatch(
+          setAuthSession({
+            token: login.token || getAccessToken() || "",
+            user: getStoredUser(),
+          }),
+        );
+        notify.success(tGift("success"));
+        clearRegisterDraft();
+        router.push("/profil-sec");
+        return;
+      }
+
       updateDraft({
         password: values.password,
         step: 3,
       });
       router.push("/kayit-ol/plan-sec");
     } catch (error) {
-      setApiError(getAuthErrorMessage(error, tCommon("errorMessage")));
+      const message = getAuthErrorMessage(
+        error,
+        isGift ? tGift("registerError") : tCommon("errorMessage"),
+      );
+      setApiError(message);
+      if (isGift) notify.error(message);
+    } finally {
+      submittingRef.current = false;
     }
   };
 
   return (
-    <RegisterFormShell title={t("title")} step={2}>
+    <RegisterFormShell title={t("title")} step={2} totalSteps={isGift ? 2 : 4}>
       <form
         id={FORM_ID}
         onSubmit={handleSubmit(onSubmit)}
@@ -143,7 +184,7 @@ export function Step2() {
 
         <StickyContinueButton
           formId={FORM_ID}
-          label={tCommon("continue")}
+          label={isGift ? tGift("register") : tCommon("continue")}
           loadingLabel={tCommon("loading")}
           loading={isLoading}
           disabled={!ready}

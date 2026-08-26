@@ -11,6 +11,7 @@ import {
 } from "@/features/auth/api/auth.mutations";
 import {
   canAccessStep,
+  isGiftRegister,
   useRegisterDraft,
 } from "@/features/auth/hooks/useRegisterDraft";
 import { MembershipPlanCard } from "@/features/membership-plans/components/MembershipPlanCard";
@@ -32,6 +33,12 @@ export function Step3() {
 
   useEffect(() => {
     if (!ready) return;
+    if (isGiftRegister(draft)) {
+      router.replace(
+        draft.registrationId ? "/kayit-ol/sifre-olustur" : "/kayit-ol",
+      );
+      return;
+    }
     if (!canAccessStep(3, draft)) {
       router.replace("/kayit-ol");
       return;
@@ -107,6 +114,10 @@ export function Step3() {
   };
 
   const continueLoading = isSubmitting || registerStep3.isPending;
+
+  if (!ready || isGiftRegister(draft) || !canAccessStep(3, draft)) {
+    return null;
+  }
 
   return (
     <RegisterFormShell title={t("title")} step={3}>
