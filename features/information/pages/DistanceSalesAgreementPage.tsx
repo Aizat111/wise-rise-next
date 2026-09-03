@@ -42,14 +42,15 @@ export async function DistanceSalesAgreementPage() {
   const t = await getTranslations("onlineConditions");
   const title = tInfo("pages.distanceSales");
 
+
   return (
     <InformationLayout title={title}>
       <InformationProse>
         <h2>{t("subtitle")}</h2>
 
         <h2>{t("article1.title")}</h2>
-        <HtmlContent html={t("article1.p1")} />
-        <HtmlContent html={t("article1.p2")} />
+        <HtmlContent html={t.raw("article1.p1")} />
+        <HtmlContent html={t.raw("article1.p2")} />
         <p>{t("article1.p3")}</p>
         <p>{t("article1.p4")}</p>
 
@@ -61,7 +62,7 @@ export async function DistanceSalesAgreementPage() {
             [t("article2.taxNo"), t("article2.taxNoValue")],
             [t("article2.mersisNo"), t("article2.mersisNoValue")],
             [t("article2.address"), t("article2.addressValue")],
-            [t("article2.email"), t("article2.emailValue"), true],
+            [t("article2.email"), t.raw("article2.emailValue"), true],
           ]}
         />
         <h3>{t("article2.buyerTitle")}</h3>
@@ -81,20 +82,42 @@ export async function DistanceSalesAgreementPage() {
         <p>{t("article3.p3")}</p>
 
         <h2>{t("article4.title")}</h2>
-        <p>
-          <strong>{t("article4.cash")}</strong>
-          {" / "}
-          <strong>{t("article4.installment")}</strong>
-        </p>
-        <p>{t("article4.accountProfile")}</p>
-        <ul>
-          {PLAN_FEATURES.map((key) => (
-            <li key={key}>{t(`article4.${key}`)}</li>
-          ))}
-        </ul>
-        <p>
-          {t("article4.bankCard")} / {t("article4.creditCard")}
-        </p>
+
+        <table className="border border-white w-full my-10">
+          <tbody>
+            <tr>
+              <td className="w-50 text-center border border-white p-3">{t("article4.cash")}</td>
+              <td className="w-50 text-center border border-white">{t("article4.installment")}</td>
+            </tr>
+            <tr>
+              <td className="w-50 text-center border border-white p-3">{t("article4.accountProfile")}</td>
+              <td className="w-50 text-center border border-white">{t("article4.accountProfile")}</td>
+            </tr>
+
+            <tr>
+              <td className="w-50 text-center border border-white p-3">
+                <ul className="list-disc list-inside text-center">
+                  {PLAN_FEATURES.map((key) => (
+                    <li key={key} className="">{t(`article4.${key}`)}</li>
+                  ))}
+                </ul>
+              </td>
+              <td className="w-50 text-center border border-white">
+                <ul className="list-disc list-inside text-center">
+                  {PLAN_FEATURES.map((key) => (
+                    <li key={key} className="">{t(`article4.${key}`)}</li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td className="w-50 text-center border border-white p-3">{t("article4.bankCard")}</td>
+              <td className="w-50 text-center border border-white">{t("article4.creditCard")}</td>
+            </tr>
+          </tbody>
+
+
+        </table>
 
         {Object.entries(ARTICLE_PARAGRAPH_COUNTS).map(([num, count]) => (
           <NestedArticle
@@ -105,23 +128,32 @@ export async function DistanceSalesAgreementPage() {
           />
         ))}
 
-        <h3>{t("article10.sellerProvider")}</h3>
-        <SellerBuyerDetails
-          rows={[
-            [t("article10.commercialTitle"), t("article10.commercialValue")],
-            [t("article10.taxNo"), t("article10.taxNoValue")],
-            [t("article10.mersisNo"), t("article10.mersisNoValue")],
-            [t("article10.address"), t("article10.addressValue")],
-            [t("article10.email"), t("article10.emailValue"), true],
-          ]}
-        />
-        <h3>{t("article10.buyer")}</h3>
-        <SellerBuyerDetails
-          rows={[
-            [t("article10.nameSurname"), ""],
-            [t("article10.tcNo"), ""],
-          ]}
-        />
+        <table className="border border-white w-full my-10">
+          <tbody>
+            <tr>
+              <td className="w-50 text-center border border-white p-3">{t("article10.sellerProvider")}</td>
+              <td className="w-50 text-center border border-white">{t("article10.buyer")}</td>
+            </tr>
+            <tr>
+              <td className="w-50 text-center border border-white p-3"><strong>{t("article10.commercialTitle")}</strong>{t("article10.commercialValue")}</td>
+              <td className="w-50 text-left pl-2 border border-white"><strong>{t("article10.nameSurname")}</strong></td>
+            </tr>
+            <tr>
+              <td className="w-50 text-center border border-white p-3"><strong>{t("article10.taxNo")}</strong>{t("article10.taxNoValue")} <br /> <strong>{t("article10.mersisNo")}</strong>{t("article10.mersisNoValue")}</td>
+              <td className="w-50 text-left pl-2 border border-white"><strong>{t("article10.tcNo")}</strong></td>
+            </tr>
+            <tr>
+              <td className="w-50 text-center border border-white p-3"><strong>{t("article10.address")}</strong>{t("article10.addressValue")}</td>
+              <td className="w-50 text-left pl-2 border border-white"><strong>{t("article10.email")}</strong>{t("article10.address")}</td>
+            </tr>
+            <tr>
+              <td className="w-50 text-center border border-white p-3"><strong>{t("article10.email")}</strong>{t("article10.emailValue")}</td>
+              <td className="w-50 text-left pl-2 border border-white"><strong>{t("article10.email")}</strong></td>
+            </tr>
+          </tbody>
+
+
+        </table>
       </InformationProse>
     </InformationLayout>
   );
@@ -216,7 +248,7 @@ function SellerBuyerDetails({
     <ul className="list-none space-y-1 pl-0">
       {rows.map(([label, value, isEmail]) => (
         <li key={label}>
-          <strong>{label}</strong>{" "}
+          <strong dangerouslySetInnerHTML={{ __html: label }} />{" "}
           {isEmail && value ? (
             <a href={`mailto:${value}`}>{value}</a>
           ) : (
