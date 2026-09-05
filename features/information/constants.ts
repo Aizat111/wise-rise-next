@@ -20,11 +20,12 @@ export const INFORMATION_ROUTES = {
   privacyPolicy: "/gizlilik-politikasi",
   userAgreement: "/kullanici-sozlesmesi",
   /** Footer "Şartlar ve Koşullar" — same document as user agreement. */
-  termsOfService: "/sartlar-ve-kosullar",
+  termsOfService: "/uyelik-sozlesmesi",
   distanceSales: "/mesafeli-satis-sozlesmesi",
   preInfo: "/on-bilgilendirme-formu",
   cookiePolicy: "/cerez-politikasi",
   kvkk: "/kvkk",
+  termsOfUse: "/kullanim-kosullari",
 } as const satisfies Record<string, `/${string}`>;
 
 export type InformationRouteKey = keyof typeof INFORMATION_ROUTES;
@@ -54,6 +55,10 @@ export const INFORMATION_PAGE_META: Record<
     titleKey: "pages.cookiePolicy",
   },
   kvkk: { route: INFORMATION_ROUTES.kvkk, titleKey: "pages.kvkk" },
+  termsOfUse: {
+    route: INFORMATION_ROUTES.termsOfUse,
+    titleKey: "pages.termsOfUse",
+  },
 };
 
 /** FAQ item keys present in `faq` translation namespace. */

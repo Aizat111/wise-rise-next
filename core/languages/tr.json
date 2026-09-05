@@ -95,7 +95,8 @@
       "distanceSales": "Mesafeli Satış Sözleşmesi",
       "preInfo": "Ön Bilgilendirme Formu",
       "cookiePolicy": "Çerez Politikası",
-      "kvkk": "KVKK"
+      "kvkk": "KVKK",
+      "termsOfUse": "Kullanım Koşulları"
     }
   },
   "cookiePolicy": {
@@ -1099,7 +1100,7 @@
       "cash": "Peşin",
       "installment": "Taksit",
       "accountProfile": "1 Hesap 4 Profil",
-      "feature1": "9 Kategori+500'den Fazla Ders",
+      "feature1": "10 Kategori+700'den Fazla Ders",
       "feature2": "Her Ay Yeni İçerikler",
       "feature3": "Bilgisayardan, Mobil Cihazdan, Tabletten Sınırsız Erişim",
       "feature4": "İzlerken Not Alma Özelliği",
@@ -1117,7 +1118,7 @@
   "commercialElectronicMessage": {
     "title": "Ticari Elektronik İleti Onay Metni",
     "paragraph1": "Bu Bildirim; Wise&Rise içerik hizmetlerini tanıtmak ve pazarlamak amacıyla elektronik iletişim araçlarıyla gerçekleştireceğimiz ticari iletişime dair 6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun ve 29417 sayılı Resmi Gazete’de yayınlanan Ticari İletişim ve Ticari Elektronik İletiler Hakkında Yönetmelik kapsamında bilgi verme ve onay alma yükümlülüğümüzü açıklamaktadır. Ayrıca verilen onayın nasıl geri alınacağına da yer verilmiştir.",
-    "paragraph2": "Biz; Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirketi olarak, Kullanım Koşulları ile Üyelik ve Mesafeli Satış Sözleşmesi kapsamında e-posta ve telefon bilgilerinizi 6698 sayılı Kişisel Verilerin Korunması Hakkında Kanun ve ilgili mevzuata uygun şekilde toplamakta ve işlemekteyiz. Detaylı bilgi için lütfen Gizlilik Bildirimi, Çerez Politikası ve <a href='/kvkk-aydinlatma-metni' target='_blank'>KVKK Aydınlatma Metni</a>’ni inceleyiniz.",
+    "paragraph2": "Biz; Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirketi olarak, Kullanım Koşulları ile Üyelik ve Mesafeli Satış Sözleşmesi kapsamında e-posta ve telefon bilgilerinizi 6698 sayılı Kişisel Verilerin Korunması Hakkında Kanun ve ilgili mevzuata uygun şekilde toplamakta ve işlemekteyiz. Detaylı bilgi için lütfen Gizlilik Bildirimi, Çerez Politikası ve KVKK <a href='/gizlilik-politikasi' target='_blank'> Aydınlatma Metni</a>’ni inceleyiniz.",
     "paragraph3": "Siz; bu bildirime onay vermeniz durumunda, Wise&Rise içerik hizmetlerine ilişkin olarak e-posta ve/veya mesaj yoluyla çeşitli ticari amaçlı tanıtım, kampanya ve bilgilendirmeler yapılmasına açık rıza verdiğinizi kabul etmiş sayılırsınız. Bu olumlu irade beyanınız kutlama ve temenni iletilerini de kapsar.",
     "paragraph4": "Vermiş olduğunuz bu onayınızı aşağıdaki yöntemlerle her zaman geri alabilirsiniz:",
     "paragraph5": "İleti Yönetim Sistemi üzerinden (https://vatandas.iys.org.tr) ",
@@ -1166,7 +1167,7 @@
       "cash": "PEŞİN",
       "installment": "TAKSİT",
       "accountProfile": "1 Hesap - 4 Profil",
-      "feature1": "9 Kategori+500'den Fazla Ders",
+      "feature1": "10 Kategori+700'den Fazla Ders",
       "feature2": "Her Ay Yeni İçerikler",
       "feature3": "Her Ay Size Özel Bonus İçerikler",
       "feature4": "Bilgisayardan, Mobil Cihazdan, Tabletten Sınırsız Erişim",
@@ -1410,6 +1411,150 @@
       "tcNo": "TCKN :"
     }
   },
+    "termsOfUse": {
+      "title": "Wise&Rise Kullanım Koşulları",
+  
+      "breadcrumbHome": "Anasayfa",
+  
+      "breadcrumbCurrent": "Wise&Rise Kullanım Koşulları",
+  
+      "section1": {
+        "title": "1. Giriş",
+  
+        "paragraph1": "1.1. Okumakta olduğunuz Wise&Rise Kullanım Koşulları (“Bildirim”); Veranova Medya ve Dijital Yayın Hizmetleri Anonim Şirketi’nin (“Veranova Medya”) sahibi olduğu web sitesi, mobil uygulama ve Wise&Rise isimli dijital platform (birlikte “Wise&Rise”) aracılığıyla sunacağı hizmetlerden faydalanmak isteyen kullanıcılara yönelik kuralları belirlemektedir.",
+  
+        "paragraph2": "1.2. Wise&Rise’ı ziyaret etmeniz ve/veya Wise&Rise’a üye olmanızla birlikte bu bildirimin doğrudan muhatabı olduğunuzu belirtmek isteriz. Wise&Rise’a erişebilmeniz ve kullanımınız, bu bildirimde bulunan hükümlere uymanıza bağlıdır. Bu sebeple bu bildirimi dikkatlice okumanızı tavsiye ederiz.",
+  
+        "paragraph3": "1.3. Wise&Rise; üyelerine internete bağlı telefon, bilgisayar, televizyon gibi cihazlar aracılığıyla internet teknolojisi üzerinden, çeşitli konularda uzmanlığı / yetkinliği bulunan eğitmenlerin icra ettiği / yer aldığı içeriklere erişilebilmesini sağlayan bir hizmet sunar. Bu üyelik hizmeti, tercih ettiğiniz plana göre sınırlı sayıdaki bazı kişilerin kullanımına sunma imkânı tanıyabilmekle birlikte, kural olarak kişiye özel niteliktedir.",
+  
+        "paragraph4": "1.4. Wise&Rise, Veranova Medya tarafından yönetilmektedir."
+      },
+  
+      "section2": {
+        "title": "2. Üyelik",
+  
+        "paragraph1": "2.1. Okudum, onaylıyorum yaptığınızda / butonuna tıkladığınızda, sizlere Wise&Rise bünyesinde sunulan metin, form, bildirim, sözleşme gibi tüm hukuki belgelerin maddelerinin her satırını okuduğunuzu ve tam olarak anladığınızı kabul etmiş sayılırsınız. Bu nedenle yasal uyarıları okumak önemlidir.",
+  
+        "paragraph2": "2.2. Wise&Rise üyeliği için üye adayı ile Veranova Medya arasında Üyelik ve Mesafeli Satış Sözleşmesi (‘‘Mesafeli Sözleşme’’) akdedilmesi gerekir. Sunulan tüm hukuki belgeleri okudum, onaylıyorum yaptığınıza / butonuna tıkladığınıza ilişkin beyanınızın (dijital ortamdaki eyleminizin) Wise&Rise’ın bilişim sistemlerine ulaşmasıyla birlikte üyelik işlemi gerçekleşmiş ve tamamlanmış olur.",
+  
+        "paragraph3": "2.3. Bu bildirimin -3- numaralı maddesinde sunulan üyelik tür ve planlarını Wise&Rise’da yer alan Planlar sekmesinden her zaman için detaylı bir şekilde inceleyebilirsiniz. Veranova Medya’nın zaman zaman özel teklifler, planlar veya üyelikler sunma hakkı her zaman saklıdır.",
+  
+        "paragraph4": "2.4. On sekiz (18) yaşından küçük kişilerin Wise&Rise’a üye olması Veranova Medya tarafından kabul edilmemektedir. Bu hususun ihlalinin tespit edilmesi hâlinde üyeliğiniz sonlandırılır. Bir üyenin, 18 yaşından küçük kişileri Wise&Rise içeriklerinden yararlandırması ancak velayet/vesayet sahibi kişilerin onayı ve her hâlde bir yetişkin gözetiminde mümkündür. Aksi haller ve bu süreçler için tüm sorumluluk ilgili üyeye ait olup Veranova Medya, sorumluluk kabul etmemektedir.",
+  
+        "paragraph5": "2.5. Wise&Rise hizmetini kullanabilmeniz için, ‘‘www.wisenrise.com’’ adresinde yer alan görsel-işitsel kayıtları/videoları izleyebilmenize imkân sağlayan bir internet erişimi ile cihaza sahip olmanız ve tercih edilen abonelik türüne uygun ödeme aracı sunmanız gerekir.",
+  
+        "paragraph6": "2.6. Veranova Medya tarafından belirlenecek bazı Wise&Rise içeriklerinin, üyeler tarafından cihaza indirmek (download) suretiyle çevrimdışı (offline) olarak erişilebilmesi mümkündür. Veranova Medya, üyelerinin çevrimdışı olarak erişebilmesine imkân sağladığı içeriklerine -sayılanlarla sınırlı olmamak üzere- izleme sayısı, periyodu ve erişim süresi gibi kısıtlamalar uygulayabilir.",
+  
+        "paragraph7": "2.7. Wise&Rise üyeliği; Mesafeli Sözleşme şartlarına uyulduğu ve üyenin hizmet alma iradesi devam ettiği müddetçe; Veranova Medya tarafından belirlenen süre boyunca devam eder."
+      },
+  
+      "section3": {
+        "title": "3. Üyelik Planları ve Kapsamı",
+  
+        "table": {
+          "cash": "Peşin",
+          "installment": "Taksit",
+          "accountProfile": "1 Hesap - 4 Profil",
+          "feature1": "10 Kategori+700'den Fazla Ders",
+          "feature2": "Her Ay Yeni İçerikler",
+          "feature3": "Her Ay Size Özel Bonus İçerikler",
+          "feature4": "Bilgisayardan, Mobil Cihazdan, Tabletten Sınırsız Erişim",
+          "feature5": "İzlerken Not Alma Özelliği",
+          "feature6": "Mobil Cihazdan Podcast Dinleme Özelliği",
+          "feature7": "Her Eğitimle Yeni Bir Sertifika Kazanma İmkânı"
+        },
+  
+        "annualPlanTitle": "Belirli Süreli, Süresi Sona Erdiğinde Kendiliğinden Yenilenen, Ön Ödemeli ve Çoklu Erişime Elverişli Abonelik Hizmeti Yıllık Plan",
+  
+        "annualPlanFeature1": "Çeşitli aralıklarla yenilenen; İş Dünyası, Sanat, Kişisel Gelişim, Gastronomi gibi kategorilerdeki içeriklere internet ortamından erişim imkânı sağlar.",
+  
+        "annualPlanFeature2": "İçeriklere aynı anda 4 ayrı cihaz üzerinden erişim imkânı sağlar."
+      },
+  
+      "section4": {
+        "title": "4. Ödemeler",
+  
+        "paragraph1": "4.1. Ödemeler banka, kredi kartı, ön ödemeli kart ile Wise&Rise’da yer alan ödeme bölümünden Iyzico altyapısı ile güvenli şekilde gerçekleştirilebilir. Kullanılacak kart tipi durum gerektirdiğinde sınırlanabilir.",
+  
+        "paragraph2": "4.2. Türkiye dışından oluşturulacak üyeliklerde Mastercard ya da VISA altyapısı kullanan herhangi bir kredi kartıyla ödeme gerçekleştirilmesi mümkündür."
+      },
+  
+      "section5": {
+        "title": "5. Üyelik Hakkının Devredilemezliği",
+  
+        "paragraph1": "5.1. Wise&Rise içerikleri, yalnızca kişisel ve ticari nitelikte olmayan kullanıma yönelik olup üyelik hakkı, üçüncü kişilere devredilemez.",
+  
+        "paragraph2": "5.2. Hesabınızı oluştururken vermiş olduğunuz bilgilerin doğruluğundan ve belirlediğiniz şifrenin korunmasından yalnızca siz sorumlu olursunuz. Giriş bilgilerinizin üçüncü kişilere kullandırmak amacıyla paylaşıldığının tespiti halinde üyeliğiniz Veranova Medya tarafından sonlandırılabilir."
+      },
+  
+      "section6": {
+        "title": "6. Değişiklik ile İçerik Ekleme ve Kaldırma Hakkı",
+  
+        "paragraph1": "6.1. Veranova Medya, en iyi kullanıcı deneyimini sunabilmek amacıyla gerektiğinde teknolojide, hizmetlerde ya da ücret politikasında her türlü değişikliği gerçekleştirebilir. Bu süreçte üyelere karşı Veranova Medya’nın yasal sınırlar dâhilinde herhangi bir yükümlülüğü bulunmaz. Bu değişiklikler; sayılanlarla sınırlı olmamak üzere teknik sorunlar, bakım dönemleri, testler, resmi otorite kararları, üçüncü taraf saldırıları sebebiyle çeşitli kesintiler; aylık abonelik bedelindeki değişiklikler; içeriklerin güncellenmesi, içerik kaldırma ya da eklemeyi kapsar. Bu durumlarla ilgili üyeler mutlaka bilgilendirilir.",
+  
+        "paragraph2": "6.2. Hiçbir üyenin Wise&Rise’da bulunan içeriklerin kaldırılmasından ya da Wise&Rise’a içerik eklenmesinden dolayı ücret iadesi talebi bulunmamaktadır."
+      },
+  
+      "section7": {
+        "title": "7. Fikri ve Sınai Mülkiyet Hakları, Ticaret Hakları",
+  
+        "paragraph1": "7.1. Wise&Rise’a üye olmak, Wise&Rise üzerindeki videolar, yazılı metin dokümanları üzerinde hiçbir surette lisans ya da ruhsat hakkı tanımaz. Üyelerin erişim sağlayacağı tüm görsel-işitsel ve/veya yazılı içeriklerin, Wise&Rise yazılım kodlarının tüm telif hakları Veranova Medya’ya veya içeriğin üretilmesine katkı sağlayan iş ortaklarına aittir. Üyelerin erişimine açılacak olan hiçbir içeriği işleme, çoğaltma, yayma, temsil, umuma iletim, kiralama ve/veya satma hakkı yoktur.",
+  
+        "paragraph2": "7.2. Wise&Rise sınai mülkiyet hakları, ticaret unvanı ve alan adları yalnızca Veranova Medya’ya aittir. Bunlar taklit edilemez, kopyalanamaz ve ticari/bireysel amaçla kullanılamaz."
+      },
+  
+      "section8": {
+        "title": "8. Kişisel Verilerin Korunması ve Çerezler",
+  
+        "paragraph1": "8.1. Üyenin Wise&Rise içeriklerine göz atabilmesi ve üyeye daha iyi bir hizmet sunulabilmesi adına, Wise&Rise’a giriş yaptığınız bilgiler doğrultusunda isim, soyisim, doğum tarihi, telefon numarası, e-posta adresi gibi kişisel veriler kaydedilmektedir.",
+  
+        "paragraph2": "8.2. Wise&Rise’da yer alan çerez (tanımlama bilgisi) uygulamalarını kabul etmeniz halinde, çerezler (tanımlama bilgileri) Çerez Politikası uyarınca ziyaretçi ve/veya üyenin cihazına yerleştirilir.",
+  
+        "paragraph3": "8.3. Detaylı bilgi için <a href=\"/gizlilik-politikasi\">Aydınlatma Metni</a>’ni incelemelisiniz."
+      },
+  
+      "section9": {
+        "title": "9. Sorumluluk Sınırlaması ve Garanti Reddi",
+  
+        "paragraph1": "9.1. Wise&Rise üzerinden sağlanacak içeriklere, içeriklerin çeşitliliğine, sayısına ve içeriklerde yer alan tüm bilgi, öneri ve tavsiyelerin bilimsel ve/veya yorumsal doğruluğuna ilişkin olarak Veranova Medya tarafından herhangi bir surette taahhütte bulunulmamaktadır.",
+  
+        "paragraph2": "9.2. Veranova Medya’nın, Wise&Rise’da yer alan ve üçüncü taraflara ait bağlantılı linklerde yer alan reklamların konusunu teşkil edebilecek ürün ve/veya hizmetlere ilişkin hiçbir sorumluluğu bulunmamaktadır.",
+  
+        "paragraph3": "9.3. Bazı uygulama ve cihazlar hizmetlerimize erişim sağlamada Wise&Rise ile uyum içinde olmayabilir. Bu yüzden üçüncü taraf uygulama ve cihazları ile erişim sağlanacak hizmetlere yönelik Veranova Medya’nın herhangi bir garanti sunmamaktadır."
+      },
+  
+      "section10": {
+        "title": "10. Üyeliğin Sonlandırılması",
+  
+        "paragraph1": "10.1. Wise&Rise üyeliğinizi herhangi bir gerekçe belirtmeksizin dilediğiniz zaman mevcut faturalandırma döneminin bitiminden itibaren geçerli olmak kaydıyla tek taraflı şekilde sonlandırabilirsiniz.",
+  
+        "paragraph2": "10.2. Bu işlem için web tarayıcısı üzerinden giriş yapıldıktan sonra “Planlarım” kısmından “İptal et” butonuna tıklanmalıdır.",
+  
+        "paragraph3": "10.3. Üyeliğin sonlandırılması durumunda Wise&Rise erişiminiz uygun şekilde kapatılır. <a href=\"/mesafeli-sozlesme\">Mesafeli Sözleşme</a> hükümleri saklıdır."
+      },
+  
+      "section11": {
+        "title": "11. Muhtelif Hükümler",
+  
+        "paragraph1": "11.1. Bu bildirim ya da üye ile akdedilen <a href=\"/mesafeli-sozlesme\">Mesafeli Sözleşme</a>’nin herhangi bir veya birden fazla hükmünün geçersiz, yasalara aykırı veya uygulanamaz ilan edilmesi durumunda, kalan hükümlerin geçerliliği bu durumdan etkilenmez.",
+  
+        "paragraph2": "11.2. Üyelik ile ilgili her türlü bilgi, yalnızca elektronik ortamda ve elektronik formatta aktarılır. Bu sebeple sağlanan iletişim bilgilerinin doğru ve güncel olduğundan emin olmalısınız. Mevcut halde bir değişiklik olması durumunda; üye, derhal ilgili değişikliği Wise&Rise üye profil sayfasından veya <a href=\"mailto:info@wisenrise.com\">info@wisenrise.com</a> adresinden bildirmelidir.",
+  
+        "paragraph3": "11.3. İnternette yaşanan kesintiler, hız düşmesi ve benzeri sebeplerle hizmette yaşanabilecek kesinti, görüntü kalitesi ve güvenlik problemlerinden ve/veya ülkede genel bir karışıklığın ortaya çıkması savaş, terör, grev, genel elektrik kesintisi, deprem, su baskını, pandemi, olağanüstü hal, siber saldırı, cihazlara virüs bulaşmış olması veya benzeri bir mücbir sebeplerden Veranova Medya sorumlu değildir.",
+  
+        "paragraph4": "11.4. Veranova Medya, üyelik ilişkisine dair haklarını ve yükümlülüklerini herhangi bir zamanda bir başkasına devir ve temlik edebilir.",
+  
+        "paragraph5": "11.5. Ortaya çıkabilecek uyuşmazlıklarda Türk Hukuku uygulanır. Ticaret Bakanlığınca yasa gereği her yıl belirlenen/ilan edilen parasal sınırlar dâhilinde İl ve İlçe Tüketici Hakem Heyetleri, bu sınırları aşan durumlarda Tüketici Mahkemeleri yetkili ve görevlidir. Bu çerçevede, dilerseniz kendi yerleşim yeriniz dilerseniz Veranova Medya’nın yerleşim yerindeki Hakem Heyetleri ve Tüketici Mahkemelerine başvurabilirsiniz.",
+  
+        "paragraph6": "11.6. Bu bildirimde bulunan hüküm ve koşullar gerektiğinde güncellenebilir. Somut değişiklikler olması durumunda üyelerimizi geçerlilik tarihinden makul süre önce bilgilendiririz. Güncel versiyona her zaman Wise&Rise üzerinden erişilebilir.",
+  
+        "paragraph7": "11.7. Bu bildirim, yayınlandığı an yürürlüğe girer ve herhangi bir şekilde Wise&Rise’ı ziyaret eden, Wise&Rise’a giriş yapan kişi açısından ayrıca bir işleme gerek kalmaksızın bağlayıcı olur. 10.3. Üyeliğin sonlandırılması durumunda Wise&Rise erişiminiz uygun şekilde kapatılır."
+      },
+  
+      "signature": "Saygılarımızla,",
+  
+      "companyName": "VERANOVA MEDYA VE DİJİTAL YAYIN HİZMETLERİ A.Ş."
+    },
   "weTheLiving": {
     "banner": {
       "simple": {

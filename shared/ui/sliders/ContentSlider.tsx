@@ -36,7 +36,7 @@ export function ContentSlider<T>({
 
     return (
       <section
-        className={cn("relative my-3 w-full", className)}
+        className={cn("relative my-5 w-full", className)}
         aria-label={title}
       >
         <SliderHeader
@@ -74,15 +74,15 @@ export function ContentSlider<T>({
     >
       {isLoading
         ? Array.from({ length: skeletonCount }).map((_, index) => (
-            <Fragment key={`skeleton-${index}`}>
-              {renderSkeleton?.(index) ?? <EducationCardSkeleton />}
-            </Fragment>
-          ))
+          <Fragment key={`skeleton-${index}`}>
+            {renderSkeleton?.(index) ?? <EducationCardSkeleton />}
+          </Fragment>
+        ))
         : items.map((item, index) => (
-            <Fragment key={getItemKey?.(item, index) ?? index}>
-              {renderItem(item, index)}
-            </Fragment>
-          ))}
+          <Fragment key={getItemKey?.(item, index) ?? index}>
+            {renderItem(item, index)}
+          </Fragment>
+        ))}
     </BaseSlider>
   );
 }

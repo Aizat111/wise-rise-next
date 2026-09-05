@@ -6,7 +6,7 @@ const ALLOWED_COLOR_PATTERN =
 const CMS_HTML_CONFIG: Config = {
   ALLOWED_TAGS: ['br', 'span', 'b', 'strong', 'i', 'em', 'p', 'a'],
   ALLOWED_ATTR: ['style', 'href', 'target', 'rel', 'class'],
-  ALLOWED_URI_REGEXP: /^https?:\/\//i
+  ALLOWED_URI_REGEXP: /^(?:https?:\/\/|mailto:|\/)/i
 };
 
 const sanitizeInlineStyle = (style: string): string | null => {

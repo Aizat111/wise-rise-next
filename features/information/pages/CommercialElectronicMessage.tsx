@@ -36,8 +36,11 @@ export async function CommercialElectronicMessagePage() {
           </ol>
           <br />
         </div>
-        <p>{t("closing")}</p>
-        <p>{t("companyName")}</p>
+        <div className="mb-3 px-5 text-center text-white font-semibold">
+          <p>{t("closing")}</p>
+          <p className="text-2xl">{t("companyName")}</p>
+        </div>
+
 
 
 

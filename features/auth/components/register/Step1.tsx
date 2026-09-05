@@ -234,7 +234,7 @@ export function Step1() {
                 <div className="text-xs md:text-sm text-white/70 font-medium text-left">
                     {t("termsText")}{" "}
                     <Link
-                        href="/kullanici-sozlesmesi"
+                        href="/kullanim-kosullari"
                         className="text-primary underline-offset-2 hover:underline"
                         target="_blank"
                     >

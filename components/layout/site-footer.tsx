@@ -36,7 +36,7 @@ const giftLinks: FooterLink[] = [
 
 const legalLinks: FooterLink[] = [
   { href: "/gizlilik-politikasi", label: "footer.privacyPolicy" },
-  { href: "/sartlar-ve-kosullar", label: "footer.termsOfService" },
+  { href: "/uyelik-sozlesmesi", label: "footer.termsOfService" },
 ];
 
 function FooterColumn({

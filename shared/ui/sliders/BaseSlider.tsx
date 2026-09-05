@@ -80,7 +80,7 @@ export function BaseSlider({
 
   return (
     <section
-      className={cn("relative w-full my-3", className)}
+      className={cn("relative w-full my-5", className)}
       aria-roledescription="carousel"
       aria-label={ariaLabel}
       aria-busy={!dragEnabled || undefined}
@@ -94,7 +94,7 @@ export function BaseSlider({
           ref={scrollerRef}
           {...pointerHandlers}
           className={cn(
-            "flex w-full touch-pan-x overflow-x-auto scroll-smooth",
+            "flex w-full touch-pan-x overflow-x-auto scroll-smooth my-5",
             "snap-x snap-mandatory",
             "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden",
             isDragging ? "cursor-grabbing select-none" : "cursor-grab",

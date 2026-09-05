@@ -37,3 +37,4 @@ export { DistanceSalesAgreementPage } from "./pages/DistanceSalesAgreementPage";
 export { PreInfoFormPage } from "./pages/PreInfoFormPage";
 export { CookiePolicyPage } from "./pages/CookiePolicyPage";
 export { KvkkPage } from "./pages/KvkkPage";
+export { TermsOfUsePage } from "./pages/TermsOfUsePage";

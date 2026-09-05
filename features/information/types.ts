@@ -67,4 +67,5 @@ export type InformationPageKey =
   | "distanceSales"
   | "preInfo"
   | "cookiePolicy"
-  | "kvkk";
+  | "kvkk"
+  | "termsOfUse";
