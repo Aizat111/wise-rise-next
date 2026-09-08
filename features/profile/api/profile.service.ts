@@ -24,24 +24,45 @@ function normalizeAvatars(response: AvatarsResponse): ProfileAvatar[] {
 function unwrapProfile(
   response: UserProfile | { data: UserProfile } | null | undefined,
 ): UserProfile {
-  if (!response || typeof response !== "object") {
+  const profile = tryUnwrapProfile(response);
+  if (!profile) {
     throw new Error("Invalid profile response");
   }
+  return profile;
+}
 
-  if (
-    "data" in response &&
-    response.data &&
-    typeof response.data === "object" &&
-    "id" in response.data
-  ) {
-    return response.data;
+function looksLikeProfile(
+  value: Record<string, unknown>,
+): value is UserProfile & Record<string, unknown> {
+  if (value.id == null) return false;
+  return (
+    typeof value.name === "string" ||
+    typeof value.is_main === "boolean" ||
+    "is_survey_completed" in value ||
+    "avatar_id" in value
+  );
+}
+
+export function tryUnwrapProfile(value: unknown): UserProfile | null {
+  if (!value || typeof value !== "object") return null;
+
+  const record = value as Record<string, unknown>;
+
+  if (looksLikeProfile(record)) {
+    return record;
   }
 
-  if ("id" in response) {
-    return response as UserProfile;
+  if (record.data) {
+    const nested = tryUnwrapProfile(record.data);
+    if (nested) return nested;
   }
 
-  throw new Error("Invalid profile response");
+  if (record.profile) {
+    const nested = tryUnwrapProfile(record.profile);
+    if (nested) return nested;
+  }
+
+  return null;
 }
 
 export const profileService = {
@@ -53,10 +74,16 @@ export const profileService = {
     return normalizeProfiles(response);
   },
 
+  async get(id: string | number): Promise<UserProfile> {
+    const response = await clientRequest<UserProfile | { data: UserProfile }>({
+      url: ENDPOINTS.profile.detail(id),
+      method: "GET",
+    });
+    return unwrapProfile(response);
+  },
+
   async create(data: CreateProfileRequest): Promise<UserProfile> {
-    const response = await clientRequest<
-      UserProfile | { data: UserProfile }
-    >({
+    const response = await clientRequest<UserProfile | { data: UserProfile }>({
       url: ENDPOINTS.profile.list,
       method: "POST",
       data,
@@ -68,9 +95,7 @@ export const profileService = {
     id: string | number,
     data: UpdateProfileRequest,
   ): Promise<UserProfile> {
-    const response = await clientRequest<
-      UserProfile | { data: UserProfile }
-    >({
+    const response = await clientRequest<UserProfile | { data: UserProfile }>({
       url: ENDPOINTS.profile.detail(id),
       method: "PUT",
       data,

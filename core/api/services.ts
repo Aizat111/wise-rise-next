@@ -20,4 +20,5 @@ export enum SERVICES {
   ACTIVITIES = "/activities",
   ASSIGNED_CLASSROOM = "/assigned-classroom",
   USER = "/user",
+  SURVEY = "/surveys",
 }

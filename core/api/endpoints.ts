@@ -90,6 +90,8 @@ export const ENDPOINTS = {
       `${SERVICES.PROFILE}/${profileId}/likes/teachers`,
     notes: (profileId: string | number) =>
       `${SERVICES.PROFILE}/${profileId}/notes`,
+    survey: (profileId: string | number, surveyId: number) =>
+      `${SERVICES.PROFILE}/${profileId}/surveys/${surveyId}`,
   },
 
   activities: {
@@ -125,4 +127,8 @@ export const ENDPOINTS = {
   },
 
   search: `${SERVICES.SEARCH}`,
+
+  survey: {
+    detail: (id: number) => `${SERVICES.SURVEY}/${id}`,
+  },
 };

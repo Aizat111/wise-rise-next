@@ -17,6 +17,22 @@ export function useProfilesQuery(enabled = true) {
   });
 }
 
+export function useProfileQuery(
+  id: string | number | null | undefined,
+  enabled = true,
+) {
+  return useQuery<UserProfile>({
+    queryKey: QUERY_KEYS.profile.detail(id ?? "unknown"),
+    queryFn: () => profileService.get(id as string | number),
+    enabled:
+      enabled &&
+      id != null &&
+      typeof window !== "undefined" &&
+      hasAccessToken(),
+    staleTime: 30 * 1000,
+  });
+}
+
 export function useAvatarsQuery(enabled = true) {
   return useQuery<ProfileAvatar[]>({
     queryKey: QUERY_KEYS.avatar.all,

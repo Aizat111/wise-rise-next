@@ -281,6 +281,16 @@
     "subtitle": "Hesabın hazır. Kısa bir anket ile hedeflerini belirleyerek devam edebilirsin.",
     "cta": "Ana Sayfaya Dön"
   },
+  "goalSelection": {
+    "title": "Hangi rüzgar seni Wise&Rise'a attı?",
+    "step": "{current} / {total}",
+    "continue": "Devam Et",
+    "complete": "Tamamla",
+    "loading": "Yükleniyor...",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "empty": "Seçenek bulunamadı.",
+    "retry": "Tekrar dene"
+  },
   "home": {
     "home": "Anasayfa",
     "title": "En İyilerden Yüzlerce Eğitim Videosunu İstediğin Yerde İzle!",

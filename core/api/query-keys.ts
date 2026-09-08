@@ -85,6 +85,7 @@ export const QUERY_KEYS = {
 
   profile: {
     all: ["profiles"],
+    detail: (id: string | number) => ["profiles", String(id)] as const,
   },
 
   avatar: {
@@ -138,5 +139,10 @@ export const QUERY_KEYS = {
   search: {
     all: ["search"],
     list: (q: string, pageSize: number) => ["search", "list", q, pageSize],
+  },
+
+  survey: {
+    all: ["survey"],
+    detail: (id: number) => ["survey", id] as const,
   },
 };

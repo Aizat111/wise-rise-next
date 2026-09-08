@@ -15,7 +15,7 @@ export interface UserProfile {
   is_child?: boolean;
   is_main: boolean;
   is_selected?: boolean;
-  is_survey_completed?: boolean;
+  is_survey_completed?: boolean | null;
 }
 
 export interface CreateProfileRequest {

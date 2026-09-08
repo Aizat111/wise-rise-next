@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { setActiveProfile } from "@/store/slices/profileSlice";
 
+import { getProfileDestination } from "../utils/get-profile-destination";
 import { useProfiles } from "../hooks/useProfiles";
 import { DeleteProfileDialog } from "./DeleteProfileDialog";
 import { EditProfileDialog } from "./EditProfileDialog";
@@ -51,8 +52,9 @@ export function ProfileSelector({ className }: ProfileSelectorProps) {
         id: profile.id,
         profile,
       });
-      dispatch(setActiveProfile(selected ?? profile));
-      router.push("/");
+      const next = selected ? { ...profile, ...selected } : profile;
+      dispatch(setActiveProfile(next));
+      router.push(getProfileDestination(next));
     } catch (error) {
       setSelectError(getAuthErrorMessage(error, t("selectError")));
     } finally {
