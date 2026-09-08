@@ -32,6 +32,23 @@ export type CourseMetaItem = {
 export type CourseHeroProps = {
   course: CourseDetail;
   onWatchTrailer: () => void;
+  onOpenNotes: () => void;
+};
+
+export type NotesDialogProps = {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  course: CourseDetail;
+  videos: CourseVideoItem[];
+  teacherSlug: string;
+  courseSlug: string;
+};
+
+export type NoteCourseHeaderProps = {
+  title: string;
+  teacherName: string;
+  categoryName: string | null;
+  coverSrc: string | null;
 };
 
 export type TrailerButtonProps = {
@@ -58,6 +75,11 @@ export type VideoPlayerProps = {
   className?: string;
   /** Resume from this playback position (seconds), e.g. where the viewer left off. */
   startTime?: number;
+  /**
+   * Seek to this time once the player is ready, skipping resume heuristics.
+   * Used when opening a lesson from a note timestamp.
+   */
+  forceStartTime?: number;
   /** Stable id used so the player can restore the last position. */
   playerKey?: string;
   /** Ref to the underlying HTML5 video element. */

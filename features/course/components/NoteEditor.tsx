@@ -4,7 +4,6 @@ import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import { notify } from "@/shared/components/notify/store/notify.store";
@@ -12,25 +11,14 @@ import { cn } from "@/lib/utils";
 
 import { useCreateVideoNoteMutation } from "../api/notes.mutations";
 import type { NoteEditorProps } from "../types";
+import { createNoteContentSchema, type NoteContentValues } from "../utils/noteSchema";
 import { formatSecondsToDuration } from "../utils/playbackTime";
-
-function createNoteSchema(t: ReturnType<typeof useTranslations<"course">>) {
-  return z.object({
-    content: z
-      .string()
-      .trim()
-      .min(1, t("noteRequired"))
-      .max(2000, t("noteTooLong")),
-  });
-}
-
-type NoteFormValues = z.infer<ReturnType<typeof createNoteSchema>>;
 
 export function NoteEditor({ videoId, currentTime }: NoteEditorProps) {
   const t = useTranslations("course");
   const createNote = useCreateVideoNoteMutation();
 
-  const schema = useMemo(() => createNoteSchema(t), [t]);
+  const schema = useMemo(() => createNoteContentSchema(t), [t]);
   const resolver = useMemo(() => standardSchemaResolver(schema), [schema]);
 
   const {
@@ -38,7 +26,7 @@ export function NoteEditor({ videoId, currentTime }: NoteEditorProps) {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<NoteFormValues>({
+  } = useForm<NoteContentValues>({
     mode: "onSubmit",
     resolver,
     defaultValues: { content: "" },

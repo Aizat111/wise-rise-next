@@ -24,6 +24,8 @@ export type {
   NoteEditorProps,
   NoteCardProps,
   VideoSidebarProps,
+  NotesDialogProps,
+  NoteCourseHeaderProps,
 } from "./types";
 
 export {
@@ -34,6 +36,8 @@ export {
   VIDEO_RESUME_MIN_SECONDS,
   VIDEO_RESTART_NEAR_END_SECONDS,
   VIDEO_RESTART_PERCENT,
+  NOTES_PAGE_SIZE,
+  NOTE_SEEK_QUERY_PARAM,
 } from "./constants";
 
 export {
@@ -41,8 +45,12 @@ export {
   CourseNotFoundError,
 } from "./api/course.queries";
 export { courseService } from "./api/course.service";
-export { useVideoNotesQuery } from "./api/notes.queries";
-export { useCreateVideoNoteMutation } from "./api/notes.mutations";
+export { useVideoNotesQuery, useCourseNotesQuery } from "./api/notes.queries";
+export {
+  useCreateVideoNoteMutation,
+  useUpdateVideoNoteMutation,
+  useDeleteVideoNoteMutation,
+} from "./api/notes.mutations";
 export { notesService } from "./api/notes.service";
 export { useProfileVideoWatchesQuery } from "./api/watch-progress.queries";
 export { useReportVideoWatchProgressMutation } from "./api/watch-progress.mutations";
@@ -85,6 +93,8 @@ export { NotesTab } from "./components/NotesTab";
 export { NoteEditor } from "./components/NoteEditor";
 export { NoteCard } from "./components/NoteCard";
 export { VideoSidebar } from "./components/VideoSidebar";
+export { NotesDialog } from "./components/notes-dialog/NotesDialog";
+export { NoteCourseHeader } from "./components/notes-dialog/NoteCourseHeader";
 export {
   CourseDetailSkeleton,
   CourseHeroSkeleton,

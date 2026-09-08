@@ -4,6 +4,7 @@ import type {
   CreateVideoNoteRequest,
   ProfileNote,
   ProfileNotesListParams,
+  UpdateVideoNoteRequest,
   VideoNote,
   VideoNotesListParams,
   VideoNotesPaginatedResponse,
@@ -73,5 +74,25 @@ export const notesService = {
     });
 
     return unwrapCreatedNote(response);
+  },
+
+  async update(
+    noteId: string,
+    payload: UpdateVideoNoteRequest,
+  ): Promise<VideoNote> {
+    const response = await clientRequest<VideoNote | { data: VideoNote }>({
+      url: ENDPOINTS.notes.detail(noteId),
+      method: "PATCH",
+      data: payload,
+    });
+
+    return unwrapCreatedNote(response);
+  },
+
+  async remove(noteId: string): Promise<void> {
+    await clientRequest({
+      url: ENDPOINTS.notes.detail(noteId),
+      method: "DELETE",
+    });
   },
 };

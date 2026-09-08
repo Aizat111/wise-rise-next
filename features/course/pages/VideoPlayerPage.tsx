@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { notFound } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { useRouter } from "@/core/i18n/navigation";
@@ -21,7 +21,9 @@ import {
 } from "../api/course.utils";
 import { useVideoWatchProgress } from "../hooks/useVideoWatchProgress";
 import type { CourseVideoItem, VideoPlayerPageProps } from "../types";
-import { parseDurationToSeconds } from "../utils/playbackTime";
+import { NOTE_SEEK_QUERY_PARAM } from "../constants";
+import { parseDurationToSeconds, parseNoteSeekParam } from "../utils/playbackTime";
+import { seekHtmlVideoWhenReady } from "../utils/seekVideo";
 import { mergeVideoWatchProgress } from "../utils/videoWatchProgress";
 import { CourseVideoSection } from "../components/CourseVideoSection";
 import { LoginRequiredDialog } from "../components/LoginRequiredDialog";
@@ -51,6 +53,10 @@ export function VideoPlayerPage({
   const [currentTime, setCurrentTime] = useState(0);
   const [loginOpen, setLoginOpen] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
+  const searchParams = useSearchParams();
+  const noteSeekSeconds = parseNoteSeekParam(
+    searchParams.get(NOTE_SEEK_QUERY_PARAM),
+  );
 
   const videos = mergeVideoWatchProgress(
     mapClassroomVideos(data?.videos),
@@ -58,6 +64,9 @@ export function VideoPlayerPage({
   );
   const activeVideo = findCourseVideoBySlug(videos, videoSlug);
   const canPlay = isAuthenticated && Boolean(activeVideo?.playbackUrl);
+  const waitingForResume =
+    isAuthenticated && Boolean(activeProfile?.id) && watchesQuery.isPending;
+  const playerMounted = canPlay && !isLoading && !waitingForResume;
 
   useVideoWatchProgress({
     profileId: activeProfile?.id,
@@ -82,12 +91,22 @@ export function VideoPlayerPage({
     }
   }, [isAuthenticated]);
 
+  useEffect(() => {
+    if (noteSeekSeconds == null || !playerMounted) return;
+
+    const controller = new AbortController();
+    seekHtmlVideoWhenReady(
+      () => playerRef.current,
+      noteSeekSeconds,
+      controller.signal,
+    );
+
+    return () => controller.abort();
+  }, [activeVideo?.id, noteSeekSeconds, playerMounted]);
+
   if (error instanceof CourseNotFoundError) {
     notFound();
   }
-
-  const waitingForResume =
-    isAuthenticated && Boolean(activeProfile?.id) && watchesQuery.isPending;
 
   if (isLoading || waitingForResume) {
     return <VideoWatchSkeleton />;
@@ -120,10 +139,7 @@ export function VideoPlayerPage({
   const categoryName = data.category?.name ?? null;
 
   const handleSeek = (seconds: number) => {
-    const video = playerRef.current;
-    if (!video) return;
-    video.currentTime = seconds;
-    void video.play().catch(() => undefined);
+    seekHtmlVideoWhenReady(() => playerRef.current, seconds);
   };
 
   const handlePlayVideo = (video: CourseVideoItem) => {
@@ -146,9 +162,11 @@ export function VideoPlayerPage({
                     autoPlay
                     playerRef={playerRef}
                     playerKey={String(activeVideo.id)}
-                    startTime={parseDurationToSeconds(
-                      activeVideo.watchedDuration ?? "",
-                    )}
+                    startTime={
+                      noteSeekSeconds ??
+                      parseDurationToSeconds(activeVideo.watchedDuration ?? "")
+                    }
+                    forceStartTime={noteSeekSeconds ?? undefined}
                     onTimeUpdate={(time: number) => setCurrentTime(time)}
                     className="absolute inset-0"
                   />

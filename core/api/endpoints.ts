@@ -128,6 +128,7 @@ export const ENDPOINTS = {
   notes: {
     list: `${SERVICES.NOTES}`,
     create: `${SERVICES.NOTES}`,
+    detail: (id: string | number) => `${SERVICES.NOTES}/${id}`,
   },
 
   search: `${SERVICES.SEARCH}`,

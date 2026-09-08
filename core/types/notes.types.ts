@@ -38,6 +38,10 @@ export type CreateVideoNoteRequest = {
   video_id: string;
 };
 
+export type UpdateVideoNoteRequest = {
+  content: string;
+};
+
 export type VideoNotesListParams = {
   videoId: string;
   page?: number;

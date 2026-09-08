@@ -49,13 +49,13 @@ function TeacherLogo({
 
 function AuthActions({
   watchHref,
-  notesHref,
+  onOpenNotes,
   watchLabel,
   notesLabel,
   className,
 }: {
   watchHref: string;
-  notesHref: string;
+  onOpenNotes: () => void;
   watchLabel: string;
   notesLabel: string;
   className?: string;
@@ -70,10 +70,11 @@ function AuthActions({
         {watchLabel}
       </Button>
       <Button
+        type="button"
         size="lg"
         variant="outline"
         className="h-auto border-white/20 bg-transparent px-6 py-3 text-base text-white hover:bg-white/10 hover:text-white lg:text-lg"
-        render={<Link href={notesHref} />}
+        onClick={onOpenNotes}
       >
         {notesLabel}
       </Button>
@@ -81,7 +82,7 @@ function AuthActions({
   );
 }
 
-export function CourseHero({ course, onWatchTrailer }: CourseHeroProps) {
+export function CourseHero({ course, onWatchTrailer, onOpenNotes }: CourseHeroProps) {
   const t = useTranslations("course");
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
 
@@ -98,7 +99,6 @@ export function CourseHero({ course, onWatchTrailer }: CourseHeroProps) {
   const watchHref =
     buildVideoHref(teacherSlug, course.slug, firstVideo?.slug) ??
     "#course-videos";
-  const notesHref = watchHref;
 
   return (
     <section
@@ -175,7 +175,7 @@ export function CourseHero({ course, onWatchTrailer }: CourseHeroProps) {
           {isAuthenticated ? (
             <AuthActions
               watchHref={watchHref}
-              notesHref={notesHref}
+              onOpenNotes={onOpenNotes}
               watchLabel={t("watchToStart")}
               notesLabel={t("notes")}
               className="mt-2 flex flex-row items-center justify-center gap-4"
@@ -224,7 +224,7 @@ export function CourseHero({ course, onWatchTrailer }: CourseHeroProps) {
           {isAuthenticated ? (
             <AuthActions
               watchHref={watchHref}
-              notesHref={notesHref}
+              onOpenNotes={onOpenNotes}
               watchLabel={t("watchToStart")}
               notesLabel={t("notes")}
               className="mt-2 flex flex-row items-center gap-4"

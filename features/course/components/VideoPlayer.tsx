@@ -46,6 +46,7 @@ export function VideoPlayer({
   playerRef: externalRef,
   playerKey,
   startTime = 0,
+  forceStartTime,
   onProgress,
   onTimeUpdate: onTimeUpdateProp,
   onClose,
@@ -56,24 +57,37 @@ export function VideoPlayer({
   const useNativeVideo = isProgressiveMediaUrl(src);
   const tubyPlayerKey = playerKey ? `wise-video-${playerKey}` : undefined;
 
+  const forcedSeekTime =
+    typeof forceStartTime === "number" &&
+    Number.isFinite(forceStartTime) &&
+    forceStartTime >= 0
+      ? forceStartTime
+      : null;
+  const hasForcedSeek = forcedSeekTime != null;
+
   // Freeze the resume point for this mount so later progress reports don't
   // rebuild the HLS instance (react-hls-player re-inits when hlsConfig changes).
-  const resumeFromRef = useRef(startTime);
-  if (
-    resumeFromRef.current < VIDEO_RESUME_MIN_SECONDS &&
-    startTime >= VIDEO_RESUME_MIN_SECONDS
-  ) {
-    resumeFromRef.current = startTime;
+  const resumeFromRef = useRef(hasForcedSeek ? forcedSeekTime : startTime);
+  if (!hasForcedSeek) {
+    if (
+      resumeFromRef.current < VIDEO_RESUME_MIN_SECONDS &&
+      startTime >= VIDEO_RESUME_MIN_SECONDS
+    ) {
+      resumeFromRef.current = startTime;
+    }
+  } else if (forcedSeekTime !== resumeFromRef.current) {
+    resumeFromRef.current = forcedSeekTime;
   }
 
   const hlsConfig = useMemo(
     () => ({
-      startPosition:
-        resumeFromRef.current >= VIDEO_RESUME_MIN_SECONDS
+      startPosition: hasForcedSeek
+        ? forcedSeekTime
+        : resumeFromRef.current >= VIDEO_RESUME_MIN_SECONDS
           ? resumeFromRef.current
           : -1,
     }),
-    [],
+    [forcedSeekTime, hasForcedSeek],
   );
 
   const reportProgress = useEffectEvent((percent: number) => {
@@ -94,6 +108,18 @@ export function VideoPlayer({
 
   const applyResume = useEffectEvent((video: HTMLVideoElement) => {
     const duration = video.duration;
+
+    if (hasForcedSeek) {
+      const target =
+        Number.isFinite(duration) && duration > 0
+          ? Math.min(forcedSeekTime, Math.max(0, duration - 0.05))
+          : forcedSeekTime;
+      if (Math.abs(video.currentTime - target) > 0.25) {
+        video.currentTime = target;
+      }
+      return;
+    }
+
     const fromPlayer =
       video.currentTime >= VIDEO_RESUME_MIN_SECONDS ? video.currentTime : 0;
     const candidate = fromPlayer || Math.max(startTime, resumeFromRef.current);
@@ -119,11 +145,17 @@ export function VideoPlayer({
   useLayoutEffect(() => {
     if (!tubyPlayerKey) return;
 
-    const saved = Math.max(startTime, resumeFromRef.current);
-    if (saved < VIDEO_RESUME_MIN_SECONDS) return;
+    const saved = hasForcedSeek
+      ? forcedSeekTime
+      : Math.max(startTime, resumeFromRef.current);
+    if (!hasForcedSeek && saved < VIDEO_RESUME_MIN_SECONDS) return;
 
     try {
       const key = tubyTimeStorageKey(tubyPlayerKey);
+      if (hasForcedSeek) {
+        localStorage.setItem(key, String(saved));
+        return;
+      }
       const existing = Number(localStorage.getItem(key));
       if (!Number.isFinite(existing) || existing < VIDEO_RESUME_MIN_SECONDS) {
         localStorage.setItem(key, String(saved));
@@ -131,13 +163,13 @@ export function VideoPlayer({
     } catch {
       // Ignore private-mode / storage errors.
     }
-  }, [tubyPlayerKey, startTime]);
+  }, [tubyPlayerKey, startTime, forcedSeekTime, hasForcedSeek]);
 
   // Reset tracking when the stream changes; report max % on unmount/close.
   useEffect(() => {
     reportedRef.current = false;
     maxPercentRef.current = 0;
-    resumeFromRef.current = startTime;
+    resumeFromRef.current = hasForcedSeek ? forcedSeekTime : startTime;
 
     return () => {
       reportClose(toWatchPercent(maxPercentRef.current));

@@ -27,6 +27,7 @@ import { CourseVideoSection } from "../components/CourseVideoSection";
 import { LoginRequiredDialog } from "../components/LoginRequiredDialog";
 import { TrailerDialog } from "../components/TrailerDialog";
 import { CourseHero } from "../components/CourseHero";
+import { NotesDialog } from "../components/notes-dialog/NotesDialog";
 
 export function CourseDetailPage({
   courseSlug,
@@ -47,6 +48,7 @@ export function CourseDetailPage({
 
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
+  const [notesOpen, setNotesOpen] = useState(false);
 
   if (error instanceof CourseNotFoundError) {
     notFound();
@@ -94,6 +96,7 @@ export function CourseDetailPage({
       <CourseHero
         course={data}
         onWatchTrailer={() => setTrailerOpen(true)}
+        onOpenNotes={() => setNotesOpen(true)}
       />
 
       <CourseAboutSection
@@ -114,6 +117,15 @@ export function CourseDetailPage({
         onOpenChange={setTrailerOpen}
         title={t("watchTrailer")}
         videoUrl={trailerUrl}
+      />
+
+      <NotesDialog
+        open={notesOpen}
+        onOpenChange={setNotesOpen}
+        course={data}
+        videos={videos}
+        teacherSlug={teacherSlug}
+        courseSlug={courseSlug}
       />
 
       <LoginRequiredDialog open={loginOpen} onOpenChange={setLoginOpen} />
