@@ -794,7 +794,8 @@
     "shareFacebook": "Facebook",
     "shareTwitter": "Twitter (X)",
     "shareLinkedin": "LinkedIn",
-    "seekToNoteAria": "{time} zamanına git"
+    "seekToNoteAria": "{time} zamanına git",
+    "watchProgressAria": "{title} izlenme oranı {percent}%"
   },
   "myProgress": {
     "title": "İlerleme Durumum",

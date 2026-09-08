@@ -18,9 +18,11 @@ export function formatSecondsToDuration(totalSeconds: number): string {
 
 /**
  * Parses `HH:MM:SS` or `MM:SS` into total seconds for seeking.
+ * Also accepts `{HH:MM:SS}` and fractional seconds (`HH:MM:SS.fffffff`).
  */
 export function parseDurationToSeconds(duration: string): number {
-  const parts = duration.split(":").map((part) => Number(part));
+  const normalized = duration.trim().replace(/^\{/, "").replace(/\}$/, "");
+  const parts = normalized.split(":").map((part) => Number(part));
   if (parts.some((n) => Number.isNaN(n))) return 0;
 
   if (parts.length === 3) {
@@ -31,6 +33,10 @@ export function parseDurationToSeconds(duration: string): number {
   if (parts.length === 2) {
     const [minutes, seconds] = parts;
     return minutes * 60 + seconds;
+  }
+
+  if (parts.length === 1) {
+    return parts[0] >= 0 ? parts[0] : 0;
   }
 
   return 0;

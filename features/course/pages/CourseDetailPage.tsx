@@ -12,6 +12,7 @@ import {
   CourseNotFoundError,
   useCourseDetailQuery,
 } from "../api/course.queries";
+import { useProfileVideoWatchesQuery } from "../api/watch-progress.queries";
 import {
   buildCourseMetaItems,
   buildVideoHref,
@@ -19,6 +20,7 @@ import {
   mapClassroomVideos,
 } from "../api/course.utils";
 import type { CourseDetailPageProps, CourseVideoItem } from "../types";
+import { mergeVideoWatchProgress } from "../utils/videoWatchProgress";
 import { CourseAboutSection } from "../components/CourseAboutSection";
 import { CourseDetailSkeleton } from "../components/CourseDetailSkeleton";
 import { CourseVideoSection } from "../components/CourseVideoSection";
@@ -34,9 +36,14 @@ export function CourseDetailPage({
   const tLessons = useTranslations("lessonsDetail");
   const router = useRouter();
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
+  const activeProfile = useAppSelector((state) => state.profile.activeProfile);
 
   const { data, isLoading, isError, error, refetch, isFetching } =
     useCourseDetailQuery(courseSlug);
+  const watchesQuery = useProfileVideoWatchesQuery(
+    activeProfile?.id,
+    isAuthenticated,
+  );
 
   const [trailerOpen, setTrailerOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
@@ -65,7 +72,10 @@ export function CourseDetailPage({
     );
   }
 
-  const videos = mapClassroomVideos(data.videos);
+  const videos = mergeVideoWatchProgress(
+    mapClassroomVideos(data.videos),
+    watchesQuery.data,
+  );
   const trailerUrl = getTrailerPlaybackUrl(data);
   const metaItems = buildCourseMetaItems(data, {
     category: tLessons("category"),

@@ -790,7 +790,8 @@
     "shareFacebook": "Facebook",
     "shareTwitter": "Twitter (X)",
     "shareLinkedin": "LinkedIn",
-    "seekToNoteAria": "{time} vaxtına get"
+    "seekToNoteAria": "{time} vaxtına get",
+    "watchProgressAria": "{title} izlənmə nisbəti {percent}%"
   },
   "myProgress": {
     "title": "İrəliləmə Vəziyyətim",

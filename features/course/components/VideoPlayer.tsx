@@ -3,6 +3,8 @@
 import {
   useEffect,
   useEffectEvent,
+  useLayoutEffect,
+  useMemo,
   useRef,
   type MutableRefObject,
   type RefObject,
@@ -14,8 +16,10 @@ import "react-tuby/css/main.css";
 
 import { cn } from "@/lib/utils";
 
+import { VIDEO_RESUME_MIN_SECONDS } from "../constants";
 import type { VideoPlayerProps } from "../types";
 import { isProgressiveMediaUrl } from "../utils/mediaUrl";
+import { getResumePlaybackSeconds } from "../utils/videoWatchProgress";
 import { calcWatchPercent, toWatchPercent } from "../utils/watchProgress";
 
 const BRAND_PRIMARY = "#be161a";
@@ -23,6 +27,10 @@ const BRAND_PRIMARY = "#be161a";
 type TubyTimeHandler =
   | ((event: SyntheticEvent<HTMLVideoElement>) => void)
   | undefined;
+
+function tubyTimeStorageKey(playerKey: string) {
+  return `${playerKey}-time`;
+}
 
 /**
  * Video player built on react-tuby.
@@ -36,6 +44,8 @@ export function VideoPlayer({
   playsInline = true,
   className,
   playerRef: externalRef,
+  playerKey,
+  startTime = 0,
   onProgress,
   onTimeUpdate: onTimeUpdateProp,
   onClose,
@@ -44,6 +54,27 @@ export function VideoPlayer({
   const maxPercentRef = useRef(0);
   const reportedRef = useRef(false);
   const useNativeVideo = isProgressiveMediaUrl(src);
+  const tubyPlayerKey = playerKey ? `wise-video-${playerKey}` : undefined;
+
+  // Freeze the resume point for this mount so later progress reports don't
+  // rebuild the HLS instance (react-hls-player re-inits when hlsConfig changes).
+  const resumeFromRef = useRef(startTime);
+  if (
+    resumeFromRef.current < VIDEO_RESUME_MIN_SECONDS &&
+    startTime >= VIDEO_RESUME_MIN_SECONDS
+  ) {
+    resumeFromRef.current = startTime;
+  }
+
+  const hlsConfig = useMemo(
+    () => ({
+      startPosition:
+        resumeFromRef.current >= VIDEO_RESUME_MIN_SECONDS
+          ? resumeFromRef.current
+          : -1,
+    }),
+    [],
+  );
 
   const reportProgress = useEffectEvent((percent: number) => {
     onProgress?.(percent);
@@ -61,10 +92,52 @@ export function VideoPlayer({
     onClose?.(percent);
   });
 
+  const applyResume = useEffectEvent((video: HTMLVideoElement) => {
+    const duration = video.duration;
+    const fromPlayer =
+      video.currentTime >= VIDEO_RESUME_MIN_SECONDS ? video.currentTime : 0;
+    const candidate = fromPlayer || Math.max(startTime, resumeFromRef.current);
+    const resumeAt = getResumePlaybackSeconds(candidate, duration);
+
+    if (resumeAt > 0) {
+      if (Math.abs(video.currentTime - resumeAt) > 1) {
+        video.currentTime = resumeAt;
+      }
+      return;
+    }
+
+    if (
+      Number.isFinite(duration) &&
+      duration > 0 &&
+      candidate >= duration - 1
+    ) {
+      video.currentTime = 0;
+    }
+  });
+
+  // Seed tuby's localStorage so its own onLoadedData does not reset to 0.
+  useLayoutEffect(() => {
+    if (!tubyPlayerKey) return;
+
+    const saved = Math.max(startTime, resumeFromRef.current);
+    if (saved < VIDEO_RESUME_MIN_SECONDS) return;
+
+    try {
+      const key = tubyTimeStorageKey(tubyPlayerKey);
+      const existing = Number(localStorage.getItem(key));
+      if (!Number.isFinite(existing) || existing < VIDEO_RESUME_MIN_SECONDS) {
+        localStorage.setItem(key, String(saved));
+      }
+    } catch {
+      // Ignore private-mode / storage errors.
+    }
+  }, [tubyPlayerKey, startTime]);
+
   // Reset tracking when the stream changes; report max % on unmount/close.
   useEffect(() => {
     reportedRef.current = false;
     maxPercentRef.current = 0;
+    resumeFromRef.current = startTime;
 
     return () => {
       reportClose(toWatchPercent(maxPercentRef.current));
@@ -126,6 +199,18 @@ export function VideoPlayer({
     reportClose(100);
   };
 
+  const handleLoadedData = (
+    event: SyntheticEvent<HTMLVideoElement>,
+    original?: TubyTimeHandler,
+  ) => {
+    original?.(event);
+    applyResume(event.currentTarget);
+  };
+
+  const handleLoadedMetadata = (event: SyntheticEvent<HTMLVideoElement>) => {
+    applyResume(event.currentTarget);
+  };
+
   return (
     <div
       className={cn(
@@ -136,21 +221,29 @@ export function VideoPlayer({
       <Player
         src={src}
         poster={poster}
+        playerKey={tubyPlayerKey}
         primaryColor={BRAND_PRIMARY}
         keyboardShortcut={false}
         dimensions={{ width: "100%", height: "100%" }}
         playerRef={internalRef as RefObject<HTMLVideoElement>}
       >
         {(ref, props) => {
-          const { onTimeUpdate, onEnded, ...rest } = props;
+          const { onTimeUpdate, onEnded, onLoadedData, ...rest } = props;
           const originalTimeUpdate = onTimeUpdate as TubyTimeHandler;
           const originalEnded = onEnded as TubyTimeHandler;
+          const originalLoadedData = onLoadedData as TubyTimeHandler;
 
           const mediaProps = {
             ...rest,
             autoPlay,
             playsInline,
             className: "size-full object-contain",
+            onLoadedMetadata: handleLoadedMetadata,
+            onLoadedData: (e: SyntheticEvent<HTMLVideoElement>) =>
+              handleLoadedData(e, originalLoadedData),
+            onCanPlay: (e: SyntheticEvent<HTMLVideoElement>) => {
+              applyResume(e.currentTarget);
+            },
             onTimeUpdate: (e: SyntheticEvent<HTMLVideoElement>) =>
               handleTimeUpdate(e, originalTimeUpdate),
             onEnded: (e: SyntheticEvent<HTMLVideoElement>) =>
@@ -171,6 +264,7 @@ export function VideoPlayer({
           return (
             <ReactHlsPlayer
               {...mediaProps}
+              hlsConfig={hlsConfig}
               playerRef={ref as RefObject<HTMLVideoElement>}
             />
           );

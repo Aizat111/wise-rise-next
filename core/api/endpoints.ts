@@ -90,6 +90,10 @@ export const ENDPOINTS = {
       `${SERVICES.PROFILE}/${profileId}/likes/teachers`,
     notes: (profileId: string | number) =>
       `${SERVICES.PROFILE}/${profileId}/notes`,
+    videos: (profileId: string | number) =>
+      `${SERVICES.PROFILE}/${profileId}/videos`,
+    video: (profileId: string | number, videoId: string | number) =>
+      `${SERVICES.PROFILE}/${profileId}/videos/${videoId}`,
     survey: (profileId: string | number, surveyId: number) =>
       `${SERVICES.PROFILE}/${profileId}/surveys/${surveyId}`,
   },

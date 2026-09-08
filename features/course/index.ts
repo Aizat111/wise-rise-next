@@ -30,6 +30,10 @@ export {
   COURSE_MEDIA_CDN,
   MOBILE_DESCRIPTION_MAX_CHARS,
   COURSE_VIDEO_SKELETON_COUNT,
+  VIDEO_WATCH_PROGRESS_INTERVAL_MS,
+  VIDEO_RESUME_MIN_SECONDS,
+  VIDEO_RESTART_NEAR_END_SECONDS,
+  VIDEO_RESTART_PERCENT,
 } from "./constants";
 
 export {
@@ -40,6 +44,9 @@ export { courseService } from "./api/course.service";
 export { useVideoNotesQuery } from "./api/notes.queries";
 export { useCreateVideoNoteMutation } from "./api/notes.mutations";
 export { notesService } from "./api/notes.service";
+export { useProfileVideoWatchesQuery } from "./api/watch-progress.queries";
+export { useReportVideoWatchProgressMutation } from "./api/watch-progress.mutations";
+export { watchProgressService } from "./api/watch-progress.service";
 export {
   buildCourseHref,
   buildVideoHref,
@@ -51,6 +58,7 @@ export {
   getTeacherLogo,
   getTrailerPlaybackUrl,
   mapClassroomVideos,
+  patchClassroomVideoWatchDuration,
   truncateDescription,
 } from "./api/course.utils";
 
@@ -60,6 +68,7 @@ export { CourseHero } from "./components/CourseHero";
 export { TrailerButton } from "./components/TrailerButton";
 export { TrailerDialog } from "./components/TrailerDialog";
 export { VideoPlayer } from "./components/VideoPlayer";
+export { useVideoWatchProgress } from "./hooks/useVideoWatchProgress";
 export { CourseAboutSection } from "./components/CourseAboutSection";
 export { CourseVideoSection } from "./components/CourseVideoSection";
 /** Alias — reuses the existing video list component. */

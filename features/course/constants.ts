@@ -7,3 +7,15 @@ export const COURSE_MEDIA_CDN =
 export const MOBILE_DESCRIPTION_MAX_CHARS = 50;
 
 export const COURSE_VIDEO_SKELETON_COUNT = 4;
+
+/** How often to POST the max reached playback position while a lesson is playing. */
+export const VIDEO_WATCH_PROGRESS_INTERVAL_MS = 10_000;
+
+/** Skip resume if the saved position is shorter than this. */
+export const VIDEO_RESUME_MIN_SECONDS = 3;
+
+/** Restart from the beginning when the viewer left this close to the end. */
+export const VIDEO_RESTART_NEAR_END_SECONDS = 5;
+
+/** Restart from the beginning when watch progress is at or above this percent. */
+export const VIDEO_RESTART_PERCENT = 95;

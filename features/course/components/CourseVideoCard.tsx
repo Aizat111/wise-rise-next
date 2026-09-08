@@ -57,8 +57,17 @@ export function CourseVideoCard({
             <Play className="size-5 fill-white " />
           </span>
         </span>
-        <div className="absolute bottom-1 right-2 flex items-center gap-2 text-xs bg-primary px-2.5 py-0.5 font-medium rounded-full">
+        <div className="absolute bottom-2 right-2 z-10 flex items-center gap-2 text-xs bg-primary px-2.5 py-0.5 font-medium rounded-full">
           {video.duration ? <span>{video.duration}</span> : null}
+        </div>
+        <div
+          className="absolute inset-x-0 bottom-0 h-1 bg-black/45"
+          aria-hidden
+        >
+          <div
+            className="h-full bg-primary transition-[width] duration-500 ease-out"
+            style={{ width: `${video.watchPercent ?? 0}%` }}
+          />
         </div>
       </div>
 

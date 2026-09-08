@@ -57,6 +57,16 @@ export type ClassroomVideo = {
   /** HLS / progressive stream when provided by API. */
   stream_url?: string | null;
   teaser?: string | null;
+  /** Watched TimeSpan (`HH:MM:SS`) for the active profile, when provided. */
+  watched_duration?: string | null;
+  watch_duration?: string | null;
+  /** 0–100 watch percent when provided by API. */
+  progress?: number | null;
+  completion_rate?: number | null;
+  pivot?: {
+    duration?: string | null;
+    watched_duration?: string | null;
+  } | null;
 };
 
 export type Classroom = {

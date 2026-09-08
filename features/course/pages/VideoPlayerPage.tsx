@@ -13,12 +13,16 @@ import {
   CourseNotFoundError,
   useCourseDetailQuery,
 } from "../api/course.queries";
+import { useProfileVideoWatchesQuery } from "../api/watch-progress.queries";
 import {
   buildVideoHref,
   findCourseVideoBySlug,
   mapClassroomVideos,
 } from "../api/course.utils";
+import { useVideoWatchProgress } from "../hooks/useVideoWatchProgress";
 import type { CourseVideoItem, VideoPlayerPageProps } from "../types";
+import { parseDurationToSeconds } from "../utils/playbackTime";
+import { mergeVideoWatchProgress } from "../utils/videoWatchProgress";
 import { CourseVideoSection } from "../components/CourseVideoSection";
 import { LoginRequiredDialog } from "../components/LoginRequiredDialog";
 import { VideoHeader } from "../components/VideoHeader";
@@ -34,14 +38,37 @@ export function VideoPlayerPage({
   const t = useTranslations("course");
   const router = useRouter();
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
+  const activeProfile = useAppSelector((state) => state.profile.activeProfile);
 
   const { data, isLoading, isError, error, refetch, isFetching } =
     useCourseDetailQuery(courseSlug);
+  const watchesQuery = useProfileVideoWatchesQuery(
+    activeProfile?.id,
+    isAuthenticated,
+  );
 
   const playerRef = useRef<HTMLVideoElement | null>(null);
   const [currentTime, setCurrentTime] = useState(0);
   const [loginOpen, setLoginOpen] = useState(false);
   const [shareUrl, setShareUrl] = useState("");
+
+  const videos = mergeVideoWatchProgress(
+    mapClassroomVideos(data?.videos),
+    watchesQuery.data,
+  );
+  const activeVideo = findCourseVideoBySlug(videos, videoSlug);
+  const canPlay = isAuthenticated && Boolean(activeVideo?.playbackUrl);
+
+  useVideoWatchProgress({
+    profileId: activeProfile?.id,
+    videoId: activeVideo?.id,
+    courseSlug,
+    playerRef,
+    enabled: canPlay,
+    initialWatchedSeconds: parseDurationToSeconds(
+      activeVideo?.watchedDuration ?? "",
+    ),
+  });
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -59,7 +86,10 @@ export function VideoPlayerPage({
     notFound();
   }
 
-  if (isLoading) {
+  const waitingForResume =
+    isAuthenticated && Boolean(activeProfile?.id) && watchesQuery.isPending;
+
+  if (isLoading || waitingForResume) {
     return <VideoWatchSkeleton />;
   }
 
@@ -79,9 +109,6 @@ export function VideoPlayerPage({
     );
   }
 
-  const videos = mapClassroomVideos(data.videos);
-  const activeVideo = findCourseVideoBySlug(videos, videoSlug);
-
   if (!activeVideo) {
     notFound();
   }
@@ -91,8 +118,6 @@ export function VideoPlayerPage({
     resolveMediaUrl(data.teacher?.photo?.path) ??
     resolveMediaUrl(data.teacher?.logo?.path);
   const categoryName = data.category?.name ?? null;
-  const canPlay =
-    isAuthenticated && Boolean(activeVideo.playbackUrl);
 
   const handleSeek = (seconds: number) => {
     const video = playerRef.current;
@@ -120,6 +145,10 @@ export function VideoPlayerPage({
                     poster={activeVideo.thumbnail ?? undefined}
                     autoPlay
                     playerRef={playerRef}
+                    playerKey={String(activeVideo.id)}
+                    startTime={parseDurationToSeconds(
+                      activeVideo.watchedDuration ?? "",
+                    )}
                     onTimeUpdate={(time: number) => setCurrentTime(time)}
                     className="absolute inset-0"
                   />

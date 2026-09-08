@@ -17,6 +17,10 @@ export type CourseVideoItem = {
   /** Progressive / stream URL for authenticated playback. */
   playbackUrl: string | null;
   isTrailer?: boolean;
+  /** Watched TimeSpan (`HH:MM:SS`) for the active profile. */
+  watchedDuration: string | null;
+  /** 0–100 watch percent derived from watched vs total duration. */
+  watchPercent: number;
 };
 
 export type CourseMetaItem = {
@@ -52,6 +56,10 @@ export type VideoPlayerProps = {
   autoPlay?: boolean;
   playsInline?: boolean;
   className?: string;
+  /** Resume from this playback position (seconds), e.g. where the viewer left off. */
+  startTime?: number;
+  /** Stable id used so the player can restore the last position. */
+  playerKey?: string;
   /** Ref to the underlying HTML5 video element. */
   playerRef?: RefObject<HTMLVideoElement | null>;
   /** Live updates whenever the max reached watch % increases. */

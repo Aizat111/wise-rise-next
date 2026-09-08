@@ -7,6 +7,7 @@ import {
   resolveTrailerUrl,
   resolveVideoPlaybackUrl,
 } from "../utils/mediaUrl";
+import { getClassroomVideoWatchProgress } from "../utils/videoWatchProgress";
 
 export function unwrapClassroomDetail(
   response: Classroom | { data: Classroom } | null | undefined,
@@ -84,6 +85,7 @@ export function mapClassroomVideoToItem(
       rawFilePath: video.raw_file_path,
       podcastFile: video.podcast_file,
     }),
+    ...getClassroomVideoWatchProgress(video),
   };
 }
 
@@ -181,4 +183,23 @@ export function findCourseVideoBySlug(
   videoSlug: string,
 ): CourseVideoItem | null {
   return videos.find((video) => video.slug === videoSlug) ?? null;
+}
+
+export function patchClassroomVideoWatchDuration(
+  classroom: Classroom | undefined,
+  videoId: string | number,
+  watchedDuration: string,
+): Classroom | undefined {
+  if (!classroom?.videos) return classroom;
+
+  const id = String(videoId);
+
+  return {
+    ...classroom,
+    videos: classroom.videos.map((video) =>
+      String(video.id) === id
+        ? { ...video, watched_duration: watchedDuration }
+        : video,
+    ),
+  };
 }

@@ -41,7 +41,7 @@ export function TeacherDialog({
                 alt={teacher.name}
                 fill
                 sizes="(max-width: 640px) 100vw, 40vw"
-                className="object-cover object-top"
+                className="object-contain"
               />
             </div>
 

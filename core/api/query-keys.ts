@@ -86,6 +86,8 @@ export const QUERY_KEYS = {
   profile: {
     all: ["profiles"],
     detail: (id: string | number) => ["profiles", String(id)] as const,
+    videos: (id: string | number) =>
+      ["profiles", String(id), "videos"] as const,
   },
 
   avatar: {
