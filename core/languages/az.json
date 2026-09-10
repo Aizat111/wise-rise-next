@@ -808,7 +808,11 @@
     "notesDialogAria": "Təlim qeydləri",
     "notesDialogLoadError": "Qeydlər yüklənərkən xəta baş verdi.",
     "notesCoverAlt": "{title} üz qabığı",
-    "noteDeleting": "Silinir..."
+    "noteDeleting": "Silinir...",
+    "relatedCoursesEyebrow": "DİQQƏTİNİ ÇƏKƏ BİLƏCƏKLƏR",
+    "relatedCoursesTitle": "Digər Təlimlər",
+    "relatedCoursesSubtitle": "Ən yaxşılara limitsiz giriş səni gözləyir",
+    "relatedCoursesAria": "Diqqətini çəkə biləcək digər təlimlər"
   },
   "myProgress": {
     "title": "İrəliləmə Vəziyyətim",

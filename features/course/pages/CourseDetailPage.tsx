@@ -28,6 +28,7 @@ import { LoginRequiredDialog } from "../components/LoginRequiredDialog";
 import { TrailerDialog } from "../components/TrailerDialog";
 import { CourseHero } from "../components/CourseHero";
 import { NotesDialog } from "../components/notes-dialog/NotesDialog";
+import { RelatedCoursesSection } from "../components/RelatedCoursesSection";
 
 export function CourseDetailPage({
   courseSlug,
@@ -110,6 +111,11 @@ export function CourseDetailPage({
         isAuthenticated={isAuthenticated}
         onPlayVideo={handlePlayVideo}
         onLockedClick={() => setLoginOpen(true)}
+      />
+
+      <RelatedCoursesSection
+        categoryId={data.category?.id}
+        currentCourseId={data.id}
       />
 
       <TrailerDialog

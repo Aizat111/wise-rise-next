@@ -26,6 +26,9 @@ export type {
   VideoSidebarProps,
   NotesDialogProps,
   NoteCourseHeaderProps,
+  RelatedEducationCardData,
+  RelatedEducationCardProps,
+  RelatedCoursesSectionProps,
 } from "./types";
 
 export {
@@ -37,6 +40,7 @@ export {
   VIDEO_RESTART_NEAR_END_SECONDS,
   VIDEO_RESTART_PERCENT,
   NOTES_PAGE_SIZE,
+  RELATED_COURSES_PAGE_SIZE,
   NOTE_SEEK_QUERY_PARAM,
 } from "./constants";
 
@@ -44,6 +48,7 @@ export {
   useCourseDetailQuery,
   CourseNotFoundError,
 } from "./api/course.queries";
+export { useRelatedClassroomsQuery } from "./api/related-classrooms.queries";
 export { courseService } from "./api/course.service";
 export { useVideoNotesQuery, useCourseNotesQuery } from "./api/notes.queries";
 export {
@@ -66,6 +71,8 @@ export {
   getTeacherLogo,
   getTrailerPlaybackUrl,
   mapClassroomVideos,
+  mapClassroomToRelatedEducationCard,
+  mapClassroomsToRelatedEducationCards,
   patchClassroomVideoWatchDuration,
   truncateDescription,
 } from "./api/course.utils";
@@ -79,6 +86,8 @@ export { VideoPlayer } from "./components/VideoPlayer";
 export { useVideoWatchProgress } from "./hooks/useVideoWatchProgress";
 export { CourseAboutSection } from "./components/CourseAboutSection";
 export { CourseVideoSection } from "./components/CourseVideoSection";
+export { RelatedCoursesSection } from "./components/RelatedCoursesSection";
+export { RelatedEducationCard } from "./components/RelatedEducationCard";
 /** Alias — reuses the existing video list component. */
 export { CourseVideoSection as CourseVideoList } from "./components/CourseVideoSection";
 export { CourseVideoCard } from "./components/CourseVideoCard";

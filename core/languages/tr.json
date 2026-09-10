@@ -812,7 +812,11 @@
     "notesDialogAria": "Ders notları",
     "notesDialogLoadError": "Notlar yüklenirken bir hata oluştu.",
     "notesCoverAlt": "{title} kapak görseli",
-    "noteDeleting": "Siliniyor..."
+    "noteDeleting": "Siliniyor...",
+    "relatedCoursesEyebrow": "İLGİNİ ÇEKEBİLECEKLER",
+    "relatedCoursesTitle": "Diğer Eğitimler",
+    "relatedCoursesSubtitle": "En iyilere sınırsız erişim seni bekliyor",
+    "relatedCoursesAria": "İlgini çekebilecek diğer eğitimler"
   },
   "myProgress": {
     "title": "İlerleme Durumum",

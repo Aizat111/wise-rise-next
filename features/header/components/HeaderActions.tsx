@@ -116,6 +116,7 @@ export function HeaderActions({
         >
           <SearchIcon />
         </Button>
+        <NotificationDropdown />
         <Button
           variant="ghost"
           size="icon"

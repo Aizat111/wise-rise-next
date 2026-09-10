@@ -1,6 +1,10 @@
 import type { Classroom, ClassroomVideo } from "@/core/types/classroom.types";
 
-import type { CourseMetaItem, CourseVideoItem } from "../types";
+import type {
+  CourseMetaItem,
+  CourseVideoItem,
+  RelatedEducationCardData,
+} from "../types";
 import { formatDuration } from "../utils/formatDuration";
 import {
   resolveMediaUrl,
@@ -167,6 +171,36 @@ export function buildCourseHref(
 ): string | null {
   if (!teacherSlug || !courseSlug) return null;
   return `/${teacherSlug}/${courseSlug}`;
+}
+
+export function mapClassroomToRelatedEducationCard(
+  classroom: Classroom,
+): RelatedEducationCardData {
+  return {
+    id: classroom.id,
+    title: classroom.name,
+    cover:
+      classroom.cover?.path ??
+      classroom.banner?.path ??
+      classroom.thumbnail?.path ??
+      "",
+    authorName: classroom.teacher?.name ?? "",
+    categoryName: classroom.category?.name ?? null,
+    isFavorite: classroom.is_favorite ?? false,
+    href: buildCourseHref(classroom.teacher?.slug, classroom.slug),
+  };
+}
+
+export function mapClassroomsToRelatedEducationCards(
+  classrooms: Classroom[],
+  currentCourseId: string | number,
+): RelatedEducationCardData[] {
+  const currentId = String(currentCourseId);
+
+  return classrooms
+    .filter((classroom) => String(classroom.id) !== currentId)
+    .map(mapClassroomToRelatedEducationCard)
+    .filter((card) => Boolean(card.cover));
 }
 
 export function buildVideoHref(

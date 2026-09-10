@@ -202,4 +202,30 @@ export type CourseDetailPageProps = {
   teacherSlug: string;
 };
 
+export type RelatedEducationCardData = {
+  id: string | number;
+  title: string;
+  cover: string;
+  authorName: string;
+  categoryName: string | null;
+  isFavorite: boolean;
+  href: string | null;
+};
+
+export type RelatedEducationCardProps = {
+  cover: string;
+  title: string;
+  authorName: string;
+  categoryName?: string | null;
+  entityId?: string | number;
+  isFavorite?: boolean;
+  href?: string | null;
+  className?: string;
+};
+
+export type RelatedCoursesSectionProps = {
+  categoryId?: number;
+  currentCourseId: string | number;
+};
+
 export type { ClassroomVideo };

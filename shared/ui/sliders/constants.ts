@@ -12,6 +12,13 @@ export const SLIDER_DEFAULT_SKELETON_COUNT = 4;
 export const SLIDER_ITEM_WIDTH_CLASS =
   "w-[calc((100%-0.75rem)/2)] md:w-[calc((100%-2.25rem)/4)]";
 
+/** Related courses slider: 1 on mobile, 3 on desktop (md+). */
+export const RELATED_COURSES_MOBILE_VISIBLE = 1;
+export const RELATED_COURSES_DESKTOP_VISIBLE = 3;
+export const RELATED_COURSES_SKELETON_COUNT = 3;
+export const RELATED_COURSES_SLIDER_ITEM_WIDTH_CLASS =
+  "w-full md:w-[calc((100%-1.5rem)/3)]";
+
 /** Coming Soon slider: always show exactly 2 cards (mobile + desktop). */
 export const COMING_SOON_VISIBLE = 2;
 export const COMING_SOON_SKELETON_COUNT = 2;
