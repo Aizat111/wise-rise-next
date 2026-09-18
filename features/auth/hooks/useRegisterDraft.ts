@@ -4,6 +4,10 @@ import { useCallback, useEffect, useState, useSyncExternalStore } from "react";
 
 import { REGISTER_FLOW_STORAGE_KEY } from "@/core/constants/auth.constants";
 import type { PlanPeriod } from "@/core/types/plan.types";
+import {
+  isFreeCampaignType,
+  type FreeCampaignType,
+} from "@/features/auth/lib/free-campaign";
 
 export type RegisterStep = 1 | 2 | 3 | 4;
 
@@ -21,6 +25,10 @@ export type RegisterDraft = {
   step: RegisterStep;
   /** Verified gift coupon code — present only in the 2-step gift register flow */
   giftCode: string | null;
+  /** Set only on `/freemonth` and `/freeyear` campaign flows */
+  campaignType: FreeCampaignType | null;
+  /** Company slug from `/freemonth-{company}` / `/freeyear-{company}` */
+  referrer: string | null;
 };
 
 export const REGISTER_ROUTES = {
@@ -42,6 +50,8 @@ export const EMPTY_REGISTER_DRAFT: RegisterDraft = {
   planName: null,
   step: 1,
   giftCode: null,
+  campaignType: null,
+  referrer: null,
 };
 
 type Listener = () => void;
@@ -67,6 +77,13 @@ function readFromStorage(): RegisterDraft {
       giftCode:
         typeof parsed.giftCode === "string" && parsed.giftCode.trim()
           ? parsed.giftCode
+          : null,
+      campaignType: isFreeCampaignType(parsed.campaignType)
+        ? parsed.campaignType
+        : null,
+      referrer:
+        typeof parsed.referrer === "string" && parsed.referrer.trim()
+          ? parsed.referrer.trim()
           : null,
     };
   } catch {

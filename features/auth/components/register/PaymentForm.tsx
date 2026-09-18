@@ -13,8 +13,10 @@ import {
   getAuthErrorMessage,
   useRegisterStep4Mutation,
 } from "@/features/auth/api/auth.mutations";
+import { useRegisterFlow } from "@/features/auth/components/register/RegisterFlowContext";
 import type { RegisterDraft } from "@/features/auth/hooks/useRegisterDraft";
 import { cn } from "@/lib/utils";
+import { notify } from "@/shared/components/notify";
 
 import { StickyContinueButton } from "./StickyContinueButton";
 
@@ -76,7 +78,9 @@ type PaymentFormProps = {
 /** Payment form — POST /register/4/steps/{id} */
 export function PaymentForm({ draft, onSuccess, className }: PaymentFormProps) {
   const t = useTranslations("register.step4");
+  const tCampaign = useTranslations("register.freeCampaign");
   const tCommon = useTranslations("common");
+  const { isFreeCampaign } = useRegisterFlow();
   const registerStep4 = useRegisterStep4Mutation();
   const [apiError, setApiError] = useState<string | null>(null);
   const [showCoupon, setShowCoupon] = useState(false);
@@ -117,7 +121,9 @@ export function PaymentForm({ draft, onSuccess, className }: PaymentFormProps) {
     setApiError(null);
 
     if (!draft.registrationId || !draft.planId) {
-      setApiError(t("checkoutError"));
+      const message = t("checkoutError");
+      setApiError(message);
+      notify.error(message);
       return;
     }
 
@@ -136,9 +142,12 @@ export function PaymentForm({ draft, onSuccess, className }: PaymentFormProps) {
           coupone_code: values.couponCode?.trim() || undefined,
         },
       });
+      notify.success(t("registerSuccess"));
       onSuccess();
     } catch (error) {
-      setApiError(getAuthErrorMessage(error, t("checkoutError")));
+      const message = getAuthErrorMessage(error, t("checkoutError"));
+      setApiError(message);
+      notify.error(message);
     }
   };
 
@@ -146,6 +155,15 @@ export function PaymentForm({ draft, onSuccess, className }: PaymentFormProps) {
     <div className={cn("flex min-w-2xl flex-col gap-3  items-center justify-center", className)}>
 
       <p className="text-sm font-medium text-white text-center">{t("cardPlan")}: {periodLabel} {planPriceLabel}</p>
+
+      {isFreeCampaign ? (
+        <p
+          className="w-full rounded-lg border border-primary/30 bg-primary/10 px-4 py-3 text-center text-sm font-medium text-white"
+          role="note"
+        >
+          {tCampaign("cardVerification")}
+        </p>
+      ) : null}
 
 
 

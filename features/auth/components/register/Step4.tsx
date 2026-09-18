@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 
 import { useRouter } from "@/core/i18n/navigation";
+import { useRegisterFlow } from "@/features/auth/components/register/RegisterFlowContext";
 import {
   canAccessStep,
   clearRegisterDraft,
@@ -18,32 +19,34 @@ export function Step4() {
   const t = useTranslations("register.step4");
   const router = useRouter();
   const { draft, ready } = useRegisterDraft();
+  const { routes, isFreeCampaign } = useRegisterFlow();
+  const isGift = !isFreeCampaign && isGiftRegister(draft);
 
   useEffect(() => {
     if (!ready) return;
-    if (isGiftRegister(draft)) {
+    if (isGift) {
       router.replace(
-        draft.registrationId ? "/kayit-ol/sifre-olustur" : "/kayit-ol",
+        draft.registrationId ? routes[2] : routes[1],
       );
       return;
     }
     if (!canAccessStep(4, draft)) {
       if (!draft.email) {
-        router.replace("/kayit-ol");
+        router.replace(routes[1]);
       } else if (!draft.password) {
-        router.replace("/kayit-ol/sifre-olustur");
+        router.replace(routes[2]);
       } else {
-        router.replace("/kayit-ol/plan-sec");
+        router.replace(routes[3]);
       }
     }
-  }, [ready, draft, router]);
+  }, [ready, draft, router, routes, isGift]);
 
   const handleSuccess = () => {
     clearRegisterDraft();
     router.push("/giris");
   };
 
-  if (!ready || isGiftRegister(draft) || !canAccessStep(4, draft)) {
+  if (!ready || isGift || !canAccessStep(4, draft)) {
     return null;
   }
 

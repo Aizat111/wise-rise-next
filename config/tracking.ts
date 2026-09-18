@@ -1,0 +1,17 @@
+export const TRACKING = {
+  hopiCookieName: "hopiid",
+  hopiCookieDays: 90,
+  metaPixelId: "853679849605985",
+  gtmId: "GTM-KSKC9KDC",
+  tiktokPixelId: "CQOAGVRC77U9B9741AUG",
+  hotjarId: "5084558",
+  hotjarSv: "6",
+  gaMeasurementId: "G-MZ5515FECK",
+  optinMonsterUser: "349986",
+  optinMonsterAccount: "370057",
+  vwoAccountId: "1019245",
+  linkedinPartnerId: "8034377",
+  customerIoWriteKey: "a80d780d24201192349e",
+  googleSiteVerification: "rg_YT5cXmx5pME8t9kNJmaKgsCE5bj3mkXjQ7BZntP0",
+  facebookDomainVerification: "e47ht84p3h2h9avjieaw6ez283zmh2",
+} as const;

@@ -5,7 +5,10 @@ import { notFound } from "next/navigation";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ThemeProvider } from "@/components/theme-provider";
-import { defaultMetadata } from "@/config/seo";
+import { EarlyHeadTracking } from "@/components/tracking/early-head-tracking";
+import { TrackingNoscript } from "@/components/tracking/tracking-noscript";
+import { TrackingScripts } from "@/components/tracking/tracking-scripts";
+import { defaultMetadata, viewport as siteViewport } from "@/config/seo";
 import { routing } from "@/core/i18n/routing";
 import Providers from "@/core/providers/Providers";
 import { getCategories } from "@/features/category/api/get-categories";
@@ -17,6 +20,7 @@ import WebsiteSchema from "@/shared/seo/WebsiteSchema";
 import "../globals.css";
 
 export const metadata = defaultMetadata;
+export const viewport = siteViewport;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -46,7 +50,12 @@ export default async function LocaleLayout({ children, params }: Props) {
       suppressHydrationWarning
       className={cn("h-full dark", poppins.variable, extraFontVariables)}
     >
+      <head>
+        <EarlyHeadTracking />
+      </head>
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
+        <TrackingNoscript />
+        <TrackingScripts />
         <OrganizationSchema />
         <WebsiteSchema />
         <ThemeProvider

@@ -15,6 +15,7 @@ import {
   useRegisterGiftMutation,
   useRegisterStep2Mutation,
 } from "@/features/auth/api/auth.mutations";
+import { useRegisterFlow } from "@/features/auth/components/register/RegisterFlowContext";
 import {
   canAccessStep,
   clearRegisterDraft,
@@ -49,12 +50,13 @@ export function Step2() {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { draft, ready, updateDraft } = useRegisterDraft();
+  const { routes, isFreeCampaign } = useRegisterFlow();
   const registerStep2 = useRegisterStep2Mutation();
   const registerGift = useRegisterGiftMutation();
   const [showPassword, setShowPassword] = useState(false);
   const [apiError, setApiError] = useState<string | null>(null);
   const submittingRef = useRef(false);
-  const isGift = isGiftRegister(draft);
+  const isGift = !isFreeCampaign && isGiftRegister(draft);
 
   const schema = useMemo(() => createStep2Schema(t), [t]);
   const resolver = useMemo(() => standardSchemaResolver(schema), [schema]);
@@ -77,18 +79,18 @@ export function Step2() {
   useEffect(() => {
     if (!ready) return;
     if (!canAccessStep(2, draft)) {
-      router.replace("/kayit-ol");
+      router.replace(routes[1]);
       return;
     }
     reset({ password: draft.password });
-  }, [ready, draft, reset, router]);
+  }, [ready, draft, reset, router, routes]);
 
   const onSubmit = async (values: Step2Values) => {
     if (submittingRef.current || isLoading) return;
     setApiError(null);
 
     if (!draft.registrationId) {
-      router.replace("/kayit-ol");
+      router.replace(routes[1]);
       return;
     }
 
@@ -121,7 +123,7 @@ export function Step2() {
         password: values.password,
         step: 3,
       });
-      router.push("/kayit-ol/plan-sec");
+      router.push(routes[3]);
     } catch (error) {
       const message = getAuthErrorMessage(
         error,

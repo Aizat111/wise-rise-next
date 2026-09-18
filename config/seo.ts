@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 import { SITE } from "./site";
+import { TRACKING } from "./tracking";
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -40,4 +41,14 @@ export const defaultMetadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  verification: {
+    google: TRACKING.googleSiteVerification,
+    other: {
+      "facebook-domain-verification": TRACKING.facebookDomainVerification,
+    },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
 };

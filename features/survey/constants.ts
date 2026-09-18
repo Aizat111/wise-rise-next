@@ -1,3 +1,4 @@
+import { isFreeCampaignPathname } from "@/features/auth/lib/free-campaign";
 import { GOAL_SELECTION_HREF } from "@/features/profile/constants";
 
 export const SURVEY_ROUTE = GOAL_SELECTION_HREF;
@@ -23,9 +24,13 @@ export const SURVEY_GUARD_EXCLUDED_PATHS = [
   "/survey",
   "/hediye-kullan",
   "/hediye-kuponu",
+  "/freemonth",
+  "/freeyear",
+  "/kampanya",
 ] as const;
 
 export function isSurveyGuardExcludedPath(pathname: string) {
+  if (isFreeCampaignPathname(pathname)) return true;
   return SURVEY_GUARD_EXCLUDED_PATHS.some(
     (path) => pathname === path || pathname.startsWith(`${path}/`),
   );

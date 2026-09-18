@@ -14,6 +14,7 @@ import {
     getAuthErrorMessage,
     useRegisterStep1Mutation,
 } from "@/features/auth/api/auth.mutations";
+import { useRegisterFlow } from "@/features/auth/components/register/RegisterFlowContext";
 import {
     isGiftRegister,
     useRegisterDraft,
@@ -44,6 +45,7 @@ export function Step1() {
     const tCommon = useTranslations("common");
     const router = useRouter();
     const { draft, ready, updateDraft } = useRegisterDraft();
+    const { routes, isFreeCampaign } = useRegisterFlow();
     const registerStep1 = useRegisterStep1Mutation();
     const [apiError, setApiError] = useState<string | null>(null);
 
@@ -68,7 +70,7 @@ export function Step1() {
         },
     });
 
-    const isGift = isGiftRegister(draft);
+    const isGift = !isFreeCampaign && isGiftRegister(draft);
 
     const isLoading = isSubmitting || registerStep1.isPending;
 
@@ -98,7 +100,7 @@ export function Step1() {
                 privacyConsent: values.privacyConsent,
                 step: 2,
             });
-            router.push("/kayit-ol/sifre-olustur");
+            router.push(routes[2]);
         } catch (error) {
             setApiError(getAuthErrorMessage(error, tCommon("errorMessage")));
         }

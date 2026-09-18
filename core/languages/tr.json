@@ -225,6 +225,7 @@
       "total": "Toplam",
       "processing": "Ödeme işleniyor...",
       "checkoutError": "Ödeme tamamlanamadı. Lütfen tekrar deneyin.",
+      "registerSuccess": "Başarıyla kayıt oldunuz.",
       "name": "Ad",
       "namePlaceholder": "Ad",
       "surname": "Soyad",
@@ -274,6 +275,11 @@
       "finishPayment": "Ödemeyi Tamamla",
       "freeMonth": "ÜCRETSİZ DENE",
       "startSubscription": "ÜYELİĞİ BAŞLAT"
+    },
+    "freeCampaign": {
+      "oneMonthFree": "1 Ay Ücretsiz",
+      "oneYearFree": "1 YIL ÜCRETSİZ",
+      "cardVerification": "Kartınızı doğrulamak için kartınızdan 1 TL çekilecektir."
     }
   },
   "survey": {

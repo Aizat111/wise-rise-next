@@ -19,6 +19,8 @@ export type MembershipPlanCardProps = {
   actionLabel?: string;
   statusLabel?: string;
   statusTone?: "success" | "danger";
+  /** Replaces the live price with strikethrough + promo copy (free campaigns). */
+  promoLabel?: string;
 };
 
 export type PlanSkeletonProps = {

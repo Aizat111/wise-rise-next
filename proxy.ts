@@ -6,6 +6,10 @@ import {
   isAzPathname,
 } from '@/core/config/domain-locale.config';
 import { routing } from '@/core/i18n/routing';
+import {
+  parseFreeCampaignPathname,
+  toInternalCampaignPathname,
+} from '@/features/auth/lib/free-campaign';
 
 const intlMiddleware = createMiddleware(routing);
 
@@ -19,6 +23,18 @@ export default function proxy(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = pathname.replace(/^\/az/, '') || '/';
     return NextResponse.redirect(url);
+  }
+
+  const campaign = parseFreeCampaignPathname(pathname);
+  if (campaign) {
+    const url = request.nextUrl.clone();
+    url.pathname = toInternalCampaignPathname(campaign);
+    if (campaign.companyName) {
+      url.searchParams.set('company', campaign.companyName);
+    } else {
+      url.searchParams.delete('company');
+    }
+    return NextResponse.rewrite(url);
   }
 
   return intlMiddleware(request);

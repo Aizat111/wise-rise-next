@@ -9,11 +9,18 @@ import {
   getAuthErrorMessage,
   useRegisterStep3Mutation,
 } from "@/features/auth/api/auth.mutations";
+import { useRegisterFlow } from "@/features/auth/components/register/RegisterFlowContext";
 import {
   canAccessStep,
   isGiftRegister,
   useRegisterDraft,
 } from "@/features/auth/hooks/useRegisterDraft";
+import {
+  buildRegisterStep3Data,
+  getCampaignPlanId,
+  getPeriodForCampaignPlanId,
+  isCampaignPlanId,
+} from "@/features/auth/lib/free-campaign";
 import { MembershipPlanCard } from "@/features/membership-plans/components/MembershipPlanCard";
 import { useDisplayPlansQuery } from "@/features/plans/api/plan.queries";
 
@@ -22,29 +29,50 @@ import { StickyContinueButton } from "./StickyContinueButton";
 
 export function Step3() {
   const t = useTranslations("register.step3");
+  const tCampaign = useTranslations("register.freeCampaign");
   const tCommon = useTranslations("common");
   const router = useRouter();
   const { draft, ready, updateDraft } = useRegisterDraft();
+  const { routes, isFreeCampaign, campaignType, companyName } = useRegisterFlow();
   const registerStep3 = useRegisterStep3Mutation();
   const { data, isLoading, isError, refetch, isFetching } = useDisplayPlansQuery();
   const [selectedPlanId, setSelectedPlanId] = useState<string | null>(null);
+  const [hasUserSelectedPlan, setHasUserSelectedPlan] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isGift = !isFreeCampaign && isGiftRegister(draft);
+  const showMonthly = campaignType !== "freeyear";
+
+  const restoredPlanId = useMemo(() => {
+    if (campaignType === "freeyear") return data?.yearly?.id ?? null;
+    if (campaignType === "freemonth") {
+      const period =
+        getPeriodForCampaignPlanId(draft.planId) ?? draft.planPeriod;
+      if (period === "Yearly") return data?.yearly?.id ?? null;
+      if (period === "Monthly") return data?.monthly?.id ?? null;
+      return null;
+    }
+    return isCampaignPlanId(draft.planId) ? null : draft.planId;
+  }, [
+    campaignType,
+    data?.monthly?.id,
+    data?.yearly?.id,
+    draft.planId,
+    draft.planPeriod,
+  ]);
+
+  const activePlanId = hasUserSelectedPlan ? selectedPlanId : restoredPlanId;
 
   useEffect(() => {
     if (!ready) return;
-    if (isGiftRegister(draft)) {
-      router.replace(
-        draft.registrationId ? "/kayit-ol/sifre-olustur" : "/kayit-ol",
-      );
+    if (isGift) {
+      router.replace(draft.registrationId ? routes[2] : routes[1]);
       return;
     }
     if (!canAccessStep(3, draft)) {
-      router.replace("/kayit-ol");
-      return;
+      router.replace(routes[1]);
     }
-    setSelectedPlanId(draft.planId);
-  }, [ready, draft, router]);
+  }, [draft, isGift, ready, router, routes]);
 
   const monthlyFeatures = useMemo(
     () => [
@@ -72,9 +100,9 @@ export function Step3() {
     const monthly = data?.monthly;
     const yearly = data?.yearly;
     const selected =
-      selectedPlanId === monthly?.id
+      activePlanId === monthly?.id
         ? monthly
-        : selectedPlanId === yearly?.id
+        : activePlanId === yearly?.id
           ? yearly
           : null;
 
@@ -84,7 +112,7 @@ export function Step3() {
     }
 
     if (!draft.registrationId) {
-      router.replace("/kayit-ol");
+      router.replace(routes[1]);
       return;
     }
 
@@ -92,20 +120,34 @@ export function Step3() {
       ? "Yearly"
       : "Monthly") as PlanPeriod;
 
+    const campaignPlanId =
+      isFreeCampaign && campaignType
+        ? getCampaignPlanId(campaignType, period)
+        : null;
+    const planIdToSend = campaignPlanId ?? selected.id;
+
+    if (isFreeCampaign && !campaignPlanId) {
+      setError(t("planRequired"));
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       await registerStep3.mutateAsync({
         id: draft.registrationId,
-        data: { plan_id: selected.id },
+        data: buildRegisterStep3Data(
+          planIdToSend,
+          isFreeCampaign ? companyName : null,
+        ),
       });
       updateDraft({
-        planId: selected.id,
+        planId: planIdToSend,
         planPeriod: period,
         planPrice: selected.price,
         planName: selected.product?.name || selected.description || selected.name,
         step: 4,
       });
-      router.push("/kayit-ol/odeme");
+      router.push(routes[4]);
     } catch (err) {
       setError(getAuthErrorMessage(err, tCommon("errorMessage")));
     } finally {
@@ -115,9 +157,19 @@ export function Step3() {
 
   const continueLoading = isSubmitting || registerStep3.isPending;
 
-  if (!ready || isGiftRegister(draft) || !canAccessStep(3, draft)) {
+  if (!ready || isGift || !canAccessStep(3, draft)) {
     return null;
   }
+
+  const monthlyPromoLabel = isFreeCampaign
+    ? tCampaign("oneMonthFree")
+    : undefined;
+  const yearlyPromoLabel = isFreeCampaign
+    ? campaignType === "freeyear"
+      ? tCampaign("oneYearFree")
+      : tCampaign("oneMonthFree")
+    : undefined;
+  const showBothPlans = Boolean(showMonthly && data?.monthly && data?.yearly);
 
   return (
     <RegisterFormShell title={t("title")} step={3}>
@@ -141,16 +193,26 @@ export function Step3() {
             </Button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {data?.monthly ? (
+          <div
+            className={
+              showBothPlans
+                ? "grid grid-cols-1 gap-4 sm:grid-cols-2"
+                : "grid grid-cols-1 gap-4"
+            }
+          >
+            {showMonthly && data?.monthly ? (
               <MembershipPlanCard
                 plan={data.monthly}
                 period="Monthly"
                 title={t("profile")}
-                selected={selectedPlanId === data.monthly.id}
+                selected={activePlanId === data.monthly.id}
                 features={monthlyFeatures}
-                onSelect={() => setSelectedPlanId(data.monthly!.id)}
+                onSelect={() => {
+                  setHasUserSelectedPlan(true);
+                  setSelectedPlanId(data.monthly!.id);
+                }}
                 actionLabel={t("buyNow")}
+                promoLabel={monthlyPromoLabel}
               />
             ) : null}
             {data?.yearly ? (
@@ -158,11 +220,15 @@ export function Step3() {
                 plan={data.yearly}
                 period="Yearly"
                 title={t("profile")}
-                selected={selectedPlanId === data.yearly.id}
-                badge={t("sale50")}
+                selected={activePlanId === data.yearly.id}
+                badge={isFreeCampaign ? undefined : t("sale50")}
                 features={yearlyFeatures}
-                onSelect={() => setSelectedPlanId(data.yearly!.id)}
+                onSelect={() => {
+                  setHasUserSelectedPlan(true);
+                  setSelectedPlanId(data.yearly!.id);
+                }}
                 actionLabel={t("buyNow")}
+                promoLabel={yearlyPromoLabel}
               />
             ) : null}
           </div>
@@ -181,7 +247,7 @@ export function Step3() {
           label={tCommon("continue")}
           loadingLabel={tCommon("loading")}
           loading={continueLoading}
-          disabled={!ready || isLoading || isError || !selectedPlanId || continueLoading}
+          disabled={!ready || isLoading || isError || !activePlanId || continueLoading}
           onClick={handleContinue}
         />
       </div>

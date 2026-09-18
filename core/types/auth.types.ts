@@ -54,6 +54,8 @@ export interface IRegisterGiftRequest {
 
 export interface IRegisterStep3Request {
   plan_id: string;
+  /** Present only on company-specific free campaign URLs */
+  referrer?: string;
 }
 
 export interface IRegisterStep4Request {

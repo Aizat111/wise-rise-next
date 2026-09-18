@@ -33,6 +33,7 @@ export function MembershipPlanCard({
   actionLabel,
   statusLabel,
   statusTone = "success",
+  promoLabel,
 }: MembershipPlanCardProps) {
   const tCommon = useTranslations("common");
   const locale = useLocale();
@@ -48,11 +49,11 @@ export function MembershipPlanCard({
       onKeyDown={
         interactive
           ? (event) => {
-              if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                onSelect?.();
-              }
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              onSelect?.();
             }
+          }
           : undefined
       }
       className={cn(
@@ -88,15 +89,28 @@ export function MembershipPlanCard({
           {title}
         </h3>
         <p className="mt-2 text-3xl font-semibold text-foreground">
-          {showListPrice ? (
-            <span className="text-sm font-bold text-white line-through md:text-xl">
-              {formatPrice(listPrice, locale)}{" "}
+          {promoLabel ? (
+            <span className="flex flex items-start gap-1">
+              <span className="text-sm font-bold text-white line-through md:text-xl">
+                {formatPrice(plan.price, locale)}
+              </span>
+              <span className="text-md font-bold text-white pl-3 md:text-xl">
+                {promoLabel}
+              </span>
             </span>
-          ) : null}
+          ) : (
+            <>
+              {showListPrice ? (
+                <span className="text-sm font-bold text-white line-through md:text-xl">
+                  {formatPrice(listPrice, locale)}{" "}
+                </span>
+              ) : null}
 
-          <span className="ml-1 text-md font-bold text-white md:text-2xl">
-            {formatPrice(plan.price, locale)}
-          </span>
+              <span className="ml-1 text-md font-bold text-white md:text-2xl">
+                {formatPrice(plan.price, locale)}
+              </span>
+            </>
+          )}
         </p>
       </div>
 

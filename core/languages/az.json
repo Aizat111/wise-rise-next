@@ -225,6 +225,7 @@
       "total": "Cəmi",
       "processing": "Ödəniş emal olunur...",
       "checkoutError": "Ödəniş tamamlanmadı. Zəhmət olmasa yenidən cəhd edin.",
+      "registerSuccess": "Uğurla qeydiyyatdan keçdiniz.",
       "name": "Ad",
       "namePlaceholder": "Ad",
       "surname": "Soyad",
@@ -273,6 +274,11 @@
       "payAndDiscoverNow": "Ödə və İndi Kəşf Et",
       "finishPayment": "Ödənişi Tamamla",
       "freeMonth": "PULSUZ SINA"
+    },
+    "freeCampaign": {
+      "oneMonthFree": "1 Ay Pulsuz",
+      "oneYearFree": "1 İL PULSUZ",
+      "cardVerification": "Kartınızı təsdiqləmək üçün kartınızdan 1 TL çəkiləcək."
     }
   },
   "survey": {
