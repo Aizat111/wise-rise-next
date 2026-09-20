@@ -13,10 +13,35 @@ import {
 
 const intlMiddleware = createMiddleware(routing);
 
+const TEACHERS_UNICODE_SEGMENT = 'eğitmenler'.normalize('NFC');
+
+function decodePathname(pathname: string) {
+  try {
+    return decodeURIComponent(pathname);
+  } catch {
+    return pathname;
+  }
+}
+
 export default function proxy(request: NextRequest) {
   const host =
     request.headers.get('x-forwarded-host') ?? request.headers.get('host');
   const { pathname } = request.nextUrl;
+  const normalizedPath = decodePathname(pathname).normalize('NFC');
+
+  // Unicode `/eğitmenler` is rewritten to the ASCII App Router folder.
+  // A `eğitmenler` folder 404s on macOS (NFD vs URL NFC) via `[teacherSlug]`.
+  if (
+    normalizedPath === `/${TEACHERS_UNICODE_SEGMENT}` ||
+    normalizedPath === `/az/${TEACHERS_UNICODE_SEGMENT}`
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = normalizedPath.replace(
+      TEACHERS_UNICODE_SEGMENT,
+      'egitmenler',
+    );
+    return intlMiddleware(new NextRequest(url, request));
+  }
 
   // TR-only known hosts: strip `/az` so they always stay Turkish
   if (isAzPathname(pathname) && !isAzAllowedOnHost(host)) {

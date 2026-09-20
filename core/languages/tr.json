@@ -463,6 +463,19 @@
     "favoriteError": "Favori işlemi tamamlanamadı.",
     "actions": "İşlemler"
   },
+  "teachersPage": {
+    "title": "Tüm Eğitmenler",
+    "allTeachers": "Tüm Eğitmenler",
+    "home": "Anasayfa",
+    "description": "Wise&Rise eğitmenlerini keşfedin. Kategorilere göre filtreleyin ve uzman isimlerle tanışın.",
+    "empty": "Bu kategoride henüz eğitmen bulunmuyor.",
+    "error": "Eğitmenler yüklenemedi.",
+    "retry": "Tekrar dene",
+    "loading": "Yükleniyor...",
+    "pagination": "Sayfalama",
+    "previousPage": "Önceki sayfa",
+    "nextPage": "Sonraki sayfa"
+  },
   "comingSoonPage": {
     "title": "Yakında Gelecekler",
     "subtitle": "Uzman İsimler, Yüzlerce Konu Başlığı, Her Ay Yeni İçerikler",

@@ -36,6 +36,11 @@ export const QUERY_KEYS = {
   teacher: {
     all: ["teachers"],
     theBest: ["teachers", "the-best"],
+    list: (filters: Record<string, string | number | undefined>) => [
+      "teachers",
+      "list",
+      filters,
+    ],
   },
 
   blog: {

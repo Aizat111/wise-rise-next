@@ -462,6 +462,19 @@
     "favoriteError": "Favorit əməliyyatı tamamlanmadı.",
     "actions": "Əməliyyatlar"
   },
+  "teachersPage": {
+    "title": "Bütün Müəllimlər",
+    "allTeachers": "Bütün Müəllimlər",
+    "home": "Ana səhifə",
+    "description": "Wise&Rise müəllimlərini kəşf edin. Kateqoriyalara görə filtrləyin və mütəxəssis adlarla tanış olun.",
+    "empty": "Bu kateqoriyada hələ müəllim yoxdur.",
+    "error": "Müəllimlər yüklənmədi.",
+    "retry": "Yenidən cəhd et",
+    "loading": "Yüklənir...",
+    "pagination": "Səhifələmə",
+    "previousPage": "Əvvəlki səhifə",
+    "nextPage": "Növbəti səhifə"
+  },
   "comingSoonPage": {
     "title": "Tezliklə Gələcəklər",
     "subtitle": "Mütəxəssis Adlar, Yüzlərlə Mövzu Başlığı, Hər Ay Yeni Məzmunlar",

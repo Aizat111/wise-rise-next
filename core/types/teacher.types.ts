@@ -48,6 +48,12 @@ export type TeachersPaginatedResponse = {
   meta?: Partial<TeachersPaginationMeta>;
 };
 
+export type TeachersListParams = {
+  category_id?: number;
+  page?: number;
+  per_page?: number;
+};
+
 export type TeachersListResult = {
   items: Teacher[];
   currentPage: number;

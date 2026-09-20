@@ -40,6 +40,7 @@ export const ENDPOINTS = {
   },
 
   teacher: {
+    list: `${SERVICES.TEACHER}`,
     theBest: `${SERVICES.TEACHER}/sorted/the_best`,
   },
 
