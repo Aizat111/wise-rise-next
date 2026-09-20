@@ -2,15 +2,12 @@
 
 import { useState } from "react";
 
-import type { Category } from "@/core/api/types";
-
 import { HeaderActions } from "./HeaderActions";
 import { HeaderLogo } from "./HeaderLogo";
 import { MobileAccountSidebar } from "./MobileAccountSidebar";
 import { MobileNavigationSidebar } from "./MobileNavigationSidebar";
 
 type MobileHeaderProps = {
-  categories: Category[];
   isAuthenticated: boolean;
   isAuthLoading?: boolean;
   name: string;
@@ -19,7 +16,6 @@ type MobileHeaderProps = {
 };
 
 export function MobileHeader({
-  categories,
   isAuthenticated,
   isAuthLoading = false,
   name,
@@ -32,10 +28,7 @@ export function MobileHeader({
     <>
       <div className="mx-auto flex h-16 w-full items-center justify-between gap-3 px-4 md:hidden">
         <div className="flex w-10 shrink-0 items-center justify-start">
-          <MobileNavigationSidebar
-            categories={categories}
-            isAuthenticated={isAuthenticated}
-          />
+          <MobileNavigationSidebar />
         </div>
 
         <div className="flex min-w-0 flex-1 items-center justify-center">

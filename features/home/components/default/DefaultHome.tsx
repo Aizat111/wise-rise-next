@@ -39,11 +39,6 @@ export function DefaultHome({ mode, membershipPlans }: DefaultHomeProps) {
         <HomeHeroSlider mode={mode} />
         <div className="px-4 lg:px-25">
           <GuestLearningBanner isAuthenticated={isAuthenticated} />
-          <WeTheLivingMembershipBanner
-            monthlyPlan={membershipPlans.monthly}
-            yearlyPlan={membershipPlans.yearly}
-            className="my-8"
-          />
           <MostWatchedSlider mode={mode} />
           <TeacherSection />
           <CategoriesSection />

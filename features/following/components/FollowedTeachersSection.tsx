@@ -46,7 +46,12 @@ export function FollowedTeachersSection({ profileId }: FollowedSectionProps) {
 
   const items = useMemo(() => {
     const teachers = data?.pages.flatMap((page) => page.items) ?? [];
-    return mapTeachersToCards(teachers).map((teacher) => ({
+    const unique = teachers.filter(
+      (teacher, index, list) =>
+        list.findIndex((item) => String(item.id) === String(teacher.id)) ===
+        index,
+    );
+    return mapTeachersToCards(unique).map((teacher) => ({
       ...teacher,
       isFavorite: teacher.isFavorite ?? true,
     }));

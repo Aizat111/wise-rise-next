@@ -16,6 +16,7 @@ import { extraFontVariables, poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import OrganizationSchema from "@/shared/seo/schemas/OrganizationSchema";
 import WebsiteSchema from "@/shared/seo/WebsiteSchema";
+import { MobileCtaBanner } from "@/shared/ui/banners/MobileCtaBanner";
 
 import "../globals.css";
 
@@ -70,6 +71,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               <SiteHeader categories={categories} />
               <main className="flex flex-1 flex-col">{children}</main>
               <SiteFooter categories={categories} />
+              <MobileCtaBanner />
             </Providers>
           </NextIntlClientProvider>
         </ThemeProvider>

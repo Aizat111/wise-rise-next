@@ -13,6 +13,20 @@ export const authNavLinks = [
   { href: "/aktivitelerim", label: "header.activities" },
 ] as const;
 
+export const mobileNavLinks = [
+  { href: "/kategoriler", label: "header.categories" },
+  { href: "/business", label: "header.business" },
+  { href: "/yakinda-gelecekler", label: "header.comingSoon" },
+  { href: "/hediye-et", label: "footer.giveGift" },
+  { href: "/hediye-kullan", label: "footer.giftCoupon" },
+  { href: "/kategoriler", label: "header.find" },
+  { href: "/iletisim", label: "footer.contact" },
+  { href: "/sikca-sorulan-sorular", label: "footer.frequentlyAskedQuestions" },
+  { href: "/iletisim", label: "footer.helpCenter" },
+  { href: "/uyelik-sozlesmesi", label: "footer.subscriptionTerms" },
+  { href: "/gizlilik-politikasi", label: "footer.privacyPolicy" },
+] as const;
+
 export const profileMenuLinks = [
   {
     href: "/profil-sec",

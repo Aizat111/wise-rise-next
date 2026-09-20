@@ -32,11 +32,6 @@ export const WE_THE_LIVING_MEMBERSHIP_IMAGES = {
 export const WE_THE_LIVING_HOME_BANNERS = [
   {
     kind: "banner" as const,
-    id: "wtl-membership",
-    variant: "membership" as const,
-  },
-  {
-    kind: "banner" as const,
     id: "wtl-simple-item1",
     variant: "simple" as const,
     itemKey: "item1" as const,
@@ -53,6 +48,11 @@ export const WE_THE_LIVING_HOME_BANNERS = [
     variant: "simple" as const,
     itemKey: "item2" as const,
     image: WE_THE_LIVING_SIMPLE_BANNER_IMAGES.item2,
+  },
+  {
+    kind: "banner" as const,
+    id: "wtl-membership",
+    variant: "membership" as const,
   },
 ];
 

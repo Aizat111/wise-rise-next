@@ -6,19 +6,23 @@ import type { Category } from "@/core/api/types";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
+import { LIVE_HREF, LiveLogoLink } from "./live-logo-link";
+
 type FooterLink = {
   href: string;
   label: string;
   external?: boolean;
+  image?: boolean;
 };
 
 const exploreLinks: FooterLink[] = [
   { href: "/hakkimizda", label: "footer.aboutUs" },
   { href: "/iletisim", label: "footer.contact" },
   {
-    href: "https://wisenrise.com/live/",
+    href: LIVE_HREF,
     label: "footer.live",
     external: true,
+    image: true,
   },
 ];
 
@@ -57,7 +61,9 @@ function FooterColumn({
       <ul className="flex flex-col gap-2">
         {links.map((link) => (
           <li key={link.href + link.label}>
-            {link.external ? (
+            {link.image ? (
+              <LiveLogoLink />
+            ) : link.external ? (
               <a
                 href={link.href}
                 target="_blank"

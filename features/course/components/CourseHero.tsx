@@ -125,7 +125,7 @@ export function CourseHero({ course, onWatchTrailer, onOpenNotes }: CourseHeroPr
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center md:hidden"
+          className="object-cover object-[center_30%] md:hidden"
         />
       ) : (
         <div className="absolute inset-0 bg-zinc-900 md:hidden" />
@@ -199,13 +199,13 @@ export function CourseHero({ course, onWatchTrailer, onOpenNotes }: CourseHeroPr
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="flex w-full max-w-md flex-col items-center gap-4"
+          className="flex w-full max-w-md flex-col items-center gap-4 mt-80"
         >
           {teacherLogo ? (
             <TeacherLogo
               src={teacherLogo}
               alt={teacherName}
-              className="h-14 w-48"
+              className="h-28 w-64"
             />
           ) : null}
 

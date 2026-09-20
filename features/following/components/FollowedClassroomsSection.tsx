@@ -39,7 +39,12 @@ export function FollowedClassroomsSection({ profileId }: FollowedSectionProps) {
 
   const items = useMemo(() => {
     const classrooms = data?.pages.flatMap((page) => page.items) ?? [];
-    return mapClassroomsToEducationCards(classrooms);
+    const unique = classrooms.filter(
+      (classroom, index, list) =>
+        list.findIndex((item) => String(item.id) === String(classroom.id)) ===
+        index,
+    );
+    return mapClassroomsToEducationCards(unique);
   }, [data]);
 
   const handleLoadMore = () => {

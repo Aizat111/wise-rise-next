@@ -11,6 +11,9 @@ export const PLAN_LIST_PRICES = {
 
 export const PRICE_SWITCH_INTERVAL_MS = 3200;
 
+/** Matches Tailwind `md` (768px): banner is mobile-only. */
+export const MOBILE_CTA_BANNER_MQ = "(max-width: 767px)" as const;
+
 export const BANNER_SHELL_CLASS =
   "w-full overflow-hidden my-15 bg-black md:rounded-xl border-0";
 

@@ -4,16 +4,21 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { QUERY_KEYS } from "@/core/api/query-keys";
 
+import { LIKED_INITIAL_PAGE } from "../constants";
 import { likeService } from "./like.service";
 
-export const LIKED_INITIAL_PAGE = 0;
+export { LIKED_INITIAL_PAGE };
 
-function hasMorePages(
-  lastPage: { items: unknown[]; perPage: number },
-  lastPageParam: number,
-) {
-  if (lastPage.items.length < lastPage.perPage) return undefined;
-  return lastPageParam + 1;
+function getNextLikedPage(lastPage: {
+  items: unknown[];
+  currentPage: number;
+  lastPage: number;
+}) {
+  if (lastPage.items.length === 0) return undefined;
+  if (lastPage.currentPage < lastPage.lastPage) {
+    return lastPage.currentPage + 1;
+  }
+  return undefined;
 }
 
 export function useLikedClassroomsQuery(
@@ -32,8 +37,7 @@ export function useLikedClassroomsQuery(
         signal,
       }),
     initialPageParam: LIKED_INITIAL_PAGE,
-    getNextPageParam: (lastPage, _pages, lastPageParam) =>
-      hasMorePages(lastPage, lastPageParam),
+    getNextPageParam: getNextLikedPage,
     enabled,
     staleTime: 60 * 1000,
   });
@@ -55,8 +59,7 @@ export function useLikedTeachersQuery(
         signal,
       }),
     initialPageParam: LIKED_INITIAL_PAGE,
-    getNextPageParam: (lastPage, _pages, lastPageParam) =>
-      hasMorePages(lastPage, lastPageParam),
+    getNextPageParam: getNextLikedPage,
     enabled,
     staleTime: 60 * 1000,
   });

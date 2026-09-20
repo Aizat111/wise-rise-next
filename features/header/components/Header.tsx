@@ -30,7 +30,6 @@ export function Header({ categories }: HeaderProps) {
         avatarUrl={avatarUrl}
       />
       <MobileHeader
-        categories={categories}
         isAuthenticated={isAuthenticated}
         isAuthLoading={isAuthLoading}
         name={profileName}

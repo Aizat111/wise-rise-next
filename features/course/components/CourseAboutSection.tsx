@@ -26,7 +26,7 @@ export function CourseAboutSection({
     >
       <h2
         id="course-about-heading"
-        className="mb-6 font-heading text-2xl font-semibold text-white border-l-4 border-primary pl-2 lg:text-3xl"
+        className="mb-6 font-heading text-xl font-semibold text-white border-l-4 border-primary pl-2 lg:text-3xl"
       >
         {t("aboutCourse")}
       </h2>

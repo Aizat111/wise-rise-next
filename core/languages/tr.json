@@ -543,6 +543,10 @@
       "subtitle": "Wise&Rise ile Olduğun Yerde Durma, İlerle!",
       "cta": "ŞİMDİ İLERLE"
     },
+    "mobileCta": {
+      "cta": "ÜYE OL",
+      "copy": "Aylık <listPrice></listPrice><salePrice></salePrice>'den başlayan fiyatlarla tüm eğitimlere sınırsız erişim"
+    },
     "business": {
       "title": "Wise&Rise İş Dünyasında!",
       "description": "Wise&Rise ile kurumunuzda bir öğrenme kültürü oluşturun. Grup indirimleri ve daha fazla bilgi için bizimle iletişime geçin.",
