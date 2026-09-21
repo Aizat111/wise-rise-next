@@ -4,6 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useTranslations } from "next-intl";
 
 import { QUERY_KEYS } from "@/core/api/query-keys";
+import type { RenewMembershipRequest } from "@/core/types/payment.types";
 import {
   getAuthErrorMessage,
   useLogoutMutation,
@@ -30,6 +31,19 @@ export function useDisableAccountMutation() {
     },
     onError: (error) => {
       notify.error(getAuthErrorMessage(error, t("cancelError")));
+    },
+  });
+}
+
+export function useRenewMembershipMutation() {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (data: RenewMembershipRequest) =>
+      membershipService.renewMembership(data),
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: QUERY_KEYS.auth.me });
+      await queryClient.invalidateQueries({ queryKey: QUERY_KEYS.order.all });
     },
   });
 }

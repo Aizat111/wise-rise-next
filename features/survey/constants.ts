@@ -24,6 +24,7 @@ export const SURVEY_GUARD_EXCLUDED_PATHS = [
   "/survey",
   "/hediye-kullan",
   "/hediye-kuponu",
+  "/uyelik-yenile",
   "/freemonth",
   "/freeyear",
   "/kampanya",

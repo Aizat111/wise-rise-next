@@ -8,6 +8,8 @@ export {
   MEMBERSHIP_PLAN_GRID_CLASS,
   MEMBERSHIP_PLANS_CONTAINER_CLASS,
   MEMBERSHIP_PLANS_ROUTE,
+  RENEWAL_PAYMENT_ROUTE,
+  RENEWAL_ROUTE,
 } from "./constants";
 
 export { MembershipPlansShell } from "./components/MembershipPlansShell";

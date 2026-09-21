@@ -5,12 +5,12 @@ import { useAppSelector } from "@/store/hooks";
 import type { DisplayMembershipPlans } from "@/core/types/plan.types";
 import { BusinessBanner } from "@/shared/ui/banners/BusinessBanner";
 import { GuestLearningBanner } from "@/shared/ui/banners/GuestLearningBanner";
+import { MembershipHeroBanner } from "@/shared/ui/banners/MembershipHeroBanner";
 import { CategoriesSection } from "@/shared/ui/categories";
 
 import { HOME_THEME_STYLES } from "../../constants";
 import type { DefaultHomeMode } from "../../types";
 import { HomeThemeWrapper } from "../HomeThemeWrapper";
-import { WeTheLivingMembershipBanner } from "../we-the-living/WeTheLivingMembershipBanner";
 import { ComingSoonSection } from "./ComingSoonSection";
 import { HomeHeroSlider } from "./HomeHeroSlider";
 import { MostWatchedSlider } from "./MostWatchedSlider";
@@ -39,6 +39,11 @@ export function DefaultHome({ mode, membershipPlans }: DefaultHomeProps) {
         <HomeHeroSlider mode={mode} />
         <div className="px-4 lg:px-25">
           <GuestLearningBanner isAuthenticated={isAuthenticated} />
+          <MembershipHeroBanner
+            monthlyPlan={membershipPlans.monthly}
+            yearlyPlan={membershipPlans.yearly}
+            className="mb-15"
+          />
           <MostWatchedSlider mode={mode} />
           <TeacherSection />
           <CategoriesSection />

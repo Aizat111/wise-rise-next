@@ -282,6 +282,18 @@
       "cardVerification": "Kartınızı doğrulamak için kartınızdan 1 TL çekilecektir."
     }
   },
+  "subscription": {
+    "renewTitle": "Üyelik Yenileme",
+    "selectPlan": "Plan Seç",
+    "payment": "Ödeme",
+    "daysRemaining": "{count, plural, one {Üyeliğinizin bitmesine # gün kaldı.} other {Üyeliğinizin bitmesine # gün kaldı.}}",
+    "warningDescription": "Üyeliğinizi yenileyerek erişiminizi kesintisiz sürdürebilirsiniz.",
+    "renewCta": "Üyeliğimi Yenile",
+    "ok": "Tamam",
+    "expiredTitle": "Üyeliğinizin süresi doldu",
+    "expiredDescription": "Eğitimlere erişmeye devam etmek için üyeliğinizi yenilemeniz gerekiyor. Kısa süre içinde üyelik yenileme sayfasına yönlendirileceksiniz.",
+    "renewSuccess": "Üyeliğiniz başarıyla yenilendi."
+  },
   "survey": {
     "title": "Hoş Geldin!",
     "subtitle": "Hesabın hazır. Kısa bir anket ile hedeflerini belirleyerek devam edebilirsin.",
@@ -567,6 +579,14 @@
       "cta": "Bizimle İlerle",
       "business2Title":"Alanının en iyilerinden öğrenin, iş dünyasında öne çıkın, Wise&Rise ile ekibinizi geleceğe taşıyın!",
       "business2Cta": "Bize Ulaşın"
+    },
+    "membershipHero": {
+      "title": "Wise&Rise ile Türkiye'nin En İyilerini İzle",
+      "subtitle": "İzledikçe geliş, geliştikçe dönüş!",
+      "cta": "HESABINI OLUŞTUR",
+      "perMonth": "/Aylık",
+      "perYear": "/Yıllık",
+      "imageAlt": "Wise&Rise üyelik"
     }
   },
   "categoriesSection": {

@@ -15,6 +15,7 @@ export const AUTH_FLOW_PATHS = [
   "/profil-sec",
   "/hedefini-belirle",
   "/survey",
+  "/uyelik-yenile",
 ] as const;
 
 export function isAuthFlowPath(pathname: string): boolean {

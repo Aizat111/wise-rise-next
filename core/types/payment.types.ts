@@ -32,3 +32,15 @@ export interface CheckoutResult {
   accessToken?: string;
   hasSetGoal?: boolean;
 }
+
+/** Authenticated membership renewal — POST /payments/checkout */
+export interface RenewMembershipRequest {
+  card_number: string;
+  expiration_month: string;
+  expiration_year: string;
+  cvc: string;
+  cardholder_name: string;
+  cardholder_surname: string;
+  coupone_code?: string;
+  plan_id: string;
+}

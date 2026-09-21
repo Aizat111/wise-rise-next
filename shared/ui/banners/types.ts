@@ -1,3 +1,5 @@
+import type { MembershipPlan } from "@/core/types/plan.types";
+
 export type GuestBannerAuthProps = {
   /**
    * When true the banner is not rendered.
@@ -8,6 +10,12 @@ export type GuestBannerAuthProps = {
 };
 
 export type GuestLearningBannerProps = GuestBannerAuthProps;
+
+export type MembershipHeroBannerProps = {
+  monthlyPlan: MembershipPlan | null;
+  yearlyPlan: MembershipPlan | null;
+  className?: string;
+};
 
 export type BusinessBannerProps = GuestBannerAuthProps;
 

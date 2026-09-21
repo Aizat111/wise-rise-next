@@ -1,5 +1,7 @@
 export const GUEST_REGISTER_HREF = "/kayit-ol" as const;
 
+export const MEMBERSHIP_HERO_IMAGE = "/background/r3.jpg" as const;
+
 export const BUSINESS_FORM_URL =
   "https://0u0c51hhbc2.typeform.com/wisenrise?typeform-source=wisenrise.com" as const;
 

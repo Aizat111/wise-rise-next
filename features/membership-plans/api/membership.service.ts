@@ -1,6 +1,7 @@
 import { clientRequest } from "@/core/api/client";
 import { ENDPOINTS } from "@/core/api/endpoints";
 import type { SubscriptionStatus } from "@/core/types/order.types";
+import type { RenewMembershipRequest } from "@/core/types/payment.types";
 
 export const membershipService = {
   async disableAccount(): Promise<unknown> {
@@ -8,6 +9,14 @@ export const membershipService = {
       url: ENDPOINTS.account.disable,
       method: "PUT",
       data: {},
+    });
+  },
+
+  async renewMembership(data: RenewMembershipRequest): Promise<unknown> {
+    return clientRequest({
+      url: ENDPOINTS.payment.checkout,
+      method: "POST",
+      data,
     });
   },
 

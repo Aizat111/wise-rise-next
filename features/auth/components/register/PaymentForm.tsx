@@ -9,6 +9,7 @@ import { z } from "zod";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Link } from "@/core/i18n/navigation";
+import type { IRegisterStep4Request } from "@/core/types/auth.types";
 import {
   getAuthErrorMessage,
   useRegisterStep4Mutation,
@@ -69,14 +70,29 @@ function createPaymentSchema(
 
 export type PaymentFormValues = z.infer<ReturnType<typeof createPaymentSchema>>;
 
-type PaymentFormProps = {
-  draft: RegisterDraft;
-  onSuccess: () => void;
-  className?: string;
+type PaymentFormDraft = Pick<RegisterDraft, "planId" | "planPeriod" | "planPrice"> & {
+  registrationId?: string | null;
 };
 
-/** Payment form — POST /register/4/steps/{id} */
-export function PaymentForm({ draft, onSuccess, className }: PaymentFormProps) {
+type PaymentFormProps = {
+  draft: PaymentFormDraft;
+  onSuccess: () => void | Promise<void>;
+  className?: string;
+  /** When set, skips the register-step payment API (e.g. membership renewal). */
+  submitPayment?: (data: IRegisterStep4Request) => Promise<void>;
+  successMessage?: string;
+  submitLabel?: string;
+};
+
+/** Payment form — POST /register/4/steps/{id} by default; renewal can inject checkout. */
+export function PaymentForm({
+  draft,
+  onSuccess,
+  className,
+  submitPayment,
+  successMessage,
+  submitLabel,
+}: PaymentFormProps) {
   const t = useTranslations("register.step4");
   const tCampaign = useTranslations("register.freeCampaign");
   const tCommon = useTranslations("common");
@@ -120,30 +136,40 @@ export function PaymentForm({ draft, onSuccess, className }: PaymentFormProps) {
   const onSubmit = async (values: PaymentFormValues) => {
     setApiError(null);
 
-    if (!draft.registrationId || !draft.planId) {
-      const message = t("checkoutError");
-      setApiError(message);
-      notify.error(message);
-      return;
-    }
-
     const [month, year] = values.expiry.split("/");
+    const payload: IRegisterStep4Request = {
+      card_number: values.cardNumber,
+      expiration_month: month,
+      expiration_year: `20${year}`,
+      cvc: values.cvc,
+      cardholder_name: values.firstName.trim(),
+      cardholder_surname: values.lastName.trim(),
+      coupone_code: values.couponCode?.trim() || undefined,
+    };
 
     try {
-      await registerStep4.mutateAsync({
-        id: draft.registrationId,
-        data: {
-          card_number: values.cardNumber,
-          expiration_month: month,
-          expiration_year: `20${year}`,
-          cvc: values.cvc,
-          cardholder_name: values.firstName.trim(),
-          cardholder_surname: values.lastName.trim(),
-          coupone_code: values.couponCode?.trim() || undefined,
-        },
-      });
-      notify.success(t("registerSuccess"));
-      onSuccess();
+      if (submitPayment) {
+        if (!draft.planId) {
+          const message = t("checkoutError");
+          setApiError(message);
+          notify.error(message);
+          return;
+        }
+        await submitPayment(payload);
+      } else {
+        if (!draft.registrationId || !draft.planId) {
+          const message = t("checkoutError");
+          setApiError(message);
+          notify.error(message);
+          return;
+        }
+        await registerStep4.mutateAsync({
+          id: draft.registrationId,
+          data: payload,
+        });
+      }
+      notify.success(successMessage ?? t("registerSuccess"));
+      await onSuccess();
     } catch (error) {
       const message = getAuthErrorMessage(error, t("checkoutError"));
       setApiError(message);
@@ -396,7 +422,7 @@ export function PaymentForm({ draft, onSuccess, className }: PaymentFormProps) {
 
         <StickyContinueButton
           formId={FORM_ID}
-          label={t("payAndDiscoverNow")}
+          label={submitLabel ?? t("payAndDiscoverNow")}
           loadingLabel={t("processing")}
           loading={isLoading}
           disabled={isDisabled}
