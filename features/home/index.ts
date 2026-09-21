@@ -29,6 +29,7 @@ export {
   DEFAULT_HOME_TAB,
   HOME_TABS,
   HOME_THEME_STYLES,
+  DEFAULT_HOME_FEED_SKELETON_COUNT,
   DEFAULT_CARD_ASPECT_RATIO,
   SLIDER_MOBILE_VISIBLE,
   SLIDER_DESKTOP_VISIBLE,
@@ -55,6 +56,7 @@ export { HomeTabItem } from "./components/HomeTabItem";
 export { HomeThemeWrapper } from "./components/HomeThemeWrapper";
 export {
   DefaultHome,
+  DefaultHomeFeed,
   MostWatchedSlider,
   HomeHeroSlider,
   ComingSoonSection,

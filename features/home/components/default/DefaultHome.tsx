@@ -11,10 +11,8 @@ import { CategoriesSection } from "@/shared/ui/categories";
 import { HOME_THEME_STYLES } from "../../constants";
 import type { DefaultHomeMode } from "../../types";
 import { HomeThemeWrapper } from "../HomeThemeWrapper";
-import { ComingSoonSection } from "./ComingSoonSection";
+import { DefaultHomeFeed } from "./DefaultHomeFeed";
 import { HomeHeroSlider } from "./HomeHeroSlider";
-import { MostWatchedSlider } from "./MostWatchedSlider";
-import { TeacherSection } from "./TeacherSection";
 
 export type DefaultHomeProps = {
   mode: DefaultHomeMode;
@@ -27,6 +25,7 @@ export type DefaultHomeProps = {
  */
 export function DefaultHome({ mode, membershipPlans }: DefaultHomeProps) {
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
+
   return (
     <HomeThemeWrapper
       themeKey={mode}
@@ -36,21 +35,31 @@ export function DefaultHome({ mode, membershipPlans }: DefaultHomeProps) {
         className="flex flex-1 flex-col gap-8 px-4 py-6 sm:gap-10  sm:py-8 "
         aria-live="polite"
       >
-        <HomeHeroSlider mode={mode} />
+        <HomeHeroSlider key={mode} mode={mode} />
         <div className="px-4 lg:px-25">
-          <GuestLearningBanner isAuthenticated={isAuthenticated} />
-          <MembershipHeroBanner
-            monthlyPlan={membershipPlans.monthly}
-            yearlyPlan={membershipPlans.yearly}
-            className="mb-15"
-          />
-          <MostWatchedSlider mode={mode} />
-          <TeacherSection />
-          <CategoriesSection />
-          <ComingSoonSection mode={mode} />
-          <div className="hidden md:block"><BusinessBanner isAuthenticated={isAuthenticated} className="bg-surface px-15" /></div>
+          {!isAuthenticated && (
+            <GuestLearningBanner isAuthenticated={isAuthenticated} />
+          )}
+          <DefaultHomeFeed key={mode} mode={mode} />
+          <div className="hidden md:block">
+            <BusinessBanner
+              isAuthenticated={isAuthenticated}
+              className="bg-surface px-15"
+            />
+          </div>
+          {!isAuthenticated && (
+            <>
+              <MembershipHeroBanner
+                monthlyPlan={membershipPlans.monthly}
+                yearlyPlan={membershipPlans.yearly}
+                className="my-15"
+              />
+              <CategoriesSection />
+            </>
+          )}
+
         </div>
       </div>
-    </HomeThemeWrapper >
+    </HomeThemeWrapper>
   );
 }

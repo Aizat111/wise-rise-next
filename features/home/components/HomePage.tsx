@@ -25,7 +25,11 @@ export function HomePage({ membershipPlans }: HomePageProps) {
       {activeHomeTab === "we-the-living" ? (
         <WeTheLivingHome membershipPlans={membershipPlans} />
       ) : (
-        <DefaultHome mode={activeHomeTab} membershipPlans={membershipPlans} />
+        <DefaultHome
+          key={activeHomeTab}
+          mode={activeHomeTab}
+          membershipPlans={membershipPlans}
+        />
       )}
     </div>
   );

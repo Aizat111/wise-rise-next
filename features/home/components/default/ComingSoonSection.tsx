@@ -11,31 +11,28 @@ import {
   SliderNavigation,
 } from "@/shared/ui/sliders";
 
-import { useComingSoonClassroomsQuery } from "../../api/classroom.queries";
-import {
-  filterClassroomsByHomeMode,
-  mapClassroomsToComingSoonCards,
-} from "../../api/classroom.utils";
-import type { DefaultHomeMode } from "../../types";
+import type { ComingSoonCardData } from "../../types";
 import { formatComingSoonDate } from "../../utils/formatComingSoonDate";
 import Link from "next/link";
 
 type ComingSoonSectionProps = {
-  mode: DefaultHomeMode;
+  title: string;
+  items: ComingSoonCardData[];
+  isLoading?: boolean;
 };
 
 /**
  * "Yakında Gelecekler" home section: copy on the left, 2-card slider on the right.
- * Independent from Education / MostWatched rows; empty list hides the section.
+ * Independent from Education rows; empty list hides the section.
  */
-export function ComingSoonSection({ mode }: ComingSoonSectionProps) {
+export function ComingSoonSection({
+  title,
+  items,
+  isLoading = false,
+}: ComingSoonSectionProps) {
   const t = useTranslations("home");
   const locale = useLocale();
-  const { data = [], isLoading } = useComingSoonClassroomsQuery();
-
-  const items = mapClassroomsToComingSoonCards(
-    filterClassroomsByHomeMode(data, mode),
-  );
+  const sectionTitle = title.trim() || t("comingSoon");
 
   if (!isLoading && items.length === 0) {
     return null;
@@ -44,12 +41,12 @@ export function ComingSoonSection({ mode }: ComingSoonSectionProps) {
   return (
     <section
       className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 lg:mt-12 lg:grid-cols-2 lg:items-center lg:gap-10 xl:gap-14"
-      aria-label={t("comingSoon")}
+      aria-label={sectionTitle}
       aria-busy={isLoading || undefined}
     >
       <div className="flex flex-col justify-center gap-3 sm:gap-4 lg:pr-1">
         <p className="text-sm font-semibold tracking-wide text-primary uppercase border-l-4 border-primary  pl-2 sm:text-base ">
-          {t("comingSoon")}
+          {sectionTitle}
         </p>
 
         <h2 className="text-xl font-semibold leading-snug text-white sm:text-2xl sm:leading-snug lg:text-3xl lg:leading-[1.2]">
@@ -66,7 +63,7 @@ export function ComingSoonSection({ mode }: ComingSoonSectionProps) {
 
       <div className="min-w-0">
         <BaseSlider
-          aria-label={t("comingSoon")}
+          aria-label={sectionTitle}
           dragEnabled={!isLoading}
           itemWidthClassName={COMING_SOON_SLIDER_ITEM_WIDTH_CLASS}
           header={({

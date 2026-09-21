@@ -28,6 +28,8 @@ export const HOME_TABS: HomeTabItemConfig[] = [
   },
 ];
 
+export const DEFAULT_HOME_FEED_SKELETON_COUNT = 3;
+
 export const HOME_THEME_STYLES: Record<HomeTabId, CSSProperties> = {
   all: {
     background: "#000000",

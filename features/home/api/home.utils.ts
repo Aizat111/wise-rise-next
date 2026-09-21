@@ -4,14 +4,44 @@ import type {
   HomeFeedResponse,
   HomeList,
 } from "@/core/types/home.types";
+import type { Teacher } from "@/core/types/teacher.types";
 import { buildCourseHref } from "@/features/course/api/course.utils";
 
 import type {
+  DefaultHomeMode,
   WeTheLivingBannerSection,
   WeTheLivingCourseCardData,
   WeTheLivingHomeSection,
   WeTheLivingSliderSection,
 } from "../types";
+
+/** API `platform` query for each DefaultHome mode. Matches hero mapping. */
+const HOME_FEED_PLATFORM_BY_MODE: Record<DefaultHomeMode, string> = {
+  all: "",
+  "wise-rise": "wisenrise",
+};
+
+export function getHomeFeedPlatform(mode: DefaultHomeMode): string {
+  return HOME_FEED_PLATFORM_BY_MODE[mode];
+}
+
+export function isTeachersHomeList(list: HomeList): boolean {
+  return list.type === "teachers";
+}
+
+export function isComingSoonHomeList(list: HomeList): boolean {
+  return list.slug === "coming_soon";
+}
+
+export function getHomeListClassrooms(list: HomeList): Classroom[] {
+  if (isTeachersHomeList(list)) return [];
+  return list.data as Classroom[];
+}
+
+export function getHomeListTeachers(list: HomeList): Teacher[] {
+  if (!isTeachersHomeList(list)) return [];
+  return list.data as Teacher[];
+}
 
 function isHomeFeed(value: unknown): value is HomeFeed {
   if (!value || typeof value !== "object") return false;
@@ -84,7 +114,9 @@ export function mapHomeListsToWeTheLivingSliders(
   const sliders: WeTheLivingSliderSection[] = [];
 
   for (const list of lists) {
-    const items = mapClassroomsToWeTheLivingCourseCards(list.data);
+    const items = mapClassroomsToWeTheLivingCourseCards(
+      getHomeListClassrooms(list),
+    );
     if (items.length === 0) continue;
 
     sliders.push({

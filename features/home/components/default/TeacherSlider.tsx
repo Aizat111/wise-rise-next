@@ -17,6 +17,7 @@ import type { TeacherSliderProps } from "../../types";
  */
 export function TeacherSlider({
   items,
+  title,
   isLoading = false,
   onViewAll,
   onItemClick,
@@ -26,7 +27,7 @@ export function TeacherSlider({
 
   return (
     <ContentSlider
-      title={t("turkeysBest")}
+      title={title ?? t("turkeysBest")}
       items={items}
       isLoading={isLoading}
       showViewAll

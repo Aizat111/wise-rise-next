@@ -18,6 +18,7 @@ export type HomeTabItemConfig = {
 
 export type TeacherSliderProps = {
   items: TeacherCardData[];
+  title?: string;
   isLoading?: boolean;
   onViewAll?: () => void;
   onItemClick?: (item: TeacherCardData) => void;
@@ -26,6 +27,9 @@ export type TeacherSliderProps = {
 };
 
 export type TeacherSectionProps = {
+  items: TeacherCardData[];
+  title: string;
+  isLoading?: boolean;
   /** Navigates to the full teachers list when "Tümü" is clicked. */
   onViewAll?: () => void;
   className?: string;

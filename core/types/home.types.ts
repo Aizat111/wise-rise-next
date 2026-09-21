@@ -1,13 +1,21 @@
 import type { Classroom, ClassroomPlatform } from "./classroom.types";
+import type { Teacher } from "./teacher.types";
 
-export type HomeListType = "manual" | "new_added" | "category" | string;
+export type HomeListType =
+  | "manual"
+  | "new_added"
+  | "category"
+  | "teachers"
+  | "coming_soon"
+  | string;
 
 export type HomeList = {
   slug: string;
   title: string;
   subtitle: string | null;
   type: HomeListType;
-  data: Classroom[];
+  /** Classrooms for education lists; teachers when `type === "teachers"`. */
+  data: Classroom[] | Teacher[];
 };
 
 export type HomeFeed = {

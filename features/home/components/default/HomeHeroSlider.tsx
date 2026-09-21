@@ -29,7 +29,7 @@ function mapHeroToSlide(hero: Hero): HeroSlide {
 export function HomeHeroSlider({ mode }: HomeHeroSliderProps) {
   const platform = getHeroPlatformParam(mode);
   const { data = [], isLoading, isError, refetch, isFetching } =
-    useHeroesQuery(platform);
+    useHeroesQuery(platform, "image", { refetchOnMount: "always" });
 
   return (
     <HeroSlider
