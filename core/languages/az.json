@@ -275,6 +275,13 @@
       "finishPayment": "Ödənişi Tamamla",
       "freeMonth": "PULSUZ SINA"
     },
+    "coupon": {
+      "label": "KUPON KODU",
+      "copied": "Kupon kodu kopyalandı.",
+      "copyError": "Kupon kodu kopyalana bilmədi.",
+      "invalid": "Kupon kodu etibarsızdır.",
+      "checking": "Kupon yoxlanılır..."
+    },
     "freeCampaign": {
       "oneMonthFree": "1 Ay Pulsuz",
       "oneYearFree": "1 İL PULSUZ",

@@ -276,6 +276,13 @@
       "freeMonth": "ÜCRETSİZ DENE",
       "startSubscription": "ÜYELİĞİ BAŞLAT"
     },
+    "coupon": {
+      "label": "KUPON KODU",
+      "copied": "Kupon kodu kopyalandı.",
+      "copyError": "Kupon kodu kopyalanamadı.",
+      "invalid": "Kupon kodu geçersiz.",
+      "checking": "Kupon kontrol ediliyor..."
+    },
     "freeCampaign": {
       "oneMonthFree": "1 Ay Ücretsiz",
       "oneYearFree": "1 YIL ÜCRETSİZ",

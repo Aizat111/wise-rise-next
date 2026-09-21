@@ -7,6 +7,11 @@ export const QUERY_KEYS = {
     checkCode: (code: string) => ["gift", "check-code", code] as const,
   },
 
+  coupon: {
+    checkCode: (planId: string, code: string) =>
+      ["coupon", "check-code", planId, code] as const,
+  },
+
   course: {
     all: ["courses"],
     mostWatched: ["courses", "most-watched"],

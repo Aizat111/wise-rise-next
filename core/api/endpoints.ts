@@ -77,6 +77,11 @@ export const ENDPOINTS = {
     checkCode: `/check-gift-code`,
   },
 
+  coupon: {
+    /** POST /check-coupon-code?plan_id={planId} — { code } */
+    checkCode: `/check-coupon-code`,
+  },
+
   profile: {
     list: `${SERVICES.PROFILE}`,
     detail: (id: string | number) => `${SERVICES.PROFILE}/${id}`,

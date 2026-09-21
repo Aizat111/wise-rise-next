@@ -68,6 +68,26 @@ export interface IRegisterStep4Request {
   coupone_code?: string;
 }
 
+/** POST /check-coupon-code?plan_id={planId} */
+export interface ICheckCouponCodeRequest {
+  code: string;
+}
+
+export interface ICheckCouponCodeData {
+  new_price: string | number;
+  discount_type?: string | null;
+  discount_value?: number | null;
+  applicable_period?: string | null;
+  resolved_plan_id?: string | null;
+}
+
+export interface ICheckCouponCodeResponse {
+  success: boolean;
+  message: string;
+  data: ICheckCouponCodeData | null;
+  extras?: unknown;
+}
+
 export interface IRegisterStepUser {
   id: string;
   email?: string;

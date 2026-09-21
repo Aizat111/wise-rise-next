@@ -8,6 +8,11 @@ import {
   isFreeCampaignType,
   type FreeCampaignType,
 } from "@/features/auth/lib/free-campaign";
+import {
+  getRegisterRoutes,
+  parseRegisterCouponCode,
+  REGISTER_ROUTES_WITHOUT_COUPON,
+} from "@/features/auth/lib/register-coupon";
 
 export type RegisterStep = 1 | 2 | 3 | 4;
 
@@ -29,14 +34,13 @@ export type RegisterDraft = {
   campaignType: FreeCampaignType | null;
   /** Company slug from `/freemonth-{company}` / `/freeyear-{company}` */
   referrer: string | null;
+  /** Coupon from `/kayit-ol/{code}` — kept across the 4 register steps */
+  couponCode: string | null;
 };
 
-export const REGISTER_ROUTES = {
-  1: "/kayit-ol",
-  2: "/kayit-ol/sifre-olustur",
-  3: "/kayit-ol/plan-sec",
-  4: "/kayit-ol/odeme",
-} as const;
+export const REGISTER_ROUTES = REGISTER_ROUTES_WITHOUT_COUPON;
+
+export { getRegisterRoutes };
 
 export const EMPTY_REGISTER_DRAFT: RegisterDraft = {
   registrationId: null,
@@ -52,6 +56,7 @@ export const EMPTY_REGISTER_DRAFT: RegisterDraft = {
   giftCode: null,
   campaignType: null,
   referrer: null,
+  couponCode: null,
 };
 
 type Listener = () => void;
@@ -85,6 +90,9 @@ function readFromStorage(): RegisterDraft {
         typeof parsed.referrer === "string" && parsed.referrer.trim()
           ? parsed.referrer.trim()
           : null,
+      couponCode: parseRegisterCouponCode(
+        typeof parsed.couponCode === "string" ? parsed.couponCode : null,
+      ),
     };
   } catch {
     return EMPTY_REGISTER_DRAFT;

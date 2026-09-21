@@ -1,19 +1,22 @@
 "use client";
 
-import { createContext, useContext, type ReactNode } from "react";
+import { useParams } from "next/navigation";
+import { createContext, useContext, useMemo, type ReactNode } from "react";
 
-import { REGISTER_ROUTES } from "@/features/auth/hooks/useRegisterDraft";
+import { usePathname } from "@/core/i18n/navigation";
+import { useRegisterDraft } from "@/features/auth/hooks/useRegisterDraft";
 import {
   getFreeCampaignPublicRoutes,
   type FreeCampaignType,
 } from "@/features/auth/lib/free-campaign";
+import {
+  getRegisterRoutes,
+  REGISTER_ROUTES_WITHOUT_COUPON,
+  resolveRegistrationCoupon,
+  type RegisterRoutes,
+} from "@/features/auth/lib/register-coupon";
 
-export type RegisterRoutes = {
-  1: string;
-  2: string;
-  3: string;
-  4: string;
-};
+export type { RegisterRoutes };
 
 export type RegisterFlowContextValue = {
   campaignType: FreeCampaignType | null;
@@ -25,7 +28,7 @@ export type RegisterFlowContextValue = {
 const DEFAULT_REGISTER_FLOW: RegisterFlowContextValue = {
   campaignType: null,
   companyName: null,
-  routes: REGISTER_ROUTES,
+  routes: REGISTER_ROUTES_WITHOUT_COUPON,
   isFreeCampaign: false,
 };
 
@@ -59,6 +62,35 @@ export function RegisterFlowProvider({
   );
 }
 
+function readCouponParam(value: string | string[] | undefined) {
+  const raw = Array.isArray(value) ? value[0] : value;
+  return typeof raw === "string" ? raw : null;
+}
+
+/** URL coupon for the normal register flow, then the draft on later steps. */
+export function useRegistrationCouponCode() {
+  const flow = useContext(RegisterFlowContext);
+  const pathname = usePathname();
+  const params = useParams();
+  const { draft } = useRegisterDraft();
+
+  return resolveRegistrationCoupon({
+    pathname,
+    couponParam: readCouponParam(params.couponCode),
+    draftCoupon: draft.couponCode,
+    isFreeCampaign: flow.isFreeCampaign,
+  });
+}
+
 export function useRegisterFlow() {
-  return useContext(RegisterFlowContext);
+  const flow = useContext(RegisterFlowContext);
+  const couponCode = useRegistrationCouponCode();
+
+  return useMemo(() => {
+    if (flow.isFreeCampaign) return flow;
+    return {
+      ...flow,
+      routes: getRegisterRoutes(couponCode),
+    };
+  }, [couponCode, flow]);
 }

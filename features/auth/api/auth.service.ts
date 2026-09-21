@@ -2,6 +2,8 @@ import { clientRequest } from "@/core/api/client";
 import { ENDPOINTS } from "@/core/api/endpoints";
 import type {
   IAuthData,
+  ICheckCouponCodeRequest,
+  ICheckCouponCodeResponse,
   ILoginResponse,
   IRegisterGiftRequest,
   IRegisterResponse,
@@ -92,6 +94,25 @@ export const authService = {
       url: ENDPOINTS.register.step(4, id),
       method: "POST",
       data,
+    });
+  },
+
+  /**
+   * POST /check-coupon-code?plan_id={planId}
+   * Body: { code }
+   * Invalid coupons return HTTP 200 with success: false.
+   */
+  checkCouponCode(
+    planId: string,
+    data: ICheckCouponCodeRequest,
+    signal?: AbortSignal,
+  ) {
+    return clientRequest<ICheckCouponCodeResponse>({
+      url: ENDPOINTS.coupon.checkCode,
+      method: "POST",
+      params: { plan_id: planId },
+      data,
+      signal,
     });
   },
 

@@ -35,6 +35,7 @@ export function FreeCampaignDraftSync({
         campaignType,
         referrer,
         giftCode: null,
+        couponCode: null,
         planId: nextPlanId,
         planPeriod: nextPlanId
           ? prev.planPeriod

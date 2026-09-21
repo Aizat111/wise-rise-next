@@ -4,6 +4,8 @@ import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
+import { RegisterCouponBadge } from "./RegisterCouponBadge";
+import { useRegistrationCouponCode } from "./RegisterFlowContext";
 import { RegisterStepper } from "./RegisterStepper";
 
 type RegisterFormShellProps = {
@@ -23,6 +25,8 @@ export function RegisterFormShell({
   children,
   className,
 }: RegisterFormShellProps) {
+  const couponCode = useRegistrationCouponCode();
+
   return (
     <div
       className={cn(
@@ -31,6 +35,7 @@ export function RegisterFormShell({
       )}
     >
       <div className="w-full border-none bg-black px-5 py-5  text-center md:max-w-3xl">
+        {couponCode ? <RegisterCouponBadge couponCode={couponCode} /> : null}
         <RegisterStepper currentStep={step} totalSteps={totalSteps} />
         <div className="mb-3 text-center">
           <h1 className="mb-3 text-3xl font-semibold text-foreground sm:text-4xl">

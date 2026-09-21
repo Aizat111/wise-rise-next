@@ -2,7 +2,7 @@
 
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { useTranslations } from "next-intl";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -15,7 +15,11 @@ import {
   useRegisterStep4Mutation,
 } from "@/features/auth/api/auth.mutations";
 import { useRegisterFlow } from "@/features/auth/components/register/RegisterFlowContext";
-import type { RegisterDraft } from "@/features/auth/hooks/useRegisterDraft";
+import { useCheckRegisterCoupon } from "@/features/auth/hooks/useCheckRegisterCoupon";
+import {
+  useRegisterDraft,
+  type RegisterDraft,
+} from "@/features/auth/hooks/useRegisterDraft";
 import { cn } from "@/lib/utils";
 import { notify } from "@/shared/components/notify";
 
@@ -70,8 +74,12 @@ function createPaymentSchema(
 
 export type PaymentFormValues = z.infer<ReturnType<typeof createPaymentSchema>>;
 
-type PaymentFormDraft = Pick<RegisterDraft, "planId" | "planPeriod" | "planPrice"> & {
+type PaymentFormDraft = Pick<
+  RegisterDraft,
+  "planId" | "planPeriod" | "planPrice"
+> & {
   registrationId?: string | null;
+  couponCode?: string | null;
 };
 
 type PaymentFormProps = {
@@ -94,12 +102,17 @@ export function PaymentForm({
   submitLabel,
 }: PaymentFormProps) {
   const t = useTranslations("register.step4");
+  const tCoupon = useTranslations("register.coupon");
   const tCampaign = useTranslations("register.freeCampaign");
   const tCommon = useTranslations("common");
   const { isFreeCampaign } = useRegisterFlow();
+  const { draft: storedDraft, updateDraft } = useRegisterDraft();
   const registerStep4 = useRegisterStep4Mutation();
   const [apiError, setApiError] = useState<string | null>(null);
-  const [showCoupon, setShowCoupon] = useState(false);
+  const seededCoupon = !isFreeCampaign ? draft.couponCode?.trim() ?? "" : "";
+  const [showCoupon, setShowCoupon] = useState(Boolean(seededCoupon));
+  const [couponInput, setCouponInput] = useState(seededCoupon);
+  const [couponEdited, setCouponEdited] = useState(false);
 
   const schema = useMemo(() => createPaymentSchema(t), [t]);
   const resolver = useMemo(() => standardSchemaResolver(schema), [schema]);
@@ -120,13 +133,32 @@ export function PaymentForm({
       cardNumber: "",
       expiry: "",
       cvc: "",
-      couponCode: "",
+      couponCode: seededCoupon,
       contractConsent: false,
     },
   });
 
   const isLoading = registerStep4.isPending || isSubmitting;
   const isDisabled = isLoading || !isValid;
+  const couponCheck = useCheckRegisterCoupon(
+    showCoupon ? couponInput : "",
+    draft.planId,
+    formatPrice,
+  );
+
+  useEffect(() => {
+    if (submitPayment || isFreeCampaign || !couponEdited) return;
+    const next = couponCheck.debouncedCode || null;
+    if ((storedDraft.couponCode ?? null) === next) return;
+    updateDraft({ couponCode: next });
+  }, [
+    couponCheck.debouncedCode,
+    couponEdited,
+    isFreeCampaign,
+    storedDraft.couponCode,
+    submitPayment,
+    updateDraft,
+  ]);
 
   const periodLabel =
     draft.planPeriod === "Yearly" ? tCommon("yearly") : tCommon("monthly");
@@ -180,7 +212,22 @@ export function PaymentForm({
   return (
     <div className={cn("flex min-w-2xl flex-col gap-3  items-center justify-center", className)}>
 
-      <p className="text-sm font-medium text-white text-center">{t("cardPlan")}: {periodLabel} {planPriceLabel}</p>
+      <p className="text-center text-sm font-medium text-white">
+        {t("cardPlan")}: {periodLabel}{" "}
+        {couponCheck.newPrice ? (
+          <>
+            <span className="text-white/50 line-through">{planPriceLabel}</span>{" "}
+            <span>{couponCheck.newPrice}</span>
+          </>
+        ) : (
+          planPriceLabel
+        )}
+      </p>
+      {couponCheck.isChecking ? (
+        <p className="text-center text-sm text-white/70" role="status">
+          {tCoupon("checking")}
+        </p>
+      ) : null}
 
       {isFreeCampaign ? (
         <p
@@ -346,9 +393,20 @@ export function PaymentForm({
                   autoComplete="off"
                   placeholder={t("couponeCode")}
                   aria-label={t("couponeCode")}
+                  aria-invalid={couponCheck.isInvalid}
                   disabled={isLoading || !showCoupon}
-                  {...register("couponCode")}
+                  {...register("couponCode", {
+                    onChange: (event) => {
+                      setCouponEdited(true);
+                      setCouponInput(event.target.value);
+                    },
+                  })}
                 />
+                {couponCheck.isInvalid ? (
+                  <p className="pt-1.5 text-sm text-red-500" role="alert">
+                    {tCoupon("invalid")}
+                  </p>
+                ) : null}
               </div>
             </div>
           </div>
