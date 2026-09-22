@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 
+import type { Classroom } from "@/core/types/classroom.types";
 import { Link } from "@/core/i18n/navigation";
 import { EducationCard } from "@/shared/ui/cards";
 import { ContentSlider } from "@/shared/ui/sliders";
@@ -15,15 +16,22 @@ import type { DefaultHomeMode } from "../../types";
 
 type MostWatchedSliderProps = {
   mode: DefaultHomeMode;
+  initialClassrooms?: Classroom[];
 };
 
 /**
  * "En Çok İzlenenler" row for DefaultHome ("Tüm İçerikler" / "Wise&Rise").
  * Uses ContentSlider → BaseSlider + EducationCard.
  */
-export function MostWatchedSlider({ mode }: MostWatchedSliderProps) {
+export function MostWatchedSlider({
+  mode,
+  initialClassrooms,
+}: MostWatchedSliderProps) {
   const t = useTranslations("home");
-  const { data = [], isLoading } = useMostWatchedClassroomsQuery();
+  const { data = [], isLoading } = useMostWatchedClassroomsQuery(
+    true,
+    initialClassrooms,
+  );
 
   const items = mapClassroomsToEducationCards(
     filterClassroomsByHomeMode(data, mode),

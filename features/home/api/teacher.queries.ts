@@ -26,10 +26,17 @@ export type TeachersListFilters = {
   pageSize?: number;
 };
 
-export function useTeachersListQuery(filters: TeachersListFilters) {
+export function useTeachersListQuery(
+  filters: TeachersListFilters,
+  options?: {
+    initialData?: TeachersListResult;
+    refetchOnMount?: boolean | "always";
+  },
+) {
   const categoryId = filters.categoryId ?? undefined;
   const page = filters.page ?? 1;
   const pageSize = filters.pageSize ?? 12;
+  const initialData = options?.initialData;
 
   return useQuery<TeachersListResult>({
     queryKey: QUERY_KEYS.teacher.list({
@@ -45,6 +52,8 @@ export function useTeachersListQuery(filters: TeachersListFilters) {
       };
       return teacherService.list(params);
     },
+    initialData,
     staleTime: 5 * 60 * 1000,
+    refetchOnMount: options?.refetchOnMount ?? (initialData ? false : undefined),
   });
 }

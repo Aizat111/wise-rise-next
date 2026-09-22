@@ -36,6 +36,7 @@ export function VideoPlayerPage({
   teacherSlug,
   courseSlug,
   videoSlug,
+  initialCourse = null,
 }: VideoPlayerPageProps) {
   const t = useTranslations("course");
   const router = useRouter();
@@ -43,7 +44,10 @@ export function VideoPlayerPage({
   const activeProfile = useAppSelector((state) => state.profile.activeProfile);
 
   const { data, isLoading, isError, error, refetch, isFetching } =
-    useCourseDetailQuery(courseSlug);
+    useCourseDetailQuery(courseSlug, true, {
+      initialData: initialCourse,
+      refetchOnMount: isAuthenticated ? "always" : false,
+    });
   const watchesQuery = useProfileVideoWatchesQuery(
     activeProfile?.id,
     isAuthenticated,

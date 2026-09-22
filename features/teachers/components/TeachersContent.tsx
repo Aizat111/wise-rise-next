@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { useCategoriesQuery } from "@/features/category/api/category.queries";
 import { useTeachersListQuery } from "@/features/home/api/teacher.queries";
+import { useAppSelector } from "@/store/hooks";
 import { mapTeachersToCards } from "@/features/home/api/teacher.utils";
 import { notify } from "@/shared/components/notify";
 import { TeacherDialog, type TeacherCardData } from "@/shared/ui/cards";
@@ -27,13 +28,19 @@ import { TeachersSidebar } from "./TeachersSidebar";
 
 export function TeachersContent({
   initialCategories = [],
+  initialTeachers = null,
+  initialCategoryId = null,
+  initialPage = 1,
 }: TeachersContentProps) {
   const t = useTranslations("teachersPage");
+  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
   const searchParams = useSearchParams();
   const categoryId = parseTeachersCategoryId(
     searchParams.get(TEACHERS_CATEGORY_PARAM),
   );
   const page = parseTeachersPage(searchParams.get(TEACHERS_PAGE_PARAM));
+  const matchesInitialSeed =
+    categoryId === initialCategoryId && page === initialPage;
 
   const { data: categories = initialCategories, isLoading: isCategoriesLoading } =
     useCategoriesQuery(initialCategories);
@@ -43,6 +50,11 @@ export function TeachersContent({
       categoryId,
       page,
       pageSize: TEACHERS_PAGE_SIZE,
+    },
+    {
+      initialData:
+        matchesInitialSeed && initialTeachers ? initialTeachers : undefined,
+      refetchOnMount: isAuthenticated ? "always" : undefined,
     },
   );
 

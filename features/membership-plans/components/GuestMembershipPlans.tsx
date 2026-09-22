@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { Link } from "@/core/i18n/navigation";
+import type { DisplayPlans } from "@/core/types/plan.types";
 import { GUEST_REGISTER_HREF } from "@/shared/ui/banners/constants";
 import { useDisplayPlansQuery } from "@/features/plans/api/plan.queries";
 
@@ -13,12 +14,17 @@ import { getPlanFeatureList, normalizePlanPeriod } from "../utils/plan-features"
 import { MembershipPlanCard } from "./MembershipPlanCard";
 import { PlanSkeleton } from "./PlanSkeleton";
 
-export function GuestMembershipPlans() {
+export function GuestMembershipPlans({
+  initialPlans = null,
+}: {
+  initialPlans?: DisplayPlans | null;
+}) {
   const t = useTranslations("register.step3");
   const tPage = useTranslations("pracingPlan");
   const tLogin = useTranslations("login");
   const tCommon = useTranslations("common");
-  const { data, isLoading, isError, refetch, isFetching } = useDisplayPlansQuery();
+  const { data, isLoading, isError, refetch, isFetching } =
+    useDisplayPlansQuery(initialPlans);
 
   const monthlyFeatures = useMemo(
     () => [t("feature1"), t("feature2"), t("feature3"), t("feature4"), t("feature5")],

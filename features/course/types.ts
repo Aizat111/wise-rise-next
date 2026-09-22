@@ -124,6 +124,7 @@ export type VideoPlayerPageProps = {
   teacherSlug: string;
   courseSlug: string;
   videoSlug: string;
+  initialCourse?: Classroom | null;
 };
 
 export type VideoWatchTabId = "content" | "notes";
@@ -200,6 +201,7 @@ export type CourseMetaProps = {
 export type CourseDetailPageProps = {
   courseSlug: string;
   teacherSlug: string;
+  initialCourse?: Classroom | null;
 };
 
 export type RelatedEducationCardData = {

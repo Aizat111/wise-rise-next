@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { DEFAULT_LOCALE } from "@/core/config/domain-locale.config";
+import { getCategoryClassroomPage } from "@/features/category/api/get-category-classrooms";
 import { getCategories } from "@/features/category/api/get-categories";
 import {
   getSelectionCanonical,
@@ -66,9 +67,13 @@ export default async function CategorySlugPage({ params }: Props) {
     notFound();
   }
 
+  const selection = resolveCategorySelection(teacherSlug, categories);
+  const classrooms = await getCategoryClassroomPage(selection);
+
   return (
     <CategoriesPage
       initialCategories={categories}
+      initialClassrooms={classrooms}
       categorySlug={teacherSlug}
     />
   );

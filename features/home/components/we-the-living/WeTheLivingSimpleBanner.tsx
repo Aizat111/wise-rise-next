@@ -3,9 +3,9 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-import { getWeTheLivingHref } from "@/features/category/api/selection.utils";
 import { cn } from "@/lib/utils";
 import Image from "@/shared/ui/Images/Image";
+import { GUEST_REGISTER_HREF } from "@/shared/ui/banners/constants";
 
 import { WeTheLivingBannerCta } from "./WeTheLivingBannerCta";
 
@@ -30,7 +30,7 @@ export function WeTheLivingSimpleBanner({
 }: WeTheLivingSimpleBannerProps) {
   const t = useTranslations("weTheLiving.banner.simple");
   const reduceMotion = useReducedMotion();
-  const href = ctaHref ?? getWeTheLivingHref();
+  const href = ctaHref ?? GUEST_REGISTER_HREF;
   const label = ctaLabel ?? t("cta");
 
   return (

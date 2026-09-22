@@ -8,6 +8,9 @@ import type { TeachersPageProps } from "../types";
 
 export async function TeachersPage({
   initialCategories = [],
+  initialTeachers = null,
+  initialCategoryId = null,
+  initialPage = 1,
 }: TeachersPageProps) {
   const t = await getTranslations("teachersPage");
 
@@ -15,7 +18,12 @@ export async function TeachersPage({
     <TeachersShell title={t("title")} homeLabel={t("home")}>
       <section aria-label={t("title")}>
         <Suspense fallback={<TeachersFallback loadingLabel={t("loading")} />}>
-          <TeachersContent initialCategories={initialCategories} />
+          <TeachersContent
+            initialCategories={initialCategories}
+            initialTeachers={initialTeachers}
+            initialCategoryId={initialCategoryId}
+            initialPage={initialPage}
+          />
         </Suspense>
       </section>
     </TeachersShell>

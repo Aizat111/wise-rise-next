@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import { SITE } from "@/config/site";
 
+import { toAbsoluteUrl } from "./site-url";
+
 interface BuildPageMetadataProps {
   title: string;
   description: string;
@@ -22,9 +24,7 @@ export function buildPageMetadata({
   noIndex = false,
   absoluteTitle = false,
 }: BuildPageMetadataProps): Metadata {
-  const url = canonical
-    ? `${SITE.url}${canonical.startsWith("/") ? canonical : `/${canonical}`}`
-    : SITE.url;
+  const url = toAbsoluteUrl(canonical || "/");
 
   return {
     title: absoluteTitle ? { absolute: title } : title,

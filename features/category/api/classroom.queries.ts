@@ -3,7 +3,10 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 import { QUERY_KEYS } from "@/core/api/query-keys";
-import type { ClassroomsListParams } from "@/core/types/classroom.types";
+import type {
+  ClassroomsListParams,
+  ClassroomsListResult,
+} from "@/core/types/classroom.types";
 import { classroomService } from "@/features/home/api/classroom.service";
 
 import { CATEGORY_PAGE_SIZE } from "../constants";
@@ -16,9 +19,14 @@ export type CategoryClassroomsFilters = {
 export function useCategoryClassroomsQuery(
   filters: CategoryClassroomsFilters,
   enabled = true,
+  options?: {
+    initialPage?: ClassroomsListResult | null;
+    refetchOnMount?: boolean | "always";
+  },
 ) {
   const categoryId = filters.categoryId ?? undefined;
   const platform = filters.platform ?? undefined;
+  const initialPage = options?.initialPage ?? undefined;
 
   return useInfiniteQuery({
     queryKey: QUERY_KEYS.course.list({
@@ -36,11 +44,16 @@ export function useCategoryClassroomsQuery(
       return classroomService.list(params);
     },
     initialPageParam: 1,
+    initialData: initialPage
+      ? { pages: [initialPage], pageParams: [1] }
+      : undefined,
     getNextPageParam: (lastPage) =>
       lastPage.currentPage < lastPage.lastPage
         ? lastPage.currentPage + 1
         : undefined,
     enabled,
     staleTime: 5 * 60 * 1000,
+    refetchOnMount:
+      options?.refetchOnMount ?? (initialPage ? false : undefined),
   });
 }

@@ -1,10 +1,14 @@
 import type { ReactNode } from "react";
 
 import type { Category } from "@/core/api/types";
+import type { TeachersListResult } from "@/core/types/teacher.types";
 import type { TeacherCardData } from "@/shared/ui/cards";
 
 export type TeachersPageProps = {
   initialCategories?: Category[];
+  initialTeachers?: TeachersListResult | null;
+  initialCategoryId?: number | null;
+  initialPage?: number;
 };
 
 export type TeachersShellProps = {
@@ -15,6 +19,9 @@ export type TeachersShellProps = {
 
 export type TeachersContentProps = {
   initialCategories?: Category[];
+  initialTeachers?: TeachersListResult | null;
+  initialCategoryId?: number | null;
+  initialPage?: number;
 };
 
 export type TeachersSidebarProps = {

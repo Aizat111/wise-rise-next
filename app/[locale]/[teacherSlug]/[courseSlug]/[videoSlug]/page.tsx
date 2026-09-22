@@ -88,6 +88,7 @@ export default async function VideoPage({ params }: Props) {
       teacherSlug={teacherSlug}
       courseSlug={courseSlug}
       videoSlug={videoSlug}
+      initialCourse={course}
     />
   );
 }

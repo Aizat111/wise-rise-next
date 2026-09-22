@@ -61,6 +61,10 @@ export default async function CoursePage({ params }: Props) {
   }
 
   return (
-    <CourseDetailPage courseSlug={courseSlug} teacherSlug={teacherSlug} />
+    <CourseDetailPage
+      courseSlug={courseSlug}
+      teacherSlug={teacherSlug}
+      initialCourse={course}
+    />
   );
 }

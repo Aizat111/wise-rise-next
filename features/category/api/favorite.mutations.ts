@@ -10,7 +10,7 @@ import { favoriteService } from "./favorite.service";
 
 export function useAddFavoriteMutation() {
   const queryClient = useQueryClient();
-  const tHome = useTranslations("homepage");
+  const tHome = useTranslations("home");
   const tCategories = useTranslations("categories");
 
   return useMutation({
@@ -29,7 +29,7 @@ export function useAddFavoriteMutation() {
 
 export function useToggleFavoriteMutation() {
   const queryClient = useQueryClient();
-  const tHome = useTranslations("homepage");
+  const tHome = useTranslations("home");
   const tCategories = useTranslations("categories");
 
   return useMutation({

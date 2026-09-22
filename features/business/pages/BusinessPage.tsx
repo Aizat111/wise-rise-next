@@ -6,7 +6,9 @@ import {
   BUSINESS_FEATURE_IMAGES,
 } from "../constants";
 import type { BusinessFeatureItem } from "../types";
+import { getCategories } from "@/features/category/api/get-categories";
 import { MostWatchedSlider } from "@/features/home";
+import { classroomService } from "@/features/home/api/classroom.service";
 import { CategoriesSection } from "@/shared/ui/categories";
 import { BusinessBanner } from "@/shared/ui/banners";
 import { TeacherShowcaseCard } from "@/shared/ui/banners/TeacherShowcaseCard";
@@ -14,6 +16,10 @@ import { TeacherShowcaseCard } from "@/shared/ui/banners/TeacherShowcaseCard";
 
 export async function BusinessPage() {
   const t = await getTranslations("business");
+  const [mostWatched, categories] = await Promise.all([
+    classroomService.listMostWatched().catch(() => []),
+    getCategories(),
+  ]);
 
   const features: BusinessFeatureItem[] = [
     {
@@ -76,8 +82,10 @@ export async function BusinessPage() {
 
   return (
     <BusinessShell title={t("heroTitle")} subtitle={t("subtitle")} referencesTitle={t("references")}>
-      <MostWatchedSlider mode={"all"} />
-      <CategoriesSection />
+      <MostWatchedSlider mode="all" initialClassrooms={mostWatched} />
+      <CategoriesSection
+        categories={categories.length > 0 ? categories : undefined}
+      />
       <TeacherShowcaseCard />
       <BusinessFeatures
         eyebrow={t("properties")}

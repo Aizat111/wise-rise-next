@@ -19,6 +19,7 @@ import { CategorySkeleton } from "../components/CategorySkeleton";
 export function CategoriesPage({
   categorySlug = null,
   initialCategories = [],
+  initialClassrooms = null,
 }: CategoriesPageProps) {
   const t = useTranslations("categories");
   const { data: categories = initialCategories, isLoading } =
@@ -48,6 +49,7 @@ export function CategoriesPage({
           selection={selection}
           categories={categories}
           isCategoriesLoading={isLoading && categories.length === 0}
+          initialClassrooms={initialClassrooms}
         />
       )}
     </div>

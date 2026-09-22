@@ -7,12 +7,19 @@ import type { Classroom } from "@/core/types/classroom.types";
 
 import { classroomService } from "./classroom.service";
 
-export function useMostWatchedClassroomsQuery(enabled = true) {
+export function useMostWatchedClassroomsQuery(
+  enabled = true,
+  initialData?: Classroom[],
+) {
+  const seeded = initialData && initialData.length > 0 ? initialData : undefined;
+
   return useQuery<Classroom[]>({
     queryKey: QUERY_KEYS.course.mostWatched,
     queryFn: () => classroomService.listMostWatched(),
     enabled,
+    initialData: seeded,
     staleTime: 5 * 60 * 1000,
+    refetchOnMount: seeded ? false : undefined,
   });
 }
 

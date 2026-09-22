@@ -24,7 +24,7 @@ export function CourseActionDropdown({
   classroomId,
   isFavorite = false,
 }: CourseActionDropdownProps) {
-  const tHome = useTranslations("homepage");
+  const tHome = useTranslations("home");
   const tLessons = useTranslations("lessonsDetail");
   const tCategories = useTranslations("categories");
   const router = useRouter();

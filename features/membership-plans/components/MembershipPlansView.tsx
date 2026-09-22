@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import type { DisplayPlans } from "@/core/types/plan.types";
 import { useMeQuery } from "@/features/auth/api/auth.queries";
 import { useOrdersQuery } from "@/features/orders/api/order.queries";
 import { useDisplayPlansQuery } from "@/features/plans/api/plan.queries";
@@ -11,9 +12,12 @@ import { useSubscriptionStatusQuery } from "../api/membership.queries";
 import { CurrentMembershipPlan } from "./CurrentMembershipPlan";
 import { GuestMembershipPlans } from "./GuestMembershipPlans";
 import { PaymentHistory } from "./PaymentHistory";
-import { PlanSkeleton } from "./PlanSkeleton";
 
-export function MembershipPlansView() {
+export function MembershipPlansView({
+  initialPlans = null,
+}: {
+  initialPlans?: DisplayPlans | null;
+}) {
   const [mounted, setMounted] = useState(false);
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
 
@@ -21,12 +25,8 @@ export function MembershipPlansView() {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return <PlanSkeleton count={2} />;
-  }
-
-  if (!isAuthenticated) {
-    return <GuestMembershipPlans />;
+  if (!mounted || !isAuthenticated) {
+    return <GuestMembershipPlans initialPlans={initialPlans} />;
   }
 
   return <AuthenticatedMembership />;

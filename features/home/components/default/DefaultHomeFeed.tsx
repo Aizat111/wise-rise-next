@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 
 import { Link } from "@/core/i18n/navigation";
+import type { HomeFeed } from "@/core/types/home.types";
+import { useAppSelector } from "@/store/hooks";
 import { notify } from "@/shared/components/notify";
 import { EducationCard } from "@/shared/ui/cards";
 import { ContentSlider } from "@/shared/ui/sliders";
@@ -28,6 +30,8 @@ import { TeacherSection } from "./TeacherSection";
 
 type DefaultHomeFeedProps = {
   mode: DefaultHomeMode;
+  initialFeed?: HomeFeed | null;
+  initialPlatform?: string;
 };
 
 function HomeEducationSlider({
@@ -90,13 +94,20 @@ function DefaultHomeFeedSkeleton() {
  * DefaultHome `/home?platform=` sections.
  * Hero stays independent so feed loading/errors cannot take it down.
  */
-export function DefaultHomeFeed({ mode }: DefaultHomeFeedProps) {
+export function DefaultHomeFeed({
+  mode,
+  initialFeed,
+  initialPlatform,
+}: DefaultHomeFeedProps) {
   const t = useTranslations("home");
+  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
   const platform = getHomeFeedPlatform(mode);
-  const { data, isLoading, isError, isFetching } = useHomeFeedQuery(
-    platform,
-    { refetchOnMount: "always" },
-  );
+  const seeded =
+    initialPlatform === platform && initialFeed ? initialFeed : undefined;
+  const { data, isLoading, isError, isFetching } = useHomeFeedQuery(platform, {
+    initialData: seeded,
+    refetchOnMount: isAuthenticated ? "always" : seeded ? false : "always",
+  });
 
   useEffect(() => {
     if (!isError) return;

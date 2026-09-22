@@ -1,4 +1,5 @@
 import type { Category } from "@/core/api/types";
+import type { ClassroomsListResult } from "@/core/types/classroom.types";
 import type { EducationCardData } from "@/shared/ui/cards";
 
 export type CategorySelection =
@@ -11,6 +12,8 @@ export type CategoriesPageProps = {
   categorySlug?: string | null;
   /** SSR categories for faster first paint. */
   initialCategories?: Category[];
+  /** First page of public classrooms for this selection. */
+  initialClassrooms?: ClassroomsListResult | null;
 };
 
 export type { CategoryHeroProps } from "@/shared/ui/CategoryHero";
@@ -46,6 +49,7 @@ export type CategorySectionProps = {
   selection: CategorySelection;
   categories: Category[];
   isCategoriesLoading?: boolean;
+  initialClassrooms?: ClassroomsListResult | null;
 };
 
 export type CategoryEducationCardProps = {

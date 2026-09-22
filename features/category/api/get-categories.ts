@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import { ENDPOINTS } from "@/core/api/endpoints";
 import { serverRequest } from "@/core/api/server";
 import type { Category } from "@/core/api/types";
@@ -6,7 +8,7 @@ import { normalizeCategories } from "./category.utils";
 
 type CategoriesResponse = Category[] | { data: Category[] };
 
-export async function getCategories(): Promise<Category[]> {
+export const getCategories = cache(async (): Promise<Category[]> => {
   try {
     const response = await serverRequest<CategoriesResponse>({
       url: ENDPOINTS.category.list,
@@ -17,4 +19,4 @@ export async function getCategories(): Promise<Category[]> {
   } catch {
     return [];
   }
-}
+});

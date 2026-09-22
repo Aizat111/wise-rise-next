@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { isAxiosError } from "axios";
 
 import { clientRequest } from "@/core/api/client";
@@ -46,17 +47,21 @@ async function fetchClassroomDetail(
   }
 }
 
+const loadCourseBySlug = cache(async (slug: string): Promise<Classroom | null> => {
+  try {
+    return await fetchClassroomDetail(slug, serverRequest);
+  } catch (error) {
+    if (error instanceof CourseNotFoundError) return null;
+    return null;
+  }
+});
+
 export const courseService = {
   async getBySlug(slug: string): Promise<Classroom> {
     return fetchClassroomDetail(slug, clientRequest);
   },
 
   async getBySlugServer(slug: string): Promise<Classroom | null> {
-    try {
-      return await fetchClassroomDetail(slug, serverRequest);
-    } catch (error) {
-      if (error instanceof CourseNotFoundError) return null;
-      return null;
-    }
+    return loadCourseBySlug(slug);
   },
 };

@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useTranslations } from "next-intl";
 
 import { mapClassroomsToEducationCards } from "@/features/home/api/classroom.utils";
+import { useAppSelector } from "@/store/hooks";
 
 import { useCategoryClassroomsQuery } from "../api/classroom.queries";
 import { getSelectionFilters } from "../api/selection.utils";
@@ -15,8 +16,10 @@ export function CategorySection({
   selection,
   categories,
   isCategoriesLoading = false,
+  initialClassrooms = null,
 }: CategorySectionProps) {
   const t = useTranslations("categories");
+  const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
   const filters = getSelectionFilters(selection);
 
   const {
@@ -25,7 +28,10 @@ export function CategorySection({
     isFetchingNextPage,
     hasNextPage,
     fetchNextPage,
-  } = useCategoryClassroomsQuery(filters);
+  } = useCategoryClassroomsQuery(filters, true, {
+    initialPage: initialClassrooms,
+    refetchOnMount: isAuthenticated ? "always" : undefined,
+  });
 
   const items = useMemo(() => {
     const classrooms = data?.pages.flatMap((page) => page.items) ?? [];

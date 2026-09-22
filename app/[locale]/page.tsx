@@ -3,11 +3,15 @@ import { setRequestLocale } from "next-intl/server";
 
 import { SITE } from "@/config/site";
 import { DEFAULT_LOCALE } from "@/core/config/domain-locale.config";
+import { getCategories } from "@/features/category/api/get-categories";
 import { HomePage } from "@/features/home/components/HomePage";
+import { getPublicHomeSeed } from "@/features/home/api/get-public-home";
 import { getDisplayMembershipPlans } from "@/features/plans/api/get-plans";
 import FAQSchema from "@/shared/seo/FAQSchema";
 import { buildPageMetadata } from "@/shared/seo/generateMetadata";
 import { getFaqItems } from "@/shared/seo/getFaqItems";
+import OrganizationSchema from "@/shared/seo/schemas/OrganizationSchema";
+import WebsiteSchema from "@/shared/seo/WebsiteSchema";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -30,15 +34,25 @@ export default async function Home({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const [faqItems, membershipPlans] = await Promise.all([
+  const [faqItems, membershipPlans, categories, homeSeed] = await Promise.all([
     getFaqItems(),
     getDisplayMembershipPlans(),
+    getCategories(),
+    getPublicHomeSeed(),
   ]);
 
   return (
     <>
+      <OrganizationSchema />
+      <WebsiteSchema />
       <FAQSchema items={faqItems} />
-      <HomePage membershipPlans={membershipPlans} />
+      <HomePage
+        membershipPlans={membershipPlans}
+        categories={categories}
+        initialPlatform={homeSeed.platform}
+        initialHeroes={homeSeed.heroes}
+        initialFeed={homeSeed.feed}
+      />
     </>
   );
 }

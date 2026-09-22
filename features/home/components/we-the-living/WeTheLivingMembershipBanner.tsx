@@ -4,8 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
 import type { MembershipPlan } from "@/core/types/plan.types";
-import { getWeTheLivingHref } from "@/features/category/api/selection.utils";
 import { cn } from "@/lib/utils";
+import { GUEST_REGISTER_HREF } from "@/shared/ui/banners/constants";
 import { useAppSelector } from "@/store/hooks";
 
 import {
@@ -29,7 +29,7 @@ export function WeTheLivingMembershipBanner({
   const t = useTranslations("weTheLiving.membership");
   const reduceMotion = useReducedMotion();
   const isAuthenticated = useAppSelector((state) => state.auth.isAuthenticated);
-  const href = ctaHref ?? getWeTheLivingHref();
+  const href = ctaHref ?? GUEST_REGISTER_HREF;
   const ctaLabel = t("cta");
 
   const monthlyFeatures = [

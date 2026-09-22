@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { DEFAULT_LOCALE } from "@/core/config/domain-locale.config";
+import { getCategoryClassroomPage } from "@/features/category/api/get-category-classrooms";
 import { getCategories } from "@/features/category/api/get-categories";
+import { resolveCategorySelection } from "@/features/category/api/selection.utils";
 import { CategoriesPage } from "@/features/category/pages/CategoriesPage";
 import { buildPageMetadata } from "@/shared/seo/generateMetadata";
 
@@ -30,6 +32,14 @@ export default async function KategorilerPage({ params }: Props) {
   setRequestLocale(locale);
 
   const categories = await getCategories();
+  const selection = resolveCategorySelection(null, categories);
+  const classrooms = await getCategoryClassroomPage(selection);
 
-  return <CategoriesPage initialCategories={categories} categorySlug={null} />;
+  return (
+    <CategoriesPage
+      initialCategories={categories}
+      initialClassrooms={classrooms}
+      categorySlug={null}
+    />
+  );
 }

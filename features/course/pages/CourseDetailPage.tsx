@@ -33,6 +33,7 @@ import { RelatedCoursesSection } from "../components/RelatedCoursesSection";
 export function CourseDetailPage({
   courseSlug,
   teacherSlug,
+  initialCourse = null,
 }: CourseDetailPageProps) {
   const t = useTranslations("course");
   const tLessons = useTranslations("lessonsDetail");
@@ -41,7 +42,10 @@ export function CourseDetailPage({
   const activeProfile = useAppSelector((state) => state.profile.activeProfile);
 
   const { data, isLoading, isError, error, refetch, isFetching } =
-    useCourseDetailQuery(courseSlug);
+    useCourseDetailQuery(courseSlug, true, {
+      initialData: initialCourse,
+      refetchOnMount: isAuthenticated ? "always" : false,
+    });
   const watchesQuery = useProfileVideoWatchesQuery(
     activeProfile?.id,
     isAuthenticated,

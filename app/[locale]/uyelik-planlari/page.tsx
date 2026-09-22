@@ -6,6 +6,8 @@ import {
   MEMBERSHIP_PLANS_ROUTE,
   MembershipPlansPage,
 } from "@/features/membership-plans";
+import { getPlans } from "@/features/plans/api/get-plans";
+import { selectDisplayPlans } from "@/features/plans/api/plan.utils";
 import { buildPageMetadata } from "@/shared/seo/generateMetadata";
 
 type Props = {
@@ -33,5 +35,17 @@ export default async function UyelikPlanlariRoute({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <MembershipPlansPage />;
+  const [monthlyPlans, yearlyPlans] = await Promise.all([
+    getPlans("Monthly"),
+    getPlans("Yearly"),
+  ]);
+
+  return (
+    <MembershipPlansPage
+      initialPlans={{
+        monthly: selectDisplayPlans(monthlyPlans).monthly,
+        yearly: selectDisplayPlans(yearlyPlans).yearly,
+      }}
+    />
+  );
 }

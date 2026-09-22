@@ -15,10 +15,17 @@ export function usePlansQuery() {
   });
 }
 
-export function useDisplayPlansQuery() {
+export function useDisplayPlansQuery(initialData?: DisplayPlans | null) {
+  const seeded =
+    initialData && (initialData.monthly || initialData.yearly)
+      ? initialData
+      : undefined;
+
   return useQuery<DisplayPlans>({
     queryKey: [...QUERY_KEYS.plan.all, "display"],
     queryFn: () => planService.getDisplayPlans(),
+    initialData: seeded,
     staleTime: 5 * 60 * 1000,
+    refetchOnMount: seeded ? false : undefined,
   });
 }

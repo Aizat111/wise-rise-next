@@ -1,5 +1,6 @@
 import { SITE } from "@/config/site";
 import JsonLd from "../JsonLd";
+import { ORGANIZATION_ID } from "../schema-ids";
 
 type ArticleSchemaProps = {
   title: string;
@@ -43,12 +44,7 @@ export default function ArticleSchema({
           name: authorName,
         },
         publisher: {
-          "@type": "Organization",
-          name: SITE.name,
-          logo: {
-            "@type": "ImageObject",
-            url: `${SITE.url}${SITE.logo}`,
-          },
+          "@id": ORGANIZATION_ID,
         },
       }}
     />

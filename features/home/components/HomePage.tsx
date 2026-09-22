@@ -1,5 +1,8 @@
 "use client";
 
+import type { Category } from "@/core/api/types";
+import type { Hero } from "@/core/types/hero.types";
+import type { HomeFeed } from "@/core/types/home.types";
 import type { DisplayMembershipPlans } from "@/core/types/plan.types";
 
 import { useHomeTab } from "../hooks/useHomeTab";
@@ -9,13 +12,23 @@ import { WeTheLivingHome } from "./we-the-living";
 
 type HomePageProps = {
   membershipPlans: DisplayMembershipPlans;
+  categories?: Category[];
+  initialPlatform?: string;
+  initialHeroes?: Hero[];
+  initialFeed?: HomeFeed | null;
 };
 
 /**
  * Home shell: tab state + which homepage tree to render.
  * Content lives in DefaultHome / WeTheLivingHome — keep this file thin.
  */
-export function HomePage({ membershipPlans }: HomePageProps) {
+export function HomePage({
+  membershipPlans,
+  categories,
+  initialPlatform,
+  initialHeroes,
+  initialFeed,
+}: HomePageProps) {
   const { activeHomeTab, setHomeTab } = useHomeTab();
 
   return (
@@ -29,6 +42,10 @@ export function HomePage({ membershipPlans }: HomePageProps) {
           key={activeHomeTab}
           mode={activeHomeTab}
           membershipPlans={membershipPlans}
+          categories={categories}
+          initialPlatform={initialPlatform}
+          initialHeroes={initialHeroes}
+          initialFeed={initialFeed}
         />
       )}
     </div>

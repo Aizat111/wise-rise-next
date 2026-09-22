@@ -9,7 +9,7 @@ import { heroService } from "./hero.service";
 
 type HeroesQueryOptions = Pick<
   UseQueryOptions<Hero[]>,
-  "enabled" | "refetchOnMount"
+  "enabled" | "refetchOnMount" | "initialData"
 >;
 
 export function useHeroesQuery(
@@ -17,12 +17,13 @@ export function useHeroesQuery(
   mediaType: "image" | "video" = "image",
   options: HeroesQueryOptions = {},
 ) {
-  const { enabled = true, refetchOnMount } = options;
+  const { enabled = true, refetchOnMount, initialData } = options;
 
   return useQuery<Hero[]>({
     queryKey: QUERY_KEYS.hero.list(platform, mediaType),
     queryFn: () => heroService.list({ platform, mediaType }),
     enabled,
+    initialData,
     staleTime: 5 * 60 * 1000,
     refetchOnMount,
   });

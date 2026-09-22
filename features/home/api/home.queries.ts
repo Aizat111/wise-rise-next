@@ -9,19 +9,20 @@ import { homeService } from "./home.service";
 
 type HomeFeedQueryOptions = Pick<
   UseQueryOptions<HomeFeed>,
-  "enabled" | "refetchOnMount"
+  "enabled" | "refetchOnMount" | "initialData"
 >;
 
 export function useHomeFeedQuery(
   platform: string,
   options: HomeFeedQueryOptions = {},
 ) {
-  const { enabled = true, refetchOnMount } = options;
+  const { enabled = true, refetchOnMount, initialData } = options;
 
   return useQuery<HomeFeed>({
     queryKey: QUERY_KEYS.home.feed(platform),
     queryFn: () => homeService.getFeed(platform),
     enabled,
+    initialData,
     staleTime: 5 * 60 * 1000,
     refetchOnMount,
   });

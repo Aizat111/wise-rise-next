@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: t("description"),
     canonical,
     keywords: [t("title"), "Wise&Rise", "aktivite", "sertifika"],
+    noIndex: true,
   });
 }
 

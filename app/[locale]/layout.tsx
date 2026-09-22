@@ -14,8 +14,7 @@ import Providers from "@/core/providers/Providers";
 import { getCategories } from "@/features/category/api/get-categories";
 import { extraFontVariables, poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
-import OrganizationSchema from "@/shared/seo/schemas/OrganizationSchema";
-import WebsiteSchema from "@/shared/seo/WebsiteSchema";
+import SiteBreadcrumbs from "@/shared/seo/SiteBreadcrumbs";
 import { MobileCtaBanner } from "@/shared/ui/banners/MobileCtaBanner";
 
 import "../globals.css";
@@ -57,8 +56,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <TrackingNoscript />
         <TrackingScripts />
-        <OrganizationSchema />
-        <WebsiteSchema />
+        <SiteBreadcrumbs locale={locale} categories={categories} />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
