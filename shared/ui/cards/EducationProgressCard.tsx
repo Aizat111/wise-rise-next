@@ -93,7 +93,7 @@ export function EducationProgressCard({
     >
       <Image
         src={thumbnail}
-        alt={title}
+        alt={teacherName ? `${teacherName} - ${title}` : title}
         fill
         sizes="(max-width: 768px) 50vw, 25vw"
         className="object-cover object-[center_10%]"

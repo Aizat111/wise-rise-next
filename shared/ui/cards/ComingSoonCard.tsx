@@ -31,7 +31,7 @@ export function ComingSoonCard({
     >
       <Image
         src={thumbnail}
-        alt={title}
+        alt={authorName ? `${authorName} - ${title}` : title}
         fill
         sizes="(max-width: 1024px) 50vw, 25vw"
         className="object-cover object-[center_10%]"

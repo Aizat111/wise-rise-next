@@ -1,6 +1,6 @@
 "use client";
 
-import { CirclePlus } from "lucide-react";
+import { Check } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
@@ -85,9 +85,7 @@ export function MembershipPlanCard({
         <p className="text-sm font-medium text-primary md:text-xl">
           {period === "Monthly" ? tCommon("monthly") : tCommon("yearly")}
         </p>
-        <h3 className="mt-1 text-sm font-semibold text-foreground md:text-base">
-          {title}
-        </h3>
+
         <p className="mt-2 text-3xl font-semibold text-foreground">
           {promoLabel ? (
             <span className="flex flex items-start gap-1">
@@ -117,7 +115,7 @@ export function MembershipPlanCard({
       <ul className="flex flex-col gap-2">
         {features.map((feature) => (
           <li key={feature} className="flex items-start gap-2 text-sm text-white/80">
-            <CirclePlus className="mt-0.5 size-4 shrink-0 text-primary" />
+            <Check className="mt-0.5 size-4 shrink-0 text-primary" />
             <span>{feature}</span>
           </li>
         ))}

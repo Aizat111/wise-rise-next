@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { SITE } from "@/config/site";
 import { DEFAULT_LOCALE } from "@/core/config/domain-locale.config";
@@ -12,6 +12,7 @@ import { buildPageMetadata } from "@/shared/seo/generateMetadata";
 import { getFaqItems } from "@/shared/seo/getFaqItems";
 import OrganizationSchema from "@/shared/seo/schemas/OrganizationSchema";
 import WebsiteSchema from "@/shared/seo/WebsiteSchema";
+import VisuallyHiddenHeading from "@/shared/seo/VisuallyHiddenHeading";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -34,6 +35,7 @@ export default async function Home({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations({ locale, namespace: "home" });
   const [faqItems, membershipPlans, categories, homeSeed] = await Promise.all([
     getFaqItems(),
     getDisplayMembershipPlans(),
@@ -43,6 +45,7 @@ export default async function Home({ params }: Props) {
 
   return (
     <>
+      <VisuallyHiddenHeading>{t("seoHeading")}</VisuallyHiddenHeading>
       <OrganizationSchema />
       <WebsiteSchema />
       <FAQSchema items={faqItems} />
