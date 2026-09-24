@@ -7,6 +7,11 @@ export const ORGANIZATION_ID = `${SITE.url}/#organization`;
 /** Stable website entity defined on the homepage. */
 export const WEBSITE_ID = `${SITE.url}/#website`;
 
+/** Stable person entity for a teacher, referenced from course schema. */
+export function teacherPersonId(teacherSlug: string) {
+  return `${SITE.url}/egitmen/${teacherSlug}#person`;
+}
+
 /**
  * Sitelinks Searchbox target.
  * `{search_term_string}` must stay literal — do not encode it.

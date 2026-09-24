@@ -1,5 +1,7 @@
 import { getTranslations } from "next-intl/server";
 
+import FAQSchema from "@/shared/seo/FAQSchema";
+
 import { FAQ_ITEM_KEYS } from "../constants";
 import { FaqAccordion } from "../components/FaqAccordion";
 import { InformationLayout } from "../components/InformationLayout";
@@ -17,8 +19,16 @@ export async function FaqPage() {
   }));
 
   return (
-    <InformationLayout title={title}>
-      <FaqAccordion items={items} />
-    </InformationLayout>
+    <>
+      <FAQSchema
+        items={items.map((item) => ({
+          question: item.title,
+          answer: item.description,
+        }))}
+      />
+      <InformationLayout title={title}>
+        <FaqAccordion items={items} />
+      </InformationLayout>
+    </>
   );
 }

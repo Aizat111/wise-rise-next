@@ -10,6 +10,7 @@ import {
 } from "@/features/course/api/course.utils";
 import { VideoPlayerPage } from "@/features/course/pages/VideoPlayerPage";
 import { buildPageMetadata } from "@/shared/seo/generateMetadata";
+import VideoSchema from "@/shared/seo/schemas/VideoSchema";
 
 type Props = {
   params: Promise<{
@@ -75,20 +76,27 @@ export default async function VideoPage({ params }: Props) {
     notFound();
   }
 
-  const video = findCourseVideoBySlug(
-    mapClassroomVideos(course.videos),
-    videoSlug,
-  );
-  if (!video) {
+  const sourceVideo =
+    course.videos?.find((item) => item.slug === videoSlug) ?? null;
+  if (!sourceVideo) {
     notFound();
   }
 
   return (
-    <VideoPlayerPage
-      teacherSlug={teacherSlug}
-      courseSlug={courseSlug}
-      videoSlug={videoSlug}
-      initialCourse={course}
-    />
+    <>
+      <VideoSchema
+        course={course}
+        video={sourceVideo}
+        locale={locale}
+        teacherSlug={teacherSlug}
+        courseSlug={courseSlug}
+      />
+      <VideoPlayerPage
+        teacherSlug={teacherSlug}
+        courseSlug={courseSlug}
+        videoSlug={videoSlug}
+        initialCourse={course}
+      />
+    </>
   );
 }

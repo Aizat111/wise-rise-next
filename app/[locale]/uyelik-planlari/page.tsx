@@ -9,6 +9,7 @@ import {
 import { getPlans } from "@/features/plans/api/get-plans";
 import { selectDisplayPlans } from "@/features/plans/api/plan.utils";
 import { buildPageMetadata } from "@/shared/seo/generateMetadata";
+import AggregateOfferSchema from "@/shared/seo/schemas/AggregateOfferSchema";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -39,13 +40,22 @@ export default async function UyelikPlanlariRoute({ params }: Props) {
     getPlans("Monthly"),
     getPlans("Yearly"),
   ]);
+  const monthly = selectDisplayPlans(monthlyPlans).monthly;
+  const yearly = selectDisplayPlans(yearlyPlans).yearly;
 
   return (
-    <MembershipPlansPage
-      initialPlans={{
-        monthly: selectDisplayPlans(monthlyPlans).monthly,
-        yearly: selectDisplayPlans(yearlyPlans).yearly,
-      }}
-    />
+    <>
+      <AggregateOfferSchema
+        locale={locale}
+        monthlyPlan={monthly}
+        yearlyPlan={yearly}
+      />
+      <MembershipPlansPage
+        initialPlans={{
+          monthly,
+          yearly,
+        }}
+      />
+    </>
   );
 }

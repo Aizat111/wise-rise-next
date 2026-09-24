@@ -14,8 +14,12 @@ import {
 } from "@/features/category/api/selection.utils";
 import { CATEGORY_BACKGROUND } from "@/features/category/constants";
 import { CategoriesPage } from "@/features/category/pages/CategoriesPage";
-import { buildSelectedCategorySeo } from "@/features/category/seo/category-page-seo";
+import {
+  buildSelectedCategorySeo,
+  getCategoryPageHeading,
+} from "@/features/category/seo/category-page-seo";
 import { buildPageMetadata } from "@/shared/seo/generateMetadata";
+import CollectionPageSchema from "@/shared/seo/schemas/CollectionPageSchema";
 
 type Props = {
   params: Promise<{
@@ -78,12 +82,29 @@ export default async function CategorySlugPage({ params }: Props) {
 
   const selection = resolveCategorySelection(teacherSlug, categories);
   const classrooms = await getCategoryClassroomPage(selection);
+  const t = await getTranslations({ locale, namespace: "categories" });
+  const allCategoriesLabel = t("allCategories");
+  const seo = buildSelectedCategorySeo(
+    t,
+    selection,
+    allCategoriesLabel,
+    classrooms?.total ?? null,
+  );
 
   return (
-    <CategoriesPage
-      initialCategories={categories}
-      initialClassrooms={classrooms}
-      categorySlug={teacherSlug}
-    />
+    <>
+      <CollectionPageSchema
+        locale={locale}
+        path={getSelectionCanonical(selection)}
+        name={getCategoryPageHeading(t, selection, allCategoriesLabel)}
+        description={seo?.description ?? t("subtitle")}
+        classrooms={classrooms?.items}
+      />
+      <CategoriesPage
+        initialCategories={categories}
+        initialClassrooms={classrooms}
+        categorySlug={teacherSlug}
+      />
+    </>
   );
 }

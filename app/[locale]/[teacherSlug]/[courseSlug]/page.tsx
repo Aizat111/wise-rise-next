@@ -6,6 +6,7 @@ import { DEFAULT_LOCALE } from "@/core/config/domain-locale.config";
 import { courseService } from "@/features/course/api/course.service";
 import { CourseDetailPage } from "@/features/course/pages/CourseDetailPage";
 import { buildPageMetadata } from "@/shared/seo/generateMetadata";
+import CourseSchema from "@/shared/seo/schemas/CourseSchema";
 
 type Props = {
   params: Promise<{
@@ -62,10 +63,18 @@ export default async function CoursePage({ params }: Props) {
   }
 
   return (
-    <CourseDetailPage
-      courseSlug={courseSlug}
-      teacherSlug={teacherSlug}
-      initialCourse={course}
-    />
+    <>
+      <CourseSchema
+        course={course}
+        locale={locale}
+        teacherSlug={teacherSlug}
+        courseSlug={courseSlug}
+      />
+      <CourseDetailPage
+        courseSlug={courseSlug}
+        teacherSlug={teacherSlug}
+        initialCourse={course}
+      />
+    </>
   );
 }
