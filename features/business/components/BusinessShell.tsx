@@ -11,7 +11,9 @@ export function BusinessShell({
   title,
   subtitle,
   children,
-  referencesTitle
+  referencesTitle,
+  alt
+
 }: BusinessShellProps) {
   return (
     <div className="bg-background text-foreground">
@@ -19,6 +21,7 @@ export function BusinessShell({
         title={title}
         subtitle={subtitle}
         backgroundSrc={CATEGORY_HERO_BACKGROUND}
+        alt={alt}
       />
       <BusinessBanner2 className="bg-black" />
       <BusinessReferences

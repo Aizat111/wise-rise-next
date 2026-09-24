@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : `/${locale}/${teacherSlug}/${courseSlug}`;
 
   return buildPageMetadata({
-    title: course.name,
+    title: course.name + " - " + course.teacher?.name,
     description: course.description?.trim() || course.name,
     canonical: canonicalBase,
     image:
@@ -56,6 +56,7 @@ export default async function CoursePage({ params }: Props) {
   setRequestLocale(locale);
 
   const course = await courseService.getBySlugServer(courseSlug);
+  console.log("course", course);
   if (!course) {
     notFound();
   }

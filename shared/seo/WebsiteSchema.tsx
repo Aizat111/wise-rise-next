@@ -17,8 +17,6 @@ export default function WebsiteSchema() {
         name: SITE.name,
         alternateName: SITE.shortName,
         url: SITE.url,
-        description: SITE.description,
-        inLanguage: ["tr", "az"],
         publisher: {
           "@id": ORGANIZATION_ID,
         },

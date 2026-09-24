@@ -166,6 +166,7 @@ function campaignCrumbs(
 async function courseCrumbs(
   segments: string[],
   locale: string,
+  t: Translator,
 ): Promise<BreadcrumbItem[] | null> {
   const [teacherSlug, courseSlug, videoSlug] = segments;
   if (!teacherSlug || !courseSlug) return null;
@@ -182,8 +183,14 @@ async function courseCrumbs(
     });
   }
 
+  const teacherName = course.teacher?.name?.trim();
   items.push({
-    name: course.name,
+    name: teacherName
+      ? t("course.breadcrumbWithTeacher", {
+          teacher: teacherName,
+          course: course.name,
+        })
+      : course.name,
     path: localizedPath(locale, `/${teacherSlug}/${courseSlug}`),
   });
 
@@ -283,7 +290,7 @@ export async function buildBreadcrumbItems({
   const first = segments[0];
 
   if (first && !STATIC_FIRST_SEGMENTS.has(first) && segments.length >= 2) {
-    const course = await courseCrumbs(segments, locale);
+    const course = await courseCrumbs(segments, locale, t);
     if (course) return [home, ...course];
   }
 

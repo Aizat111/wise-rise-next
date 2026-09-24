@@ -3,11 +3,9 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { notFound } from "next/navigation";
-
 import { Button } from "@/components/ui/button";
 import { useRouter } from "@/core/i18n/navigation";
 import { useAppSelector } from "@/store/hooks";
-
 import {
   CourseNotFoundError,
   useCourseDetailQuery,
@@ -55,6 +53,7 @@ export function CourseDetailPage({
   const [loginOpen, setLoginOpen] = useState(false);
   const [notesOpen, setNotesOpen] = useState(false);
 
+  const seoHeading = data?.name;
   if (error instanceof CourseNotFoundError) {
     notFound();
   }

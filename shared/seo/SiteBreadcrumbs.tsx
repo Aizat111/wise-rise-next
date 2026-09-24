@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import type { Category } from "@/core/api/types";
 
 import { buildBreadcrumbItems, isHomePath } from "./build-breadcrumb-items";
-import PageSchema from "./schemas/PageSchema";
+import BreadcrumbSchema from "./schemas/BreadcrumbSchema";
 import { PATHNAME_HEADER } from "./schema-ids";
 
 type SiteBreadcrumbsProps = {
@@ -21,5 +21,7 @@ export default async function SiteBreadcrumbs({
   if (!pathname || isHomePath(pathname)) return null;
 
   const items = await buildBreadcrumbItems({ pathname, locale, categories });
-  return <PageSchema items={items} />;
+  if (items.length < 2) return null;
+
+  return <BreadcrumbSchema items={items} />;
 }

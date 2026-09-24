@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale === DEFAULT_LOCALE ? BUSINESS_ROUTE : `/${locale}${BUSINESS_ROUTE}`;
 
   return buildPageMetadata({
-    title: t("title"),
-    description: t("subtitle"),
+    title: t("seo.title"),
+    description: t("seo.description"),
     canonical,
-    keywords: [t("title"), t("heroTitle"), "Wise&Rise", "iş dünyası"],
+    keywords: [t("seo.title"), t("seo.description"), "Wise&Rise", "iş dünyası"],
   });
 }
 

@@ -12,6 +12,7 @@ import { classroomService } from "@/features/home/api/classroom.service";
 import { CategoriesSection } from "@/shared/ui/categories";
 import { BusinessBanner } from "@/shared/ui/banners";
 import { TeacherShowcaseCard } from "@/shared/ui/banners/TeacherShowcaseCard";
+import VisuallyHiddenHeading from "@/shared/seo/VisuallyHiddenHeading";
 
 
 export async function BusinessPage() {
@@ -81,7 +82,8 @@ export async function BusinessPage() {
   ];
 
   return (
-    <BusinessShell title={t("heroTitle")} subtitle={t("subtitle")} referencesTitle={t("references")}>
+    <BusinessShell title={t("heroTitle")} subtitle={t("subtitle")} referencesTitle={t("references")} alt={t("seo.heading")}>
+      <VisuallyHiddenHeading>{t("seo.heading")}</VisuallyHiddenHeading>
       <MostWatchedSlider mode="all" initialClassrooms={mostWatched} />
       <CategoriesSection
         categories={categories.length > 0 ? categories : undefined}

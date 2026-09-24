@@ -14,6 +14,7 @@ import {
 } from "@/features/category/api/selection.utils";
 import { CATEGORY_BACKGROUND } from "@/features/category/constants";
 import { CategoriesPage } from "@/features/category/pages/CategoriesPage";
+import { buildSelectedCategorySeo } from "@/features/category/seo/category-page-seo";
 import { buildPageMetadata } from "@/shared/seo/generateMetadata";
 
 type Props = {
@@ -40,15 +41,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const selection = resolveCategorySelection(teacherSlug, categories);
-  const title = getSelectionTitle(selection, t("allCategories"));
+  const classrooms = await getCategoryClassroomPage(selection);
+  const seo = buildSelectedCategorySeo(
+    t,
+    selection,
+    t("allCategories"),
+    classrooms?.total ?? null,
+  );
+  const title = seo?.title ?? getSelectionTitle(selection, t("allCategories"));
   const path = getSelectionCanonical(selection);
   const canonical =
     locale === DEFAULT_LOCALE ? path : `/${locale}${path}`;
 
   return buildPageMetadata({
     title,
-    description: t("subtitle"),
+    description: seo?.description ?? t("subtitle"),
     canonical,
+    absoluteTitle: Boolean(seo),
     image: getSelectionHeroBackground(selection, CATEGORY_BACKGROUND),
     keywords: [title, t("title"), "Wise&Rise"],
   });

@@ -15,11 +15,3 @@ export const SEARCH_ACTION_TARGET = `${SITE.url}${SEARCH_ROUTE}?${SEARCH_QUERY_P
 
 /** Request header set in `proxy.ts` so server components know the public path. */
 export const PATHNAME_HEADER = "x-pathname";
-
-export function webpageId(pageUrl: string) {
-  return `${pageUrl}#webpage`;
-}
-
-export function breadcrumbId(pageUrl: string) {
-  return `${pageUrl}#breadcrumb`;
-}

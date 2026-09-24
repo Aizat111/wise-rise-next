@@ -481,7 +481,29 @@
     "loadMore": "Daha çox",
     "loading": "Yüklənir...",
     "favoriteError": "Favorit əməliyyatı tamamlanmadı.",
-    "actions": "Əməliyyatlar"
+    "actions": "Əməliyyatlar",
+    "alt": "{category} Təlimləri - Wise & Rise",
+    "seo": {
+      "title": "{category} Təlimləri — {count}+ Kurs | Wise & Rise",
+      "titleFallback": "{category} Təlimləri | Wise & Rise",
+      "description": "{category} sahəsində Türkiyənin ən yaxşı mütəxəssislərindən {count}+ kurs. {value}. İlk 7 gün pulsuz.",
+      "descriptionFallback": "{category} sahəsində Türkiyənin ən yaxşı mütəxəssislərindən kurslar. {value}. İlk 7 gün pulsuz.",
+      "heading": "{category} Təlimləri",
+      "valueProps": {
+        "ebeveynlik-cocuk-gelisimi": "Uşaq böyütmə və valideynlik prinsipləri üzrə praktiki dərslər",
+        "ev-stil": "Moda, dizayn və yaşayış sahəsinə dair praktik baxışlar",
+        "gastronomi": "Mətbəx mədəniyyətindən qəhvəyə, dadın hekayəsini ustalarından öyrənin",
+        "genel-kultur": "Tarix, ədəbiyyat və fikir dünyasından seçilmiş hekayələr",
+        "is-dunyasi": "Sahibkarlıq, süni intellekt və gələcəyin iş dünyasına dair strateji dərslər",
+        "kisisel-gelisim": "Həyata istiqamət vermək və komfort zonasından çıxmaq üçün ilhamverici məzmunlar",
+        "psikoloji": "Münasibətlər, məna axtarışı və zehin üzrə dərin dərslər",
+        "saglik": "Ürək, bağırsaq və beyin sağlamlığından bütöv rifaha uzanan məzmunlar",
+        "sanat": "Yazarlıq, hekayə danışma və səhnə sənətlərində yaradıcı istehsal",
+        "yasam": "Gözəllik, dönüşüm və həyata dair seçilmiş dərslər",
+        "we-the-living": "Müdriklik və kəşf üzrə seçilmiş dərinləşmə hekayələri",
+        "default": "Sahəsinin qabaqcıl adlarından seçilmiş dərslər"
+      }
+    }
   },
   "teachersPage": {
     "title": "Bütün Müəllimlər",
@@ -808,6 +830,7 @@
     "aboutCourse": "Təlim haqqında",
     "courseVideos": "Təlim videoları",
     "category": "Kateqoriya",
+    "breadcrumbWithTeacher": "{teacher} ilə {course}",
     "teacher": "Təlimçi",
     "duration": "Müddət",
     "episodes": "Bölmə",

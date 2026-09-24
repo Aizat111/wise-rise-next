@@ -85,7 +85,7 @@
     "live": "Live"
   },
   "information": {
-    "home": "Anasayfa",
+    "home": "Ana Sayfa",
     "pages": {
       "about": "Hakkımızda",
       "contact": "İletişim",
@@ -482,7 +482,29 @@
     "loadMore": "Daha Fazla",
     "loading": "Yükleniyor...",
     "favoriteError": "Favori işlemi tamamlanamadı.",
-    "actions": "İşlemler"
+    "actions": "İşlemler",
+    "alt": "{category} Eğitimleri - Wise & Rise",
+    "seo": {
+      "title": "{category} Eğitimleri — {count}+ Kurs | Wise & Rise",
+      "titleFallback": "{category} Eğitimleri | Wise & Rise",
+      "description": "{category} alanında Türkiye'nin en iyi uzmanlarından {count}+ kurs. {value}. İlk 7 gün ücretsiz.",
+      "descriptionFallback": "{category} alanında Türkiye'nin en iyi uzmanlarından kurslar. {value}. İlk 7 gün ücretsiz.",
+      "heading": "{category} Eğitimleri",
+      "valueProps": {
+        "ebeveynlik-cocuk-gelisimi": "Çocuk yetiştirme ve ebeveynlik ilkeleri üzerine uygulamalı dersler",
+        "ev-stil": "Moda, tasarım ve yaşam alanına dair pratik bakış açıları",
+        "gastronomi": "Mutfak kültüründen kahveye, lezzetin hikâyesini ustalarından öğrenin",
+        "genel-kultur": "Tarih, edebiyat ve düşünce dünyasından seçkin anlatılar",
+        "is-dunyasi": "Girişimcilik, yapay zekâ ve geleceğin iş dünyasına dair stratejik dersler",
+        "kisisel-gelisim": "Hayata yön vermek ve konfor alanından çıkmak için ilham veren içerikler",
+        "psikoloji": "İlişkiler, anlam arayışı ve zihin üzerine derinlemesine dersler",
+        "saglik": "Kalp, bağırsak ve beyin sağlığından bütüncül iyilik haline uzanan içerikler",
+        "sanat": "Yazarlık, hikâye anlatıcılığı ve sahne sanatlarında yaratıcı üretim",
+        "yasam": "Güzellik, dönüşüm ve hayata dair seçkin dersler",
+        "we-the-living": "Bilgelik ve keşif üzerine seçilmiş derinleşme anlatıları",
+        "default": "Alanının önde gelen isimlerinden seçilmiş dersler"
+      }
+    }
   },
   "teachersPage": {
     "title": "Tüm Eğitmenler",
@@ -752,6 +774,11 @@
     "howToWorkWithWiseRise": "WISE & RISE İLE NASIL ÇALIŞACAKSINIZ?",
     "forUsers": "Kullanıcılar için",
     "forBusiness": "İş Dünyası için",
+    "seo": {
+      "title": "Kurumsal Abonelik — Ekip Eğitimleri | Wise & Rise",
+      "description": "Ekibinizi Türkiye'nin en iyilerinden öğrenmeye götürün. Kurumsal abonelik, ekip yönetim paneli, özel raporlama. Fiyat teklifi alın.",
+      "heading": "Kurumsallar İçin Wise & Rise"
+    },
     "features": {
       "item1": {
         "title": "İhtiyaca yönelik, etkili bir eğitim deneyimi",
@@ -812,6 +839,7 @@
     "aboutCourse": "Eğitim Hakkında",
     "courseVideos": "Eğitim Videoları",
     "category": "Kategori",
+    "breadcrumbWithTeacher": "{teacher} ile {course}",
     "teacher": "Eğitmen",
     "duration": "Süre",
     "episodes": "Bölüm",

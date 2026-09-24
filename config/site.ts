@@ -35,4 +35,6 @@ export const SITE = {
 
   favicon: "/favicon.ico",
   contactAddress: "Akat Mah. Cebeci Cad. No:65 Beşiktaş/İstanbul",
+  organizationDescription:
+    "Türkiye'nin en iyi uzmanlarından online eğitim platformu.",
 };

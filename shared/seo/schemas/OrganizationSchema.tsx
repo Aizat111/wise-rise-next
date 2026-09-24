@@ -24,7 +24,7 @@ export default function OrganizationSchema() {
 
         image: `${SITE.url}${SITE.logo}`,
 
-        description: SITE.description,
+        description: SITE.organizationDescription,
 
         email: SITE.email,
 
@@ -43,7 +43,7 @@ export default function OrganizationSchema() {
           telephone: SITE.phone,
           email: SITE.email,
           contactType: "customer support",
-          availableLanguage: ["Turkish", "English"],
+          availableLanguage: ["Turkish"],
         },
       }}
     />

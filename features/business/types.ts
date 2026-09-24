@@ -53,4 +53,5 @@ export type BusinessShellProps = {
   subtitle?: string;
   children: ReactNode;
   referencesTitle: string;
+  alt?: string;
 };
